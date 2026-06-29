@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="module_admin_trash" model="ir.module.category">
+            <field name="name">Trash Management</field>
+        </record>
+        <record id="res_groups_admin_trash" model="res.groups">
+            <field name="name">Trash Administrator</field>
+            <field name="category_id" ref="trash.module_admin_trash" />
+        </record>
+
+    </data>
+</odoo>

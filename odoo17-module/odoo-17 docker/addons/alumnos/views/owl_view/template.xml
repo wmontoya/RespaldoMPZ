@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="alumnos.page" name="OXP Demo App">
+        <html>
+            <head>
+                <t t-call-assets="alumnos.assets" />
+            </head>
+            <body>
+                <div id="owl_wrapwrap" class="container"> </div>
+            </body>
+        </html>
+    </template>
+</odoo>

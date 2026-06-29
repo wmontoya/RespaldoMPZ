@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_trash_route_upload_form" model="ir.ui.view">
+        <field name="name">trash.route.upload.form</field>
+        <field name="model">trash.route_upload</field>
+        <field name="arch" type="xml">
+            <form string="Cargar Rutas desde KML y Excel">
+                <sheet>
+                    <group string="Archivos de Carga" col="2">
+                        <group>
+                            <field name="kml_file" filename="filename"/>
+                            <field name="filename"/>
+                        </group>
+                        <group>
+                            <field name="excel_file" filename="excel_filename"/>
+                            <field name="excel_filename"/>
+                        </group>
+                    </group>
+                    <div class="oe_title" style="padding: 15px; background-color: #f5f5f5; border-radius: 5px; margin: 10px 0;">
+                        <h3>Modo de Uso</h3>
+                        <p style="margin: 8px 0;"><strong>1. Carga inicial (KML + Excel):</strong> Seleccione ambos archivos para crear rutas nuevas con coordenadas, sectores, días y fechas de recolección.</p>
+                        <p style="margin: 8px 0;"><strong>2. Actualizar datos (solo Excel):</strong> Si las rutas ya existen (creadas previamente desde KML), puede cargar solo el Excel para actualizar sectores, días, iteración y fechas quincenales sin duplicar información.</p>
+                        <p style="margin: 8px 0;"><strong>3. Re-cargar Excel:</strong> Puede volver a cargar el Excel las veces que necesite; el sistema actualizará los registros existentes sin crear duplicados.</p>
+                        <h3 style="margin-top: 15px;">Requisitos del Excel</h3>
+                        <p style="margin: 5px 0;">• Debe contener una columna "RUTA" con los códigos de ruta que coincidan con el KML.</p>
+                        <p style="margin: 5px 0;">• Columnas de días: "BASURA Día", "ORGÁNICO Día", "RECICLAJE Día".</p>
+                        <p style="margin: 5px 0;">• Las fechas quincenales se leen de las columnas posteriores (columna 8 en adelante).</p>
+                    </div>
+                </sheet>
+                <footer>
+                    <button string="Procesar Archivos" type="object" name="process_kml_and_excel" class="btn-primary"/>
+                    <button string="Cancelar" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

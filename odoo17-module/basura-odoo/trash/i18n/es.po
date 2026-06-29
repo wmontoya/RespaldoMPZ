@@ -1,0 +1,188 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* trash
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-10 00:00+0000\n"
+"PO-Revision-Date: 2026-02-10 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: trash
+#: model:ir.model,name:trash.model_trash_route
+msgid "Route"
+msgstr "Ruta"
+
+#. module: trash
+#: model:ir.model,name:trash.model_trash_route_day
+msgid "Trash Route Collection Days"
+msgstr "Días de recolección por ruta"
+
+#. module: trash
+#: model:ir.model.fields,field_description:trash.field_trash_route_day__route_id
+msgid "Route"
+msgstr "Ruta"
+
+#. module: trash
+#: model:ir.model.fields,field_description:trash.field_trash_route_day__waste_type
+msgid "Waste Type"
+msgstr "Tipo de residuo"
+
+#. module: trash
+#: model:ir.model.fields,field_description:trash.field_trash_route_day__day_ids
+msgid "Collection Days"
+msgstr "Días de recolección"
+
+#. module: trash
+#: model:ir.model.fields,field_description:trash.field_trash_route_day__day_iteration
+msgid "Day Iteration"
+msgstr "Frecuencia"
+
+#. module: trash
+#: model:ir.model.fields,field_description:trash.field_trash_route_day__collection_time
+msgid "Collection time"
+msgstr "Horario de recolección"
+
+#. module: trash
+#: model:ir.model.fields,field_description:trash.field_trash_route_day__sector_id
+msgid "Sector"
+msgstr "Sector"
+
+#. module: trash
+#: model:ir.model.fields,field_description:trash.field_trash_route_day__subscription_ids
+msgid "Subscribers"
+msgstr "Suscriptores"
+
+#. module: trash
+#: model:ir.model.fields,field_description:trash.field_trash_route_day__day_list
+msgid "Days (Display)"
+msgstr "Días (visualización)"
+
+#. module: trash
+#: model:ir.model,name:trash.model_trash_route_sector
+msgid "Sectors"
+msgstr "Sectores"
+
+#. module: trash
+#: model:ir.model.fields,field_description:trash.field_trash_route_sector__name_sector
+msgid "Name of Sector"
+msgstr "Nombre del sector"
+
+#. module: trash
+#: model:ir.model,name:trash.model_trash_route_upload
+msgid "Upload KML File"
+msgstr "Cargar archivo KML"
+
+#. module: trash
+#: model:ir.model.fields,field_description:trash.field_trash_route_upload__kml_file
+msgid "KML File"
+msgstr "Archivo KML"
+
+#. module: trash
+#: model:ir.model.fields,field_description:trash.field_trash_route_upload__filename
+msgid "Filename"
+msgstr "Nombre del archivo"
+
+#. module: trash
+#: model_terms:ir.ui.view,arch_db:trash.view_route_form
+msgid "Collection Days"
+msgstr "Días de recolección"
+
+#. module: trash
+#: model_terms:ir.ui.view,arch_db:trash.view_route_form
+msgid "Route Day"
+msgstr "Día de la ruta"
+
+#. module: trash
+#: model_terms:ir.ui.view,arch_db:trash.view_route_form
+msgid "Quincenal Days"
+msgstr "Fechas quincenales"
+
+#. module: trash
+#: model_terms:ir.ui.view,arch_db:trash.view_route_form
+msgid "Subscriptions"
+msgstr "Suscripciones"
+
+#. module: trash
+#: model_terms:ir.ui.view,arch_db:trash.view_route_form
+msgid "Coordinates Points"
+msgstr "Puntos de las coordenadas"
+
+#. module: trash
+#: model:ir.actions.act_window,name:trash.action_route_tree
+#: model_terms:ir.ui.view,arch_db:trash.view_route_tree
+msgid "Routes"
+msgstr "Rutas"
+
+#. module: trash
+#: model:ir.model.fields,field_description:trash.field_trash_route__day_ids
+msgid "Collection Days"
+msgstr "Días de recolección"
+
+#. module: trash
+#: model:ir.model.fields,field_description:trash.field_trash_route_quincenal_date__route_day_id
+msgid "Route Day"
+msgstr "Día de la ruta"
+
+#. module: trash
+#: model:ir.model.fields,field_description:trash.field_trash_route_quincenal_date__collection_date
+msgid "Recollection Date"
+msgstr "Fecha de recolección"
+
+#. module: trash
+#: model:ir.ui.menu,name:trash.menu_root_trash
+msgid "Trashing Management"
+msgstr "Rutas de recolección"
+
+#. module: trash
+#: model:ir.ui.menu,name:trash.menu_general
+msgid "General"
+msgstr "General"
+
+#. module: trash
+#: model:ir.ui.menu,name:trash.menu_route_tree_action
+msgid "Routes"
+msgstr "Rutas"
+
+#. module: trash
+#: model:ir.ui.menu,name:trash.menu_configurations
+msgid "Configurations"
+msgstr "Configuraciones"
+
+#. module: trash
+#: model:ir.ui.menu,name:trash.menu_trash_route_upload
+msgid "Upload Routes"
+msgstr "Cargar rutas"
+
+#. module: trash
+#: model:ir.model,name:trash.model_trash_route
+msgid "Trash Collection Route"
+msgstr "Ruta de recolección"
+
+#. module: trash
+#: model:ir.model.fields,field_description:trash.field_trash_route__name
+msgid "Route Name"
+msgstr "Nombre de la ruta"
+
+#. module: trash
+#: model:ir.model.fields,field_description:trash.field_trash_route__code
+msgid "Route Code"
+msgstr "Código de la ruta"
+
+#. module: trash
+#: model:ir.model.fields,field_description:trash.field_trash_route__description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: trash
+#: model:ir.model.fields,field_description:trash.field_trash_route__color
+msgid "Color"
+msgstr "Color"
+

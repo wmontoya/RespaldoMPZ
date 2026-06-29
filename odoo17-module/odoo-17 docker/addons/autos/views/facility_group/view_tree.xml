@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Definir una plantilla para la card de Bootstrap -->
+        <template id="facility_group_card_template">
+            <t t-call="web.html_container">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Facility Group</h5>
+                        <p class="card-text">Marcas: <t t-esc="record.marca"/></p>
+                        <p class="card-text">Color: <t t-esc="record.color"/></p>
+                        <p class="card-text">Placa: <t t-esc="record.placa"/></p>
+                        <p class="card-text">Estado: <t t-esc="record.state"/></p>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <!-- Vista de lista para Facility Group -->
+        <record id="view_facility_group_tree" model="ir.ui.view">
+            <field name="name">facility.group.tree</field>
+            <field name="model">autos.facility_group</field>
+            <field name="arch" type="xml">
+                <tree string="Facility Groups">
+                    <field name="marca"/>
+                    <field name="color"/>
+                    <field name="placa"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

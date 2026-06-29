@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="autos.action_reservation_facility_group_form" model="ir.actions.act_window">
+        <field name="name">Open Autos Group</field>
+        <field name="res_model">autos.facility_group</field>
+        <field name="view_mode">form</field>
+    </record>
+
+    <!-- Acción para abrir la vista de árbol de Facility Group -->
+    <record id="action_facility_group_tree" model="ir.actions.act_window">
+        <field name="name">Registro Autos</field>
+        <field name="res_model">autos.facility_group</field>
+        <field name="view_mode">tree,form,kanban</field> <!-- Puedes especificar más modos de vista
+        si es necesario -->
+        <field name="view_id" ref="view_facility_group_tree" /> <!-- ID de la vista de árbol -->
+    </record>
+</odoo>

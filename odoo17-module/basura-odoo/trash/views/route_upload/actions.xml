@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="action_trash_route_upload" model="ir.actions.act_window">
+        <field name="name">Upload Routes KML</field>
+        <field name="res_model">trash.route_upload</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_trash_route_upload_form"/>
+        <field name="target">new</field>
+    </record>
+</odoo>

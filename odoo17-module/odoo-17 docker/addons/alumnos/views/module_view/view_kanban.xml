@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Vista kanban para Alumnos -->
+        <record id="view_alumnos_kanban" model="ir.ui.view">
+            <field name="name">alumnos.alumnos.kanban</field>
+            <field name="model">alumnos.alumnos</field>
+            <field name="arch" type="xml">
+                <kanban class="oe_background_grey">
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="card shadow-sm">
+                                <div class="card-body p-2">
+                                    <div class="card-title"> 
+                                        <t t-if="record.estado.raw_value == 'activo'">
+                                            <span class="badge bg-secondary float-end">
+                                                <field name="estado" />
+                                            </span>
+                                        </t>
+                                        <t t-if="record.estado.raw_value != 'activo'">
+                                            <span class="badge bg-danger float-end text-white">
+                                                <field name="estado" />
+                                            </span>
+                                        </t>
+                                        <field name="nombre" class="lead fw-light" />
+                                    </div>
+                                    <p>
+                                        <field name="apellido1" />
+                                        <field name="apellido2" />
+                                    </p>
+                                    <!-- <button type="object" name="open_record" class="btn btn-primary btn-sm" string="View" /> -->
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Root Menu Trash Collection -->
+        <menuitem id="menu_root_trash" name="Trashing Management" sequence="10"
+                  web_icon="trash,static/description/icon.png"/>
+
+        <!-- General Submenu -->
+        <menuitem id="menu_general" name="General" parent="menu_root_trash" sequence="11">
+            <menuitem id="menu_route_tree_action" name="Routes"
+                      action="trash.action_route_tree"
+                      groups="trash.res_groups_admin_trash"/>
+            <menuitem id="menu_complaint_action" name="Complaints"
+                      action="trash.action_trash_complaint"
+                      groups="trash.res_groups_admin_trash"/>
+        </menuitem>
+
+        <!-- Configurations Submenu -->
+        <menuitem id="menu_configurations" name="Configurations" parent="menu_root_trash" sequence="12">
+            <menuitem id="menu_trash_route_upload" name="Upload Routes"
+                      action="trash.action_trash_route_upload"
+                      groups="trash.res_groups_admin_trash"/>
+        </menuitem>
+
+    </data>
+</odoo>

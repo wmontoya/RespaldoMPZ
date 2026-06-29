@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Vista kanban para Facility Group -->
+        <record id="view_facility_group_kanban" model="ir.ui.view">
+            <field name="name">autos.facility.group.kanban</field>
+            <field name="model">autos.facility_group</field>
+            <field name="arch" type="xml">
+                <kanban class="oe_background_grey">
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="card shadow-sm">
+                                <div class="card-body p-2">
+                                    <div class="card-title"> 
+                                        <t t-if="record.state.raw_value == 'active'">
+                                            <span class="badge bg-secondary float-end">
+                                                <field name="state" />
+                                            </span>
+                                        </t>
+                                        <t t-if="record.state.raw_value != 'active'">
+                                            <span class="badge bg-danger float-end text-white">
+                                                <field name="state" />
+                                            </span>
+                                        </t>
+                                        <field name="marca" class="lead fw-light" />
+                                    </div>
+                                    <p>
+                                        <field name="placa" />
+                                    </p>
+                                    <button type="object" name="open_record" class="btn btn-primary btn-sm" string="View" />
+                                   
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+    </data>
+</odoo>

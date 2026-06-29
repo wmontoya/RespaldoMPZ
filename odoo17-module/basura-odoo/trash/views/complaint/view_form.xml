@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Form View for Complaints -->
+        <record id="view_trash_complaint_form" model="ir.ui.view">
+            <field name="name">trash.complaint.form</field>
+            <field name="model">trash.complaint</field>
+            <field name="arch" type="xml">
+                <form string="Complaint">
+                    <header>
+                        <button name="action_set_in_review" 
+                                string="Mark In Review" 
+                                type="object" 
+                                class="btn-primary"
+                                invisible="state != 'registered'"/>
+                        <button name="action_set_finished" 
+                                string="Mark Finished" 
+                                type="object" 
+                                class="btn-success"
+                                invisible="state != 'in_review'"/>
+                        <button name="action_set_registered" 
+                                string="Reopen" 
+                                type="object" 
+                                class="btn-secondary"
+                                invisible="state == 'registered'"/>
+                        <field name="state" 
+                               widget="statusbar" 
+                               statusbar_visible="registered,in_review,finished"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="id_number"/>
+                                <field name="date"/>
+                            </group>
+                            <group>
+                                <field name="state" widget="badge" 
+                                       decoration-info="state == 'registered'" 
+                                       decoration-warning="state == 'in_review'" 
+                                       decoration-success="state == 'finished'"/>
+                            </group>
+                        </group>
+                        <group string="Complaint Details">
+                            <field name="description" nolabel="1" placeholder="Enter the complaint description..."/>
+                        </group>
+                        <group string="Response">
+                            <field name="response" nolabel="1" placeholder="Enter the response to this complaint..."/>
+                        </group>
+                        <group string="Internal Notes">
+                            <field name="internal_notes" nolabel="1" placeholder="Internal notes for follow-up..."/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

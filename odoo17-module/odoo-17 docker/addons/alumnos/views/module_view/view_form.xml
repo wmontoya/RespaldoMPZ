@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Vista de formulario para Facility Group -->
+        <record id="view_alumnos_group_form" model="ir.ui.view">
+            <field name="name">alumnos.group.form</field>
+            <field name="model">alumnos.alumnos</field>
+            <field name="arch" type="xml">
+                <form string="Facility Group">
+                    <sheet>
+                        <group>
+                            <field name="nombre" />
+                            <field name="apellido1" />
+                            <field name="apellido2" />
+                            <field name="estado" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

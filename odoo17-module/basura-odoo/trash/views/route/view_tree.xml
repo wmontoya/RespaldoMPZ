@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_route_tree" model="ir.ui.view">
+            <field name="name">trash.route.tree</field>
+            <field name="model">trash.route</field>
+            <field name="arch" type="xml">
+                <tree string="Routes">
+                    <field name="name"/>
+                    <field name="code"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="action_route_tree" model="ir.actions.act_window">
+            <field name="name">Routes</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">trash.route</field>
+            <field name="view_mode">tree,form</field>
+            <field name="views" eval="[
+                (ref('trash.view_route_tree'), 'tree'),
+                (ref('trash.view_route_form'), 'form')
+            ]"/>
+        </record>
+
+    </data>
+</odoo>

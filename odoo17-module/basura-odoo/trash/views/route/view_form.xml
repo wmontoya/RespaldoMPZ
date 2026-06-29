@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_route_form" model="ir.ui.view">
+            <field name="name">trash.route.form</field>
+            <field name="model">trash.route</field>
+            <field name="arch" type="xml">
+                <form string="Route">
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="code" />
+                            <field name="description" />
+                            <field name="color" widget="color"/>
+                        </group>
+
+                        <notebook>
+                            <page string="Collection Days">
+                                <field name="day_ids">
+                                    <tree>
+                                        <field name="sector_id" />
+                                        <field name="waste_type"/>
+                                        <field name="day_iteration"/>
+                                        <field name="collection_time"/>
+                                    </tree>
+
+                                    <form string="Route Day">
+                                        <sheet>
+
+                                            <group>
+                                                <field name="waste_type"/>
+                                                <field name="day_ids" widget="many2many_tags"/>
+                                                <field name="sector_id" />
+                                                <field name="day_iteration"/>
+                                                <field name="collection_time"/>
+                                            </group>
+
+                                            <notebook >
+                                                <page string="Quincenal Days" invisible="day_iteration != 'QUINCENAL'">
+                                                    <field name="quincenal_date_ids">
+                                                        <tree editable="bottom">
+                                                            <field name="collection_date"/>
+                                                        </tree>
+                                                    </field>
+                                                </page>
+                                                <page string="Subscriptions">
+                                                    <field name="subscription_ids">
+                                                        <tree editable="bottom">
+                                                            <field name="id" />
+                                                            <field name="subscription_code" />
+                                                        </tree>
+                                                    </field>
+                                                </page>
+                                           </notebook>
+
+                                        </sheet>
+                                    </form>
+                                </field>
+                            </page>
+
+                            <page string="Coordinates Points">
+                                <field name="segment_line_ids">
+                                    <tree editable="bottom">
+                                        <field name="id" />
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

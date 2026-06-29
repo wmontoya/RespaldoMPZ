@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Tree View for Complaints -->
+        <record id="view_trash_complaint_tree" model="ir.ui.view">
+            <field name="name">trash.complaint.tree</field>
+            <field name="model">trash.complaint</field>
+            <field name="arch" type="xml">
+                <tree string="Complaints" decoration-info="state == 'registered'" decoration-warning="state == 'in_review'" decoration-success="state == 'finished'">
+                    <field name="name" string="Number"/>
+                    <field name="id_number"/>
+                    <field name="date"/>
+                    <field name="state" widget="badge" decoration-info="state == 'registered'" decoration-warning="state == 'in_review'" decoration-success="state == 'finished'"/>
+                    <field name="description" widget="text" optional="show"/>
+                    <field name="create_date" string="Creation Date" optional="hide"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Definir una plantilla para la card de Bootstrap -->
+        <template id="alumnos_card_template">
+            <t t-call="web.html_container">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Alumnos</h5>
+                        <p class="card-text">Nombre: <t t-esc="record.nombre"/></p>
+                        <p class="card-text">Apellido1: <t t-esc="record.apellido1"/></p>
+                        <p class="card-text">Apellido2: <t t-esc="record.apellido2"/></p>
+                        <p class="card-text">Estado: <t t-esc="record.estado"/></p>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <!-- Vista de lista para Facility Group -->
+        <record id="view_alumnos_tree" model="ir.ui.view">
+            <field name="name">alumnos.group.tree</field>
+            <field name="model">alumnos.alumnos</field>
+            <field name="arch" type="xml">
+                <tree string="Alumnos Groups">
+                    <field name="nombre"/>
+                    <field name="apellido1"/>
+                    <field name="apellido2"/>
+                    <field name="estado"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

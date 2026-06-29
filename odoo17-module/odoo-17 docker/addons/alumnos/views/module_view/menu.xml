@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Acción para abrir la vista de árbol de Facility Group -->
+        <record id="action_alumnos_tree" model="ir.actions.act_window">
+            <field name="name">Registro Alumnos</field>
+            <field name="res_model">alumnos.alumnos</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <!-- Campo view_id eliminado, no se necesita aquí -->
+        </record>
+
+        <!-- Menú para acceder a la vista de árbol de Facility Group -->
+        <menuitem id="menu_alumnos_tree" name="Alumnos" sequence="10"/>
+        <menuitem id="menu_alumnos_tree_action" name="Alumnos Groups" action="action_alumnos_tree" parent="menu_alumnos_tree"/>
+    </data>
+</odoo>

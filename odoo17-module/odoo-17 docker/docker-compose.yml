@@ -1,0 +1,70 @@
+services:
+  db:
+    image: postgres:16
+    networks:
+      - odoo_net
+    user: root
+    environment:
+      - POSTGRES_USER=odoo
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=postgres
+    restart: always             # run as a service
+    volumes:
+        - ./postgresql:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "odoo", "-d", "postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+  odoo17:
+    build: .
+    image: odoo:17
+    networks:
+      - odoo_net
+    user: root
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "10017:8069"
+      - "20017:8072" # live chat
+    tty: true
+    command: [ "/opt/odoo-venv/bin/python", "/usr/bin/odoo"] # "./wait-for-postgres.sh",
+    environment:
+      - PGHOST=db
+      - PGPORT=5432
+      - PGUSER=odoo
+      - PGPASSWORD=root
+      - PGDATABASE=postgres
+    volumes:
+      #- /etc/timezone:/etc/timezone:ro
+      #- /etc/localtime:/etc/localtime:ro
+      # - ./entrypoint.sh:/entrypoint.sh
+      - ./requirements.txt:/requirements.txt
+      # - ./wait-for-postgres.sh:/wait-for-postgres.sh
+      - ./addons:/mnt/extra-addons
+      - ./SistemaParquimetros-Odoo/parking_meters:/mnt/extra-addons/parking_meters
+      # - ./NotificacionesMpz-Odoo/notifications_mpz:/mnt/extra-addons/notifications_mpz
+      - ./PagosEnLinea-Odoo/online_payments:/mnt/extra-addons/online_payments
+      - ./Valuaciones-Odoo/valuation_reports:/mnt/extra-addons/valuation_reports
+      - ./yaipan-Odoo/yaipan_reports:/mnt/extra-addons/yaipan_reports
+      - ./notification-odoo/notifications_mpz:/mnt/extra-addons/notifications_mpz
+      - ./basura-odoo/trash:/mnt/extra-addons/trash
+      - ./controlresiduos-odoo/waste_control:/mnt/extra-addons/waste_control
+      - ./propiedadpatrimonial-odoo/property_patrimonial:/mnt/extra-addons/property_patrimonial
+      - ./paralizaciones-odoo/paralization_mpz:/mnt/extra-addons/paralization_mpz
+      - ./cisevri-odoo/sevri:/mnt/extra-addons/sevri
+      - ./etc:/etc/odoo
+    restart: always             # run as a service
+networks:
+  odoo_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.30.0.0/16
+
+    # 'opt/odoo/mpz/extra-addons/notifications_mpz/security/key_private.pem'
+
+ 

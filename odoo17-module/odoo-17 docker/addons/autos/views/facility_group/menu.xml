@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        
+
+        <!-- Menú para acceder a la vista de árbol de Facility Group -->
+        <menuitem id="menu_facility_group_tree" name="Autos"  sequence="10"/>
+        <menuitem id="menu_facility_group_tree_action" name="Facility Groups" action="action_facility_group_tree" parent="menu_facility_group_tree"/>
+    </data>
+</odoo>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Full permissions for Trash module administrator -->
+    <record id="model_access_trash_route" model="ir.model.access">
+        <field name="name">trash.route admin access</field>
+        <field name="model_id" ref="model_trash_route" />
+        <field name="group_id" ref="trash.res_groups_admin_trash" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_unlink" eval="1" />
+        <field name="perm_read" eval="1" />
+    </record>
+
+    <record id="model_access_trash_route_day" model="ir.model.access">
+        <field name="name">trash.route_day admin access</field>
+        <field name="model_id" ref="model_trash_route_day" />
+        <field name="group_id" ref="trash.res_groups_admin_trash" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_unlink" eval="1" />
+        <field name="perm_read" eval="1" />
+    </record>
+
+    <record id="model_access_trash_day" model="ir.model.access">
+        <field name="name">trash.day admin access</field>
+        <field name="model_id" ref="model_trash_day" />
+        <field name="group_id" ref="trash.res_groups_admin_trash" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_unlink" eval="1" />
+        <field name="perm_read" eval="1" />
+    </record>
+
+    <record id="access_trash_route_upload_admin" model="ir.model.access">
+        <field name="name">trash.route_upload admin</field>
+        <field name="model_id" ref="model_trash_route_upload" />
+        <field name="group_id" ref="trash.res_groups_admin_trash" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_unlink" eval="1" />
+    </record>
+
+    <record id="access_trash_route_point_admin" model="ir.model.access">
+        <field name="name">trash.route_point admin</field>
+        <field name="model_id" ref="model_trash_route_point" />
+        <field name="group_id" ref="trash.res_groups_admin_trash" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_unlink" eval="1" />
+    </record>
+
+    <record id="access_trash_route_day_admin" model="ir.model.access">
+        <field name="name">trash.route_day admin</field>
+        <field name="model_id" ref="model_trash_route_day" />
+        <field name="group_id" ref="trash.res_groups_admin_trash" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_unlink" eval="1" />
+    </record>
+
+    <record id="access_trash_route_segment_admin" model="ir.model.access">
+        <field name="name">trash.route_segment admin</field>
+        <field name="model_id" ref="model_trash_route_segment" />
+        <field name="group_id" ref="trash.res_groups_admin_trash" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_unlink" eval="1" />
+    </record>
+
+    <record id="access_trash_route_sector_admin" model="ir.model.access">
+        <field name="name">trash.route_sector admin</field>
+        <field name="model_id" ref="model_trash_route_sector" />
+        <field name="group_id" ref="trash.res_groups_admin_trash" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_unlink" eval="1" />
+    </record>
+
+    <record id="access_trash_route_subscription_admin" model="ir.model.access">
+        <field name="name">trash.route_subscription admin</field>
+        <field name="model_id" ref="model_trash_route_subscription" />
+        <field name="group_id" ref="trash.res_groups_admin_trash" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_unlink" eval="1" />
+    </record>
+
+    <record id="access_trash_route_quincenal_date_admin" model="ir.model.access">
+        <field name="name">trash.route_quincenal_date admin</field>
+        <field name="model_id" ref="model_trash_route_quincenal_date" />
+        <field name="group_id" ref="trash.res_groups_admin_trash" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_unlink" eval="1" />
+    </record>
+
+    <record id="access_trash_complaint_admin" model="ir.model.access">
+        <field name="name">trash.complaint admin</field>
+        <field name="model_id" ref="model_trash_complaint" />
+        <field name="group_id" ref="trash.res_groups_admin_trash" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_unlink" eval="1" />
+    </record>
+
+    <!-- Public access for API controller -->
+    <record id="access_trash_complaint_public" model="ir.model.access">
+        <field name="name">trash.complaint public</field>
+        <field name="model_id" ref="model_trash_complaint" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_unlink" eval="0" />
+    </record>
+</odoo>

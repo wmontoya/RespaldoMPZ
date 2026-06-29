@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Vista de formulario para Facility Group -->
+        <record id="view_facility_group_form" model="ir.ui.view">
+            <field name="name">facility.group.form</field>
+            <field name="model">autos.facility_group</field>
+            <field name="arch" type="xml">
+                <form string="Facility Group">
+                    <sheet>
+                        <group>
+                            <field name="marca" />
+                            <field name="color" />
+                            <field name="placa" />
+                            <field name="state" />
+                        </group>
+                        <!-- Agregar la lista de facilities -->
+                        <!-- <notebook>
+                            <page string="Facilities">
+                                <field name="facilities_ids">
+                                    <tree>
+                                        <field name="Marca" />
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook> -->
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
