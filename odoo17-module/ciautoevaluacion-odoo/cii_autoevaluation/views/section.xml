@@ -1,0 +1,63 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="autoevaluation_survey_section_tree">
+      <field name="name">ae.section.tree</field>
+      <field name="model">ae.section</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="sequence" widget="handle"/>
+          <field name="title" />
+          <field name="description" />
+          <field name="components" widget="many2many_tags"/>
+          <field name="questions" />
+        </tree>
+      </field>
+    </record>
+
+    <record id="autoevaluation_survey_section_form" model="ir.ui.view">
+      <field name="name">ae.section.form</field>
+      <field name="model">ae.section</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                <field name="title" placeholder="Section Title..." required="1"/>
+              </h1>
+            </div>
+
+            <group>
+              <group>
+                <field name="sequence"/>
+                <field name="components" widget="many2many_tags"/>
+              </group>
+            </group>
+
+            <notebook>
+              <page string="Section Details" name="details">
+                <group>
+                  <field name="description" string="Description" widget="text" placeholder="Section description..."/>
+                </group>
+              </page>
+              <page string="Questions" name="questions">
+                <field name="questions">
+                  <tree editable="bottom">
+                    <field name="sequence" widget="handle"/>
+                    <field name="title"/>
+                    <field name="description"/>
+                  </tree>
+                </field>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+ 
+    <record model="ir.actions.act_window" id="autoevaluation_section_action">
+      <field name="name">Sections</field>
+      <field name="res_model">ae.section</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+  </data>
+</odoo>

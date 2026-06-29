@@ -1,0 +1,541 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* property_patrimonial
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-20 00:00+0000\n"
+"PO-Revision-Date: 2026-04-20 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: property_patrimonial
+#: model:ir.model,name:property_patrimonial.model_patrimonial_property
+msgid "Patrimonial Property"
+msgstr "Propiedad Patrimonial"
+
+#. module: property_patrimonial
+#: model:ir.model,name:property_patrimonial.model_patrimonial_agreement
+msgid "Agreement"
+msgstr "Convenio"
+
+#. module: property_patrimonial
+#: model:ir.model,name:property_patrimonial.model_patrimonial_agreement_file
+msgid "Agreement File"
+msgstr "Archivo de Convenio"
+
+#. module: property_patrimonial
+#: model:ir.model,name:property_patrimonial.model_patrimonial_finca
+msgid "Estate"
+msgstr "Finca"
+
+#. module: property_patrimonial
+#: model:ir.model,name:property_patrimonial.model_patrimonial_district
+msgid "District"
+msgstr "Distrito"
+
+#. module: property_patrimonial
+#: model:ir.model,name:property_patrimonial.model_property_maintenance
+msgid "Property Maintenance"
+msgstr "Mantenimiento de Propiedad"
+
+#. module: property_patrimonial
+#: model:ir.model,name:property_patrimonial.model_patrimonial_finca_use
+msgid "Estate Use"
+msgstr "Uso de Finca"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_patrimonial_property__expediente
+msgid "File Number"
+msgstr "Expediente"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_patrimonial_property__tipo
+msgid "Type"
+msgstr "Tipo"
+
+#. module: property_patrimonial
+#: model:ir.model.fields.selection,property_patrimonial.property.tipo:zona_verde
+msgid "Green Area"
+msgstr "Zona Verde"
+
+#. module: property_patrimonial
+#: model:ir.model.fields.selection,property_patrimonial.property.tipo:inmueble_patrimonial
+msgid "Patrimonial Building"
+msgstr "Inmueble Patrimonial"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_patrimonial_property__descripcion
+msgid "Description"
+msgstr "Descripción"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_patrimonial_property__direction
+msgid "Direction"
+msgstr "Dirección"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_patrimonial_property__donor
+msgid "Donor"
+msgstr "Donante"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_patrimonial_property__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_patrimonial_property__estate_ids
+msgid "Estates"
+msgstr "Fincas"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_patrimonial_property__agreement_ids
+msgid "Agreements"
+msgstr "Convenios"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_patrimonial_property__maintenance_ids
+msgid "Maintenances"
+msgstr "Mantenimientos"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_patrimonial_agreement__name
+msgid "Agreement Number"
+msgstr "Número de Convenio"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_patrimonial_agreement__property_id
+msgid "Property"
+msgstr "Propiedad"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_patrimonial_agreement__notes
+msgid "Notes"
+msgstr "Notas"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_patrimonial_agreement__fecha_inicio
+msgid "Start Date"
+msgstr "Fecha de Inicio"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_patrimonial_agreement__fecha_vencimiento
+msgid "Expiration Date"
+msgstr "Fecha de Vencimiento"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_patrimonial_agreement__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_patrimonial_agreement__estado
+msgid "Status"
+msgstr "Estado"
+
+#. module: property_patrimonial
+#: model:ir.model.fields.selection,property_patrimonial.agreement.estado:vigente
+msgid "Active"
+msgstr "Vigente"
+
+#. module: property_patrimonial
+#: model:ir.model.fields.selection,property_patrimonial.agreement.estado:vencido
+msgid "Expired"
+msgstr "Vencido"
+
+#. module: property_patrimonial
+#: model:ir.model.fields.selection,property_patrimonial.agreement.estado:en_tramite
+msgid "In Process"
+msgstr "En Trámite"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_patrimonial_agreement__file_ids
+msgid "Files"
+msgstr "Archivos"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_patrimonial_agreement_file__name
+msgid "File Name"
+msgstr "Nombre del Archivo"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_patrimonial_agreement_file__estado
+msgid "File Status"
+msgstr "Estado del Archivo"
+
+#. module: property_patrimonial
+#: model:ir.model.fields.selection,property_patrimonial.patrimonial.agreement.file.estado:vigente
+msgid "Active"
+msgstr "Vigente"
+
+#. module: property_patrimonial
+#: model:ir.model.fields.selection,property_patrimonial.patrimonial.agreement.file.estado:vencido
+msgid "Expired"
+msgstr "Vencido"
+
+#. module: property_patrimonial
+#: model:ir.model.fields.selection,property_patrimonial.patrimonial.agreement.file.estado:en_tramite
+msgid "In Process"
+msgstr "En Trámite"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_patrimonial_finca__num_plano
+msgid "Flat Number"
+msgstr "Número de Plano"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_patrimonial_finca__num_finca
+msgid "Estate Number"
+msgstr "Número de Finca"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_patrimonial_finca__medida
+msgid "Measure (m²)"
+msgstr "Medida (m²)"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_patrimonial_finca__district_id
+msgid "District"
+msgstr "Distrito"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_patrimonial_finca__observaciones
+msgid "Observations"
+msgstr "Observaciones"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_patrimonial_finca__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_patrimonial_finca__property_ids
+msgid "Properties"
+msgstr "Propiedades"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_patrimonial_finca__use_ids
+msgid "Uses"
+msgstr "Usos"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_patrimonial_district__name
+msgid "District Name"
+msgstr "Nombre del Distrito"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_patrimonial_district__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_finca_use__description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_property_maintenance__name
+msgid "Maintenance Name"
+msgstr "Nombre de Mantenimiento"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_property_maintenance__fecha
+msgid "Date"
+msgstr "Fecha"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_property_maintenance__tipo_mantenimiento
+msgid "Maintenance Type"
+msgstr "Tipo de Mantenimiento"
+
+#. module: property_patrimonial
+#: model:ir.model.fields.selection,property_patrimonial.property.maintenance.tipo_mantenimiento:preventivo
+msgid "Preventive"
+msgstr "Preventivo"
+
+#. module: property_patrimonial
+#: model:ir.model.fields.selection,property_patrimonial.property.maintenance.tipo_mantenimiento:correctivo
+msgid "Corrective"
+msgstr "Correctivo"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_property_maintenance__observaciones
+msgid "Observations"
+msgstr "Observaciones"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_property_maintenance__usuario_id
+msgid "Registered by"
+msgstr "Registrado por"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_property_maintenance__responsible_user_ids
+msgid "Responsible Users"
+msgstr "Agentes Encargados"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_property_maintenance__estado
+msgid "State"
+msgstr "Estado"
+
+#. module: property_patrimonial
+#: model:ir.model.fields.selection,property_patrimonial.property.maintenance.estado:pendiente
+msgid "Pending"
+msgstr "Pendiente"
+
+#. module: property_patrimonial
+#: model:ir.model.fields.selection,property_patrimonial.property.maintenance.estado:completado
+msgid "Completed"
+msgstr "Completado"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_property_maintenance__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: property_patrimonial
+#: model:ir.model.fields,field_description:property_patrimonial.field_property_maintenance__property_ids
+msgid "Properties"
+msgstr "Propiedades"
+
+#. module: property_patrimonial
+#: model:ir.actions.act_window,action_patrimonial_property
+msgid "Patrimonial Properties"
+msgstr "Propiedades Patrimoniales"
+
+#. module: property_patrimonial
+#: model:ir.ui.view,view_patrimonial_property_tree
+msgid "Patrimonial Properties"
+msgstr "Propiedades Patrimoniales"
+
+#. module: property_patrimonial
+#: model:ir.ui.view,view_patrimonial_property_form
+msgid "Patrimonial Property"
+msgstr "Propiedad Patrimonial"
+
+#. module: property_patrimonial
+#: model:ir.ui.view,view_patrimonial_property_search
+msgid "Search Properties"
+msgstr "Buscar Propiedades"
+
+#. module: property_patrimonial
+#: model:ir.ui.view,view_patrimonial_property_search,name:filter_zona_verde
+msgid "Green Areas"
+msgstr "Zonas Verdes"
+
+#. module: property_patrimonial
+#: model:ir.ui.view,view_patrimonial_property_search,name:group_by_tipo
+msgid "Group by Type"
+msgstr "Agrupar por Tipo"
+
+#. module: property_patrimonial
+#: model:ir.actions.act_window,action_patrimonial_agreement
+msgid "Agreements"
+msgstr "Convenios"
+
+#. module: property_patrimonial
+#: model:ir.ui.view,view_patrimonial_agreement_tree
+msgid "Agreements"
+msgstr "Convenios"
+
+#. module: property_patrimonial
+#: model:ir.ui.view,view_patrimonial_agreement_form
+msgid "Agreement"
+msgstr "Convenio"
+
+#. module: property_patrimonial
+#: model:ir.ui.view,view_patrimonial_agreement_file_form
+msgid "Agreement File"
+msgstr "Archivo de Convenio"
+
+#. module: property_patrimonial
+#: model:ir.actions.act_window,action_patrimonial_finca
+msgid "Estates"
+msgstr "Fincas"
+
+#. module: property_patrimonial
+#: model:ir.ui.view,view_patrimonial_finca_tree
+msgid "Estates"
+msgstr "Fincas"
+
+#. module: property_patrimonial
+#: model:ir.ui.view,view_patrimonial_finca_form
+msgid "Estate"
+msgstr "Finca"
+
+#. module: property_patrimonial
+#: model:ir.ui.view,view_patrimonial_finca_search
+msgid "Search Estates"
+msgstr "Buscar Fincas"
+
+#. module: property_patrimonial
+#: model:ir.actions.act_window,action_patrimonial_district
+msgid "Districts"
+msgstr "Distritos"
+
+#. module: property_patrimonial
+#: model:ir.ui.view,view_patrimonial_district_tree
+msgid "Districts"
+msgstr "Distritos"
+
+#. module: property_patrimonial
+#: model:ir.ui.view,view_patrimonial_district_form
+msgid "District"
+msgstr "Distrito"
+
+#. module: property_patrimonial
+#: model:ir.actions.act_window,action_property_maintenance
+msgid "Maintenances"
+msgstr "Mantenimientos"
+
+#. module: property_patrimonial
+#: model:ir.ui.view,view_property_maintenance_tree
+msgid "Maintenances"
+msgstr "Mantenimientos"
+
+#. module: property_patrimonial
+#: model:ir.ui.view,view_property_maintenance_form
+msgid "Maintenance"
+msgstr "Mantenimiento"
+
+#. module: property_patrimonial
+#: model:ir.ui.view,view_property_maintenance_search
+msgid "Search Maintenances"
+msgstr "Buscar Mantenimientos"
+
+#. module: property_patrimonial
+#: model:ir.ui.view,view_property_maintenance_search,name:filter_pendiente
+msgid "Pending"
+msgstr "Pendiente"
+
+#. module: property_patrimonial
+#: model:ir.ui.view,view_property_maintenance_search,name:filter_completado
+msgid "Completed"
+msgstr "Completado"
+
+#. module: property_patrimonial
+#: model:ir.ui.view,view_property_maintenance_search,name:group_by_estado
+msgid "Group by State"
+msgstr "Agrupar por Estado"
+
+#. module: property_patrimonial
+#: model:ir.ui.view,view_property_maintenance_search,name:group_by_tipo
+msgid "Group by Type"
+msgstr "Agrupar por Tipo"
+
+#. module: property_patrimonial
+#: model:ir.ui.menu,name:menu_patrimonial_root
+msgid "Patrimonial Management"
+msgstr "Gestión Patrimonial"
+
+#. module: property_patrimonial
+#: model:ir.ui.menu,name:menu_patrimonial_properties
+msgid "Properties"
+msgstr "Propiedades"
+
+#. module: property_patrimonial
+#: model:ir.ui.menu,name:menu_patrimonial_agreements
+msgid "Agreements"
+msgstr "Convenios"
+
+#. module: property_patrimonial
+#: model:ir.ui.menu,name:menu_patrimonial_estates
+msgid "Estates"
+msgstr "Fincas"
+
+#. module: property_patrimonial
+#: model:ir.ui.menu,name:menu_patrimonial_districts
+msgid "Districts"
+msgstr "Distritos"
+
+#. module: property_patrimonial
+#: model:ir.ui.menu,name:menu_patrimonial_maintenance
+msgid "Maintenances"
+msgstr "Mantenimientos"
+
+#. module: property_patrimonial
+#: model:res.groups,name:property_patrimonial.res_groups_patrimonial_user
+msgid "Patrimonial User"
+msgstr "Usuario Patrimonial"
+
+#. module: property_patrimonial
+#: model:res.groups,name:property_patrimonial.res_groups_patrimonial_manager
+msgid "Patrimonial Manager"
+msgstr "Administrador Patrimonial"
+
+#. module: property_patrimonial
+#: model:ir.module.category,name:property_patrimonial.module_category_patrimonial
+msgid "Patrimonial Management"
+msgstr "Gestión Patrimonial"
+
+#. module: property_patrimonial
+#: model_terms:ir.ui.view,arch_db:view_patrimonial_property_form
+msgid "General Information"
+msgstr "Información General"
+
+#. module: property_patrimonial
+#: model_terms:ir.ui.view,arch_db:view_patrimonial_property_form
+msgid "Estates"
+msgstr "Fincas"
+
+#. module: property_patrimonial
+#: model_terms:ir.ui.view,arch_db:view_patrimonial_property_form
+msgid "Agreements"
+msgstr "Convenios"
+
+#. module: property_patrimonial
+#: model_terms:ir.ui.view,arch_db:view_patrimonial_property_form
+msgid "Maintenances"
+msgstr "Mantenimientos"
+
+#. module: property_patrimonial
+#: model_terms:ir.ui.view,arch_db:view_patrimonial_property_form
+msgid "Patrimonial File"
+msgstr "Expediente Patrimonial"
+
+#. module: property_patrimonial
+#: model_terms:ir.ui.view,arch_db:view_patrimonial_agreement_form
+msgid "Basic Information"
+msgstr "Información Básica"
+
+#. module: property_patrimonial
+#: model_terms:ir.ui.view,arch_db:view_patrimonial_agreement_form
+msgid "Dates"
+msgstr "Fechas"
+
+#. module: property_patrimonial
+#: model_terms:ir.ui.view,arch_db:view_patrimonial_agreement_form
+msgid "Attachments"
+msgstr "Adjuntos"
+
+#. module: property_patrimonial
+#: model_terms:ir.ui.view,arch_db:view_patrimonial_finca_form
+msgid "Estate Data"
+msgstr "Datos de la Finca"
+
+#. module: property_patrimonial
+#: model_terms:ir.ui.view,arch_db:view_patrimonial_finca_form
+msgid "Uses"
+msgstr "Usos"
+
+#. module: property_patrimonial
+#: model_terms:ir.ui.view,arch_db:view_patrimonial_district_form
+msgid "District Information"
+msgstr "Información del Distrito"
+
+#. module: property_patrimonial
+#: model_terms:ir.ui.view,arch_db:view_property_maintenance_form
+msgid "Maintenance Information"
+msgstr "Información de Mantenimiento"
+
+#. module: property_patrimonial
+#: model_terms:ir.ui.view,arch_db:view_patrimonial_agreement_file_form
+msgid "File Information"
+msgstr "Información del Archivo"

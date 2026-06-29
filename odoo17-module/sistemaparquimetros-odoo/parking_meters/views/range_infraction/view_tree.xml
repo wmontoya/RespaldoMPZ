@@ -1,0 +1,17 @@
+<odoo>
+    <data>
+        <record id="view_range_infraction_tree" model="ir.ui.view">
+            <field name="name">parking_meters.range_infraction.tree</field>
+            <field name="model">parking_meters.range_infraction</field>
+            <field name="arch" type="xml">
+                <tree string="Range of Infractions">
+                    <field name="id"/>
+                    <field name="start_range"/>
+                    <field name="end_range"/>
+                    <field name="ticket_number"/>
+                    <field name="user_code_id"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

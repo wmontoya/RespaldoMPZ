@@ -1,0 +1,13 @@
+<odoo>
+    <data>
+        <record id="event_type_1" model="sev.event_type">
+            <field name="name">Interno</field>
+            <field name="description">Evento interno de la organización</field>  
+      
+        </record>
+        <record id="event_type_2" model="sev.event_type">
+            <field name="name">Externo</field>
+            <field name="description"> Evento externo de la organización </field> 
+        </record>
+    </data>
+</odoo>

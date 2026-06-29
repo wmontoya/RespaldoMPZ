@@ -1,0 +1,87 @@
+<odoo>
+    <!-- Tipos de Paredes -->
+    <record id="tipo_pared_blo" model="tipos.pared">
+        <field name="name">BLO</field>
+        <field name="desc_pared">BLOCK</field>
+    </record>
+    <record id="tipo_pared_conc" model="tipos.pared">
+        <field name="name">CONC</field>
+        <field name="desc_pared">CONCRETO</field>
+    </record>
+    <record id="tipo_pared_cov" model="tipos.pared">
+        <field name="name">COV</field>
+        <field name="desc_pared">PANEL COVINTEC</field>
+    </record>
+    <record id="tipo_pared_dg" model="tipos.pared">
+        <field name="name">DG</field>
+        <field name="desc_pared">DENS GLASS</field>
+    </record>
+    <record id="tipo_pared_dur" model="tipos.pared">
+        <field name="name">DUR</field>
+        <field name="desc_pared">DUROCK</field>
+    </record>
+    <record id="tipo_pared_fe" model="tipos.pared">
+        <field name="name">FE</field>
+        <field name="desc_pared">HIERRO</field>
+    </record>
+    <record id="tipo_pared_fib" model="tipos.pared">
+        <field name="name">FIB</field>
+        <field name="desc_pared">FIBROLIT</field>
+    </record>
+    <record id="tipo_pared_grav" model="tipos.pared">
+        <field name="name">GRAV</field>
+        <field name="desc_pared">GRAVA, SACOS POLI</field>
+    </record>
+    <record id="tipo_pared_gy" model="tipos.pared">
+        <field name="name">GY</field>
+        <field name="desc_pared">GYPSUM</field>
+    </record>
+    <record id="tipo_pared_hg" model="tipos.pared">
+        <field name="name">HG</field>
+        <field name="desc_pared">HIERRO GALVANIZADO</field>
+    </record>
+    <record id="tipo_pared_ma" model="tipos.pared">
+        <field name="name">MA</field>
+        <field name="desc_pared">MALLA</field>
+    </record>
+    <record id="tipo_pared_mad" model="tipos.pared">
+        <field name="name">MAD</field>
+        <field name="desc_pared">MADERA</field>
+    </record>
+    <record id="tipo_pared_na" model="tipos.pared">
+        <field name="name">NA</field>
+        <field name="desc_pared">NO APLICA</field>
+    </record>
+    <record id="tipo_pared_pie" model="tipos.pared">
+        <field name="name">PIE</field>
+        <field name="desc_pared">PIEDRA</field>
+    </record>
+    <record id="tipo_pared_pl" model="tipos.pared">
+        <field name="name">PL</field>
+        <field name="desc_pared">PLYCEM</field>
+    </record>
+    <record id="tipo_pared_pre" model="tipos.pared">
+        <field name="name">PRE</field>
+        <field name="desc_pared">PREFABRICADO</field>
+    </record>
+    <record id="tipo_pared_soc" model="tipos.pared">
+        <field name="name">SOC</field>
+        <field name="desc_pared">ZOCALO</field>
+    </record>
+    <record id="tipo_pared_tub" model="tipos.pared">
+        <field name="name">TUB</field>
+        <field name="desc_pared">TUBO</field>
+    </record>
+    <record id="tipo_pared_tuyblo" model="tipos.pared">
+        <field name="name">TUYBLO</field>
+        <field name="desc_pared">TUBO Y BLOCK</field>
+    </record>
+    <record id="tipo_pared_verj" model="tipos.pared">
+        <field name="name">VERJ</field>
+        <field name="desc_pared">VERJA</field>
+    </record>
+    <record id="tipo_pared_vi" model="tipos.pared">
+        <field name="name">VI</field>
+        <field name="desc_pared">VIDRIO</field>
+    </record>
+</odoo>

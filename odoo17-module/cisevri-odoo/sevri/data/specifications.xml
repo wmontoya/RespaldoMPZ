@@ -1,0 +1,367 @@
+<odoo>
+    <data>
+        <!-- Internos --> 
+        <!-- Especificaciones para Tecnológicos -->
+        <record id="specification_tecnológicos_1" model="sev.specification">
+            <field name="description">Tecnología inadecuada y no funcional</field>
+            <field name="classification_id" ref="classification_1" />   
+        </record>
+        <record id="specification_tecnológicos_2" model="sev.specification">
+            <field name="description">Pérdida de información por no actualizar tecnologías de información.</field>
+            <field name="classification_id" ref="classification_1" />
+        </record>
+        <record id="specification_tecnológicos_3" model="sev.specification">
+            <field name="description">Pérdida de información en la migración de datos de un sistema a otro.</field>
+            <field name="classification_id" ref="classification_1" />
+        </record>
+        <record id="specification_tecnológicos_4" model="sev.specification">
+            <field name="description">Subutilización de la tecnología</field>
+            <field name="classification_id" ref="classification_1" />
+        </record>
+        <record id="specification_tecnológicos_5" model="sev.specification">
+            <field name="description">Dependencia tecnológica</field>
+            <field name="classification_id" ref="classification_1" />
+        </record>
+
+
+        <!-- Especificaciones para Infraestructura -->
+        <record id="specification_infraestructura_1" model="sev.specification">
+            <field name="description">Deterioro físico del edificio municipal</field>
+            <field name="classification_id" ref="classification_2" />   
+        </record>
+        <record id="specification_infraestructura_2" model="sev.specification">
+            <field name="description">Instalaciones eléctricas</field>
+            <field name="classification_id" ref="classification_2" />
+        </record>
+        <record id="specification_infraestructura_3" model="sev.specification">
+            <field name="description">Aguas residuales</field>
+            <field name="classification_id" ref="classification_2" />
+        </record>
+        <record id="specification_infraestructura_4" model="sev.specification">
+            <field name="description">Dispositivos de seguridad</field>
+            <field name="classification_id" ref="classification_2" />
+        </record>
+        <record id="specification_infraestructura_5" model="sev.specification">
+            <field name="description">Espacio físico insuficiente</field>
+            <field name="classification_id" ref="classification_2" />
+        </record>
+              <record id="specification_infraestructura_6" model="sev.specification">
+            <field name="description">Poca planificación de la estructura física</field>
+            <field name="classification_id" ref="classification_2" />
+        </record>
+
+        
+        <!-- Especificaciones para financieros -->
+        <record id="specification_financieros_internos_1" model="sev.specification">
+            <field name="description">Alta morosidad en el pago de impuestos y tributos</field>
+            <field name="classification_id" ref="classification_16" />
+        </record>
+        <record id="specification_financieros_internos_2" model="sev.specification">
+            <field name="description">Actualización de las tarifas municipales.</field>
+            <field name="classification_id" ref="classification_16" />
+        </record>
+        <record id="specification_financieros_internos_3" model="sev.specification">
+            <field name="description">Endeudamiento financiero</field>
+            <field name="classification_id" ref="classification_16" />
+        </record>
+        <record id="specification_financieros_internos_4" model="sev.specification">
+            <field name="description">Gestión cobratoria.</field>
+            <field name="classification_id" ref="classification_16" />
+        </record>
+        <record id="specification_financieros_internos_5" model="sev.specification">
+            <field name="description">Limitación de recursos</field>
+            <field name="classification_id" ref="classification_16" />
+        </record>
+        <record id="specification_financieros_internos_6" model="sev.specification">
+            <field name="description">Políticas financieras</field>
+            <field name="classification_id" ref="classification_16" />
+        </record>
+
+
+        <!-- Especificaciones para Recursos Humanos -->
+        <record id="specification_rrhh_1" model="sev.specification">
+            <field name="description">Falta de inducción</field>
+            <field name="classification_id" ref="classification_3" />
+        </record>
+        <record id="specification_rrhh_2" model="sev.specification">
+            <field name="description">Falta de capacitación</field>
+            <field name="classification_id" ref="classification_3" />
+        </record>
+        <record id="specification_rrhh_7" model="sev.specification">
+            <field name="description">Falta de procedimientos de reclutamiento y selección. </field>
+            <field name="classification_id" ref="classification_3" />
+        </record>
+        <record id="specification_rrhh_3" model="sev.specification">
+            <field name="description">Movilidad continua del personal</field>
+            <field name="classification_id" ref="classification_3" />
+        </record>
+        <record id="specification_rrhh_4" model="sev.specification">
+            <field name="description">Conflictos laborales</field>
+            <field name="classification_id" ref="classification_3" />
+        </record>
+        <record id="specification_rrhh_5" model="sev.specification">
+            <field name="description">Personal Insuficiente</field>
+            <field name="classification_id" ref="classification_3" />
+        </record>
+        <record id="specification_rrhh_6" model="sev.specification">
+            <field name="description">Seguridad Ocupacional</field>
+            <field name="classification_id" ref="classification_3" />
+        </record>
+
+        <!-- Especificaciones para Estratégicos -->
+        <record id="specification_estrategicos_1" model="sev.specification">
+            <field name="description">Falta de seguimiento de planes de trabajo</field>
+            <field name="classification_id" ref="classification_4" />
+        </record>
+        <record id="specification_estrategicos_2" model="sev.specification">
+            <field name="description">Políticas de planificación deficientes</field>
+            <field name="classification_id" ref="classification_4" />
+        </record>
+        <record id="specification_estrategicos_3" model="sev.specification">
+            <field name="description">Desvinculación de políticas generales</field>
+            <field name="classification_id" ref="classification_4" />
+        </record>
+        <record id="specification_estrategicos_4" model="sev.specification">
+            <field name="description">No concordancia entre lo planeado y lo ejecutado</field>
+            <field name="classification_id" ref="classification_4" />
+        </record>
+        <record id="specification_estrategicos_5" model="sev.specification">
+            <field name="description">Políticas del Concejo Municipal</field>
+            <field name="classification_id" ref="classification_4" />
+        </record>
+
+        <!-- Especificaciones para Estructura Organizacional-->
+        <record id="specification_estructura_1" model="sev.specification">
+            <field name="description">Falta de departamentos administrativos especializados</field>
+            <field name="classification_id" ref="classification_5" />
+        </record>
+        <record id="specification_estructura_2" model="sev.specification">
+            <field name="description">Duplicidad de funciones</field>
+            <field name="classification_id" ref="classification_5" />
+        </record>
+        <record id="specification_estructura_3" model="sev.specification">
+            <field name="description">Limitación en los niveles jerárquicos</field>
+            <field name="classification_id" ref="classification_5" />
+        </record>
+        <record id="specification_estructura_4" model="sev.specification">
+            <field name="description">Falta de conocimiento sobre la estructura.</field>
+            <field name="classification_id" ref="classification_5" />
+        </record>
+        <record id="specification_estructura_5" model="sev.specification">
+            <field name="description">Delegación de funciones</field>
+            <field name="classification_id" ref="classification_5" />
+        </record>
+        <record id="specification_estructura_6" model="sev.specification">
+            <field name="description">Mala distribución de funciones</field>
+            <field name="classification_id" ref="classification_5" />
+        </record>
+
+        <!-- Especificaciones para Procedimientos -->
+        <record id="specification_procedimientos_1" model="sev.specification">
+            <field name="description">Exceso de trámites en los procedimientos</field>
+            <field name="classification_id" ref="classification_6" />
+        </record>
+        <record id="specification_procedimientos_2" model="sev.specification">
+            <field name="description">Falta de manuales de procedimientos</field>
+            <field name="classification_id" ref="classification_6" />
+        </record>
+        <record id="specification_procedimientos_3" model="sev.specification">
+            <field name="description">Procedimientos descontinuados</field>
+            <field name="classification_id" ref="classification_6" />
+        </record>
+        <record id="specification_procedimientos_4" model="sev.specification">
+            <field name="description">Desactualización de manuales</field>
+            <field name="classification_id" ref="classification_6" />
+        </record>
+
+        <!-- Especificaciones para Normativa Interna -->
+        <record id="specification_normativa_1" model="sev.specification">
+            <field name="description">Falta de cumplimiento de normas internas</field>
+            <field name="classification_id" ref="classification_7" />
+        </record>
+        <record id="specification_normativa_2" model="sev.specification">
+            <field name="description">Desactualización de normas internas</field>
+            <field name="classification_id" ref="classification_7" />
+        </record>
+        <record id="specification_normativa_3" model="sev.specification">
+            <field name="description">Incumplimiento de las normas internas.</field>
+            <field name="classification_id" ref="classification_7" />
+        </record>
+        <record id="specification_normativa_4" model="sev.specification">
+            <field name="description">Contraposición de normas internas.</field>
+            <field name="classification_id" ref="classification_7" />
+        </record>
+
+
+        <!-- Especificaciones para Seguridad -->
+        <record id="specification_seguridad_1" model="sev.specification">
+            <field name="description">Falta de planes de emergencia</field>
+            <field name="classification_id" ref="classification_8" />
+        </record>
+        <record id="specification_seguridad_2" model="sev.specification">
+            <field name="description">Inseguridad en el resguardo de la información</field>
+            <field name="classification_id" ref="classification_8" />
+        </record>
+        <record id="specification_seguridad_3" model="sev.specification">
+            <field name="description">Edificio inseguro</field>
+            <field name="classification_id" ref="classification_8" />
+        </record>
+        <record id="specification_seguridad_4" model="sev.specification">
+            <field name="description">Vigilancia en las instalaciones</field>
+            <field name="classification_id" ref="classification_8" />
+        </record>
+        <record id="specification_seguridad_5" model="sev.specification">
+            <field name="description">Acceso a la información</field>
+            <field name="classification_id" ref="classification_8" />
+        </record>
+
+        <!-- Externos -->  
+        <!-- Especificaciones para Legales -->  
+        <record id="specification_legales_1" model="sev.specification">
+            <field name="description">Fuga de información</field>
+            <field name="classification_id" ref="classification_9" />
+        </record>
+        <record id="specification_legales_2" model="sev.specification">
+            <field name="description">Desconocimiento de normas</field>
+            <field name="classification_id" ref="classification_9" />
+        </record>
+        <record id="specification_legales_3" model="sev.specification">
+            <field name="description">Creación y modificación de normas</field>
+            <field name="classification_id" ref="classification_9" />
+        </record>
+        <record id="specification_legales_4" model="sev.specification">
+            <field name="description">Derogación de normas</field>
+            <field name="classification_id" ref="classification_9" />
+        </record>
+        <record id="specification_legales_5" model="sev.specification">
+            <field name="description">Normativa insuficiente u obsoleta</field>
+            <field name="classification_id" ref="classification_9" />
+        </record>
+        <record id="specification_legales_6" model="sev.specification">
+            <field name="description">Interpretaciones encontradas de las normas</field>
+            <field name="classification_id" ref="classification_9" />
+        </record>
+        <record id="specification_legales_7" model="sev.specification">
+            <field name="description">Incumplimiento de leyes</field>
+            <field name="classification_id" ref="classification_9" />
+        </record>
+        <record id="specification_legales_8" model="sev.specification">
+            <field name="description">Demandas y acciones judiciales</field>
+            <field name="classification_id" ref="classification_9" />
+        </record>
+
+        <!-- Especificaciones para Financieros -->
+        <record id="specification_financieros_1" model="sev.specification">
+            <field name="description">Inflación y devaluación</field>
+            <field name="classification_id" ref="classification_10" />
+        </record>
+        <record id="specification_financieros_2" model="sev.specification">
+            <field name="description">Impropaciones presupuestarias</field>
+            <field name="classification_id" ref="classification_10" />
+        </record>
+        <record id="specification_financieros_3" model="sev.specification">
+            <field name="description">Dependencia económica</field>
+            <field name="classification_id" ref="classification_10" />
+        </record>
+        <record id="specification_financieros_4" model="sev.specification">
+            <field name="description">Administrado con poca capacidad de pago</field>
+            <field name="classification_id" ref="classification_10" />
+        </record>
+        <record id="specification_financieros_5" model="sev.specification">
+            <field name="description">Impacto económico de los T.L.C</field>
+            <field name="classification_id" ref="classification_10" />
+        </record>
+        <record id="specification_financieros_6" model="sev.specification">
+            <field name="description">Dependencia de transferencia de recursos de otras
+                instituciones</field>
+            <field name="classification_id" ref="classification_10" />
+        </record>
+        <record id="specification_financieros_7" model="sev.specification">
+            <field name="description">Atrasos en los desembolsos para desarrollo de proyectos</field>
+            <field name="classification_id" ref="classification_10" />
+        </record>
+
+
+        <!-- Especificaciones para Sociales -->
+        <record id="specification_sociales_1" model="sev.specification">
+            <field name="description">Situación migratoria del cantón</field>
+            <field name="classification_id" ref="classification_11" />
+        </record>
+        <record id="specification_sociales_2" model="sev.specification">
+            <field name="description">Acelerado crecimiento de la población</field>
+            <field name="classification_id" ref="classification_11" />
+        </record>
+        <record id="specification_sociales_3" model="sev.specification">
+            <field name="description">Aumento en el nivel de pobreza</field>
+            <field name="classification_id" ref="classification_11" />
+        </record>
+        <record id="specification_sociales_4" model="sev.specification">
+            <field name="description">Desempleo</field>
+            <field name="classification_id" ref="classification_11" />
+        </record>
+        <record id="specification_sociales_5" model="sev.specification">
+            <field name="description">Participación ciudadana</field>
+            <field name="classification_id" ref="classification_11" />
+        </record>
+        <record id="specification_sociales_6" model="sev.specification">
+            <field name="description">Mala calidad en la educación</field>
+            <field name="classification_id" ref="classification_11" />
+        </record>
+        <record id="specification_sociales_7" model="sev.specification">
+            <field name="description">Patologías sociales</field>
+            <field name="classification_id" ref="classification_11" />
+        </record>
+
+        <!-- Especificaciones para Políticos -->
+        <record id="specification_politicos_1" model="sev.specification">
+            <field name="description">Influencia política</field>
+            <field name="classification_id" ref="classification_12" />
+        </record>
+        <record id="specification_politicos_2" model="sev.specification">
+            <field name="description">Debilitamiento del régimen municipal</field>
+            <field name="classification_id" ref="classification_12" />
+        </record>
+        <record id="specification_politicos_3" model="sev.specification">
+            <field name="description">Cambio de autoridades municipales</field>
+            <field name="classification_id" ref="classification_12" />
+        </record>
+        <record id="specification_politicos_4" model="sev.specification">
+            <field name="description">Políticas gubernamentales</field>
+            <field name="classification_id" ref="classification_12" />
+        </record>
+
+        <!-- Especificaciones para Fenómenos Naturales -->
+        <record id="specification_fenomenos_1" model="sev.specification">
+            <field name="description">Desastres provocados por huracanes o inviernos</field>
+            <field name="classification_id" ref="classification_13" />
+        </record>
+        <record id="specification_fenomenos_2" model="sev.specification">
+            <field name="description">Desastres provocados por movimientos telúricos</field>
+            <field name="classification_id" ref="classification_13" />
+        </record>
+
+        <!-- Especificaciones para Casos Fortuitos -->
+        <record id="specification_casos_1" model="sev.specification">
+            <field name="description">Robos o asaltos</field>
+            <field name="classification_id" ref="classification_14" />
+        </record>
+        <record id="specification_casos_2" model="sev.specification">
+            <field name="description">Incendios</field>
+            <field name="classification_id" ref="classification_14" />
+        </record>
+        <record id="specification_casos_3" model="sev.specification">
+            <field name="description">Cortes de corriente eléctrica</field>
+            <field name="classification_id" ref="classification_14" />
+        </record>
+
+        <!-- Especificaciones para Ambientales -->
+        <record id="specification_ambientales_1" model="sev.specification">
+            <field name="description">Contaminación</field>
+            <field name="classification_id" ref="classification_15" />
+        </record>
+        <record id="specification_ambientales_2" model="sev.specification">
+            <field name="description">Deforestación</field>
+            <field name="classification_id" ref="classification_15" />
+        </record>
+    </data>
+</odoo>

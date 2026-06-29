@@ -1,0 +1,79 @@
+<odoo>
+    <record id="view_evidencia_form" model="ir.ui.view">
+        <field name="name">paralization_mpz.evidencia.form</field>
+        <field name="model">paralization_mpz.evidencia</field>
+        <field name="arch" type="xml">
+
+            <form string="Evidencia">
+                <sheet style="background:#f4f6f9;">
+
+                    <div class="container-fluid">
+
+                        <div class="card border-0 shadow-sm rounded">
+
+                            <!-- HEADER -->
+                            <div class="card-header text-white"
+                                style="background: linear-gradient(135deg,#2c3e50,#34495e);">
+                                <h4 class="mb-0 text-white">
+                                    Evidencia
+                                </h4>
+                            </div>
+
+                            <!-- BODY -->
+                            <div class="card-body p-4">
+
+                                 <!-- Nombre -->
+                                 <div class="mb-3">
+                                     <span class="text-muted small">
+                                         Nombre
+                                     </span>
+                                     <br />
+                                     <field name="name"
+                                         class="w-100" />
+                                 </div>
+
+                                 <!-- Boleta (invisible pero requerida) -->
+                                 <field name="boleta_id" invisible="1"/>
+
+                                <!-- Tipo -->
+                                <div class="mb-3">
+                                    <span class="text-muted small">
+                                        Tipo
+                                    </span>
+                                    <br />
+                                    <field name="tipo"
+                                        class="w-100" />
+                                </div>
+
+                                <!-- Archivo -->
+                                <div class="mb-3">
+                                    <span class="text-muted small">
+                                        Archivo
+                                    </span>
+                                    <br />
+                                    <field name="attachment_id"
+                                        widget="many2many_binary" />
+                                </div>
+
+                                <!-- Descripción -->
+                                <div class="mb-3">
+                                    <span class="text-muted small">
+                                        Descripción
+                                    </span>
+                                    <br />
+                                    <field name="descripcion"
+                                        class="w-100" />
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </sheet>
+            </form>
+
+        </field>
+    </record>
+</odoo>

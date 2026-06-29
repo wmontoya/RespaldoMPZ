@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Wizard Form View -->
+        <record id="aes_survey_answer_wizard_form" model="ir.ui.view">
+            <field name="name">ae.survey.answer.wizard.form</field>
+            <field name="model">ae.survey.answer.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Create Survey Answers">
+                    <sheet>
+                        <group>
+                            <field name="survey_id" readonly="1"/>
+                            <field name="department_ids" widget="many2many_tags"/>
+                        </group>
+                        <div class="alert alert-info">
+                            <i class="fa fa-info-circle"/> This wizard will create survey answers for the selected departments.
+                            The answers will be created in "Draft" status and can be completed later.
+                        </div>
+                    </sheet>
+                    <footer>
+                        <button name="action_create_survey_answers" string="Create Answers" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo> 

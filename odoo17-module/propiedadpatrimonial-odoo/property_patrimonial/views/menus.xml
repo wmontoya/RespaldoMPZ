@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem id="menu_patrimonial_root"
+                 name="Propiedades MPZ"
+                 sequence="10"
+                 web_icon="property_patrimonial,static/description/icon.png"
+                 groups="property_patrimonial.res_groups_patrimonial_user,property_patrimonial.res_groups_patrimonial_manager"/>
+
+        <menuitem id="menu_patrimonial_properties"
+                 name="Propiedades"
+                 parent="menu_patrimonial_root"
+                 action="action_patrimonial_property"
+                 sequence="1"
+                 groups="property_patrimonial.res_groups_patrimonial_user,property_patrimonial.res_groups_patrimonial_manager"/>
+
+    </data>
+</odoo>

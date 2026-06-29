@@ -1,0 +1,417 @@
+waste_control
+|   .cspell.config.yaml
+|   .editorconfig
+|   .gitattributes
+|   .gitignore
+|   __init__.py
+|   __manifest__.py
+|   LICENSE
+|   README.es.md
+|   README.md
+|   TODO-TASK.md
+|   
++---.dictionaries
+|   |   project-words.txt
+|   |   python.txt
+|   |   spanish.txt
+|   
++---.github
+|   |   
+|   \---instructions
+|       |   reglas-odoo-17.instructions.md
+|       |   reglas-proyecto.instructions.md
+|       |   skill-modelos.md
+|       |   skill-reportes.md
+|       |   skill-seguridad.md
+|       |   skill-traducciones.md
+|       |   skill-vistas.md
+|   
++---.vscode
+|   |   extensions.json
+|   |   launch.json
+|   |   settings.json
+|   
++---data
+|   |   report_paperformat.xml
+|   |   
+|   +---basic
+|   |   |   locations_data.xml
+|   |   |   main_view_data.xml
+|   |   |   payment_methods_data.xml
+|   |   |   types_of_waste_data.xml
+|   |   
+|   \---demo
+|       |   comb_km_demo.xml
+|       |   ebi_tariffs_data.xml
+|       |   minors_entities_demo.xml
+|       |   vehicles_routes_demo.xml
+|       |   waste_management_demo.xml
+|   
++---docs
+|   |   GUIA_USUARIO_SISTEMA.md
+|   |   PROJECT-STRUCTURE.txt
+|   |   
+|   +---develop-odoo-local
+|   |   |   ESTANDARES.md
+|   |   |   GUIA_ACTUALIZACIONES.md
+|   |   |   GUIA_CREACION_REPORTES.md
+|   |   |   PRIMEROS_PASOS.md
+|   |   |   RULES_ODOO-17.md
+|   |   |   
+|   |   +---guia-configuracion
+|   |   |   |   GUIA_ODOO.md
+|   |   |   |   GUIA_VS_CODE.md
+|   |   |   
+|   |   +---odoo-descriptions
+|   |   |   |   BASE_MODULE.md
+|   |   |   |   ODOO_INFO.md
+|   |   |   
+|   |   +---templates
+|   |   |   |   entity_name_view.xml
+|   |   |   |   launch.json
+|   |   |   |   settings.json
+|   |   |   
+|   |   \---wizard
+|   |       |   
+|   |       \---reports
+|   |           |   BASE_WIZARD.md
+|   |   
+|   +---inciando-odoo
+|   |   |   image-1.png
+|   |   |   image-2.png
+|   |   |   image-3.png
+|   |   |   image-4.png
+|   |   |   image-5.png
+|   |   |   image-6.png
+|   |   |   image-7.png
+|   |   |   image-8.png
+|   |   |   image-9.png
+|   |   |   image.png
+|   |   |   PRIMER-INGRESO-ODOO.md
+|   |   
+|   +---requerimientos
+|   |   |   general.md
+|   |   |   reportes.md
+|   |   |   roles.md
+|   |   |   tablas.md
+|   |   |   
+|   |   +---check
+|   |   |   |   general.md
+|   |   |   |   reportes.md
+|   |   |   |   roles.md
+|   |   |   |   tablas.md
+|   |   |   
+|   |   \---schema
+|   |       |   waste-control-(en).prisma
+|   |       |   waste-control-(es).prisma
+|   |   
+|   \---test
+|       |   
+|       \---informes
+|           |   formulario-test.md
+|   
++---i18n
+|   |   es_CR.po
+|   
++---models
+|   |   __init__.py
+|   |   base_model.py
+|   |   main_view.py
+|   |   
+|   +---core
+|   |   |   __init__.py
+|   |   |   
+|   |   +---comb_km
+|   |   |   |   __init__.py
+|   |   |   |   bills.py
+|   |   |   |   fuel_purchase_orders.py
+|   |   |   |   kilometers_traveled.py
+|   |   |   
+|   |   +---vehicles_routes
+|   |   |   |   __init__.py
+|   |   |   |   historic_vehicles.py
+|   |   |   |   routes_study.py
+|   |   |   |   vehicle_routes.py
+|   |   |   
+|   |   \---waste_management
+|   |       |   __init__.py
+|   |       |   buenos_aires_tonnages.py
+|   |       |   communities_waste_reports.py
+|   |       |   meat_waste.py
+|   |       |   private_companies.py
+|   |       |   purchase_orders_ebi.py
+|   |       |   waste.py
+|   |       |   
+|   |       \---recycling
+|   |           |   __init__.py
+|   |           |   recycling_by_campaigns.py
+|   |           |   recycling_on_route.py
+|   |   
+|   +---minor_models
+|   |   |   __init__.py
+|   |   |   ebi_tariffs.py
+|   |   |   payment_methods.py
+|   |   |   products.py
+|   |   |   recycle_programs.py
+|   |   |   routes.py
+|   |   |   types_of_waste.py
+|   |   |   
+|   |   +---contacts
+|   |   |   |   __init__.py
+|   |   |   |   collection_centers.py
+|   |   |   |   drivers.py
+|   |   |   |   squads.py
+|   |   |   |   supervisors.py
+|   |   |   
+|   |   \---locations
+|   |       |   __init__.py
+|   |       |   cantons.py
+|   |       |   communities.py
+|   |       |   districts.py
+|   |       |   provinces.py
+|   |   
+|   \---utils
+|       |   __init__.py
+|       |   date_utils.py
+|       |   validation_mixin.py
+|       |   warning_type.py
+|   
++---reports
+|   |   __init__.py
+|   |   report_utils.py
+|   |   
+|   \---core
+|       |   __init__.py
+|       |   
+|       +---comb_km
+|       |   |   __init__.py
+|       |   |   comparative_fuel_cost_report.py
+|       |   |   comparative_fuel_cost_report.xml
+|       |   |   fuel_consumption_by_plate_report.py
+|       |   |   fuel_consumption_by_plate_report.xml
+|       |   |   fuel_cost_report.py
+|       |   |   fuel_cost_report.xml
+|       |   |   fuel_cost_route_non_recyclable_report.py
+|       |   |   fuel_cost_route_non_recyclable_report.xml
+|       |   |   fuel_efficiency_report.py
+|       |   |   fuel_efficiency_report.xml
+|       |   |   fuel_purchase_orders_report.py
+|       |   |   fuel_purchase_orders_report.xml
+|       |   |   km_per_route_report.py
+|       |   |   km_per_route_report.xml
+|       |   |   km_route_non_recyclable_report.py
+|       |   |   km_route_non_recyclable_report.xml
+|       |   |   km_traveled_report.py
+|       |   |   km_traveled_report.xml
+|       |   
+|       +---vehicles_routes
+|       |   
+|       \---waste_management
+|           |   __init__.py
+|           |   buenos_aires_tonnages_report.py
+|           |   buenos_aires_tonnages_report.xml
+|           |   communities_waste_report.py
+|           |   communities_waste_report.xml
+|           |   districts_tonnages_report.py
+|           |   districts_tonnages_report.xml
+|           |   meat_waste_report.py
+|           |   meat_waste_report.xml
+|           |   non_recyclable_waste_report.py
+|           |   non_recyclable_waste_report.xml
+|           |   private_companies_report.py
+|           |   private_companies_report.xml
+|           |   purchase_orders_ebi_report.py
+|           |   purchase_orders_ebi_report.xml
+|           |   recycling_on_route_report.py
+|           |   recycling_on_route_report.xml
+|           |   waste_disposition_report.py
+|           |   waste_disposition_report.xml
+|           |   waste_percentage_report.py
+|           |   waste_percentage_report.xml
+|           |   waste_report.py
+|           |   waste_report.xml
+|   
++---security
+|   |   ir.model.access.csv
+|   |   waste_control_auditor_security.xml
+|   |   waste_control_editor_security.xml
+|   |   waste_control_groups.xml
+|   |   waste_control_it_security.xml
+|   |   waste_control_leadership_security.xml
+|   |   waste_control_technical_security.xml
+|   
++---static
+|   |   
+|   +---description
+|   |   |   icon.png
+|   |   
+|   \---src
+|       |   
+|       \---css
+|   
++---tests
+|   |   __init__.py
+|   |   TODO-TEST.md
+|   |   use.md
+|   |   
+|   +---modular
+|   |   |   __init__.py
+|   |   |   test_modular_comb_km_vehicles_routes.py
+|   |   |   test_modular_full_flow.py
+|   |   |   test_modular_waste_management_routes.py
+|   |   
+|   +---odoo
+|   |   
+|   +---unit
+|   |   |   __init__.py
+|   |   |   test_buenos_aires_tonnages.py
+|   |   |   test_communities_waste_reports.py
+|   |   |   test_contacts.py
+|   |   |   test_fuel_purchase_orders.py
+|   |   |   test_historic_vehicles.py
+|   |   |   test_kilometers_traveled.py
+|   |   |   test_locations.py
+|   |   |   test_meat_waste.py
+|   |   |   test_payment_methods.py
+|   |   |   test_private_companies.py
+|   |   |   test_products.py
+|   |   |   test_purchase_orders_ebi.py
+|   |   |   test_recycle_programs.py
+|   |   |   test_recycling_by_campaigns.py
+|   |   |   test_recycling_on_route.py
+|   |   |   test_report_helper_norm.py
+|   |   |   test_routes.py
+|   |   |   test_routes_study.py
+|   |   |   test_types_of_waste.py
+|   |   |   test_waste.py
+|   |   
+|   \---utils
+|       |   __init__.py
+|       |   json_to_markdown.py
+|       |   test_report_helper.py
+|   
++---tools
+|   |   COMANDOS-PROYECTO.md
+|   |   markdown-command-runner-0.0.1.vsix
+|   |   README.md
+|   |   
+|   \---utils
+|       |   __init__.py
+|       |   entities.txt
+|       |   generate-project-structure.py
+|       |   reports.txt
+|       |   templates.py
+|       |   text_manager.py
+|   
++---utils
+|   |   __init__.py
+|   |   entity_validations.py
+|   |   payment_methods_validation.py
+|   |   routes_study_validation.py
+|   |   types_of_waste_validation.py
+|   
++---views
+|   |   main_view.xml
+|   |   menu_view.xml
+|   |   
+|   +---core
+|   |   |   
+|   |   +---comb_km
+|   |   |   |   bills_view.xml
+|   |   |   |   fuel_purchase_orders_view.xml
+|   |   |   |   kilometers_traveled_view.xml
+|   |   |   
+|   |   +---vehicles_routes
+|   |   |   |   historic_vehicles_view.xml
+|   |   |   |   routes_study_view.xml
+|   |   |   |   vehicle_routes_view.xml
+|   |   |   
+|   |   \---waste_management
+|   |       |   buenos_aires_tonnages_view.xml
+|   |       |   communities_waste_reports_view.xml
+|   |       |   meat_waste_view.xml
+|   |       |   private_companies_view.xml
+|   |       |   purchase_orders_ebi_view.xml
+|   |       |   waste_view.xml
+|   |       |   
+|   |       \---recycling
+|   |           |   recycling_by_campaigns_view.xml
+|   |           |   recycling_on_route_view.xml
+|   |   
+|   \---minor_views
+|       |   ebi_tariffs_view.xml
+|       |   payment_methods_view.xml
+|       |   products_view.xml
+|       |   recycle_programs_view.xml
+|       |   routes_view.xml
+|       |   types_of_waste_view.xml
+|       |   
+|       +---contacts
+|       |   |   collection_centers_view.xml
+|       |   |   drivers_view.xml
+|       |   |   squads_view.xml
+|       |   |   supervisors_view.xml
+|       |   
+|       \---locations
+|           |   cantons_view.xml
+|           |   communities_view.xml
+|           |   districts_view.xml
+|           |   provinces_view.xml
+|   
+\---wizard
+    |   __init__.py
+    |   
+    \---reports
+        |   __init__.py
+        |   base_year_report_wizard.py
+        |   
+        \---core
+            |   __init__.py
+            |   
+            +---comb_km
+            |   |   __init__.py
+            |   |   comparative_fuel_cost_wizard.py
+            |   |   comparative_fuel_cost_wizard_view.xml
+            |   |   fuel_consumption_by_plate_wizard.py
+            |   |   fuel_consumption_by_plate_wizard_view.xml
+            |   |   fuel_cost_route_non_recyclable_wizard.py
+            |   |   fuel_cost_route_non_recyclable_wizard_view.xml
+            |   |   fuel_cost_wizard.py
+            |   |   fuel_cost_wizard_view.xml
+            |   |   fuel_efficiency_wizard.py
+            |   |   fuel_efficiency_wizard_view.xml
+            |   |   fuel_purchase_orders_wizard.py
+            |   |   fuel_purchase_orders_wizard_view.xml
+            |   |   km_per_route_wizard.py
+            |   |   km_per_route_wizard_view.xml
+            |   |   km_route_non_recyclable_wizard.py
+            |   |   km_route_non_recyclable_wizard_view.xml
+            |   |   km_traveled_wizard.py
+            |   |   km_traveled_wizard_view.xml
+            |   
+            +---vehicles_routes
+            |   
+            \---waste_management
+                |   __init__.py
+                |   buenos_aires_tonnages_wizard.py
+                |   buenos_aires_tonnages_wizard_view.xml
+                |   communities_waste_wizard.py
+                |   communities_waste_wizard_view.xml
+                |   districts_tonnages_wizard.py
+                |   districts_tonnages_wizard_view.xml
+                |   meat_waste_wizard.py
+                |   meat_waste_wizard_view.xml
+                |   non_recyclable_waste_wizard.py
+                |   non_recyclable_waste_wizard_view.xml
+                |   private_companies_wizard.py
+                |   private_companies_wizard_view.xml
+                |   purchase_orders_ebi_wizard.py
+                |   purchase_orders_ebi_wizard_view.xml
+                |   recycling_on_route_wizard.py
+                |   recycling_on_route_wizard_view.xml
+                |   waste_disposition_wizard.py
+                |   waste_disposition_wizard_view.xml
+                |   waste_percentage_wizard.py
+                |   waste_percentage_wizard_view.xml
+                |   waste_wizard.py
+                |   waste_wizard_view.xml

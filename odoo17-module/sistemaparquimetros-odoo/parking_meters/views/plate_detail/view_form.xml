@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_plate_detail_form" model="ir.ui.view">
+            <field name="name">parking_meters.plate_detail.form</field>
+            <field name="model">parking_meters.plate_detail</field>
+            <field name="arch" type="xml">
+                <form string="Plate Detail">
+                    <sheet>
+                        <group>
+                            <field name="class_code" />
+                            <field name="government_code" />
+                            <field name="plate_type_code_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

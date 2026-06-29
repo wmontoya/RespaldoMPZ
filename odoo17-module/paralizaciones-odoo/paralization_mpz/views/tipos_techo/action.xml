@@ -1,0 +1,7 @@
+<odoo>
+    <record model="ir.actions.act_window" id="action_tipos_techo">
+        <field name="name">Tipos de Techos</field>
+        <field name="res_model">tipos.techo</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+</odoo>

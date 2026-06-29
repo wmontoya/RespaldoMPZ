@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- ========================================
+             ENCUESTA DE AUTOEVALUACIÓN 2025 (ACTIVA)
+             ======================================== -->
+        
+        <!-- Encuesta 2025 -->
+        <record id="demo_survey_2025" model="ae.survey">
+            <field name="title">Autoevaluación 2025</field>
+            <field name="description">Encuesta de autoevaluación para el año 2025 - Sistema de Control Interno</field>
+            <field name="initial_date">2025-01-01</field>
+            <field name="final_date">2025-12-31</field>
+            <field name="status">active</field>
+        </record>
+
+        <!-- Componentes para Encuesta 2025 -->
+        <record id="demo_component_environment_2025" model="ae.component">
+            <field name="title">Ambiente</field>
+            <field name="surveys" eval="[(6, 0, [ref('demo_survey_2025')])]"/>
+        </record>
+
+        <record id="demo_component_risks_2025" model="ae.component">
+            <field name="title">Riesgos</field>
+            <field name="surveys" eval="[(6, 0, [ref('demo_survey_2025')])]"/>
+        </record>
+
+        <record id="demo_component_control_2025" model="ae.component">
+            <field name="title">Actividades de Control</field>
+            <field name="surveys" eval="[(6, 0, [ref('demo_survey_2025')])]"/>
+        </record>
+
+        <!-- ========================================
+             ENCUESTA DE AUTOEVALUACIÓN 2024 (INACTIVA)
+             ======================================== -->
+        
+        <!-- Encuesta 2024 -->
+        <record id="demo_survey_2024" model="ae.survey">
+            <field name="title">Autoevaluación 2024</field>
+            <field name="description">Encuesta de autoevaluación para el año 2024 - Sistema de Control Interno</field>
+            <field name="initial_date">2024-01-01</field>
+            <field name="final_date">2024-12-31</field>
+            <field name="status">inactive</field>
+        </record>
+
+        <!-- Componentes para Encuesta 2024 -->
+        <record id="demo_component_environment_2024" model="ae.component">
+            <field name="title">Ambiente</field>
+            <field name="surveys" eval="[(6, 0, [ref('demo_survey_2024')])]"/>
+        </record>
+
+        <record id="demo_component_risks_2024" model="ae.component">
+            <field name="title">Riesgos</field>
+            <field name="surveys" eval="[(6, 0, [ref('demo_survey_2024')])]"/>
+        </record>
+
+        <record id="demo_component_systems_2024" model="ae.component">
+            <field name="title">Sistemas</field>
+            <field name="surveys" eval="[(6, 0, [ref('demo_survey_2024')])]"/>
+        </record>
+
+        <record id="demo_component_monitoring_2024" model="ae.component">
+            <field name="title">Monitoreo</field>
+            <field name="surveys" eval="[(6, 0, [ref('demo_survey_2024')])]"/>
+        </record>
+
+    </data>
+</odoo> 

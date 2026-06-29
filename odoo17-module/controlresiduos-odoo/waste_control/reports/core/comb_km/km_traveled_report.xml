@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <template id="km_traveled_report_document">
+      <div class="page">
+        <h2>Reporte de kilómetros recorridos - año <span t-esc="selected_year" /></h2>
+        <p class="text-muted">Fecha del reporte: <span t-esc="report_date" /></p>
+
+        <table class="table table-sm table-bordered">
+          <thead>
+            <tr class="text-center" style="background-color: #d9d9d9;">
+              <th>Vehículo</th>
+              <t t-foreach="month_headers" t-as="month">
+                <th>
+                  <span t-esc="month" />
+                </th>
+              </t>
+              <th>Total anual</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr t-foreach="rows" t-as="row">
+              <td>
+                <span t-esc="row['name']" />
+              </td>
+              <t t-foreach="row['values']" t-as="val">
+                <td class="text-end">
+                  <span t-esc="val"
+                    t-options="{'widget': 'float', 'precision': 0}"
+                    t-if="val > 0" />
+                  <span t-else="">-</span>
+                </td>
+              </t>
+              <td class="text-end" style="background-color: #f4f5ef;">
+                <span t-esc="row['total']"
+                  t-options="{'widget': 'float', 'precision': 0}" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          <span>Promedio mensual de kilómetros:</span>
+          <span t-esc="monthly_average_total" t-options="{'widget': 'float', 'precision': 2}" />
+        </p>
+      </div>
+    </template>
+
+    <template id="km_traveled_report">
+      <t t-call="web.html_container">
+        <t t-call="web.external_layout">
+          <t t-call="waste_control.km_traveled_report_document" />
+        </t>
+      </t>
+    </template>
+
+    <record id="km_traveled_report_action" model="ir.actions.report">
+      <field name="name">Reporte de kilómetros recorridos</field>
+      <field name="model">waste_control.km_traveled_wizard</field>
+      <field name="report_type">qweb-pdf</field>
+      <field name="report_name">waste_control.km_traveled_report</field>
+      <field name="report_file">waste_control.km_traveled_report</field>
+      <field name="print_report_name">(f'Reporte_de_Km_Recorridos_{object.year}')</field>
+      <field name="paperformat_id" ref="waste_control.paperformat_landscape" />
+    </record>
+  </data>
+</odoo>

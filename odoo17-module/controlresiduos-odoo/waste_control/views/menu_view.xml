@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- waste_control/views/menu_view.xml -->
+<odoo>
+  <data>
+    <!-- Action Windows -->
+    <record id="res_partner_act_window" model="ir.actions.act_window">
+      <field name="name">Contactos</field>
+      <field name="res_model">res.partner</field>
+      <field name="view_mode">tree,kanban,form</field>
+      <field name="context">{'default_supplier': True}</field>
+    </record>
+
+    <!-- <record
+            id="res_user_act_window" model="ir.actions.act_window">
+            <field name="name">Odoo user</field>
+            <field name="res_model">res.users</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="context">{}</field>
+      </record> -->
+
+    <!-- Root Menu -->
+    <menuitem
+      sequence="0" name="Control de Residuos" id="waste_control_root"
+      web_icon="waste_control,static/description/icon.png"
+      groups="waste_control.group_auditor,waste_control.group_editor,waste_control.group_it,waste_control.group_leadership,waste_control.group_technical" />
+
+    <menuitem
+      parent="waste_control_root" sequence="0" name="Bienvenida" id="main_view_menu"
+      action="main_view_act_window" />
+
+    <!-- * Main Models * -->
+
+    <!-- (Comb_Km) -->
+
+    <menuitem
+      parent="waste_control_root" sequence="1" name="Comb_KM"
+      id="comb_km_menu" />
+
+    <menuitem parent="comb_km_menu" sequence="10" name="Facturas"
+      id="bills_menu"
+      action="bills_act_window" />
+
+    <menuitem parent="comb_km_menu" sequence="20"
+      name="Órdenes de compra de combustible"
+      id="fuel_purchase_orders_menu" action="fuel_purchase_orders_act_window" />
+
+    <menuitem
+      parent="comb_km_menu" sequence="30" name="Kilómetrajes recorridos"
+      id="kilometers_traveled_menu" action="kilometers_traveled_act_window" />
+    <!-- end (Comb_Km) -->
+
+    <!-- (Vehicles_Routes) -->
+    <menuitem
+      parent="waste_control_root" sequence="2" name="Rutas de vehículos"
+      id="vehicles_routes_menu" />
+
+    <menuitem parent="vehicles_routes_menu" sequence="10"
+      name="Histórico vehículos"
+      id="historic_vehicles_menu" action="historic_vehicles_act_window" />
+
+    <menuitem
+      parent="vehicles_routes_menu" sequence="20" name="Estudio de rutas"
+      id="routes_study_menu"
+      action="routes_study_act_window" />
+
+    <menuitem parent="vehicles_routes_menu" sequence="30"
+      name="Rutas de vehículos"
+      id="vehicle_routes_menu" action="vehicle_routes_act_window" />
+    <!-- end (Vehicles_Routes) -->
+
+    <!-- * waste * -->
+    <menuitem
+      parent="waste_control_root" sequence="3" name="Gestión de residuos"
+      id="waste_management_menu" />
+
+    <menuitem parent="waste_management_menu" sequence="5"
+      name="Tonelajes Buenos Aires"
+      id="buenos_aires_tonnages_menu"
+      action="buenos_aires_tonnages_act_window" />
+
+    <menuitem parent="waste_management_menu"
+      sequence="20" name="Reportes de restudios en comunidades"
+      id="communities_waste_reports_menu"
+      action="communities_waste_reports_act_window" />
+
+    <menuitem parent="waste_management_menu"
+      sequence="30" name="Residuos cárnicos" id="meat_waste_menu"
+      action="meat_waste_act_window" />
+
+    <menuitem parent="waste_management_menu" sequence="40"
+      name="Compañía privada"
+      id="private_companies_menu"
+      action="private_companies_act_window" />
+
+    <menuitem parent="waste_management_menu"
+      sequence="50" name="Orden de compra EBI"
+      id="purchase_orders_ebi_menu"
+      action="purchase_orders_ebi_act_window" />
+
+    <menuitem parent="waste_management_menu"
+      sequence="60" name="Residuos" id="waste_menu"
+      action="waste_act_window" />
+
+    <!-- waste/recycling -->
+    <menuitem parent="waste_management_menu"
+      sequence="70"
+      name="Reciclaje"
+      id="recycling_menu" />
+
+    <menuitem parent="recycling_menu" sequence="10"
+      name="Reciclaje por campañas"
+      id="recycling_by_campaigns_menu"
+      action="recycling_by_campaigns_act_window" />
+
+    <menuitem parent="recycling_menu"
+      sequence="20" name="Reciclaje en ruta"
+      id="recycling_on_route_menu"
+      action="recycling_on_route_act_window" />
+    <!-- end waste -->
+
+    <!-- Menus for waste records -->
+    <!-- <menuitem parent="waste_control_root"
+            id="menu_waste_records_root" name="Waste records"
+            sequence="4" />
+
+            <menuitem id="menu_waste_records_all" parent="menu_waste_records_root"
+            name="All records"
+            sequence="10" action="waste_records_all_act_window" />
+
+            <menuitem
+            id="menu_waste_records_on_route" parent="menu_waste_records_root" name="On route"
+            sequence="20" action="waste_records_on_route_act_window" />
+
+            <menuitem
+            id="menu_waste_records_meat" parent="menu_waste_records_root"
+            name="Residuos cárnicos" sequence="30" action="waste_records_meat_act_window" />
+
+            <menuitem
+            id="menu_waste_records_organic" parent="menu_waste_records_root"
+            name="Residuos orgánicos" sequence="40" action="waste_records_organic_act_window" />
+
+            <menuitem
+            id="menu_waste_records_non_recyclable" parent="menu_waste_records_root"
+            name="Non-recyclable" sequence="50"
+            action="waste_records_non_recyclable_act_window" -->
+    <!-- end  waste records-->
+    <!-- end Main Models -->
+
+    <!-- * Minor Models *-->
+
+    <!-- Contacts Models -->
+    <menuitem parent="waste_control_root"
+      sequence="5" name="Contactos" id="contacts_root" />
+
+    <menuitem parent="contacts_root"
+      sequence="10" name="Centros de acopio"
+      id="collection_centers_menu" action="collection_centers_act_window" />
+
+    <menuitem
+      parent="contacts_root" sequence="20" name="Conductores" id="drivers_menu"
+      action="drivers_act_window" />
+
+    <menuitem parent="contacts_root" sequence="30"
+      name="Supervisores" id="supervisors_menu"
+      action="supervisors_act_window" />
+
+    <menuitem parent="contacts_root" sequence="40"
+      name="Cuadrillas" id="squads_menu"
+      action="squads_act_window" />
+
+    <menuitem parent="contacts_root" sequence="50"
+      name="Todos los Contactos" id="res_partner_menu" action="res_partner_act_window" />
+    <!-- end Contacts Models  -->
+
+    <!--  -->
+    <menuitem
+      parent="waste_control_root" sequence="6"
+      name="Administración de datos" id="minors_root" />
+
+    <!-- Minor Locations Models -->
+    <menuitem parent="minors_root" sequence="10"
+      name="Ubicaciones" id="location_menu" />
+
+    <menuitem parent="location_menu" sequence="10"
+      name="Provincias" id="provinces_menu"
+      action="provinces_act_window" />
+
+    <menuitem parent="location_menu" sequence="20"
+      name="Cantones" id="cantons_menu"
+      action="cantons_act_window" />
+
+    <menuitem parent="location_menu" sequence="30"
+      name="Distritos" id="districts_menu"
+      action="districts_act_window" />
+
+    <menuitem parent="location_menu" sequence="40"
+      name="Comunidades" id="communities_menu"
+      action="communities_act_window" />
+    <!-- end Locations Models -->
+
+    <!-- Other Minor Models -->
+    <menuitem parent="minors_root" sequence="20"
+      name="Métodos de pago" id="payment_methods_menu"
+      action="payment_methods_act_window" />
+
+    <menuitem parent="minors_root" sequence="30"
+      name="Productos" id="products_menu"
+      action="products_act_window" />
+
+    <menuitem parent="minors_root" sequence="40"
+      name="Programas de reciclaje"
+      id="recycle_programs_menu"
+      action="recycle_programs_act_window" />
+
+    <menuitem parent="minors_root" sequence="50"
+      name="Rutas" id="routes_menu"
+      action="routes_act_window" />
+
+    <menuitem parent="minors_root" sequence="55"
+      name="Tarifas EBI" id="ebi_tariffs_menu"
+      action="ebi_tariffs_act_window" />
+
+    <menuitem parent="minors_root" sequence="60"
+      name="Tipos de residuo" id="types_of_waste_menu"
+      action="types_of_waste_act_window" />
+    <!-- end others Models -->
+    <!-- end Minors Models -->
+
+    <!-- * Reports * -->
+    <menuitem
+      parent="waste_control_root"
+      sequence="99"
+      name="Reportes"
+      id="reports_menu"
+      groups="waste_control.group_auditor,waste_control.group_editor,waste_control.group_it,waste_control.group_leadership" />
+
+    <!-- Comb-km Reports -->
+    <menuitem
+      parent="reports_menu"
+      sequence="10"
+      name="Comb_KM"
+      id="reports_comb_km_menu" />
+
+    <menuitem
+      parent="reports_comb_km_menu"
+      sequence="10"
+      name="Reporte orden de compra de combustible por año"
+      id="fuel_purchase_orders_report_menu"
+      action="fuel_purchase_orders_wizard_action" />
+
+    <menuitem
+      parent="reports_comb_km_menu"
+      sequence="20"
+      name="Reporte de consumo de combustible por placa"
+      id="fuel_consumption_by_plate_report_menu"
+      action="fuel_consumption_by_plate_wizard_action" />
+
+    <menuitem
+      parent="reports_comb_km_menu"
+      sequence="30"
+      name="Reporte de eficiencia de combustible (Km/L)"
+      id="fuel_efficiency_report_menu"
+      action="waste_control.fuel_efficiency_wizard_action" />
+
+    <menuitem
+      parent="reports_comb_km_menu"
+      sequence="40"
+      name="Reporte de costo de combustible por placa"
+      id="fuel_cost_report_menu"
+      action="waste_control.fuel_cost_wizard_action" />
+
+    <menuitem
+      parent="reports_comb_km_menu"
+      sequence="50"
+      name="Reporte de kilómetros recorridos por placa"
+      id="km_traveled_report_menu"
+      action="waste_control.km_traveled_wizard_action" />
+
+    <menuitem
+      parent="reports_comb_km_menu"
+      sequence="60"
+      name="Reporte de kilómetros recorridos por ruta"
+      id="km_per_route_report_menu"
+      action="waste_control.km_per_route_wizard_action" />
+
+    <menuitem
+      parent="reports_comb_km_menu"
+      sequence="70"
+      name="Reporte de kilómetros recorridos por ruta (no reciclable)"
+      id="km_route_non_recyclable_report_menu"
+      action="waste_control.km_route_non_recyclable_wizard_action" />
+
+    <menuitem
+      parent="reports_comb_km_menu"
+      sequence="80"
+      name="Reporte de costo de combustible por ruta (no reciclable)"
+      id="fuel_cost_route_non_recyclable_report_menu"
+      action="waste_control.fuel_cost_route_non_recyclable_wizard_action" />
+
+    <menuitem
+      parent="reports_comb_km_menu"
+      sequence="90"
+      name="Reporte comparativo de costes de combustible"
+      id="comparative_fuel_cost_report_menu"
+      action="waste_control.comparative_fuel_cost_wizard_action" />
+
+    <!-- Waste Management Reports -->
+    <menuitem
+      parent="reports_menu"
+      sequence="20"
+      name="Gestión de residuos"
+      id="reports_waste_management_menu" />
+
+    <menuitem
+      parent="reports_waste_management_menu"
+      sequence="10"
+      name="Reporte reciclaje en ruta"
+      id="recycling_on_route_report_menu"
+      action="recycling_on_route_wizard_action" />
+
+    <menuitem
+      parent="reports_waste_management_menu"
+      sequence="20"
+      name="Reporte residuos carnicos"
+      id="meat_waste_report_menu"
+      action="meat_waste_wizard_action" />
+
+    <menuitem
+      parent="reports_waste_management_menu"
+      sequence="30"
+      name="Reporte residuos por rutas"
+      id="waste_report_menu"
+      action="waste_wizard_action" />
+
+    <menuitem
+      parent="reports_waste_management_menu"
+      sequence="40"
+      name="Reporte de tonelaje de Buenos Aires"
+      id="buenos_aires_tonnages_report_menu"
+      action="buenos_aires_tonnages_wizard_action" />
+
+    <menuitem
+      parent="reports_waste_management_menu"
+      sequence="50"
+      name="Reporte EBI de órdenes de compra"
+      id="purchase_orders_ebi_report_menu"
+      action="purchase_orders_ebi_wizard_action" />
+
+    <menuitem
+      parent="reports_waste_management_menu"
+      sequence="60"
+      name="Reporte empresas privadas"
+      id="private_companies_report_menu"
+      action="private_companies_wizard_action" />
+
+    <menuitem
+      parent="reports_waste_management_menu"
+      sequence="70"
+      name="Reporte residuos de comunidades"
+      id="communities_waste_report_menu"
+      action="communities_waste_wizard_action" />
+
+    <menuitem
+      parent="reports_waste_management_menu"
+      sequence="80"
+      name="Reporte de tonelaje de los distritos"
+      id="districts_tonnages_report_menu"
+      action="districts_tonnages_wizard_action" />
+
+    <menuitem
+      parent="reports_waste_management_menu"
+      sequence="90"
+      name="Reporte de residuos no reciclables"
+      id="non_recyclable_waste_report_menu"
+      action="non_recyclable_waste_wizard_action" />
+
+    <menuitem
+      parent="reports_waste_management_menu"
+      sequence="100"
+      name="Reporte de disposición de residuos"
+      id="waste_disposition_report_menu"
+      action="waste_disposition_wizard_action" />
+
+    <menuitem
+      parent="reports_waste_management_menu"
+      sequence="110"
+      name="Reporte de porcentaje de residuos"
+      id="waste_percentage_report_menu"
+      action="waste_percentage_wizard_action" />
+
+    <!-- end Reports -->
+  </data>
+</odoo>

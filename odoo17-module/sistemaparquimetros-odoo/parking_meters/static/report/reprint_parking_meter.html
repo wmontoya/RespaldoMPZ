@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boleta de Infracción</title>
+    <style>
+        body {
+            font-family: Lucida Console, Lucida Sans Typewriter, monaco, Bitstream Vera Sans Mono, monospace;
+            white-space: pre-line;
+            font-size: 12px;
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 0;
+            background-color: white;
+        }
+        .content {
+            padding: 10px 20px;
+        }
+        .title {
+            text-align: center;
+            color: #000;
+        }
+        .subtitle {
+            text-align: center;
+            color: #000;
+        }
+        .contact {
+            text-align: center;
+            color: #000;
+        }
+        .department {
+            text-align: center;
+            color: #0047AB;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .email {
+            text-align: center;
+            color: #0047AB;
+            margin-bottom: 5px;
+        }
+        .reimpresion {
+            text-align: center;
+            color: #0047AB;
+        }
+        .separator {
+            text-align: center;
+            color: #000;
+            margin: 10px 0;
+        }
+        .ticket-info {
+            color: #0047AB;
+            font-weight: bold;
+        }
+        .normal-text {
+            color: #000;
+        }
+        .warning-title {
+            color: #0047AB;
+            font-weight: bold;
+        }
+        .signature {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="title">MUNICIPALIDAD DE PEREZ ZELEDON</div>
+        <div class="contact">Telefono:2220-6693</div>
+        <div class="contact">Apdo:274-8000 San Jose, Costa Rica</div>
+        <div class="contact">Costado sur de la Catedral</div>
+
+        <div class="department">ACTIVIDAD DE ESTACIONOMETROS</div>
+        <div class="email">estacionometros@mpz.go.cr</div>
+        <div class="reimpresion">Reimpresion</div>
+        <div class="separator">----------------------------------</div>
+
+        <div><span class="ticket-info">Boleta de Infraccion No. {ticket}</span></div>
+        <div><span class="ticket-info">Fecha: </span><span class="normal-text">{date}</span></div>
+        <div><span class="ticket-info">Placa: </span><span class="normal-text">{plate_type}-{plate_number}</span></div>
+        <div><span class="ticket-info">Color: </span><span class="normal-text">{color}</span></div>
+        <div><span class="ticket-info">Marca: </span><span class="normal-text">{brand}</span></div>
+        <div><span class="ticket-info">Tipo de vehiculo: </span><span class="normal-text">{vehicle_type}</span></div>
+
+        <div class="separator">----------------------------------</div>
+
+        <div><span class="ticket-info">Monto de Multa: </span><span class="normal-text">{amount} Colones</span></div>
+        <div><span class="ticket-info">Lugar de los hechos: </span><span class="normal-text">{first_location} - {second_location} - {third_location}</span></div>
+
+        <div class="separator">----------------------------------</div>
+
+        <div class="ticket-info">Articulos Infringidos:</div>
+        <div>
+            <span class="ticket-info">Articulo 23 y Articulo {article}: {article_definition}. {clause}  </span>
+        </div>
+        <div class="normal-text">
+Segun El Reglamento Para La Administracion Y Operacion De Los Sistemas De Estacionamientos Autorizados (Parquimetros) En El Canton De Perez Zeledon (Publicado en el Diario Oficial La Gaceta No.109 del 19 de junio del 2018)
+Observaciones: {observations}
+        </div>
+
+        <div class="separator">----------------------------------</div>
+
+        <div class="warning-title">Advertencia de la Ley al Infractor:</div>
+        <div class="normal-text">1.Los Oficiales de Estacionometros estan Investidos de Autoridad, en el articulo 5,de la ley 3580.
+2.Si la multa no es cancelada en un plazo de 48 horas, generara un recargo del 2% mensual, asimismo si esa no es cancelada se generara un gravamen sobre el vehiculo ante Registro Publico de la Propiedad. Articulo 3 de la Ley 3580 y 23 del reglamento.
+3.La cancelacion total de la multa es requisito indispensable para retirar los derechos de circulacion anualmente. Articulo 4 de la ley 3580 y 24 del reglamento.
+4.Las multas podran ser canceladas de lunes a jueves de 07:00 am a 04:00 pm y viernes de 07:00 am a 03:00 pm. en las cajas recaudadoras de la Municipalidad de Perez Zeledon o en las sucursales del Banco Nacional de Costa Rica a la cuenta IBAN
+No. CR75 0151 0101 0010 0057 12.
+5.En caso de disconformidad el infractor podra hacer uno de los recursos que le faculta el Articulo 171 del Codigo Municipal, los cuales deberan interponerse a mas tardar el quinto dia habil.
+6.Para mas informacion en
+www.perezzeledon.go.cr/apps/parking/pagos</div>
+
+        <div class="separator">----------------------------------</div>
+
+        <div class="signature">
+            <div><span class="ticket-info">Inspector: </span><span class="normal-text">{inspector}</span></div>
+            <div class="normal-text">
+Firma: __________________________</div>
+        </div>
+    </div>
+</body>
+</html>

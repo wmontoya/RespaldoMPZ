@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- * Tree View * -->
+    <record id="kilometers_traveled_tree_view" model="ir.ui.view">
+      <field name="name">waste_control.kilometers_traveled.tree</field>
+      <field name="model">waste_control.kilometers_traveled</field>
+      <field name="arch" type="xml">
+        <tree string="Kilómetrajes recorridos" decoration-danger="overtime_hours &gt; 0">
+          <field name="month" />
+          <field name="date" widget="date" />
+
+          <field name="output_km" />
+          <field name="input_km" />
+          <field name="total_km" />
+
+          <field name="departure_time" widget="float_time" optional="show" />
+          <field name="return_time" widget="float_time" optional="show" />
+          <field name="hours_on_route" widget="float_time" />
+          <field name="overtime_hours" widget="float_time" optional="hide" />
+
+          <!-- Relations -->
+          <field name="squads_id" />
+          <field name="drivers_id" string="Nombre de conductor" />
+          <field name="historic_vehicles_id" string="Número de placa" />
+          <field name="routes_id" string="Rutas" />
+
+          <field name="create_uid" string="Fuente" />
+          <field name="create_date" />
+          <field name="active" widget="boolean_toggle" />
+        </tree>
+      </field>
+    </record>
+
+    <!-- * Form View * -->
+    <record id="kilometers_traveled_form_view" model="ir.ui.view">
+      <field name="name">waste_control.kilometers_traveled.form</field>
+      <field name="model">waste_control.kilometers_traveled</field>
+      <field name="arch" type="xml">
+        <form string="Kilómetrajes recorridos">
+          <header />
+          <header />
+          <sheet>
+            <group>
+              <group string="Información de fecha">
+                <field name="date" widget="date" placeholder="Selecciona la fecha" />
+                <field name="month" placeholder="Selecciona el mes" />
+              </group>
+
+              <separator />
+
+              <group string="Información sobre kilómetros">
+                <field name="output_km" placeholder="Ingrese los kilómetros de salida" />
+                <field name="input_km" placeholder="Ingrese el kilometraje de entrada" />
+                <field name="total_km" placeholder="Auto calculado" />
+              </group>
+
+              <separator />
+
+              <group string="Información de rutas">
+                <field name="departure_time" widget="float_time"
+                  placeholder="Introduzca la hora de salida" />
+                <field name="return_time" widget="float_time"
+                  placeholder="Introduce la hora de regreso" />
+                <field name="hours_on_route" widget="float_time"
+                  placeholder="Ingrese las horas en ruta" />
+                <field name="overtime_hours" widget="float_time" />
+                <field name="types_of_waste_id" placeholder="Select waste type" />
+              </group>
+            </group>
+
+            <!-- Relations -->
+            <group>
+              <field name="squads_id" placeholder="Escriba o seleccione" />
+              <field name="drivers_id" placeholder="Escriba o seleccione" />
+              <field name="historic_vehicles_id"
+                placeholder="Seleccione o ingrese el número de placa, SM-1234" />
+              <separator />
+
+              <field name="routes_id" placeholder="Escriba o seleccione" />
+            </group>
+
+            <separator />
+
+            <group>
+              <field name="active" widget="boolean_toggle" />
+            </group>
+
+            <notebook>
+              <page string="Observaciones">
+                <group>
+                  <field name="observations" placeholder="Observaciones" />
+                </group>
+              </page>
+
+              <!-- * Audit fields*  -->
+              <page string="Información de modificación">
+                <group>
+                  <group>
+                    <field name="create_date" readonly="1" />
+                    <field name="write_date" readonly="1" />
+                  </group>
+                  <group>
+                    <field name="create_uid" string="Fuente"
+                      readonly="1" />
+                    <field name="write_uid" string="Editor" readonly="1" />
+                  </group>
+                </group>
+              </page>
+            </notebook>
+          </sheet>
+          <!-- * Notes/Messages  * -->
+          <div class="oe_chatter">
+            <field name="message_ids" />
+          </div>
+        </form>
+      </field>
+    </record>
+
+    <!-- * Pivot View * -->
+    <record id="kilometers_traveled_pivot_view" model="ir.ui.view">
+      <field name="name">waste_control.kilometers_traveled.pivot</field>
+      <field name="model">waste_control.kilometers_traveled</field>
+      <field name="arch" type="xml">
+        <pivot string="Análisis de Kilometraje" display_quantity="true">
+          <field name="historic_vehicles_id" type="row" />
+          <field name="date" interval="month" type="col" />
+          <field name="total_km" type="measure" />
+          <field name="hours_on_route" type="measure" />
+          <field name="overtime_hours" type="measure" />
+        </pivot>
+      </field>
+    </record>
+
+    <!-- * Graph View * -->
+    <record id="kilometers_traveled_graph_view" model="ir.ui.view">
+      <field name="name">waste_control.kilometers_traveled.graph</field>
+      <field name="model">waste_control.kilometers_traveled</field>
+      <field name="arch" type="xml">
+        <graph string="Análisis de Kilometraje" type="line">
+          <field name="date" interval="month" type="row" />
+          <field name="total_km" type="measure" />
+        </graph>
+      </field>
+    </record>
+
+    <!-- * Kanban View * -->
+    <record id="kilometers_traveled_kanban_view" model="ir.ui.view">
+      <field name="name">waste_control.kilometers_traveled.kanban</field>
+      <field name="model">waste_control.kilometers_traveled</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <field name="id" />
+          <field name="date" />
+          <field name="historic_vehicles_id" />
+          <field name="total_km" />
+          <field name="hours_on_route" />
+          <templates>
+            <t t-name="kanban-box">
+              <div class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <span class="o_kanban_record_title">
+                    <field name="historic_vehicles_id" />
+                  </span>
+                  <div>
+                    <field name="date" />
+                  </div>
+                  <div>
+                    <field name="total_km" />km</div>
+                  <div>
+                    <field name="hours_on_route" widget="float_time" />horas</div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+    <!-- * Search view * -->
+    <record id="kilometers_traveled_search_view" model="ir.ui.view">
+      <field name="name">waste_control.kilometers_traveled.search</field>
+      <field name="model">waste_control.kilometers_traveled</field>
+      <field name="arch" type="xml">
+        <search>
+          <filter string="Activo" name="filter_active" domain="[('active', '=', True)]" />
+          <filter string="Inactivo" name="filter_inactive"
+            domain="[('active', '=', False)]" />
+
+          <filter string="Año actual" name="year_current"
+            domain="[('date','&gt;=', (context_today()).strftime('%Y-01-01')), ('date','&lt;=', (context_today()).strftime('%Y-12-31'))]" />
+
+          <filter string="Año anterior" name="year_last"
+            domain="[('date','&gt;=', (context_today() - relativedelta(years=1)).strftime('%Y-01-01')), ('date','&lt;=', (context_today() - relativedelta(years=1)).strftime('%Y-12-31'))]" />
+
+          <separator />
+          <filter string="Mis registros" name="filter_my_records"
+            domain="[('create_uid', '=', uid)]" />
+
+          <group expand="0" string="Agrupado por">
+            <filter string="Estado" name="group_by_active"
+              context="{'group_by': 'active'}" />
+            <filter string="Usuario responsable" name="group_by_user"
+              context="{'group_by': 'create_uid'}" />
+            <filter string="Fecha de creación" name="group_by_create_date"
+              context="{'group_by': 'create_date:month'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+    <!-- * Action * -->
+    <record id="kilometers_traveled_act_window" model="ir.actions.act_window">
+      <field name="name">Kilómetrajes recorridos</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">waste_control.kilometers_traveled</field>
+      <field name="context">{'search_default_year_current': 1}</field>
+      <field name="view_mode">tree,kanban,form,pivot,graph</field>
+      <field name="search_view_id" ref="kilometers_traveled_search_view" />
+    </record>
+  </data>
+</odoo>

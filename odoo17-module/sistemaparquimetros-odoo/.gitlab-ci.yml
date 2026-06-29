@@ -1,0 +1,20 @@
+
+variables:
+  MODULE_NAME: "parking_meters"
+
+include:
+  - project: 'mpz/gitlab-base'
+    ref: main
+    file: '/ci-templates/odoo-deploy-template.yml'
+
+build-job:
+  extends: .build_job_template
+
+deploy_test:
+  extends: .deploy_test_template
+
+deploy_production:
+  extends: .deploy_production_template
+
+move_final:
+  extends: .move_final_template

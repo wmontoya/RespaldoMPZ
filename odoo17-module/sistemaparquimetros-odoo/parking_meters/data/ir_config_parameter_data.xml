@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="parking_meters_streets" model="ir.config_parameter">
+            <field name="key">parking_meters.Calles</field>
+            <field name="value">11</field>
+        </record>
+        <record id="parking_meters_avenues" model="ir.config_parameter">
+            <field name="key">parking_meters.Avenidas</field>
+            <field name="value">19</field>
+        </record>
+        <record id="parking_meters_notification_time" model="ir.config_parameter">
+            <field name="key">parking_meters.Notification_Time</field>
+            <field name="value">5</field>
+        </record>
+        <record id="parking_meters_image_folder" model="ir.config_parameter">
+            <field name="key">parking_meters.Image_folder</field>
+            <field name="value">MIP_Infracciones</field>
+        </record>
+        <record id="tramites_user" model="ir.config_parameter">
+            <field name="key">tramites.User</field>
+            <field name="value">tramites</field>
+        </record>
+        <record id="tramites_password" model="ir.config_parameter">
+            <field name="key">tramites.Password</field>
+            <field name="value">8waFepHU8hag</field>
+        </record>
+         <record id="parking_meters_is_active" model="ir.config_parameter">
+            <field name="key">parking_meters.Is_Active</field>
+            <field name="value">true</field>
+        </record>
+    </data>
+</odoo>

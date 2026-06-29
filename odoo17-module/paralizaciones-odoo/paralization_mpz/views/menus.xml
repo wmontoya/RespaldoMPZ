@@ -1,0 +1,24 @@
+<odoo>
+  <data>
+    <menuitem name="Paralización MPZ" id="menu_paralization_mpz_root" sequence="10" web_icon="paralization_mpz,static/description/icon.png"/>
+
+    <menuitem name="Boletas" id="menu_boletas" parent="menu_paralization_mpz_root"
+               action="paralization_mpz.action_boletas" sequence="10"
+               groups="paralization_mpz.group_paralization_oficial,paralization_mpz.group_paralization_administrativo,paralization_mpz.group_paralization_administrador_ti"/>
+
+    <menuitem name="Configuración" id="menu_config" parent="menu_paralization_mpz_root" sequence="30"
+               groups="paralization_mpz.group_paralization_administrativo,paralization_mpz.group_paralization_administrador_ti"/>
+
+    <menuitem name="Tipos de Pisos" id="menu_tipos_piso" parent="menu_config"
+               action="paralization_mpz.action_tipos_piso" sequence="10"
+               groups="paralization_mpz.group_paralization_administrativo,paralization_mpz.group_paralization_administrador_ti"/>
+
+    <menuitem name="Tipos de Paredes" id="menu_tipos_pared" parent="menu_config"
+               action="paralization_mpz.action_tipos_pared" sequence="20"
+               groups="paralization_mpz.group_paralization_administrativo,paralization_mpz.group_paralization_administrador_ti"/>
+
+    <menuitem name="Tipos de Techos" id="menu_tipos_techo" parent="menu_config"
+               action="paralization_mpz.action_tipos_techo" sequence="30"
+               groups="paralization_mpz.group_paralization_administrativo,paralization_mpz.group_paralization_administrador_ti"/>
+  </data>
+</odoo>

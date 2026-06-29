@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Form View -->
+        <record id="view_inspector_form" model="ir.ui.view">
+            <field name="name">paralization_mpz.inspector.form</field>
+            <field name="model">paralization_mpz.inspector</field>
+            <field name="arch" type="xml">
+                <form string="Inspector">
+                    <sheet>
+                        <group>
+                            <field name="login"/>
+                            <field name="name"/>
+                            <field name="cedula"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

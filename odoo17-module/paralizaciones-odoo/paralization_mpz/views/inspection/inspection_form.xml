@@ -1,0 +1,205 @@
+<odoo>
+
+    <!-- FORM VIEW -->
+    <record id="view_inspection_form" model="ir.ui.view">
+        <field name="name">paralization_mpz.inspection.form</field>
+        <field name="model">paralization_mpz.inspection</field>
+        <field name="arch" type="xml">
+
+            <form string="Acta de Inspección">
+
+                <sheet style="background:#f4f6f9;">
+
+                    <div class="container-fluid">
+
+                        <div class="card border-0 shadow-sm rounded">
+
+                            <!-- HEADER -->
+                            <div class="card-header text-white"
+                                 style="background: linear-gradient(135deg,#2c3e50,#34495e);">
+
+                                <div class="d-flex justify-content-between align-items-center">
+
+                                    <div>
+                                        <h4 class="mb-0 text-white">
+                                            Acta de Inspección
+                                        </h4>
+                                    </div>
+
+                                    <div>
+                                        <field name="name"
+                                               readonly="1"
+                                               force_save="1"
+                                               class="form-control text-white"/>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- BODY -->
+                            <div class="card-body p-4">
+
+                                <div class="row g-4">
+
+                                    <!-- INFORMACIÓN GENERAL -->
+                                    <div class="col-lg-6 d-flex">
+                                        <div class="card border-0 shadow-sm h-100 w-100">
+
+                                            <div class="card-header bg-white">
+                                                <h5 class="mb-0 fw-semibold">
+                                                    <i class="fa fa-file-text me-1"/>
+                                                    Información General
+                                                </h5>
+                                            </div>
+
+                                            <div class="card-body">
+
+                                                <div class="mb-3">
+                                                    <p class="text-muted small">
+                                                        Fecha
+                                                    </p>
+
+                                                    <field name="fecha"
+                                                           nolabel="1"
+                                                           class="w-100"/>
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <p class="text-muted small">
+                                                        Dirección Exacta
+                                                    </p>
+
+                                                    <field name="direccion"
+                                                           nolabel="1"/>
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <p class="text-muted small">
+                                                        Descripción de los Hechos
+                                                    </p>
+
+                                                    <field name="descripcion_hechos"
+                                                           nolabel="1"/>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <!-- INSPECTOR Y TESTIGO -->
+                                    <div class="col-lg-6 d-flex">
+                                        <div class="card border-0 shadow-sm h-100 w-100">
+
+                                            <div class="card-header bg-white">
+                                                <h5 class="mb-0 fw-semibold">
+                                                    <i class="fa fa-users me-1"/>
+                                                    Participantes
+                                                </h5>
+                                            </div>
+
+                                            <div class="card-body">
+
+                                                <!-- Inspector -->
+                                                <div class="mb-3">
+                                                    <p class="text-muted small">
+                                                        Inspector
+                                                    </p>
+
+                                                    <field name="inspector_id"
+                                                           nolabel="1"
+                                                           class="w-100"/>
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <p class="text-muted small">
+                                                        Cédula Inspector
+                                                    </p>
+
+                                                    <field name="inspector_cedula"
+                                                           nolabel="1"
+                                                           readonly="1"/>
+                                                </div>
+
+                                                <hr/>
+
+                                                <!-- Testigo -->
+                                                <div class="mb-3">
+                                                    <p class="text-muted small">
+                                                        Nombre del Testigo
+                                                    </p>
+
+                                                    <field name="testigo_nombre"
+                                                           nolabel="1"/>
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <p class="text-muted small">
+                                                        Cédula del Testigo
+                                                    </p>
+
+                                                    <field name="testigo_cedula"
+                                                           nolabel="1"/>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- EVIDENCIAS -->
+                                <div class="row mt-4">
+
+                                    <div class="col-12">
+
+                                        <div class="card border-0 shadow-sm">
+
+                                            <div class="card-header bg-white">
+                                                <h5 class="mb-0 fw-semibold">
+                                                    <i class="fa fa-camera me-1"/>
+                                                    Evidencias
+                                                </h5>
+                                            </div>
+
+                                            <div class="card-body">
+
+                                                 <field name="evidencia_ids"
+                                                        context="{'form_view_ref':'paralization_mpz.view_evidencia_form', 'default_inspection_id': active_id}"
+                                                        domain="[('boleta_id', '=', False)]"
+                                                        nolabel="1">
+
+                                                    <tree class="table table-sm table-hover">
+
+                                                        <field name="name"/>
+                                                        <field name="tipo"/>
+                                                        <field name="descripcion"/>
+
+                                                    </tree>
+
+                                                </field>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </sheet>
+
+            </form>
+
+        </field>
+    </record>
+
+</odoo>

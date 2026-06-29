@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1"> 
+        <record id="online_payments_sinpe_login_pay" model="ir.config_parameter">
+            <field name="key">online_payments.login_pay</field>
+            <field name="value">3ec9741eb779346d090e2f02cf785iut</field>
+        </record>
+        <record id="online_payments_transaction_key_pay" model="ir.config_parameter">
+            <field name="key">online_payments.transaction_key_pay</field>
+            <field name="value">PD0SX2yi173Bh45p</field>
+        </record>
+        <record id="online_payments_final_invoice_key" model="ir.config_parameter">
+            <field name="key">online_payments.final_invoice</field>
+            <field name="value">1</field>
+        </record>
+        <record id="online_payments_final_invoice_key" model="ir.config_parameter">
+            <field name="key">online_payments.final_invoice</field>
+            <field name="value">1</field>
+        </record>
+        <record id="online_payments_final_invoice_key" model="ir.config_parameter">
+            <field name="key">online_payments.final_invoice</field>
+            <field name="value">1</field>
+        </record>
+    </data>
+</odoo>

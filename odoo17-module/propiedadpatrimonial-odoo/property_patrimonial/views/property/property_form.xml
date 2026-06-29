@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_patrimonial_property_form" model="ir.ui.view">
+        <field name="name">patrimonial.property.form</field>
+        <field name="model">patrimonial.property</field>
+        <field name="arch" type="xml">
+            <form string="Patrimonial Property">
+                <sheet style="background-color: #f4f6f9;">
+
+                    <div class="container-fluid mb-4">
+                        <div class="row align-items-center p-4 rounded shadow-sm"
+                            style="background: linear-gradient(135deg, #1f3b57, #2c5282);">
+
+                            <div class="col-md-9">
+                                <h2 class="fw-bold mb-1 text-white">
+                                    <field name="expediente" />
+                                </h2>
+                                <div class="text-white-50">
+                                    Expediente
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 text-end">
+                                <span class="badge px-3 py-2 bg-light text-dark">
+                                    MPZ
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="container-fluid">
+                        <div class="row g-4">
+
+                            <div class="col-lg-4">
+                                <div class="card border-0 shadow-sm">
+
+                                    <div class="card-header"
+                                        style="background-color: #ffffff; border-bottom: 1px solid #dee2e6;">
+                                        <h5 class="mb-0 fw-semibold" style="color:#212529;">
+                                            <i class="fa fa-info-circle me-1" /> Información General </h5>
+                                    </div>
+
+                                    <div class="card-body">
+
+                                        <div class="mb-3">
+                                            <span style="color:#6c757d; font-size: 13px;">Tipo</span>
+                                            <br />
+                                            <field name="tipo" nolabel="1" />
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <span style="color:#6c757d; font-size: 13px;">
+                                                Dirección</span>
+                                            <field name="direction" nolabel="1" />
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <span style="color:#6c757d; font-size: 13px;">Donador</span>
+                                            <field name="donor" nolabel="1" />
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-lg-8">
+                                <div class="card border-0 shadow-sm h-100">
+
+                                    <div class="card-header"
+                                        style="background-color: #ffffff; border-bottom: 1px solid #dee2e6;">
+                                        <h5 class="mb-0 fw-semibold" style="color:#212529;">
+                                            <i class="fa fa-building me-1" /> Propiedades </h5>
+                                    </div>
+
+                                    <div class="card-body p-0">
+                                        <field name="estate_ids"
+                                            context="{'form_view_ref': 'property_patrimonial.view_patrimonial_finca_form'}"
+                                            nolabel="1">
+                                            <tree class="table table-sm table-hover">
+                                                <field name="num_finca" />
+                                                <field name="num_plano" />
+                                                <field name="medida" />
+                                                <field name="district_id" />
+                                                <field name="use_ids"
+                                                    widget="many2many_tags" />
+                                                <field name="observaciones" />
+                                            </tree>
+                                        </field>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="container-fluid mt-4">
+                        <div class="row g-4">
+
+                            <div class="col-lg-8">
+                                <div class="card border-0 shadow-sm">
+
+                                    <div
+                                        class="card-header d-flex justify-content-between align-items-center bg-white">
+
+                                        <div>
+                                            <h6 class="mb-0 fw-semibold">
+                                                <i class="fa fa-file-text me-1 text-primary" />
+                                                Convenios </h6>
+                                        </div>
+
+                                        <button name="action_add_agreement"
+                                            type="object"
+                                            class="btn btn-primary btn-sm">
+                                            <i class="fa fa-plus me-1" /> Nuevo </button>
+
+                                    </div>
+
+                                    <div class="card-body" style="background-color:#f8f9fa;">
+
+                                        <field name="agreement_ids" nolabel="1" mode="kanban"
+                                            create="0"
+                                            edit="0" delete="1">
+
+                                            <kanban class="o_kanban_small_column" create="false">
+                                                <field name="name" />
+                                                <field name="fecha_inicio" />
+                                                <field name="fecha_vencimiento" />
+                                                <field name="notes" />
+                                                <field name="file_summary" />
+
+                                                <templates>
+                                                    <t t-name="kanban-box">
+
+                                                        <div
+                                                            class="p-3 rounded-3 shadow-sm bg-white h-100 d-flex flex-column border"
+                                                            style="transition: all 0.2s ease;">
+
+                                                            <div class="mb-2 pb-2 border-bottom">
+                                                                <div class="fw-semibold text-dark">
+                                                                    <field name="name" />
+                                                                </div>
+
+                                                                <div class="text-muted small">
+                                                                    <i class="fa fa-calendar me-1" />
+                                                                    De: <field
+                                                                        name="fecha_inicio" /> -
+                                                                    Hasta: <field
+                                                                        name="fecha_vencimiento" />
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="text-muted small mb-2"
+                                                                t-if="record.notes.raw_value">
+                                                                <i class="fa fa-sticky-note me-1" />
+                                                                Notas: <field
+                                                                    name="notes" />
+                                                            </div>
+
+                                                            <div class="flex-grow-1">
+                                                                <div
+                                                                    class="small text-uppercase text-muted mb-1">
+                                                                    Archivos
+                                                                </div>
+
+                                                                <t
+                                                                    t-if="record.file_summary.raw_value">
+                                                                    <t
+                                                                        t-foreach="record.file_summary.raw_value"
+                                                                        t-as="file">
+
+                                                                        <div
+                                                                            class="d-flex justify-content-between align-items-center small px-2 py-1 mb-1 rounded"
+                                                                            style="background-color:#f1f3f5;">
+
+                                                                            <span
+                                                                                class="text-truncate">
+                                                                                📄 <t
+                                                                                    t-esc="file['name']" />
+                                                                            </span>
+
+                                                                            <div
+                                                                                class="d-flex align-items-center gap-1">
+
+                                                                                <span class="badge"
+                                                                                    t-att-class="{
+                                                                                'bg-success': file['estado']=='vigente',
+                                                                                'bg-warning text-dark': file['estado']=='en_tramite',
+                                                                                'bg-danger': file['estado']=='vencido'
+                                                                            }">
+
+                                                                                    <t
+                                                                                        t-esc="file['estado_display']" />
+                                                                                </span>
+                                                                                <div
+                                                                                    class="d-flex gap-2 mt-auto">
+                                                                                    <button
+                                                                                        name="action_download"
+                                                                                        type="object"
+                                                                                        t-att-context="{'attachment_id': file['id']}"
+                                                                                        class="btn btn-sm btn-light">
+                                                                                        <i
+                                                                                            class="fa fa-download" />
+                                                                                    </button>
+
+                                                                                </div>
+
+                                                                            </div>
+
+                                                                        </div>
+
+                                                                    </t>
+                                                                </t>
+
+                                                                <t
+                                                                    t-if="!record.file_summary.raw_value">
+                                                                    <div
+                                                                        class="text-muted small fst-italic">
+                                                                        Sin archivos
+                                                                    </div>
+                                                                </t>
+
+                                                            </div>
+
+                                                            <div class="d-flex gap-2 mt-3">
+                                                                <button name="action_open_agreement"
+                                                                    type="object"
+                                                                    class="btn btn-outline-primary btn-sm w-50">
+                                                                    <i class="fa fa-pen me-1" />
+                                                                    Editar </button>
+
+                                                                <button
+                                                                    name="action_delete_agreement"
+                                                                    type="object"
+                                                                    class="btn btn-outline-danger btn-sm w-50"
+                                                                    confirm="¿Eliminar convenio?">
+                                                                    <i class="fa fa-trash" />
+                                                                </button>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </t>
+                                                </templates>
+                                            </kanban>
+
+                                        </field>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card border-0 shadow-sm h-100">
+
+                                    <div
+                                        class="card-header d-flex justify-content-between align-items-center"
+                                        style="background-color: #ffffff; border-bottom: 1px solid #dee2e6;">
+                                        <h5 class="mb-0 fw-semibold">
+                                            <i class="fa fa-archive me-1" /> Archivos </h5>
+                                    </div>
+
+                                    <div class="card-body p-0">
+
+                                        <field name="file_ids"
+                                            context="{'form_view_ref': 'property_patrimonial.view_patrimonial_agreement_file_form'}"
+                                            nolabel="1">
+                                            <tree class="table table-sm table-hover">
+                                                <field name="name" readonly="1" />
+                                                <field name="estado"
+                                                    widget="badge"
+                                                    decoration-success="estado == 'vigente'"
+                                                    decoration-warning="estado == 'en_tramite'"
+                                                    decoration-danger="estado == 'vencido'" />
+                                                <field name="attachment_id" />
+                                            </tree>
+                                        </field>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container-fluid mt-4">
+                        <div class="card border-0 shadow-sm">
+
+                            <div class="card-header"
+                                style="background-color: #ffffff; border-bottom: 1px solid #dee2e6;">
+                                <h5 class="mb-0 fw-semibold" style="color:#212529;">
+                                    <i class="fa fa-wrench me-1" /> Mantenimientos </h5>
+                            </div>
+
+                            <div class="card-body p-0">
+                                <field name="maintenance_ids"
+                                    context="{'form_view_ref': 'property_patrimonial.view_property_maintenance_form'}"
+                                    nolabel="1">
+
+                                    <tree
+                                        class="table table-sm table-hover"
+                                        decoration-success="estado == 'completado'"
+                                        decoration-danger="estado == 'pendiente'">
+                                        <field name="fecha" />
+                                        <field name="tipo_mantenimiento" />
+                                        <field name="observaciones" />
+                                        <field name="usuario_id" />
+                                        <field name="responsible_user_ids" widget="many2many_tags" />
+                                        <field name="estado" />
+                                    </tree>
+                                </field>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

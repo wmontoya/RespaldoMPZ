@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="parking_meters.action_infraction_import_form" model="ir.actions.act_window">
+            <field name="name">Sicsoa Importar</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">parking_meters.infraction_import</field>
+            <field name="view_mode">form</field>
+            <field name="view_ids" eval="[(5, 0, 0), (0, 0, {'view_mode': 'form', 'view_id': ref('parking_meters.view_infraction_import_form')})]" />
+        </record>
+    </data>
+</odoo>

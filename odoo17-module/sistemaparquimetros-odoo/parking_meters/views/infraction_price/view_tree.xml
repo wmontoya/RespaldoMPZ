@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_infraction_price_tree" model="ir.ui.view">
+            <field name="name">parking_meters.infraction_price.tree</field>
+            <field name="model">parking_meters.infraction_price</field>
+            <field name="arch" type="xml">
+                <tree string="Infraction Prices">
+                    <field name="id" />
+                    <field name="price" />
+                    <field name="update_date"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

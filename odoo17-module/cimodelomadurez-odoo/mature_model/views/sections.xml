@@ -1,0 +1,87 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="mature_model_section_tree">
+      <field name="name">sección.tree</field>
+      <field name="model">mm.section</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name" />
+          <field name="description" />
+          <field name="questions"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="section_view_form" model="ir.ui.view">
+      <field name="name">sección.view.form</field>
+      <field name="model">mm.section</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <div class="container mt-4">
+              <div class="card shadow-sm">
+                <div class="card-header bg-primary">
+                  <h3 class="card-title mb-0 text-white">Información de la Sección</h3>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="mb-3">
+                        <label for="name" class="form-label fw-bold">Nombre de la sección</label>
+                        <field name="name" required="1" class="form-control" style="margin-left: 1rem;" />
+                      </div>
+                      <div class="mb-3">
+                        <label for="description" class="form-label fw-bold">Descripción</label>
+                        <field name="description" class="form-control" widget="text" rows="4"/>
+                      </div>
+                      <div class="mb-3">
+                        <label for="questions" class="form-label fw-bold">Preguntas</label>
+                        <field name="questions" required="1" >
+                          <tree>
+                            <field name="title"/>
+                            <field name="section_id"/>
+                            <field name="options"/>
+                          </tree>
+                        </field>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="section_view_kanban" model="ir.ui.view">
+      <field name="name">sección.view.kanban</field>
+      <field name="model">mm.section</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <templates>
+            <t t-name="kanban-box">
+              <div class="o_kanban_card">
+                <div class="o_kanban_header">
+                  <strong><field name="name"/></strong>
+                </div>
+                <div class="o_kanban_body">
+                  <field name="description"/>
+                </div>
+                <div class="o_kanban_footer">
+                  <field name="questions"/>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="mm_section_action">
+      <field name="name">Secciones</field>
+      <field name="res_model">mm.section</field>
+      <field name="view_mode">tree,form,kanban</field>
+    </record>
+  </data>
+</odoo>

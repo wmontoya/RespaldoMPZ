@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- * Tree View * -->
+    <record id="ebi_tariffs_tree_view" model="ir.ui.view">
+      <field name="name">waste_control.ebi_tariffs.tree</field>
+      <field name="model">waste_control.ebi_tariffs</field>
+      <field name="arch" type="xml">
+        <tree string="Tarifas EBI">
+          <field name="year" widget="char" />
+          <field name="tariff" widget="monetary" />
+          <field name="currency_id" column_invisible="True" />
+          <field name="create_uid" string="Fuente" />
+          <field name="create_date" />
+          <field name="active" widget="boolean_toggle" />
+        </tree>
+      </field>
+    </record>
+
+    <!-- * Form View * -->
+    <record id="ebi_tariffs_form_view" model="ir.ui.view">
+      <field name="name">waste_control.ebi_tariffs.form</field>
+      <field name="model">waste_control.ebi_tariffs</field>
+      <field name="arch" type="xml">
+        <form string="Tarifa EBI">
+          <header />
+          <sheet>
+            <div class="oe_title">
+              <label for="year" class="oe_edit_only" />
+              <h1>
+                <field name="year" placeholder="Ingrese el año (p. ej., 2026)" />
+              </h1>
+            </div>
+
+            <group>
+              <group>
+                <field name="tariff" widget="monetary" placeholder="0.00" />
+                <field name="currency_id" invisible="1" />
+              </group>
+              <group>
+                <field name="active" widget="boolean_toggle" />
+              </group>
+            </group>
+
+            <notebook>
+              <!-- * Audit fields*  -->
+              <page string="Información de modificación">
+                <group>
+                  <group>
+                    <field name="create_date" readonly="1" />
+                    <field name="write_date" readonly="1" />
+                  </group>
+                  <group>
+                    <field name="create_uid" string="Fuente" readonly="1" />
+                    <field name="write_uid" string="Editor" readonly="1" />
+                  </group>
+                </group>
+              </page>
+            </notebook>
+          </sheet>
+          <div class="oe_chatter">
+            <field name="message_ids" />
+          </div>
+        </form>
+      </field>
+    </record>
+
+    <!-- * Action * -->
+    <record id="ebi_tariffs_act_window" model="ir.actions.act_window">
+      <field name="name">Tarifas EBI</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">waste_control.ebi_tariffs</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+          ¡Crea la primera tarifa!
+        </p>
+      </field>
+    </record>
+  </data>
+</odoo>

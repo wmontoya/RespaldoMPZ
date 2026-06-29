@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="module_admin_user_yaipan" model="ir.module.category">
+            <field name="name">Yaipan Reports</field>
+        </record>
+        <record id="res_groups_admin_user_yaipan" model="res.groups">
+            <field name="name">Administrator</field>
+            <field name="category_id" ref="yaipan_reports.module_admin_user_yaipan" />
+        </record>
+        <record id="res_groups_web_yaipan" model="res.groups">
+            <field name="name">Web</field>
+            <field name="category_id" ref="yaipan_reports.module_admin_user_yaipan" />
+        </record>
+    </data>
+</odoo>

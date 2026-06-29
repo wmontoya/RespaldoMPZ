@@ -1,0 +1,6 @@
+# cspell-tools: keep-case no-split
+hasattr
+isinstance
+pathlib
+pycache
+strftime

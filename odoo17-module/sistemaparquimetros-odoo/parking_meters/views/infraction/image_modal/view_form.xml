@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_image_modal" model="ir.ui.view">
+            <field name="name">parking_meters.infraction.image.modal</field>
+            <field name="model">parking_meters.infraction</field>
+            <field name="arch" type="xml">
+                <form string="Images">
+                    <group>
+                   <div class="container p-1"
+                            style='width: 960px;'>
+                            <field name="infraction_images" nolabel="1"/>
+                        </div>
+                    </group>
+                    <footer class="d-flex justify-content-end">
+                        <button string="Close" class="btn btn-danger btn-lg" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

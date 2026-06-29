@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <!-- Note:
+    the simbol " ** " represent a entity module
+    the simbol " * " represent a entity group
+    the simbol "!" represent a entity
+    -->
+  <data noupdate="0">
+    <!-- ** comb_km ** -->
+    <!-- ! bills -->
+    <record id="bills_1" model="waste_control.bills">
+      <field name="bill_number">FB001</field>
+      <field name="date">2026-01-15</field>
+      <field name="amount">150000</field>
+    </record>
+
+    <record id="bills_2" model="waste_control.bills">
+      <field name="bill_number">FB002</field>
+      <field name="date">2026-01-20</field>
+      <field name="amount">200000</field>
+    </record>
+
+    <!-- ! fuel_purchase_orders -->
+    <record id="fuel_purchase_order_1" model="waste_control.fuel_purchase_orders">
+      <field name="date">2026-01-15</field>
+      <field name="liters">100.50</field>
+      <field name="amount">75000</field>
+      <field name="oc_number">OC12345</field>
+      <field name="coupon">C123</field>
+      <!-- relations -->
+      <field name="bills_id" ref="bills_1" />
+      <field name="historic_vehicles_id" ref="historic_vehicles_1" />
+      <field name="applicant_id" ref="partner_person_5" />
+    </record>
+
+    <record id="fuel_purchase_order_2" model="waste_control.fuel_purchase_orders">
+      <field name="date">2026-01-20</field>
+      <field name="liters">85.25</field>
+      <field name="amount">65000</field>
+      <field name="oc_number">OC12346</field>
+      <field name="coupon">C124</field>
+      <!-- relations -->
+      <field name="bills_id" ref="bills_2" />
+      <field name="applicant_id" ref="partner_person_6" />
+      <field name="historic_vehicles_id" ref="historic_vehicles_2" />
+    </record>
+
+    <!-- ! kilometers_traveled -->
+    <record id="kilometers_traveled_1" model="waste_control.kilometers_traveled">
+      <field name="date">2026-01-15</field>
+      <field name="output_km">1000</field>
+      <field name="input_km">1125</field>
+      <field name="types_of_waste_id" ref="types_of_waste_organico" />
+      <field name="departure_time">6.0</field>
+      <field name="return_time">12.5</field>
+      <field name="hours_on_route">6.5</field>
+      <field name="observations"><![CDATA[Ruta completada sin inconvenientes. Excelente trabajo del equipo.]]></field>
+      <!-- relations -->
+      <field name="drivers_id" ref="drivers_1" />
+      <field name="squads_id" ref="squads_1" />
+      <field name="historic_vehicles_id" ref="historic_vehicles_1" />
+      <field name="routes_id" ref="routes_1" />
+    </record>
+
+    <record id="kilometers_traveled_2" model="waste_control.kilometers_traveled">
+      <field name="date">2026-01-16</field>
+      <field name="output_km">2500</field>
+      <field name="input_km">2685</field>
+      <field name="types_of_waste_id" ref="types_of_waste_no_aprovechable" />
+      <field name="departure_time">6.0</field>
+      <field name="return_time">14.0</field>
+      <field name="hours_on_route">8.0</field>
+      <field name="observations"><![CDATA[Ruta extendida por alta demanda en zona residencial.]]></field>
+      <!-- relations -->
+      <field name="drivers_id" ref="drivers_1" />
+      <field name="squads_id" ref="squads_1" />
+      <field name="historic_vehicles_id" ref="historic_vehicles_2" />
+      <field name="routes_id" ref="routes_2" />
+    </record>
+    <!-- ** end Comb_km ** -->
+  </data>
+</odoo>

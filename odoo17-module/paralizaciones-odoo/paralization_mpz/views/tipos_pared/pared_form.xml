@@ -1,0 +1,16 @@
+<odoo>
+    <record model="ir.ui.view" id="view_tipos_pared_form">
+        <field name="name">tipos.pared.form</field>
+        <field name="model">tipos.pared</field>
+        <field name="arch" type="xml">
+            <form string="Tipo de Pared">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="desc_pared"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <template id="recycling_on_route_report_document">
+      <div class="page">
+        <h2>Reciclaje mensual total recogido por ruta - año <span t-esc="selected_year" /></h2>
+        <p class="text-muted">Fecha del reporte: <span t-esc="report_date" /></p>
+
+        <table class="table table-sm table-bordered">
+          <thead>
+            <tr class="text-center" style="background-color: #d9d9d9;">
+              <th>Rutas</th>
+
+              <t t-foreach="month_names" t-as="v_month">
+                <th>
+                  <span t-esc="v_month" />
+                </th>
+              </t>
+
+              <th>Anual</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <t t-foreach="rows" t-as="row">
+              <tr>
+                <!-- * Column names * -->
+                <td class="align-middle text-center" style="background-color: #f2f2f2;">
+                  <span t-esc="row['name']" />
+                </td>
+
+                <t t-foreach="row['values']" t-as="val">
+                  <td class="text-end">
+                    <span t-esc="val" t-options="{'widget': 'float', 'precision': 2}" t-if="val > 0" />
+                    <span t-else="">-</span>
+                  </td>
+                </t>
+
+                <td class="text-end" style="background-color: #f4f5ef;">
+                  <span t-esc="row['total']" t-options="{'widget': 'float', 'precision': 2}" />
+                </td>
+              </tr>
+            </t>
+          </tbody>
+        </table>
+
+        <div class="row mt-3">
+          <div class="col-12"> Promedio mensual de toneladas <span t-esc="monthly_average"
+              t-options="{'widget': 'float', 'precision': 4}" />
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <template id="recycling_on_route_report">
+      <t t-call="web.html_container">
+        <t t-call="web.external_layout">
+          <t t-call="waste_control.recycling_on_route_report_document" />
+        </t>
+      </t>
+    </template>
+
+    <record id="recycling_on_route_report_action" model="ir.actions.report">
+      <field name="name">Reporte reciclaje en ruta</field>
+      <field name="model">waste_control.recycling_on_route_wizard</field>
+      <field name="report_type">qweb-pdf</field>
+      <field name="report_name">waste_control.recycling_on_route_report</field>
+      <field name="report_file">waste_control.recycling_on_route_report</field>
+      <field name="print_report_name">(f'Reporte_Reciclaje_{object.year}')</field>
+      <field name="paperformat_id" ref="waste_control.paperformat_landscape" />
+    </record>
+  </data>
+</odoo>

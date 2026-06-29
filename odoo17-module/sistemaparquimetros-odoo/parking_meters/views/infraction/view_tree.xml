@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_infraction_tree" model="ir.ui.view">
+            <field name="name">parking_meters.infraction.tree</field>
+            <field name="model">parking_meters.infraction</field>
+            <field name="arch" type="xml">
+                <tree string="Infractions" default_order="registration_date desc" duplicate="0"
+                    create="0"
+                    delete="0" edit="0">
+                    <header>
+                        <button
+                            name="action_pay_selected"
+                            string="Pagar seleccionados"
+                            type="object"
+                            class="oe_highlight"
+                            icon="fa-money"
+                            groups="base.group_user" />
+                    </header>
+
+                    <field name="ticket_number_formatted" width="auto" />
+                    <field name="plate_number" width="auto" />
+                    <field name="plate_type_description" width="auto" />
+                    <field name="infraction_price_price" width="auto" />
+                    <field name="surcharge" width="auto" />
+                    <field name="registration_date" width="auto" />
+                    <field name="infraction_state_description" width="auto" />
+                    <field name="currency_id" column_invisible="1" invisible="1" />
+                </tree>
+            </field>
+        </record>
+
+    </data>
+</odoo>

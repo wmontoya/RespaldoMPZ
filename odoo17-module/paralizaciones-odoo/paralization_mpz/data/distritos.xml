@@ -1,0 +1,49 @@
+<odoo>
+        <record id="distrito_san_isidro_de_el_general" model="paralization_mpz.distrito">
+            <field name="name">San Isidro de El General</field>
+        </record>
+
+        <record id="distrito_el_general" model="paralization_mpz.distrito">
+            <field name="name">El General</field>
+        </record>
+
+        <record id="distrito_daniel_flores" model="paralization_mpz.distrito">
+            <field name="name">Daniel Flores</field>
+        </record>
+
+        <record id="distrito_rivas" model="paralization_mpz.distrito">
+            <field name="name">Rivas</field>
+        </record>
+
+        <record id="distrito_san_pedro" model="paralization_mpz.distrito">
+            <field name="name">San Pedro</field>
+        </record>
+
+        <record id="distrito_platanares" model="paralization_mpz.distrito">
+            <field name="name">Platanares</field>
+        </record>
+
+        <record id="distrito_pejibaye" model="paralization_mpz.distrito">
+            <field name="name">Pejibaye</field>
+        </record>
+
+        <record id="distrito_cajon" model="paralization_mpz.distrito">
+            <field name="name">Cajón</field>
+        </record>
+
+        <record id="distrito_baru" model="paralization_mpz.distrito">
+            <field name="name">Barú</field>
+        </record>
+
+        <record id="distrito_rio_nuevo" model="paralization_mpz.distrito">
+            <field name="name">Río Nuevo</field>
+        </record>
+
+        <record id="distrito_paramo" model="paralization_mpz.distrito">
+            <field name="name">Páramo</field>
+        </record>
+
+        <record id="distrito_la_amistad" model="paralization_mpz.distrito">
+            <field name="name">La Amistad</field>
+        </record>
+</odoo>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_admin_user_tree" model="ir.ui.view">
+            <field name="name">parking_meters.user.tree</field>
+            <field name="model">res.users</field>
+            <field name="arch" type="xml">
+                <tree string="Users">
+                    <field name="name" />
+                    <field name="email" />
+                    <field name="active" />
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

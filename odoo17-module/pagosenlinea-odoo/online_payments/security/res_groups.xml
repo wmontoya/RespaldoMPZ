@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="online_payments_groups" model="ir.module.category">
+            <field name="name">Online Payment</field>
+        </record>
+        <record id="webpage_limited" model="res.groups">
+            <field name="name">Web Aplication</field> 
+            <field name="category_id" ref="online_payments.online_payments_groups" /> 
+        </record> 
+        <record id="cashier_limited" model="res.groups">
+            <field name="name">Cashier</field> 
+            <field name="category_id" ref="online_payments.online_payments_groups" />
+            <field name="implied_ids" eval="[(4, ref('base.group_user')), (4, ref('online_payments.webpage_limited'))]"/> 
+        </record> 
+        <record id="finance_administrator" model="res.groups">
+            <field name="name">Treasury administrator</field>
+            <field name="category_id" ref="online_payments.online_payments_groups"/>
+        </record>
+        <record id="system_administrator" model="res.groups">
+            <field name="name">System Administrador</field>
+            <field name="category_id" ref="online_payments.online_payments_groups"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user')), (4, ref('online_payments.finance_administrator')), (4, ref('online_payments.webpage_limited'))]"/>
+        </record>
+    </data>
+</odoo>

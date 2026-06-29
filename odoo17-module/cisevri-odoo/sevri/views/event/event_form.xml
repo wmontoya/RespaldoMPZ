@@ -1,0 +1,125 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="view_event_form">
+      <field name="name">event.form</field>
+      <field name="model">sev.event</field>
+      <field name="arch" type="xml">
+        <form string="Evento">
+          <sheet style="background:#f4f6f9;">
+            <div class="container-fluid">
+              <div class="card border-0 shadow-sm rounded">
+                <div class="card-header text-white" style="background: linear-gradient(135deg,#2c3e50,#34495e);">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                      <h4 class="mb-0 text-white">Evento</h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body p-4">
+                  <div class="row g-4">
+                    <div class="col-lg-6 d-flex">
+                      <div class="card border-0 shadow-sm h-100 w-100">
+                        <div class="card-header bg-white">
+                          <h5 class="mb-0 fw-semibold">
+                            <i class="fa fa-info-circle me-1"/>
+                            Información del Evento
+                          </h5>
+                        </div>
+                        <div class="card-body">
+                          <div class="mb-3">
+                            <p class="text-muted small">Actividad</p>
+                            <field name="activity_id" nolabel="1"/>
+                          </div>
+                          <div class="mb-3">
+                            <p class="text-muted small">Descripción</p>
+                            <field name="description" nolabel="1"/>
+                          </div>
+                          <div class="mb-3">
+                            <p class="text-muted small">Causas</p>
+                            <field name="causes" nolabel="1"/>
+                          </div>
+                          <div class="mb-3">
+                            <p class="text-muted small">Consecuencias</p>
+                            <field name="consequences" nolabel="1"/>
+                          </div>
+                          <div class="mb-3">
+                            <p class="text-muted small">Tipo de Evento</p>
+                            <field name="event_type_id" nolabel="1"/>
+                          </div>
+                          <div class="mb-3">
+                            <p class="text-muted small">Especificación</p>
+                            <field name="event_specification_id" nolabel="1"/>
+                          </div>
+                          <div class="mb-3">
+                            <p class="text-muted small">Clasificación</p>
+                            <field name="event_classification_id" nolabel="1"/>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 d-flex">
+                      <div class="card border-0 shadow-sm h-100 w-100">
+                        <div class="card-header bg-white">
+                          <h5 class="mb-0 fw-semibold">
+                            <i class="fa fa-calculator me-1"/>
+                            Evaluación de Riesgo
+                          </h5>
+                        </div>
+                        <div class="card-body">
+                          <div class="mb-3">
+                            <p class="text-muted small">Probabilidad</p>
+                            <field name="probability" nolabel="1"/>
+                          </div>
+                          <div class="mb-3">
+                            <p class="text-muted small">Impacto</p>
+                            <field name="impact" nolabel="1"/>
+                          </div>
+                          <div class="mb-3">
+                            <p class="text-muted small">Nivel de Riesgo</p>
+                            <field name="risk_level" nolabel="1"/>
+                          </div>
+                          <div class="mb-3">
+                            <p class="text-muted small">Medidas de Control Existentes</p>
+                            <field name="existent_control_measures" nolabel="1"/>
+                          </div>
+                          <div class="mb-3">
+                            <p class="text-muted small">Actitud</p>
+                            <field name="actitude" nolabel="1"/>
+                          </div>
+                          <div class="mb-3">
+                            <p class="text-muted small">Aptitud</p>
+                            <field name="aptitude" nolabel="1"/>
+                          </div>
+                          <div class="mb-3">
+                            <p class="text-muted small">Nuevo Nivel de Riesgo</p>
+                            <field name="new_risk_level" nolabel="1"/>
+                          </div>
+                          <div class="mb-3">
+                            <p class="text-muted small">Aceptación</p>
+                            <field name="acceptance" nolabel="1"/>
+                          </div>
+                          <div class="mb-3">
+                            <p class="text-muted small">Fecha de Creación</p>
+                            <field name="creation_date" nolabel="1"/>
+                          </div>
+                          <div class="mb-3">
+                            <p class="text-muted small">Última Actualización</p>
+                            <field name="last_update" nolabel="1"/>
+                          </div>
+                          <div class="mb-3">
+                            <p class="text-muted small">Estado</p>
+                            <field name="status" nolabel="1"/>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </sheet>
+        </form>
+      </field>
+    </record>
+  </data>
+</odoo>

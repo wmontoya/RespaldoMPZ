@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data noupdate="1">
+
+    <!-- ** cantons ** -->
+    <record id="waste_control_cantons_rule_group_technical" model="ir.rule">
+      <field name="name">Regla para usuarios Técnicos</field>
+      <field name="model_id" ref="model_waste_control_cantons" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="1" />
+      <field name="perm_write" eval="1" />
+      <field name="perm_create" eval="1" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- Special rule for delete - only own records -->
+    <record id="waste_control_cantons_delete_rule_group_technical" model="ir.rule">
+      <field name="name">Los usuarios Técnicos solo pueden eliminar sus propios registros</field>
+      <field name="model_id" ref="model_waste_control_cantons" />
+      <field name="domain_force">[('create_uid', '=', user.id)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="0" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="1" />
+    </record>
+
+    <!-- ** provinces ** -->
+    <record id="waste_control_provinces_rule_group_technical" model="ir.rule">
+      <field name="name">Regla para usuarios Técnicos</field>
+      <field name="model_id" ref="model_waste_control_provinces" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="1" />
+      <field name="perm_write" eval="1" />
+      <field name="perm_create" eval="1" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- Special rule for delete - only own records -->
+    <record id="waste_control_provinces_delete_rule_group_technical" model="ir.rule">
+      <field name="name">Los usuarios Técnicos solo pueden eliminar sus propios registros</field>
+      <field name="model_id" ref="model_waste_control_provinces" />
+      <field name="domain_force">[('create_uid', '=', user.id)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="0" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="1" />
+    </record>
+
+    <!-- ** districts ** -->
+    <record id="waste_control_districts_rule_group_technical" model="ir.rule">
+      <field name="name">Regla para usuarios Técnicos</field>
+      <field name="model_id" ref="model_waste_control_districts" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="1" />
+      <field name="perm_write" eval="1" />
+      <field name="perm_create" eval="1" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- Special rule for delete - only own records -->
+    <record id="waste_control_districts_delete_rule_group_technical" model="ir.rule">
+      <field name="name">Los usuarios Técnicos solo pueden eliminar sus propios registros</field>
+      <field name="model_id" ref="model_waste_control_districts" />
+      <field name="domain_force">[('create_uid', '=', user.id)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="0" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="1" />
+    </record>
+
+    <!-- ** communities ** -->
+    <record id="waste_control_communities_rule_group_technical" model="ir.rule">
+      <field name="name">Regla para usuarios Técnicos</field>
+      <field name="model_id" ref="model_waste_control_communities" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="1" />
+      <field name="perm_write" eval="1" />
+      <field name="perm_create" eval="1" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- Special rule for delete - only own records -->
+    <record id="waste_control_communities_delete_rule_group_technical" model="ir.rule">
+      <field name="name">Los usuarios Técnicos solo pueden eliminar sus propios registros</field>
+      <field name="model_id" ref="model_waste_control_communities" />
+      <field name="domain_force">[('create_uid', '=', user.id)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="0" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="1" />
+    </record>
+
+    <!-- ** squads ** -->
+    <record id="waste_control_squads_rule_group_technical" model="ir.rule">
+      <field name="name">Regla para usuarios Técnicos</field>
+      <field name="model_id" ref="model_waste_control_squads" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="1" />
+      <field name="perm_write" eval="1" />
+      <field name="perm_create" eval="1" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- Special rule for delete - only own records -->
+    <record id="waste_control_squads_delete_rule_group_technical" model="ir.rule">
+      <field name="name">Los usuarios Técnicos solo pueden eliminar sus propios registros</field>
+      <field name="model_id" ref="model_waste_control_squads" />
+      <field name="domain_force">[('create_uid', '=', user.id)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="0" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="1" />
+    </record>
+
+    <!-- ** drivers ** -->
+    <record id="waste_control_drivers_rule_group_technical" model="ir.rule">
+      <field name="name">Regla para usuarios Técnicos</field>
+      <field name="model_id" ref="model_waste_control_drivers" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="1" />
+      <field name="perm_write" eval="1" />
+      <field name="perm_create" eval="1" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- Special rule for delete - only own records -->
+    <record id="waste_control_drivers_delete_rule_group_technical" model="ir.rule">
+      <field name="name">Los usuarios Técnicos solo pueden eliminar sus propios registros</field>
+      <field name="model_id" ref="model_waste_control_drivers" />
+      <field name="domain_force">[('create_uid', '=', user.id)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="0" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="1" />
+    </record>
+
+    <!-- ** supervisors ** -->
+    <record id="waste_control_supervisors_rule_group_technical" model="ir.rule">
+      <field name="name">Regla para usuarios Técnicos</field>
+      <field name="model_id" ref="model_waste_control_supervisors" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="1" />
+      <field name="perm_write" eval="1" />
+      <field name="perm_create" eval="1" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- Special rule for delete - only own records -->
+    <record id="waste_control_supervisors_delete_rule_group_technical" model="ir.rule">
+      <field name="name">Los usuarios Técnicos solo pueden eliminar sus propios registros</field>
+      <field name="model_id" ref="model_waste_control_supervisors" />
+      <field name="domain_force">[('create_uid', '=', user.id)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="0" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="1" />
+    </record>
+
+    <!-- ** collection_centers ** -->
+    <record id="waste_control_collection_centers_rule_group_technical" model="ir.rule">
+      <field name="name">Regla para usuarios Técnicos</field>
+      <field name="model_id" ref="model_waste_control_collection_centers" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="1" />
+      <field name="perm_write" eval="1" />
+      <field name="perm_create" eval="1" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- Special rule for delete - only own records -->
+    <record id="waste_control_collection_centers_delete_rule_group_technical" model="ir.rule">
+      <field name="name">Los usuarios Técnicos solo pueden eliminar sus propios registros</field>
+      <field name="model_id" ref="model_waste_control_collection_centers" />
+      <field name="domain_force">[('create_uid', '=', user.id)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="0" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="1" />
+    </record>
+
+    <!-- ** routes ** -->
+    <record id="waste_control_routes_rule_group_technical" model="ir.rule">
+      <field name="name">Regla para usuarios Técnicos</field>
+      <field name="model_id" ref="model_waste_control_routes" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="1" />
+      <field name="perm_write" eval="1" />
+      <field name="perm_create" eval="1" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- Special rule for delete - only own records -->
+    <record id="waste_control_routes_delete_rule_group_technical" model="ir.rule">
+      <field name="name">Los usuarios Técnicos solo pueden eliminar sus propios registros</field>
+      <field name="model_id" ref="model_waste_control_routes" />
+      <field name="domain_force">[('create_uid', '=', user.id)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="0" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="1" />
+    </record>
+
+    <!-- ** products ** -->
+    <record id="waste_control_products_rule_group_technical" model="ir.rule">
+      <field name="name">Regla para usuarios Técnicos</field>
+      <field name="model_id" ref="model_waste_control_products" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="1" />
+      <field name="perm_write" eval="1" />
+      <field name="perm_create" eval="1" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- Special rule for delete - only own records -->
+    <record id="waste_control_products_delete_rule_group_technical" model="ir.rule">
+      <field name="name">Los usuarios Técnicos solo pueden eliminar sus propios registros</field>
+      <field name="model_id" ref="model_waste_control_products" />
+      <field name="domain_force">[('create_uid', '=', user.id)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="0" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="1" />
+    </record>
+
+    <!-- ** types_of_waste ** -->
+    <record id="waste_control_types_of_waste_rule_group_technical" model="ir.rule">
+      <field name="name">Regla para usuarios Técnicos</field>
+      <field name="model_id" ref="model_waste_control_types_of_waste" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="1" />
+      <field name="perm_write" eval="1" />
+      <field name="perm_create" eval="1" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- Special rule for delete - only own records -->
+    <record id="waste_control_types_of_waste_delete_rule_group_technical" model="ir.rule">
+      <field name="name">Los usuarios Técnicos solo pueden eliminar sus propios registros</field>
+      <field name="model_id" ref="model_waste_control_types_of_waste" />
+      <field name="domain_force">[('create_uid', '=', user.id)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="0" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="1" />
+    </record>
+
+    <!-- ** payment_methods ** -->
+    <record id="waste_control_payment_methods_rule_group_technical" model="ir.rule">
+      <field name="name">Regla para usuarios Técnicos</field>
+      <field name="model_id" ref="model_waste_control_payment_methods" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="1" />
+      <field name="perm_write" eval="1" />
+      <field name="perm_create" eval="1" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- Special rule for delete - only own records -->
+    <record id="waste_control_payment_methods_delete_rule_group_technical" model="ir.rule">
+      <field name="name">Los usuarios Técnicos solo pueden eliminar sus propios registros</field>
+      <field name="model_id" ref="model_waste_control_payment_methods" />
+      <field name="domain_force">[('create_uid', '=', user.id)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="0" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="1" />
+    </record>
+
+    <!-- ** recycle_programs ** -->
+    <record id="waste_control_recycle_programs_rule_group_technical" model="ir.rule">
+      <field name="name">Regla para usuarios Técnicos</field>
+      <field name="model_id" ref="model_waste_control_recycle_programs" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="1" />
+      <field name="perm_write" eval="1" />
+      <field name="perm_create" eval="1" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- Special rule for delete - only own records -->
+    <record id="waste_control_recycle_programs_delete_rule_group_technical" model="ir.rule">
+      <field name="name">Los usuarios Técnicos solo pueden eliminar sus propios registros</field>
+      <field name="model_id" ref="model_waste_control_recycle_programs" />
+      <field name="domain_force">[('create_uid', '=', user.id)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="0" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="1" />
+    </record>
+
+    <!-- ** bills ** -->
+    <record id="waste_control_bills_rule_group_technical" model="ir.rule">
+      <field name="name">Regla para usuarios Técnicos</field>
+      <field name="model_id" ref="model_waste_control_bills" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="1" />
+      <field name="perm_write" eval="1" />
+      <field name="perm_create" eval="1" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- Special rule for delete - only own records -->
+    <record id="waste_control_bills_delete_rule_group_technical" model="ir.rule">
+      <field name="name">Los usuarios Técnicos solo pueden eliminar sus propios registros</field>
+      <field name="model_id" ref="model_waste_control_bills" />
+      <field name="domain_force">[('create_uid', '=', user.id)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="0" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="1" />
+    </record>
+
+    <!-- ** routes_study ** -->
+    <record id="waste_control_routes_study_rule_group_technical" model="ir.rule">
+      <field name="name">Regla para usuarios Técnicos</field>
+      <field name="model_id" ref="model_waste_control_routes_study" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="1" />
+      <field name="perm_write" eval="1" />
+      <field name="perm_create" eval="1" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- Special rule for delete - only own records -->
+    <record id="waste_control_routes_study_delete_rule_group_technical" model="ir.rule">
+      <field name="name">Los usuarios Técnicos solo pueden eliminar sus propios registros</field>
+      <field name="model_id" ref="model_waste_control_routes_study" />
+      <field name="domain_force">[('create_uid', '=', user.id)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="0" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="1" />
+    </record>
+
+    <!-- ** fuel_purchase_orders ** -->
+    <record id="waste_control_fuel_purchase_orders_rule_group_technical" model="ir.rule">
+      <field name="name">Regla para usuarios Técnicos</field>
+      <field name="model_id" ref="model_waste_control_fuel_purchase_orders" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="1" />
+      <field name="perm_write" eval="1" />
+      <field name="perm_create" eval="1" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- Special rule for delete - only own records -->
+    <record id="waste_control_fuel_purchase_orders_delete_rule_group_technical" model="ir.rule">
+      <field name="name">Los usuarios Técnicos solo pueden eliminar sus propios registros</field>
+      <field name="model_id" ref="model_waste_control_fuel_purchase_orders" />
+      <field name="domain_force">[('create_uid', '=', user.id)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="0" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="1" />
+    </record>
+
+    <!-- ** vehicle_routes ** -->
+    <record id="waste_control_vehicle_routes_rule_group_technical" model="ir.rule">
+      <field name="name">Regla para usuarios Técnicos</field>
+      <field name="model_id" ref="model_waste_control_vehicle_routes" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="1" />
+      <field name="perm_write" eval="1" />
+      <field name="perm_create" eval="1" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- Special rule for delete - only own records -->
+    <record id="waste_control_vehicle_routes_delete_rule_group_technical" model="ir.rule">
+      <field name="name">Los usuarios Técnicos solo pueden eliminar sus propios registros</field>
+      <field name="model_id" ref="model_waste_control_vehicle_routes" />
+      <field name="domain_force">[('create_uid', '=', user.id)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="0" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="1" />
+    </record>
+
+    <!-- ** historic_vehicles ** -->
+    <record id="waste_control_historic_vehicles_rule_group_technical" model="ir.rule">
+      <field name="name">Regla para usuarios Técnicos</field>
+      <field name="model_id" ref="model_waste_control_historic_vehicles" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="1" />
+      <field name="perm_write" eval="1" />
+      <field name="perm_create" eval="1" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- Special rule for delete - only own records -->
+    <record id="waste_control_historic_vehicles_delete_rule_group_technical" model="ir.rule">
+      <field name="name">Los usuarios Técnicos solo pueden eliminar sus propios registros</field>
+      <field name="model_id" ref="model_waste_control_historic_vehicles" />
+      <field name="domain_force">[('create_uid', '=', user.id)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="0" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="1" />
+    </record>
+
+    <!-- ** kilometers_traveled ** -->
+    <record id="waste_control_kilometers_traveled_rule_group_technical" model="ir.rule">
+      <field name="name">Regla para usuarios Técnicos</field>
+      <field name="model_id" ref="model_waste_control_kilometers_traveled" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="1" />
+      <field name="perm_write" eval="1" />
+      <field name="perm_create" eval="1" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- Special rule for delete - only own records -->
+    <record id="waste_control_kilometers_traveled_delete_rule_group_technical" model="ir.rule">
+      <field name="name">Los usuarios Técnicos solo pueden eliminar sus propios registros</field>
+      <field name="model_id" ref="model_waste_control_kilometers_traveled" />
+      <field name="domain_force">[('create_uid', '=', user.id)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="0" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="1" />
+    </record>
+
+    <!-- ** waste ** -->
+    <record id="waste_control_waste_rule_group_technical" model="ir.rule">
+      <field name="name">Regla para usuarios Técnicos</field>
+      <field name="model_id" ref="model_waste_control_waste" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="1" />
+      <field name="perm_write" eval="1" />
+      <field name="perm_create" eval="1" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- Special rule for delete - only own records -->
+    <record id="waste_control_waste_delete_rule_group_technical" model="ir.rule">
+      <field name="name">Los usuarios Técnicos solo pueden eliminar sus propios registros</field>
+      <field name="model_id" ref="model_waste_control_waste" />
+      <field name="domain_force">[('create_uid', '=', user.id)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="0" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="1" />
+    </record>
+
+    <!-- ** meat_waste ** -->
+    <record id="waste_control_meat_waste_rule_group_technical" model="ir.rule">
+      <field name="name">Regla para usuarios Técnicos</field>
+      <field name="model_id" ref="model_waste_control_meat_waste" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="1" />
+      <field name="perm_write" eval="1" />
+      <field name="perm_create" eval="1" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- Special rule for delete - only own records -->
+    <record id="waste_control_meat_waste_delete_rule_group_technical" model="ir.rule">
+      <field name="name">Los usuarios Técnicos solo pueden eliminar sus propios registros</field>
+      <field name="model_id" ref="model_waste_control_meat_waste" />
+      <field name="domain_force">[('create_uid', '=', user.id)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="0" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="1" />
+    </record>
+
+    <!-- ** private_companies ** -->
+    <record id="waste_control_private_companies_rule_group_technical" model="ir.rule">
+      <field name="name">Regla para usuarios Técnicos</field>
+      <field name="model_id" ref="model_waste_control_private_companies" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="1" />
+      <field name="perm_write" eval="1" />
+      <field name="perm_create" eval="1" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- Special rule for delete - only own records -->
+    <record id="waste_control_private_companies_delete_rule_group_technical" model="ir.rule">
+      <field name="name">Los usuarios Técnicos solo pueden eliminar sus propios registros</field>
+      <field name="model_id" ref="model_waste_control_private_companies" />
+      <field name="domain_force">[('create_uid', '=', user.id)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="0" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="1" />
+    </record>
+
+    <!-- ** recycling_on_route ** -->
+    <record id="waste_control_recycling_on_route_rule_group_technical" model="ir.rule">
+      <field name="name">Regla para usuarios Técnicos</field>
+      <field name="model_id" ref="model_waste_control_recycling_on_route" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="1" />
+      <field name="perm_write" eval="1" />
+      <field name="perm_create" eval="1" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- Special rule for delete - only own records -->
+    <record id="waste_control_recycling_on_route_delete_rule_group_technical" model="ir.rule">
+      <field name="name">Los usuarios Técnicos solo pueden eliminar sus propios registros</field>
+      <field name="model_id" ref="model_waste_control_recycling_on_route" />
+      <field name="domain_force">[('create_uid', '=', user.id)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="0" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="1" />
+    </record>
+
+    <!-- ** purchase_orders_ebi ** -->
+    <record id="waste_control_purchase_orders_ebi_rule_group_technical" model="ir.rule">
+      <field name="name">Regla para usuarios Técnicos</field>
+      <field name="model_id" ref="model_waste_control_purchase_orders_ebi" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="1" />
+      <field name="perm_write" eval="1" />
+      <field name="perm_create" eval="1" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- Special rule for delete - only own records -->
+    <record id="waste_control_purchase_orders_ebi_delete_rule_group_technical" model="ir.rule">
+      <field name="name">Los usuarios Técnicos solo pueden eliminar sus propios registros</field>
+      <field name="model_id" ref="model_waste_control_purchase_orders_ebi" />
+      <field name="domain_force">[('create_uid', '=', user.id)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="0" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="1" />
+    </record>
+
+    <!-- ** buenos_aires_tonnages ** -->
+    <record id="waste_control_buenos_aires_tonnages_rule_group_technical" model="ir.rule">
+      <field name="name">Regla para usuarios Técnicos</field>
+      <field name="model_id" ref="model_waste_control_buenos_aires_tonnages" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="1" />
+      <field name="perm_write" eval="1" />
+      <field name="perm_create" eval="1" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- Special rule for delete - only own records -->
+    <record id="waste_control_buenos_aires_tonnages_delete_rule_group_technical" model="ir.rule">
+      <field name="name">Los usuarios Técnicos solo pueden eliminar sus propios registros</field>
+      <field name="model_id" ref="model_waste_control_buenos_aires_tonnages" />
+      <field name="domain_force">[('create_uid', '=', user.id)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="0" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="1" />
+    </record>
+
+    <!-- ** recycling_by_campaigns ** -->
+    <record id="waste_control_recycling_by_campaigns_rule_group_technical" model="ir.rule">
+      <field name="name">Regla para usuarios Técnicos</field>
+      <field name="model_id" ref="model_waste_control_recycling_by_campaigns" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="1" />
+      <field name="perm_write" eval="1" />
+      <field name="perm_create" eval="1" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- Special rule for delete - only own records -->
+    <record id="waste_control_recycling_by_campaigns_delete_rule_group_technical" model="ir.rule">
+      <field name="name">Los usuarios Técnicos solo pueden eliminar sus propios registros</field>
+      <field name="model_id" ref="model_waste_control_recycling_by_campaigns" />
+      <field name="domain_force">[('create_uid', '=', user.id)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="0" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="1" />
+    </record>
+
+    <!-- ** communities_waste_reports ** -->
+    <record id="waste_control_communities_waste_reports_rule_group_technical" model="ir.rule">
+      <field name="name">Regla para usuarios Técnicos</field>
+      <field name="model_id" ref="model_waste_control_communities_waste_reports" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="1" />
+      <field name="perm_write" eval="1" />
+      <field name="perm_create" eval="1" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- Special rule for delete - only own records -->
+    <record id="waste_control_communities_waste_reports_delete_rule_group_technical" model="ir.rule">
+      <field name="name">Los usuarios Técnicos solo pueden eliminar sus propios registros</field>
+      <field name="model_id" ref="model_waste_control_communities_waste_reports" />
+      <field name="domain_force">[('create_uid', '=', user.id)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="0" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="1" />
+    </record>
+
+    <!-- ** ebi_tariffs ** -->
+    <record id="waste_control_ebi_tariffs_rule_group_technical" model="ir.rule">
+      <field name="name">Regla para usuarios Técnicos</field>
+      <field name="model_id" ref="model_waste_control_ebi_tariffs" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="1" />
+      <field name="perm_write" eval="1" />
+      <field name="perm_create" eval="1" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- Special rule for delete - only own records -->
+    <record id="waste_control_ebi_tariffs_delete_rule_group_technical" model="ir.rule">
+      <field name="name">Los usuarios Técnicos solo pueden eliminar sus propios registros</field>
+      <field name="model_id" ref="model_waste_control_ebi_tariffs" />
+      <field name="domain_force">[('create_uid', '=', user.id)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_technical'))]" />
+      <field name="perm_read" eval="0" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="1" />
+    </record>
+  </data>
+</odoo>

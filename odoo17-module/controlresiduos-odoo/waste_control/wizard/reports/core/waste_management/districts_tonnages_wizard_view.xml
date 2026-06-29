@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="districts_tonnages_wizard_form" model="ir.ui.view">
+      <field name="name">districts.tonnages.wizard.form</field>
+      <field name="model">waste_control.districts_tonnages_wizard</field>
+      <field name="arch" type="xml">
+        <form string="Reporte de tonelajes de distritos">
+          <group>
+            <group>
+              <field name="year" widget="char" size="4" placeholder="Ingrese el año" />
+            </group>
+          </group>
+          <footer>
+            <button
+              string="Generar reporte"
+              class="btn-primary"
+              type="object"
+              name="action_print_report" />
+            <button
+              string="Cancelar"
+              class="btn-danger"
+              special="cancel" />
+          </footer>
+        </form>
+      </field>
+    </record>
+
+    <record id="districts_tonnages_wizard_action" model="ir.actions.act_window">
+      <field name="name">Districts tonnages report</field>
+      <field name="res_model">waste_control.districts_tonnages_wizard</field>
+      <field name="view_mode">form</field>
+      <field name="target">new</field>
+      <field name="binding_model_id" ref="model_waste_control_communities_waste_reports" />
+    </record>
+  </data>
+</odoo>

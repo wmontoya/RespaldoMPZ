@@ -1,0 +1,9 @@
+<odoo>
+  <data>
+    <record model="ir.actions.act_window" id="action_specification">
+      <field name="name">Especificaciones</field>
+      <field name="res_model">sev.specification</field>
+      <field name="view_mode">tree,form,kanban</field>
+    </record>
+  </data>
+</odoo>

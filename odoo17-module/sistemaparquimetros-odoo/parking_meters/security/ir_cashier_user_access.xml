@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+    <record id="model_access_infraction_cashier" model="ir.model.access">
+        <field name="name">access_infraction_cashier</field>
+        <field name="model_id" ref="model_parking_meters_infraction" />
+        <field name="group_id" ref="parking_meters.res_groups_cashier_user" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_unlink" eval="0" />
+        <field name="perm_read" eval="1" />
+    </record>
+
+    <record id="model_access_image_cashier" model="ir.model.access">
+        <field name="name">access_image_cashier</field>
+        <field name="model_id" ref="model_parking_meters_image" />
+        <field name="group_id" ref="parking_meters.res_groups_cashier_user" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_unlink" eval="0" />
+        <field name="perm_read" eval="1" />
+    </record>
+
+    <record id="model_access_article_cashier" model="ir.model.access">
+        <field name="name">access_article_cashier</field>
+        <field name="model_id" ref="model_parking_meters_article" />
+        <field name="group_id" ref="parking_meters.res_groups_cashier_user" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_unlink" eval="0" />
+        <field name="perm_read" eval="1" />
+    </record>
+
+    <record id="model_access_brand_cashier" model="ir.model.access">
+        <field name="name">access_brand_cashier</field>
+        <field name="model_id" ref="model_parking_meters_brand" />
+        <field name="group_id" ref="parking_meters.res_groups_cashier_user" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_unlink" eval="0" />
+        <field name="perm_read" eval="1" />
+    </record>
+
+    <record id="model_access_clause_cashier" model="ir.model.access">
+        <field name="name">access_clause_cashier</field>
+        <field name="model_id" ref="model_parking_meters_clause" />
+        <field name="group_id" ref="parking_meters.res_groups_cashier_user" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_unlink" eval="0" />
+        <field name="perm_read" eval="1" />
+    </record>
+
+    <record id="model_access_color_cashier" model="ir.model.access">
+        <field name="name">access_color_cashier</field>
+        <field name="model_id" ref="model_parking_meters_color" />
+        <field name="group_id" ref="parking_meters.res_groups_cashier_user" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_unlink" eval="0" />
+        <field name="perm_read" eval="1" />
+    </record>
+
+    <record id="model_access_range_infraction_cashier" model="ir.model.access">
+        <field name="name">access_range_infraction_cashier</field>
+        <field name="model_id" ref="model_parking_meters_range_infraction" />
+        <field name="group_id" ref="parking_meters.res_groups_cashier_user" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_unlink" eval="0" />
+        <field name="perm_read" eval="1" />
+    </record>
+
+    <record id="model_access_plate_detail_cashier" model="ir.model.access">
+        <field name="name">access_plate_detail_cashier</field>
+        <field name="model_id" ref="model_parking_meters_plate_detail" />
+        <field name="group_id" ref="parking_meters.res_groups_cashier_user" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_unlink" eval="0" />
+        <field name="perm_read" eval="1" />
+    </record>
+
+    <record id="model_access_infraction_price_cashier" model="ir.model.access">
+        <field name="name">access_infraction_price_cashier</field>
+        <field name="model_id" ref="model_parking_meters_infraction_price" />
+        <field name="group_id" ref="parking_meters.res_groups_cashier_user" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_unlink" eval="0" />
+        <field name="perm_read" eval="1" />
+    </record>
+
+    <record id="model_access_infraction_state_cashier" model="ir.model.access">
+        <field name="name">access_infraction_state_cashier</field>
+        <field name="model_id" ref="model_parking_meters_infraction_state" />
+        <field name="group_id" ref="parking_meters.res_groups_cashier_user" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_unlink" eval="0" />
+        <field name="perm_read" eval="1" />
+    </record>
+
+    <record id="model_access_plate_type_cashier" model="ir.model.access">
+        <field name="name">access_plate_type_cashier</field>
+        <field name="model_id" ref="model_parking_meters_plate_type" />
+        <field name="group_id" ref="parking_meters.res_groups_cashier_user" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_unlink" eval="0" />
+        <field name="perm_read" eval="1" />
+    </record>
+
+    <record id="model_access_vehicle_type_cashier" model="ir.model.access">
+        <field name="name">access_vehicle_type_cashier</field>
+        <field name="model_id" ref="model_parking_meters_vehicle_type" />
+        <field name="group_id" ref="parking_meters.res_groups_cashier_user" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_unlink" eval="0" />
+        <field name="perm_read" eval="1" />
+    </record>
+
+    <record id="model_access_parameter_cashier" model="ir.model.access">
+        <field name="name">access_parameter_cashier</field>
+        <field name="model_id" ref="parking_meters.model_ir_config_parameter" />
+        <field name="group_id" ref="parking_meters.res_groups_cashier_user" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_unlink" eval="0" />
+        <field name="perm_read" eval="1" />
+    </record>
+
+    <record id="model_access_parking_rate_cashier" model="ir.model.access">
+        <field name="name">access_parking_rate_cashier</field>
+        <field name="model_id" ref="model_parking_meters_parking_rate" />
+        <field name="group_id" ref="parking_meters.res_groups_cashier_user" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_unlink" eval="0" />
+        <field name="perm_read" eval="1" />
+    </record>
+
+    <record id="model_access_parking_time_cashier" model="ir.model.access">
+        <field name="name">access_parking_time_cashier</field>
+        <field name="model_id" ref="model_parking_meters_parking_time" />
+        <field name="group_id" ref="parking_meters.res_groups_cashier_user" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_unlink" eval="0" />
+        <field name="perm_read" eval="1" />
+    </record>
+
+    <record id="model_access_infractions_wizard_cashier" model="ir.model.access">
+        <field name="name">access_infractions_wizard_cashier</field>
+        <field name="model_id" ref="model_parking_meters_infractions_wizard" />
+        <field name="group_id" ref="parking_meters.res_groups_cashier_user" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_unlink" eval="0" />
+        <field name="perm_read" eval="1" />
+    </record>
+
+
+    <record id="access_res_currency_cashier" model="ir.model.access">
+        <field name="name">access_res_currency_cashier</field>
+        <field name="model_id" ref="base.model_res_currency" />
+        <field name="group_id" ref="parking_meters.res_groups_cashier_user" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_unlink" eval="0" />
+    </record>
+
+    <record id="access_payment_type_cashier" model="ir.model.access">
+        <field name="name">access_payment_type_cashier</field>
+        <field name="model_id" ref="model_parking_meters_payment_type" />
+        <field name="group_id" ref="parking_meters.res_groups_cashier_user" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_unlink" eval="0" />
+    </record>
+
+    <record id="access_ir_logging_cashier_user" model="ir.model.access">
+        <field name="name">Error Access - Cashier</field>
+        <field name="model_id" ref="base.model_ir_logging" />
+        <field name="group_id" ref="parking_meters.res_groups_cashier_user" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_unlink" eval="0" />
+    </record>
+    </data>
+</odoo>

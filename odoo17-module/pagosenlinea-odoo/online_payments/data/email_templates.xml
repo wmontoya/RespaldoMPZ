@@ -1,0 +1,80 @@
+<odoo>
+    <data noupdate="1">
+
+        <!-- Plantilla de correo para el módulo online_payments -->
+        <record id="email_template_payment_confirmation" model="mail.template">
+            <field name="name">Confirmación de Pago</field>
+            <field name="email_from">${object.company_id.email or ''}</field>
+            <field name="subject">Confirmación de Pago: ${object.name}</field>
+            <field name="model_id" ref="online_payments.model_online_payments_spo_payment"/>
+            <field name="auto_delete" eval="False"/>
+            <field name="email_to">${object.partner_id.email or ''}</field>
+            <field name="body_html" type="html">
+                <![CDATA[
+                <html>
+                  <head>
+                    <style type="text/css">
+                      body {
+                        font-family: Arial, sans-serif;
+                        color: #333;
+                        line-height: 1.6;
+                      }
+                      .container {
+                        width: 100%;
+                        max-width: 600px;
+                        margin: 0 auto;
+                        border: 1px solid #ccc;
+                        padding: 20px;
+                      }
+                      .header {
+                        text-align: center;
+                        background-color: #4CAF50;
+                        color: white;
+                        padding: 10px 0;
+                        border-radius: 5px 5px 0 0;
+                      }
+                      .content {
+                        padding: 20px;
+                      }
+                      .button {
+                        display: inline-block;
+                        padding: 10px 20px;
+                        margin-top: 20px;
+                        color: white;
+                        background-color: #4CAF50;
+                        text-decoration: none;
+                        border-radius: 5px;
+                      }
+                      .footer {
+                        text-align: center;
+                        margin-top: 30px;
+                        font-size: 12px;
+                        color: #777;
+                      }
+                    </style>
+                  </head>
+                  <body>
+                    <div class="container">
+                      <div class="header">
+                        <h1>Confirmación de Pago - {{ object.company_id.name }}</h1>
+                      </div>
+                      <div class="content">
+                        <p>Estimado/a {{ object.partner_id.name }},</p>
+                        <p>Hemos recibido su pago correspondiente a la transacción <strong>{{ object.name }}</strong>.</p>
+                        <p>El monto abonado es de: <strong>{{ object.amount }} {{ object.currency_id.symbol }}</strong>.</p>
+                        <p>Para más detalles sobre su transacción, haga clic en el siguiente botón:</p>
+                        <a href="{{ object.payment_url }}" class="button">Ver Transacción</a>
+                      </div>
+                      <div class="footer">
+                        <p>Si tiene alguna duda, no dude en contactarnos al correo: soporte@tuempresa.com</p>
+                        <p>&copy; {{ object.company_id.name }} - Todos los derechos reservados.</p>
+                      </div>
+                    </div>
+                  </body>
+                </html>
+                ]]>
+            </field>
+        </record>
+
+    </data>
+</odoo>

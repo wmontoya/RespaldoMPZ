@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="model_base_url_system_administrator" model="ir.model.access">
+            <field name="name">Base URLs System Administrator</field>
+            <field name="model_id" ref="online_payments.model_online_payments_base_url" />
+            <field name="group_id" ref="online_payments.system_administrator" />
+            <field name="perm_create" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_unlink" eval="1" />
+            <field name="perm_read" eval="1" />
+        </record>
+        <record id="model_yaipan_connection_system_administrator" model="ir.model.access">
+            <field name="name">Yaipan Connection System Administrator</field>
+            <field name="model_id" ref="online_payments.model_online_payments_yaipan_connection" />
+            <field name="group_id" ref="online_payments.system_administrator" />
+            <field name="perm_create" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_unlink" eval="1" />
+            <field name="perm_read" eval="1" />
+        </record>
+        <record id="access_ir_logging_readonly" model="ir.model.access">
+            <field name="name">Error Access</field>
+            <field name="model_id" ref="base.model_ir_logging" />
+            <field name="group_id" ref="online_payments.system_administrator" />
+            <field name="perm_read" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_create" eval="1" />
+            <field name="perm_unlink" eval="0" />
+        </record>
+        <record id="model_catalog" model="ir.model.access">
+            <field name="name">Catalog Access</field>
+            <field name="model_id" ref="online_payments.model_online_payments_catalog" />
+            <field name="group_id" ref="online_payments.system_administrator" />
+            <field name="perm_create" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_unlink" eval="1" />
+            <field name="perm_read" eval="1" />
+        </record>
+    </data>
+</odoo>

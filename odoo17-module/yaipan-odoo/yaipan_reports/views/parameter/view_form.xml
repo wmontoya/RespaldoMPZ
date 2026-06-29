@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="yaipan_reports.oracle_config_settings_view_form" model="ir.ui.view">
+            <field name="name">oracle.config.settings.header</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="base.res_config_settings_view_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="inside">
+                    <block groups="yaipan_reports.res_groups_admin_user_yaipan">
+                        <div class="o_setting_container settings px-0">
+                            <div class="app_settings_block">
+                                <h2 class="o_setting_header">Oracle – ERP Yaipán Connection</h2>
+                            </div>
+                        </div>
+                        <setting id="connection_setting">
+                            <group>
+                                <field name="oracle_db_user" />
+                                <field name="oracle_db_password" password="True" />
+                                <field name="oracle_db_host" />
+                                <field name="oracle_db_port" />
+                                <field name="oracle_db_service_name" />
+                            </group>
+                        </setting>
+                    </block>
+                </xpath>
+                <xpath expr="//form" position="inside">
+                    <block groups="yaipan_reports.res_groups_admin_user_yaipan">
+                        <div class="o_setting_container settings px-0">
+                            <div class="app_settings_block">
+                                <h2 class="o_setting_header">Api – ERP Yaipán Connection</h2>
+                            </div>
+                        </div>
+                        <setting id="connection_setting">
+                            <group>
+                                <field name="yaipan_url_base" placeholder="Enter base URL" />
+                                <field name="yaipan_token" placeholder="Enter yaipan token" password="True" />
+                            </group>
+                        </setting>
+                    </block>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

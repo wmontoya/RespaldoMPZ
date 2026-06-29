@@ -1,0 +1,111 @@
+<odoo>
+    <record id="view_property_maintenance_form" model="ir.ui.view">
+        <field name="name">property.maintenance.form</field>
+        <field name="model">property.maintenance</field>
+        <field name="arch" type="xml">
+
+            <form string="Mantenimiento">
+                <sheet style="background:#f4f6f9;">
+
+                    <div class="container-fluid">
+
+                        <div class="row mb-4">
+                            <div class="col">
+
+                                <div class="p-4 rounded shadow-sm text-white"
+                                    style="background:linear-gradient(135deg,#1f3b57,#2c5282);">
+
+                                    <h2 class="mb-1 text-white">
+                                        <field name="usuario_id" readonly="1" class="text-white"/>
+                                    </h2>
+                                    <div style="opacity:0.8;">
+                                        Registrado por
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row g-4">
+                            <div class="col-lg-6">
+                                <div class="card border-0 shadow-sm">
+
+                                    <div class="card-header bg-white">
+                                        <strong>Información General</strong>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <div class="mb-3">
+                                            <span class="text-muted small">Tipo de Mantenimientos</span>
+                                            <br />
+                                            <field name="tipo_mantenimiento" widget="radio" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <span class="text-muted small">Fecha</span>
+                                            <br />
+                                            <field name="fecha" />
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <span class="text-muted small">Estado</span>
+                                            <br />
+                                            <field name="estado" />
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="card border-0 shadow-sm">
+
+                                    <div class="card-header bg-white">
+                                        <strong>Responsables</strong>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <div class="mb-3">
+                                            <span class="text-muted small">Agentes responsables</span>
+                                            <br />
+                                            <field name="responsible_user_ids"
+                                                widget="many2many_tags" />
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row mt-4">
+                            <div class="col">
+
+                                <div class="card border-0 shadow-sm">
+
+                                    <div class="card-header bg-white">
+                                        <strong>Observaciones</strong>
+                                    </div>
+
+                                    <div class="card-body">
+
+                                        <field name="observaciones"
+                                            placeholder="Agregar notas de mantenimiento..." />
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </sheet>
+            </form>
+
+        </field>
+    </record>
+</odoo>

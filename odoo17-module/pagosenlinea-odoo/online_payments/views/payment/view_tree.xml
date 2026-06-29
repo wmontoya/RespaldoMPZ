@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_payment_tree" model="ir.ui.view">
+            <field name="name">payment.tree</field>
+            <field name="model">online_payments.payment</field>
+            <field name="arch" type="xml">
+                <tree string="Payments" duplicate="0" default_order="date_creation desc">
+                    <field name="invoice_temp"/>
+                    <field name="invoice_real"/>
+                    <field name="authorization"/>
+                    <field name="total_amount"/>
+                    <field name="status_transaction_description"/>
+                    <field name="date_creation"/>
+                    <field name="date_pay"/>
+                     <field name="cashier_name"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="yaipan_reports.action_open_oracle_config_settings" model="ir.actions.act_window">
+            <field name="name">Oracle Configuration</field>
+            <field name="res_model">res.config.settings</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="context">{'module' : 'yaipan_reports'}</field>
+        </record>
+    </data>
+</odoo>

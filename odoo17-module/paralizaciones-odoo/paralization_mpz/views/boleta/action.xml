@@ -1,0 +1,10 @@
+<odoo>
+  <data>
+    <record model="ir.actions.act_window" id="action_boletas">
+      <field name="name">Boletas de Paralización de Obra</field>
+      <field name="res_model">paralization_mpz.boleta</field>
+      <field name="view_mode">tree,kanban,form</field>
+      <field name="search_view_id" ref="view_boleta_search"/>
+    </record>
+  </data>
+</odoo>

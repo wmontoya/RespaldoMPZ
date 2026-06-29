@@ -1,0 +1,12 @@
+<odoo>
+    <record model="ir.ui.view" id="view_tipos_piso_tree">
+        <field name="name">tipos.piso.tree</field>
+        <field name="model">tipos.piso</field>
+        <field name="arch" type="xml">
+            <tree string="Tipos de Pisos" editable="bottom">
+                <field name="name"/>
+                <field name="desc_piso"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

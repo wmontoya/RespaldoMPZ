@@ -1,0 +1,26 @@
+{
+	// python
+	"python.defaultInterpreterPath": "C:\\Program Files\\Odoo 17.0.2\\python\\python.exe",
+	"python.analysis.extraPaths": [
+		"C:\\Program Files\\Odoo 17.0.2\\server"
+	],
+	// vs code config
+	"editor.formatOnSave": true,
+	// xml f
+	"xml.format.emptyElements": "collapse",
+	"xml.format.preserveAttributeLineBreaks": true,
+	"xml.fileAssociations": [
+		{
+			"pattern": "**/views.xml",
+			"systemId": "https://www.odoo.com/xmlns/views.xsd"
+		},
+		{
+			"pattern": "**/security.xml",
+			"systemId": "https://www.odoo.com/xmlns/security.xsd"
+		},
+		{
+			"pattern": "**/data.xml",
+			"systemId": "https://www.odoo.com/xmlns/data.xsd"
+		}
+	]
+}

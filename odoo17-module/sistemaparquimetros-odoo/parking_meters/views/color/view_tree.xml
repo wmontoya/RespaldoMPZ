@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <record id="view_color_tree" model="ir.ui.view">
+            <field name="name">parking_meters.color.tree</field>
+            <field name="model">parking_meters.color</field>
+            <field name="arch" type="xml">
+                <tree string="Colors">
+                    <field name="id"/>
+                    <field name="color"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

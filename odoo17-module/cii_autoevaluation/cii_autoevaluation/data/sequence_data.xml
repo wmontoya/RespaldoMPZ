@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- This file sets default sequence values for existing records -->
+        <!-- It will be executed when the module is updated -->
+        
+        <!-- Note: The actual sequence values will be set by the Python code in the models -->
+        <!-- This file is just a placeholder for future data migrations if needed -->
+        
+    </data>
+</odoo> 

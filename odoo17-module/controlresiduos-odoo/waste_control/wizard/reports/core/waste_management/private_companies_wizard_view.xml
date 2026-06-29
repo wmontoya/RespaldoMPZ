@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="private_companies_wizard_form" model="ir.ui.view">
+      <field name="name">private.companies.wizard.form</field>
+      <field name="model">waste_control.private_companies_wizard</field>
+      <field name="arch" type="xml">
+        <form string="Reporte de empresas privadas">
+          <group>
+            <field name="year" widget="char" size="4" placeholder="Ingrese el año" />
+          </group>
+          <footer>
+            <button
+              string="Generar reporte"
+              name="action_print_report"
+              type="object"
+              class="btn-primary" />
+            <button
+              string="Cancelar"
+              class="btn-danger"
+              special="cancel" />
+          </footer>
+        </form>
+      </field>
+    </record>
+
+    <record id="private_companies_wizard_action" model="ir.actions.act_window">
+      <field name="name">Private companies report</field>
+      <field name="res_model">waste_control.private_companies_wizard</field>
+      <field name="view_mode">form</field>
+      <field name="target">new</field>
+      <field name="binding_model_id" ref="model_waste_control_private_companies" />
+      <field name="binding_type">report</field>
+    </record>
+  </data>
+</odoo>

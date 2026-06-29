@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="parking_meters.action_plate_detail_tree" model="ir.actions.act_window">
+            <field name="name">Plate Detail</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">parking_meters.plate_detail</field>
+            <field name="view_mode">tree</field>
+            <field name="view_ids" eval="[(5, 0, 0), (0, 0, {'view_mode': 'tree', 'view_id': ref('parking_meters.view_plate_detail_tree')}), (0, 0, {'view_mode': 'form', 'view_id': ref('parking_meters.view_plate_detail_form')})]" />
+        </record>
+    </data>
+</odoo>

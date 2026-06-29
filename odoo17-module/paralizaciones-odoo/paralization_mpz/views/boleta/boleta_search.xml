@@ -1,0 +1,15 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="view_boleta_search">
+      <field name="name">paralization_mpz.boleta.search</field>
+      <field name="model">paralization_mpz.boleta</field>
+      <field name="arch" type="xml">
+        <search string="Buscar Boleta">
+          <field name="numero_boleta"/>
+          <field name="inspector_id"/>
+          <field name="obra_direccion"/>
+        </search>
+      </field>
+    </record>
+  </data>
+</odoo>

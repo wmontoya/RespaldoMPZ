@@ -1,0 +1,16 @@
+<odoo>
+    <record model="ir.ui.view" id="view_tipos_piso_form">
+        <field name="name">tipos.piso.form</field>
+        <field name="model">tipos.piso</field>
+        <field name="arch" type="xml">
+            <form string="Tipo de Piso">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="desc_piso"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

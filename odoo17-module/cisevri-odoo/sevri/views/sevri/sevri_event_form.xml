@@ -1,0 +1,261 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="sevri_event_user_form">
+            <field name="name">sev.event.form.custom</field>
+            <field name="model">sev.event</field>
+
+            <field name="arch" type="xml">
+                <form string="Evento">
+                    <sheet style="background:#f4f6f9;">
+
+                        <div class="container-fluid">
+                            <div class="card border-0 shadow-sm rounded">
+
+                                <!-- HEADER -->
+                                <div class="card-header text-white"
+                                    style="background: linear-gradient(135deg,#2c3e50,#34495e);">
+
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h4 class="mb-0 text-white">
+                                                Información del Evento
+                                            </h4>
+                                        </div>
+
+                                        <!-- <div>
+                                            <field name="status"
+                                                widget="statusbar"
+                                                statusbar_visible="inactive,in_progress,active,completed"
+                                                options="{'clickable': true}"
+                                                decoration-danger="status == 'inactive'"
+                                                decoration-warning="status == 'in_progress'"
+                                                decoration-info="status == 'active'"
+                                                decoration-success="status == 'completed'" />
+                                        </div> -->
+                                    </div>
+                                </div>
+
+                                <!-- BODY -->
+                                <div class="card-body p-4">
+
+                                    <div class="row g-4">
+
+                                        <!-- INFORMACIÓN GENERAL -->
+                                        <div class="col-lg-12 d-flex">
+                                            <div class="card border-0 shadow-sm h-100 w-100">
+
+                                                <div class="card-header bg-white">
+                                                    <h5 class="mb-0 fw-semibold">
+                                                        <i class="fa fa-info-circle me-1" />
+                                                        Información General </h5>
+                                                </div>
+
+                                                <div class="card-body">
+
+                                                    <div class="mb-3">
+                                                        <p class="text-muted small">Evento (¿Qué es
+                                                            lo que puede suceder?)</p>
+                                                        <field name="description" nolabel="1"
+                                                            class="w-100" />
+                                                    </div>
+
+                                                    <div class="mb-3">
+                                                        <p class="text-muted small">Causa (¿Qué
+                                                            causas hacen que suceda el evento?)</p>
+                                                        <field name="causes" nolabel="1"
+                                                            class="w-100" />
+                                                    </div>
+
+                                                    <div class="mb-3">
+                                                        <p class="text-muted small">Consecuencias
+                                                            (¿Qué consecuencias podrían ocurrir?)</p>
+                                                        <field name="consequences" nolabel="1"
+                                                            class="w-100" />
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <!-- EVALUACIÓN -->
+                                        <div class="col-lg-12 d-flex">
+                                            <div class="card border-0 shadow-sm h-100 w-100">
+
+                                                <div class="card-header bg-white">
+                                                    <h5 class="mb-0 fw-semibold">
+                                                        <i class="fa fa-shield me-1" /> Evaluación
+                                                        del Riesgo </h5>
+                                                </div>
+
+                                                <div class="card-body">
+
+                                                    <div class="row">
+
+                                                        <!-- COLUMNA 1 -->
+                                                        <div class="col-lg-4">
+
+                                                            <div class="mb-3">
+                                                                <p class="text-muted small">Tipo de
+                                                                    Evento</p>
+                                                                <field name="event_type_id"
+                                                                    nolabel="1"
+                                                                    class="w-100"
+                                                                    options="{
+                                                                        'no_create': True,
+                                                                        'no_create_edit': True,
+                                                                        'no_open': True
+                                                                    }" />
+                                                            </div>
+
+                                                            <div class="mb-3">
+                                                                <p class="text-muted small">
+                                                                    Probabilidad</p>
+                                                                <field name="probability_string"
+                                                                    nolabel="1"
+                                                                    class="w-100" />
+                                                            </div>
+
+                                                            <div class="mb-3">
+                                                                <p class="text-muted small">Actitud</p>
+                                                                <field name="actitude"
+                                                                    nolabel="1"
+                                                                    class="w-100" />
+                                                            </div>
+
+                                                        </div>
+
+                                                        <!-- COLUMNA 2 -->
+                                                        <div class="col-lg-4">
+
+                                                            <div class="mb-3">
+                                                                <p class="text-muted small">
+                                                                    Especificación</p>
+                                                                <field name="event_specification_id"
+                                                                    nolabel="1"
+                                                                    class="w-100"
+                                                                    options="{
+                                                                    'no_create': True,
+                                                                    'no_create_edit': True,
+                                                                    'no_open': True
+                                                                }" />
+                                                            </div>
+
+                                                            <div class="mb-3">
+                                                                <p class="text-muted small">Impacto</p>
+                                                                <field name="impact_string"
+                                                                    nolabel="1"
+                                                                    class="w-100" />
+                                                            </div>
+
+                                                            <div class="mb-3">
+                                                                <p class="text-muted small">Aptitud</p>
+                                                                <field name="aptitude"
+                                                                    nolabel="1"
+                                                                    class="w-100" />
+                                                            </div>
+
+                                                        </div>
+
+                                                        <!-- COLUMNA 3 -->
+                                                        <div class="col-lg-4">
+
+                                                            <div class="mb-3">
+                                                                <p class="text-muted small">
+                                                                    Clasificación</p>
+                                                                <field
+                                                                    name="event_classification_id"
+                                                                    nolabel="1"
+                                                                    class="w-100"
+                                                                    options="{
+                                                                        'no_create': True,
+                                                                        'no_create_edit': True,
+                                                                        'no_open': True
+                                                                    }" />
+                                                            </div>
+
+                                                            <div class="mb-3">
+                                                                <p class="text-muted small">Nivel de
+                                                                    Riesgo</p>
+                                                                <field name="risk_level_html"
+                                                                    widget="html"
+                                                                    nolabel="1"
+                                                                    readonly="1" />
+                                                            </div>
+
+                                                            <div class="mb-3">
+                                                                <p class="text-muted small">Nuevo
+                                                                    Nivel de Riesgo</p>
+                                                                <field name="new_risk_level_html"
+                                                                    widget="html"
+                                                                    nolabel="1"
+                                                                    readonly="1" />
+                                                            </div>
+
+                                                        </div>
+
+                                                        <!-- FULL WIDTH -->
+                                                        <div class="col-12">
+
+                                                            <div class="mb-3">
+                                                                <p class="text-muted small">
+                                                                    Medidas de Control Existentes
+                                                                </p>
+                                                                <field
+                                                                    name="existent_control_measures"
+                                                                    nolabel="1"
+                                                                    class="w-100" />
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- INFORMACIÓN ADICIONAL -->
+                                         <field name="new_risk_level" invisible="1"></field>
+                                        <div class="col-12" invisible="new_risk_level == 'low'">
+                                            <div class="card border-0 shadow-sm">
+
+                                                <div class="card-header bg-white">
+                                                    <h5 class="mb-0 fw-semibold">
+                                                        <i class="fa fa-text me-1" /> Acciones
+                                                        Propuestas </h5>
+                                                </div>
+
+                                                <div class="card-body">
+                                                    <div class="mb-3">
+                                                        <field name="proposed_actions"
+                                                            nolabel="1">
+                                                            <tree editable="bottom">
+                                                                <field name="description" />
+                                                                <field name="indicators" />
+                                                                <field name="user_id" string="Responsable" />
+                                                                <field name="action_date" widget="date" />
+                                                            </tree>
+                                                        </field>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

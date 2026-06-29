@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <!-- Note:
+    the simbol " ** " represent a entity module
+    the simbol " * " represent a entity group
+    the simbol "!" represent a entity
+    -->
+  <data noupdate="0">
+    <!-- ** Waste management **-->
+    <!-- ! meat_waste -->
+    <record id="meat_waste_1" model="waste_control.meat_waste">
+      <field name="date">2026-01-15</field>
+      <field name="kilograms">250.50</field>
+      <!-- relations -->
+      <field name="routes_id" ref="routes_1" />
+      <field name="historic_vehicles_id" ref="historic_vehicles_1" />
+    </record>
+    <record id="meat_waste_2" model="waste_control.meat_waste">
+      <field name="date">2026-01-16</field>
+      <field name="kilograms">175.25</field>
+      <!-- relations -->
+      <field name="routes_id" ref="routes_2" />
+      <field name="historic_vehicles_id" ref="historic_vehicles_2" />
+    </record>
+    <record id="meat_waste_3" model="waste_control.meat_waste">
+      <field name="date">2026-01-15</field>
+      <field name="kilograms">250.50</field>
+      <!-- relations -->
+      <field name="routes_id" ref="routes_1" />
+      <field name="historic_vehicles_id" ref="historic_vehicles_1" />
+    </record>
+    <record id="meat_waste_4" model="waste_control.meat_waste">
+      <field name="date">2026-01-16</field>
+      <field name="kilograms">175.25</field>
+      <!-- relations -->
+      <field name="routes_id" ref="routes_2" />
+      <field name="historic_vehicles_id" ref="historic_vehicles_2" />
+    </record>
+    <record id="meat_waste_5" model="waste_control.meat_waste">
+      <field name="date">2026-01-15</field>
+      <field name="kilograms">250.50</field>
+      <!-- relations -->
+      <field name="routes_id" ref="routes_1" />
+      <field name="historic_vehicles_id" ref="historic_vehicles_1" />
+    </record>
+    <record id="meat_waste_6" model="waste_control.meat_waste">
+      <field name="date">2026-01-16</field>
+      <field name="kilograms">175.25</field>
+      <!-- relations -->
+      <field name="routes_id" ref="routes_2" />
+      <field name="historic_vehicles_id" ref="historic_vehicles_2" />
+    </record>
+    <record id="meat_waste_7" model="waste_control.meat_waste">
+      <field name="date">2026-01-15</field>
+      <field name="kilograms">250.50</field>
+      <!-- relations -->
+      <field name="routes_id" ref="routes_1" />
+      <field name="historic_vehicles_id" ref="historic_vehicles_1" />
+    </record>
+    <record id="meat_waste_8" model="waste_control.meat_waste">
+      <field name="date">2026-01-16</field>
+      <field name="kilograms">175.25</field>
+      <!-- relations -->
+      <field name="routes_id" ref="routes_2" />
+      <field name="historic_vehicles_id" ref="historic_vehicles_2" />
+    </record>
+
+    <!-- ! recycling_on_route -->
+    <record id="recycling_on_route_1" model="waste_control.recycling_on_route">
+      <field name="date">2026-01-15</field>
+      <field name="tons">2.500</field>
+      <field name="rejected_amount">0.250</field>
+      <field name="other_non_recoverable">0.75</field>
+      <field name="hours_on_route">6.50</field>
+      <field name="weighing_time">0.50</field>
+      <!-- relations -->
+      <field name="routes_id" ref="routes_1" />
+      <field name="historic_vehicles_id" ref="historic_vehicles_1" />
+      <field name="collection_center_id" ref="collection_centers_1" />
+    </record>
+    <record id="recycling_on_route_2" model="waste_control.recycling_on_route">
+      <field name="date">2026-01-16</field>
+      <field name="tons">1.750</field>
+      <field name="rejected_amount">0.050</field>
+      <field name="other_non_recoverable">0.50</field>
+      <field name="hours_on_route">5.25</field>
+      <field name="weighing_time">0.45</field>
+      <!-- relations -->
+      <field name="routes_id" ref="routes_2" />
+      <field name="historic_vehicles_id" ref="historic_vehicles_2" />
+      <field name="collection_center_id" ref="collection_centers_1" />
+    </record>
+
+    <record id="recycling_on_route_3" model="waste_control.recycling_on_route">
+      <field name="date">2026-01-15</field>
+      <field name="tons">2.500</field>
+      <field name="other_non_recoverable">0.75</field>
+      <field name="hours_on_route">6.50</field>
+      <field name="weighing_time">0.50</field>
+      <!-- relations -->
+      <field name="routes_id" ref="routes_1" />
+      <field name="historic_vehicles_id" ref="historic_vehicles_1" />
+      <field name="collection_center_id" ref="collection_centers_1" />
+    </record>
+    <record id="recycling_on_route_4" model="waste_control.recycling_on_route">
+      <field name="date">2026-01-16</field>
+      <field name="tons">1.750</field>
+      <field name="other_non_recoverable">0.50</field>
+      <field name="hours_on_route">5.25</field>
+      <field name="weighing_time">0.45</field>
+      <!-- relations -->
+      <field name="routes_id" ref="routes_2" />
+      <field name="historic_vehicles_id" ref="historic_vehicles_2" />
+      <field name="collection_center_id" ref="collection_centers_1" />
+    </record>
+    <record id="recycling_on_route_5" model="waste_control.recycling_on_route">
+      <field name="date">2026-01-15</field>
+      <field name="tons">2.500</field>
+      <field name="other_non_recoverable">0.75</field>
+      <field name="hours_on_route">6.50</field>
+      <field name="weighing_time">0.50</field>
+      <!-- relations -->
+      <field name="routes_id" ref="routes_1" />
+      <field name="historic_vehicles_id" ref="historic_vehicles_1" />
+      <field name="collection_center_id" ref="collection_centers_1" />
+    </record>
+    <record id="recycling_on_route_6" model="waste_control.recycling_on_route">
+      <field name="date">2026-01-16</field>
+      <field name="tons">1.750</field>
+      <field name="other_non_recoverable">0.50</field>
+      <field name="hours_on_route">5.25</field>
+      <field name="weighing_time">0.45</field>
+      <!-- relations -->
+      <field name="routes_id" ref="routes_2" />
+      <field name="historic_vehicles_id" ref="historic_vehicles_2" />
+      <field name="collection_center_id" ref="collection_centers_1" />
+    </record>
+    <record id="recycling_on_route_7" model="waste_control.recycling_on_route">
+      <field name="date">2026-01-15</field>
+      <field name="tons">2.500</field>
+      <field name="other_non_recoverable">0.75</field>
+      <field name="hours_on_route">6.50</field>
+      <field name="weighing_time">0.50</field>
+      <!-- relations -->
+      <field name="routes_id" ref="routes_1" />
+      <field name="historic_vehicles_id" ref="historic_vehicles_1" />
+      <field name="collection_center_id" ref="collection_centers_1" />
+    </record>
+    <record id="recycling_on_route_8" model="waste_control.recycling_on_route">
+      <field name="date">2026-01-16</field>
+      <field name="tons">1.750</field>
+      <field name="other_non_recoverable">0.50</field>
+      <field name="hours_on_route">5.25</field>
+      <field name="weighing_time">0.45</field>
+      <!-- relations -->
+      <field name="routes_id" ref="routes_2" />
+      <field name="historic_vehicles_id" ref="historic_vehicles_2" />
+      <field name="collection_center_id" ref="collection_centers_1" />
+    </record>
+
+    <!-- ! recycling_by_campaigns -->
+    <record id="recycling_by_campaigns_1" model="waste_control.recycling_by_campaigns">
+      <field name="place">Escuela Central</field>
+      <field name="date">2026-01-15</field>
+      <field name="tons">1.250</field>
+      <!-- relations -->
+      <field name="districts_id" ref="districts_paramo" />
+      <field name="recycle_programs_id" ref="recycle_programs_1" />
+      <field name="historic_vehicles_id" ref="historic_vehicles_1" />
+    </record>
+    <record id="recycling_by_campaigns_2" model="waste_control.recycling_by_campaigns">
+      <field name="place">Plaza Comunal</field>
+      <field name="date">2026-01-16</field>
+      <field name="tons">0.950</field>
+      <!-- relations -->
+      <field name="districts_id" ref="districts_paramo" />
+      <field name="recycle_programs_id" ref="recycle_programs_2" />
+      <field name="historic_vehicles_id" ref="historic_vehicles_2" />
+    </record>
+    <record id="recycling_by_campaigns_3" model="waste_control.recycling_by_campaigns">
+      <field name="place">Escuela Central</field>
+      <field name="date">2026-01-15</field>
+      <field name="tons">1.250</field>
+      <!-- relations -->
+      <field name="districts_id" ref="districts_paramo" />
+      <field name="recycle_programs_id" ref="recycle_programs_1" />
+      <field name="historic_vehicles_id" ref="historic_vehicles_1" />
+    </record>
+    <record id="recycling_by_campaigns_4" model="waste_control.recycling_by_campaigns">
+      <field name="place">Plaza Comunal</field>
+      <field name="date">2026-01-16</field>
+      <field name="tons">0.950</field>
+      <!-- relations -->
+      <field name="districts_id" ref="districts_paramo" />
+      <field name="recycle_programs_id" ref="recycle_programs_2" />
+      <field name="historic_vehicles_id" ref="historic_vehicles_2" />
+    </record>
+    <record id="recycling_by_campaigns_5" model="waste_control.recycling_by_campaigns">
+      <field name="place">Escuela Central</field>
+      <field name="date">2026-01-15</field>
+      <field name="tons">1.250</field>
+      <!-- relations -->
+      <field name="districts_id" ref="districts_paramo" />
+      <field name="recycle_programs_id" ref="recycle_programs_1" />
+      <field name="historic_vehicles_id" ref="historic_vehicles_1" />
+    </record>
+    <record id="recycling_by_campaigns_6" model="waste_control.recycling_by_campaigns">
+      <field name="place">Plaza Comunal</field>
+      <field name="date">2026-01-16</field>
+      <field name="tons">0.950</field>
+      <!-- relations -->
+      <field name="districts_id" ref="districts_paramo" />
+      <field name="recycle_programs_id" ref="recycle_programs_2" />
+      <field name="historic_vehicles_id" ref="historic_vehicles_2" />
+    </record>
+    <record id="recycling_by_campaigns_7" model="waste_control.recycling_by_campaigns">
+      <field name="place">Escuela Central</field>
+      <field name="date">2026-01-15</field>
+      <field name="tons">1.250</field>
+      <!-- relations -->
+      <field name="districts_id" ref="districts_paramo" />
+      <field name="recycle_programs_id" ref="recycle_programs_1" />
+      <field name="historic_vehicles_id" ref="historic_vehicles_1" />
+    </record>
+    <record id="recycling_by_campaigns_8" model="waste_control.recycling_by_campaigns">
+      <field name="place">Plaza Comunal</field>
+      <field name="date">2026-01-16</field>
+      <field name="tons">0.950</field>
+      <!-- relations -->
+      <field name="districts_id" ref="districts_paramo" />
+      <field name="recycle_programs_id" ref="recycle_programs_2" />
+      <field name="historic_vehicles_id" ref="historic_vehicles_2" />
+    </record>
+
+    <!-- ! waste -->
+    <record id="waste_1" model="waste_control.waste">
+      <field name="date">2026-01-15</field>
+      <field name="tons">3.50</field>
+      <field name="weighing_time">0.75</field>
+      <!-- relations -->
+      <field name="products_id" ref="products_1" />
+      <field name="types_of_waste_id" ref="types_of_waste_organico" />
+      <field name="routes_id" ref="routes_1" />
+      <field name="historic_vehicles_id" ref="historic_vehicles_1" />
+    </record>
+
+    <record id="waste_2" model="waste_control.waste">
+      <field name="date">2026-01-16</field>
+      <field name="tons">2.75</field>
+      <field name="weighing_time">0.50</field>
+      <!-- relations -->
+      <field name="products_id" ref="products_2" />
+      <field name="types_of_waste_id" ref="types_of_waste_ordinario" />
+      <field name="routes_id" ref="routes_2" />
+      <field name="historic_vehicles_id" ref="historic_vehicles_2" />
+    </record>
+
+    <!-- ! buenos_aires_tonnages -->
+    <record id="buenos_aires_tonnages_1" model="waste_control.buenos_aires_tonnages">
+      <field name="billing_date">2026-01-15</field>
+      <field name="tons">4.50</field>
+      <field name="notes">Entrega regular</field>
+      <field name="ticket">T12345</field>
+      <field name="historic_vehicles_id" ref="historic_vehicles_1" />
+      <field name="drivers_id" ref="drivers_1" />
+    </record>
+
+    <record id="buenos_aires_tonnages_2" model="waste_control.buenos_aires_tonnages">
+      <field name="billing_date">2026-01-16</field>
+      <field name="tons">3.75</field>
+      <field name="notes">Entrega especial</field>
+      <field name="ticket">T12346</field>
+      <!-- relations -->
+      <field name="historic_vehicles_id" ref="historic_vehicles_2" />
+      <field name="drivers_id" ref="drivers_1" />
+    </record>
+
+    <!-- ! purchase_orders_ebi -->
+    <record id="purchase_orders_ebi_1" model="waste_control.purchase_orders_ebi">
+      <field name="purchase_order">PO12345</field>
+      <field name="date">2026-01-15</field>
+      <field name="tonnages">5.25</field>
+      <field name="cost">250000</field>
+      <field name="notes">Orden regular</field>
+      <!-- auto calculate -->
+    </record>
+
+    <record id="purchase_orders_ebi_2" model="waste_control.purchase_orders_ebi">
+      <field name="purchase_order">PO12346</field>
+      <field name="date">2026-01-16</field>
+      <field name="tonnages">4.75</field>
+      <field name="cost">225000</field>
+      <field name="notes">Orden especial</field>
+      <!-- auto calculate -->
+    </record>
+
+    <!-- ! private_companies -->
+    <record id="private_companies_1" model="waste_control.private_companies">
+      <field name="date">2026-01-15</field>
+      <field name="weight_tons">6.25</field>
+      <field name="receipt_number">R12345</field>
+      <field name="amount_to_pay">150000</field>
+      <field name="amount_paid">150000</field>
+      <field name="observations">Pago completo</field>
+      <field name="ticket_weight">6.2</field>
+      <!-- relations -->
+      <field name="historic_vehicles_id" ref="historic_vehicles_1" />
+      <field name="drivers_id" ref="drivers_1" />
+      <field name="payment_method_id" ref="payment_methods_efectivo" />
+    </record>
+
+    <record id="private_companies_2" model="waste_control.private_companies">
+      <field name="date">2026-01-16</field>
+      <field name="weight_tons">5.75</field>
+      <field name="receipt_number">R12346</field>
+      <field name="amount_to_pay">125000</field>
+      <field name="amount_paid">100000</field>
+      <field name="observations">Pago parcial</field>
+      <field name="ticket_weight">5.7</field>
+      <!-- relations -->
+      <field name="historic_vehicles_id" ref="historic_vehicles_2" />
+      <field name="drivers_id" ref="drivers_1" />
+      <field name="payment_method_id" ref="payment_methods_sinpe" />
+    </record>
+    <!-- ** end Waste management **-->
+
+    <!-- ? to revision -->
+    <!-- ! communities_waste_reports -->
+    <record id="communities_waste_reports_1" model="waste_control.communities_waste_reports">
+      <field name="date">2026-01-15</field>
+      <field name="kilograms">750</field>
+      <field name="tons">0.75</field>
+      <field name="ebi_ticket_number">E12345</field>
+      <field name="bill">B12345</field>
+      <!-- relations -->
+      <field name="historic_vehicles_id" ref="historic_vehicles_1" />
+      <field name="districts_id" ref="districts_paramo" />
+      <field name="communities_id" ref="communities_san_isidro" />
+    </record>
+
+    <record id="communities_waste_reports_2" model="waste_control.communities_waste_reports">
+      <field name="date">2026-01-16</field>
+      <field name="kilograms">850</field>
+      <field name="tons">0.85</field>
+      <field name="ebi_ticket_number">E12346</field>
+      <field name="bill">B12346</field>
+      <!-- relations -->
+      <field name="historic_vehicles_id" ref="historic_vehicles_2" />
+      <field name="districts_id" ref="districts_paramo" />
+      <field name="communities_id" ref="communities_san_isidro" />
+    </record>
+  </data>
+</odoo>

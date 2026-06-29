@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- ========================================
+             SECCIONES PARA ENCUESTA 2025
+             ======================================== -->
+        
+        <!-- Secciones para Componente Ambiente 2025 -->
+        <record id="demo_section_environment_1_2025" model="ae.section">
+            <field name="title">Integridad y Valores Éticos</field>
+            <field name="description">Evaluación de la integridad organizacional y valores éticos</field>
+            <field name="components" eval="[(6, 0, [ref('demo_component_environment_2025')])]"/>
+        </record>
+
+        <record id="demo_section_environment_2_2025" model="ae.section">
+            <field name="title">Compromiso con la Competencia</field>
+            <field name="description">Evaluación del compromiso con la competencia del personal</field>
+            <field name="components" eval="[(6, 0, [ref('demo_component_environment_2025')])]"/>
+        </record>
+
+        <record id="demo_section_environment_3_2025" model="ae.section">
+            <field name="title">Participación de la Alta Dirección</field>
+            <field name="description">Evaluación de la participación de la alta dirección</field>
+            <field name="components" eval="[(6, 0, [ref('demo_component_environment_2025')])]"/>
+        </record>
+
+        <!-- Secciones para Componente Riesgos 2025 -->
+        <record id="demo_section_risks_1_2025" model="ae.section">
+            <field name="title">Identificación de Riesgos</field>
+            <field name="description">Evaluación de la identificación de riesgos</field>
+            <field name="components" eval="[(6, 0, [ref('demo_component_risks_2025')])]"/>
+        </record>
+
+        <record id="demo_section_risks_2_2025" model="ae.section">
+            <field name="title">Análisis de Riesgos</field>
+            <field name="description">Evaluación del análisis de riesgos</field>
+            <field name="components" eval="[(6, 0, [ref('demo_component_risks_2025')])]"/>
+        </record>
+
+        <record id="demo_section_risks_3_2025" model="ae.section">
+            <field name="title">Gestión de Riesgos</field>
+            <field name="description">Evaluación de la gestión de riesgos</field>
+            <field name="components" eval="[(6, 0, [ref('demo_component_risks_2025')])]"/>
+        </record>
+
+        <!-- Secciones para Componente Actividades de Control 2025 -->
+        <record id="demo_section_control_1_2025" model="ae.section">
+            <field name="title">Controles Preventivos</field>
+            <field name="description">Evaluación de los controles preventivos</field>
+            <field name="components" eval="[(6, 0, [ref('demo_component_control_2025')])]"/>
+        </record>
+
+        <record id="demo_section_control_2_2025" model="ae.section">
+            <field name="title">Controles Detectivos</field>
+            <field name="description">Evaluación de los controles detectivos</field>
+            <field name="components" eval="[(6, 0, [ref('demo_component_control_2025')])]"/>
+        </record>
+
+        <record id="demo_section_control_3_2025" model="ae.section">
+            <field name="title">Controles Correctivos</field>
+            <field name="description">Evaluación de los controles correctivos</field>
+            <field name="components" eval="[(6, 0, [ref('demo_component_control_2025')])]"/>
+        </record>
+
+        <!-- ========================================
+             SECCIONES PARA ENCUESTA 2024
+             ======================================== -->
+        
+        <!-- Secciones para Componente Ambiente 2024 -->
+        <record id="demo_section_environment_1_2024" model="ae.section">
+            <field name="title">Cultura Organizacional</field>
+            <field name="description">Evaluación de la cultura organizacional</field>
+            <field name="components" eval="[(6, 0, [ref('demo_component_environment_2024')])]"/>
+        </record>
+
+        <record id="demo_section_environment_2_2024" model="ae.section">
+            <field name="title">Estructura Organizacional</field>
+            <field name="description">Evaluación de la estructura organizacional</field>
+            <field name="components" eval="[(6, 0, [ref('demo_component_environment_2024')])]"/>
+        </record>
+
+        <record id="demo_section_environment_3_2024" model="ae.section">
+            <field name="title">Políticas y Procedimientos</field>
+            <field name="description">Evaluación de políticas y procedimientos</field>
+            <field name="components" eval="[(6, 0, [ref('demo_component_environment_2024')])]"/>
+        </record>
+
+        <!-- Secciones para Componente Riesgos 2024 -->
+        <record id="demo_section_risks_1_2024" model="ae.section">
+            <field name="title">Identificación de Riesgos</field>
+            <field name="description">Evaluación de la identificación de riesgos</field>
+            <field name="components" eval="[(6, 0, [ref('demo_component_risks_2024')])]"/>
+        </record>
+
+        <record id="demo_section_risks_2_2024" model="ae.section">
+            <field name="title">Evaluación de Riesgos</field>
+            <field name="description">Evaluación de la evaluación de riesgos</field>
+            <field name="components" eval="[(6, 0, [ref('demo_component_risks_2024')])]"/>
+        </record>
+
+        <record id="demo_section_risks_3_2024" model="ae.section">
+            <field name="title">Respuesta a Riesgos</field>
+            <field name="description">Evaluación de la respuesta a riesgos</field>
+            <field name="components" eval="[(6, 0, [ref('demo_component_risks_2024')])]"/>
+        </record>
+
+        <!-- Secciones para Componente Sistemas 2024 -->
+        <record id="demo_section_systems_1_2024" model="ae.section">
+            <field name="title">Sistemas de Información</field>
+            <field name="description">Evaluación de los sistemas de información</field>
+            <field name="components" eval="[(6, 0, [ref('demo_component_systems_2024')])]"/>
+        </record>
+
+        <record id="demo_section_systems_2_2024" model="ae.section">
+            <field name="title">Comunicación</field>
+            <field name="description">Evaluación de la comunicación</field>
+            <field name="components" eval="[(6, 0, [ref('demo_component_systems_2024')])]"/>
+        </record>
+
+        <record id="demo_section_systems_3_2024" model="ae.section">
+            <field name="title">Tecnología</field>
+            <field name="description">Evaluación de la tecnología</field>
+            <field name="components" eval="[(6, 0, [ref('demo_component_systems_2024')])]"/>
+        </record>
+
+        <!-- Secciones para Componente Monitoreo 2024 -->
+        <record id="demo_section_monitoring_1_2024" model="ae.section">
+            <field name="title">Monitoreo Continuo</field>
+            <field name="description">Evaluación del monitoreo continuo</field>
+            <field name="components" eval="[(6, 0, [ref('demo_component_monitoring_2024')])]"/>
+        </record>
+
+        <record id="demo_section_monitoring_2_2024" model="ae.section">
+            <field name="title">Evaluaciones Periódicas</field>
+            <field name="description">Evaluación de las evaluaciones periódicas</field>
+            <field name="components" eval="[(6, 0, [ref('demo_component_monitoring_2024')])]"/>
+        </record>
+
+        <record id="demo_section_monitoring_3_2024" model="ae.section">
+            <field name="title">Reportes de Deficiencias</field>
+            <field name="description">Evaluación de los reportes de deficiencias</field>
+            <field name="components" eval="[(6, 0, [ref('demo_component_monitoring_2024')])]"/>
+        </record>
+
+    </data>
+</odoo> 

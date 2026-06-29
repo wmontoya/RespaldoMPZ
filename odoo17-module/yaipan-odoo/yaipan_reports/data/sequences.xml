@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+     <record id="seq_temporal_invoice_spo" model="ir.sequence">
+        <field name="name">Secuencia de Factura Temporal SPO</field>
+        <field name="code">parking_meters.temporal_invoice_spo</field>
+        <field name="prefix">SPO-</field>
+        <field name="padding">6</field>
+        <field name="suffix">-%(year)s</field>
+        <field name="number_increment">1</field>
+        <field name="implementation">standard</field>
+    </record>
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="status_transaction_registered" model="online_payments.status_transaction">
+            <field name="description">REGISTRED</field>
+        </record>
+        <record id="status_transaction_approved" model="online_payments.status_transaction">
+            <field name="description">APPROVED</field>
+        </record>
+        <record id="status_transaction_rejected" model="online_payments.status_transaction">
+            <field name="description">REJECTED</field>
+        </record>
+                    
+    </data>
+</odoo>

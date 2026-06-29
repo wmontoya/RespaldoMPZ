@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="parking_meters.action_ir_config_parameter_tree" model="ir.actions.act_window">
+            <field name="name">Parameters</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ir.config_parameter</field>
+            <field name="view_mode">tree</field>
+            <field name="view_ids" eval="[(5, 0, 0), (0, 0, {'view_mode': 'tree', 'view_id': ref('parking_meters.view_ir_config_parameter_tree')}), (0, 0, {'view_mode': 'form', 'view_id': ref('parking_meters.view_ir_config_parameter_form')})]" />
+        </record>
+    </data>
+</odoo>

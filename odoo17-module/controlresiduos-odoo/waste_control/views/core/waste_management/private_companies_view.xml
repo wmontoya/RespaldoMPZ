@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- * Tree View * -->
+    <record id="private_companies_tree_view" model="ir.ui.view">
+      <field name="name">waste_control.private_companies.tree</field>
+      <field name="model">waste_control.private_companies</field>
+      <field name="arch" type="xml">
+        <tree string="Compañía privada">
+          <!-- Main fields -->
+          <field name="date" widget="date" />
+          <field name="weight_tons" />
+          <field name="receipt_number" />
+
+          <field name="amount_to_pay" widget="monetary" />
+          <field name="amount_paid" widget="monetary" />
+          <field name="difference" widget="monetary" />
+          <field name="invoice_status" widget="badge"
+            decoration-info="invoice_status == 'pending'"
+            decoration-warning="invoice_status == 'partial'"
+            decoration-success="invoice_status == 'paid'" />
+          <field name="currency_id" />
+
+          <field name="observations" />
+          <field name="ticket_weight" />
+
+          <!-- Relations -->
+          <field name="historic_vehicles_id" string="Número de placa" />
+          <field name="drivers_id" />
+          <field name="payment_method_id" />
+
+          <!-- Computed fields -->
+          <field name="month" />
+          <field name="year" widget="char" />
+
+          <field name="create_uid" string="Fuente" />
+          <field name="create_date" />
+          <field name="active" widget="boolean_toggle" />
+        </tree>
+      </field>
+    </record>
+
+    <!-- * Form View * -->
+    <record id="private_companies_form_view" model="ir.ui.view">
+      <field name="name">waste_control.private_companies.form</field>
+      <field name="model">waste_control.private_companies</field>
+      <field name="arch" type="xml">
+        <form string="Compañía privada">
+          <header />
+          <sheet>
+            <group>
+              <!-- Main fields -->
+              <group string="Información principal">
+                <field name="date" widget="date" placeholder="Selecciona la fecha" />
+                <field name="weight_tons" placeholder="Ingrese el peso en toneladas" />
+                <field name="receipt_number" placeholder="Ingrese el número de recibo" />
+
+                <field name="amount_to_pay" widget="monetary"
+                  placeholder="Ingrese el monto a pagar"
+                />
+                <field name="amount_paid" widget="monetary"
+                  placeholder="Ingrese el monto pagado"
+                />
+                <field name="difference" readonly="1" force_save="1" />
+                <field name="invoice_status" widget="badge"
+                  decoration-info="invoice_status == 'pending'"
+                  decoration-warning="invoice_status == 'partial'"
+                  decoration-success="invoice_status == 'paid'" />
+                <field name="currency_id" invisible="1" />
+
+                <field name="observations" placeholder="Ingrese las observaciones" />
+                <field name="ticket_weight" placeholder="Ingrese el peso del ticket" />
+              </group>
+
+              <!-- Relations -->
+              <group string="Referencias">
+                <field name="historic_vehicles_id" placeholder="Escriba o seleccione" />
+                <field name="drivers_id" placeholder="Escriba o seleccione" />
+                <field name="payment_method_id" placeholder="Escriba o seleccione" />
+              </group>
+
+              <!-- Computed fields -->
+              <group string="Campos calculados">
+                <field name="month" />
+                <field name="year" widget="char" />
+              </group>
+            </group>
+
+            <separator />
+
+            <group>
+              <field name="active" widget="boolean_toggle" />
+            </group>
+
+            <notebook>
+              <!-- * Audit fields*  -->
+              <page string="Información de modificación">
+                <group>
+                  <group>
+                    <field name="create_date" readonly="1" />
+                    <field name="write_date" readonly="1" />
+                  </group>
+                  <group>
+                    <field name="create_uid" string="Fuente"
+                      readonly="1" />
+                    <field name="write_uid" string="Editor" readonly="1" />
+                  </group>
+                </group>
+              </page>
+            </notebook>
+          </sheet>
+          <!-- * Notes/Messages  * -->
+          <div class="oe_chatter">
+            <field name="message_ids" />
+          </div>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- * Kanban View * -->
+    <record id="private_companies_kanban_view" model="ir.ui.view">
+      <field name="name">waste_control.private_companies.kanban</field>
+      <field name="model">waste_control.private_companies</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <field name="id" />
+          <field name="date" />
+          <field name="weight_tons" />
+          <field name="amount_to_pay" />
+          <field name="receipt_number" />
+          <field name="currency_id" />
+          <templates>
+            <t t-name="kanban-box">
+              <div class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <span class="o_kanban_record_title">
+                    <field name="receipt_number" />
+                  </span>
+                  <div>
+                    <field name="date" />
+                  </div>
+                  <div>
+                    <field name="weight_tons" />toneladas</div>
+                  <div>
+                    <field name="amount_to_pay" widget="monetary" />
+                  </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+
+    <!-- * Pivot View * -->
+    <record id="private_companies_pivot_view" model="ir.ui.view">
+      <field name="name">waste_control.private_companies.pivot</field>
+      <field name="model">waste_control.private_companies</field>
+      <field name="arch" type="xml">
+        <pivot string="Compañía privada" display_quantity="true">
+          <field name="date" interval="year" type="col" />
+          <field name="date" interval="month" type="col" />
+          <field name="weight_tons" type="measure" />
+          <field name="amount_to_pay" type="measure" widget="monetary" />
+        </pivot>
+      </field>
+    </record>
+
+    <!-- * Search view * -->
+    <record id="private_companies_search_view" model="ir.ui.view">
+      <field name="name">waste_control.private_companies.search</field>
+      <field name="model">waste_control.private_companies</field>
+      <field name="arch" type="xml">
+        <search>
+          <filter string="Activo" name="filter_active" domain="[('active', '=', True)]" />
+          <filter string="Inactivo" name="filter_inactive"
+            domain="[('active', '=', False)]" />
+
+          <filter string="Año actual" name="year_current"
+            domain="[('date','&gt;=', (context_today()).strftime('%Y-01-01')), ('date','&lt;=', (context_today()).strftime('%Y-12-31'))]" />
+
+          <filter string="Año anterior" name="year_last"
+            domain="[('date','&gt;=', (context_today() - relativedelta(years=1)).strftime('%Y-01-01')), ('date','&lt;=', (context_today() - relativedelta(years=1)).strftime('%Y-12-31'))]" />
+
+          <separator />
+          <filter string="Mis registros" name="filter_my_records"
+            domain="[('create_uid', '=', uid)]" />
+
+          <group expand="0" string="Agrupado por">
+            <filter string="Estado" name="group_by_active"
+              context="{'group_by': 'active'}" />
+            <filter string="Usuario responsable" name="group_by_user"
+              context="{'group_by': 'create_uid'}" />
+            <filter string="Fecha de creación" name="group_by_create_date"
+              context="{'group_by': 'create_date:month'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+    <!-- * Action * -->
+    <record id="private_companies_act_window" model="ir.actions.act_window">
+      <field name="name">Compañía privada</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">waste_control.private_companies</field>
+      <field name="context">{'search_default_year_current': 1}</field>
+      <field name="view_mode">tree,kanban,form,pivot</field>
+      <field name="search_view_id" ref="private_companies_search_view" />
+    </record>
+  </data>
+</odoo>

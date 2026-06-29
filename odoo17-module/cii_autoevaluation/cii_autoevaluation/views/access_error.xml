@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Custom access error page for assessee users -->
+        <template id="assessee_access_error_page">
+            <t t-call="web.layout">
+                <div class="container mt-5">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <div class="card">
+                                <div class="card-header bg-warning text-white">
+                                    <h4><i class="fa fa-exclamation-triangle"></i> Área Restringida</h4>
+                                </div>
+                                <div class="card-body text-center">
+                                    <h5>Lo sentimos, no tiene permisos para acceder a esta sección.</h5>
+                                    <p class="text-muted">Como usuario evaluado, solo puede acceder a sus autoevaluaciones.</p>
+
+                                    <div class="mt-4">
+                                        <p><strong>¿Dónde desea ir?</strong></p>
+                                        <div class="btn-group-vertical" role="group">
+                                            <a href="/web#action=cii_autoevaluation.autoevaluation_survey_answer_user_auto_action"
+                                               class="btn btn-primary btn-lg mb-2">
+                                                <i class="fa fa-file-text"></i> Mi Autoevaluación Actual
+                                            </a>
+                                            <a href="/web#action=cii_autoevaluation.autoevaluation_my_previous_assessments_server_action"
+                                               class="btn btn-secondary btn-lg">
+                                                <i class="fa fa-history"></i> Mis Evaluaciones Anteriores
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="mt-4">
+                                        <small class="text-muted">
+                                            Si necesita acceso a otras funciones, contacte a su administrador.
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script type="text/javascript">
+                    // Auto-redirect to current assessment after 5 seconds
+                    setTimeout(function() {
+                        window.location.href = '/web#action=cii_autoevaluation.autoevaluation_survey_answer_user_auto_action';
+                    }, 5000);
+                </script>
+            </t>
+        </template>
+
+        <!-- Action for the error page -->
+        <record id="assessee_access_error_action" model="ir.actions.act_url">
+            <field name="name">Access Error - Redirect</field>
+            <field name="url">/autoevaluation/access_error</field>
+            <field name="target">self</field>
+        </record>
+    </data>
+</odoo>

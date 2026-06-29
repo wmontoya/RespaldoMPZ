@@ -1,0 +1,49 @@
+<odoo>
+    <record id="view_patrimonial_agreement_file_form" model="ir.ui.view">
+        <field name="name">patrimonial.agreement.file.form</field>
+        <field name="model">patrimonial.agreement.file</field>
+        <field name="arch" type="xml">
+
+            <form string="Archivo">
+                <sheet style="background:#f4f6f9;">
+
+                    <div class="container-fluid">
+
+                        <div class="card border-0 shadow-sm rounded">
+
+                            <!-- HEADER -->
+                            <div class="card-header text-white"
+                                 style="background: linear-gradient(135deg,#2c3e50,#34495e);">
+                                <h4 class="mb-0 text-white">Archivo</h4>
+                            </div>
+
+                            <!-- BODY -->
+                            <div class="card-body p-4">
+
+                                <div class="mb-3">
+                                    <span class="text-muted small">Nombre del Archivo</span><br/>
+                                    <field name="name" readonly="1" class="form-control-plaintext"/>
+                                </div>
+
+                                <div class="mb-3">
+                                    <span class="text-muted small">Archivo</span><br/>
+                                    <field name="attachment_id" widget="many2many_binary"/>
+                                </div>
+
+                                <div class="mb-3">
+                                    <span class="text-muted small">Estado</span><br/>
+                                    <field name="estado" required="1"/>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </sheet>
+            </form>
+
+        </field>
+    </record>
+</odoo>

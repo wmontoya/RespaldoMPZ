@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem id="menu_root_parking_meters" name="Parking Meters" sequence="10"
+            web_icon="parking_meters,static/description/icon.png">
+            <menuitem id="menu_general" name="General" sequence="11">
+                <menuitem id="menu_infraction_tree_action" name="Infractions"
+                    action="action_infraction_tree"
+                    groups="parking_meters.res_groups_admin_user,parking_meters.res_groups_cashier_user,parking_meters.res_groups_ti_user" />
+                <menuitem id="menu_parking_time_tree_action" name="Tiempo de estacionamiento"
+                    action="action_parking_time_tree"
+                    groups="parking_meters.res_groups_admin_user,parking_meters.res_groups_ti_user" />
+            </menuitem>
+            <menuitem id="menu_configurations" name="Configurations" sequence="12">
+                <menuitem id="menu_article_tree_action" name="Articles"
+                    action="parking_meters.action_article_tree"
+                    groups="parking_meters.res_groups_admin_user,parking_meters.res_groups_ti_user" />
+                <menuitem id="menu_ir_config_parameter_tree_action" name="Parameters"
+                    action="parking_meters.action_ir_config_parameter_tree"
+                    groups="parking_meters.res_groups_admin_user,parking_meters.res_groups_ti_user" />
+                <menuitem id="menu_brand_tree_action" name="Brands"
+                    action="parking_meters.action_brand_tree"
+                    groups="parking_meters.res_groups_admin_user,parking_meters.res_groups_ti_user" />
+                <menuitem id="menu_clause_tree_action" name="Clauses"
+                    action="parking_meters.action_clause_tree"
+                    groups="parking_meters.res_groups_admin_user,parking_meters.res_groups_ti_user" />
+                <menuitem id="menu_color_tree_action" name="Colors"
+                    action="parking_meters.action_color_tree"
+                    groups="parking_meters.res_groups_admin_user,parking_meters.res_groups_ti_user" />
+                <menuitem id="menu_range_infraction_tree_action" name="Range of Infractions"
+                    action="parking_meters.action_range_infraction_tree"
+                    groups="parking_meters.res_groups_admin_user,parking_meters.res_groups_ti_user" />
+                <menuitem id="menu_plate_detail_tree_action" name="Plate Details"
+                    action="parking_meters.action_plate_detail_tree"
+                    groups="parking_meters.res_groups_admin_user,parking_meters.res_groups_ti_user" />
+                <menuitem id="menu_infraction_price_tree_action" name="Infraction Prices"
+                    action="parking_meters.action_infraction_price_tree"
+                    groups="parking_meters.res_groups_admin_user,parking_meters.res_groups_ti_user" />
+                <menuitem id="menu_infraction_state_tree_action" name="Infraction States"
+                    action="parking_meters.action_infraction_state_tree"
+                    groups="parking_meters.res_groups_admin_user,parking_meters.res_groups_ti_user" />
+                <menuitem id="menu_plate_type_tree_action" name="Plate Types"
+                    action="parking_meters.action_plate_type_tree"
+                    groups="parking_meters.res_groups_admin_user,parking_meters.res_groups_ti_user" />
+                <menuitem id="menu_user_tree_action" name="Admin Users"
+                    action="action_admin_user_tree"
+                    groups="parking_meters.res_groups_admin_user,parking_meters.res_groups_ti_user" />
+                <menuitem id="menu_vehicle_type_tree_action" name="Vehicle Types"
+                    action="parking_meters.action_vehicle_type_tree"
+                    groups="parking_meters.res_groups_admin_user,parking_meters.res_groups_ti_user" />
+                <menuitem id="menu_parking_rate_tree_action" name="Parking Rate"
+                    action="parking_meters.action_parking_rate_tree"
+                    groups="parking_meters.res_groups_admin_user,parking_meters.res_groups_ti_user" />
+            </menuitem>
+            <menuitem id="menu_sicsoa" name="Sicsoa" sequence="13">
+                <menuitem id="menu_infraction_export_action" name="Export Infractions"
+                    action="parking_meters.action_infraction_export_form"
+                    groups="parking_meters.res_groups_admin_user,parking_meters.res_groups_ti_user" />
+                <menuitem id="menu_infraction_import_action" name="Import Infractions"
+                    action="parking_meters.action_infraction_import_form"
+                    groups="parking_meters.res_groups_admin_user,parking_meters.res_groups_ti_user" />
+            </menuitem>
+        </menuitem>
+    </data>
+</odoo>

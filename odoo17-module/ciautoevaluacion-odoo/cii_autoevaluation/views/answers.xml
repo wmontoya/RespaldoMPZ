@@ -1,0 +1,158 @@
+<odoo>
+  <data>
+
+    <!-- Tree View for Answers -->
+    <record model="ir.ui.view" id="autoevaluation_survey_answers_tree">
+      <field name="name">ae.answer.tree</field>
+      <field name="model">ae.answer</field>
+      <field name="arch" type="xml">
+        <tree string="Answers">
+          <field name="survey_id"/>
+          <field name="department_id"/> 
+          <field name="manager_id"/>
+          <field name="component_id"/>
+          <field name="question_id"/>
+          <field name="response" /> 
+          <field name="proposed_actions_count"/>
+          <field name="justification_count"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Form View for Answers -->
+    <record id="autoevaluation_survey_answer_form" model="ir.ui.view">
+      <field name="name">ae.answer.form</field>
+      <field name="model">ae.answer</field>
+      <field name="arch" type="xml">
+        <form string="Answer">
+          <header>
+            <button name="toggle_proposed_action" type="object" string="Proposed Action" class="btn-secondary" 
+                    invisible="response != 'no'"/>
+            <button name="toggle_justification" type="object" string="Justification" class="btn-secondary" 
+                    invisible="response != 'si'"/>
+            <button name="view_proposed_actions" type="object" string="View Actions" class="btn-secondary" 
+                    invisible="not proposed_actions"/>
+            <button name="view_justifications" type="object" string="View Justifications" class="btn-secondary" 
+                    invisible="justification_count == 0"/>
+          </header>
+          <sheet>
+            <group>
+              <group>
+                <field name="department_id" readonly="1"/>
+                <field name="manager_id"/>
+                <field name="survey_id"/> 
+                <field name="component_id"/>
+                <field name="question_id"/>
+                <field name="response" required="True"/> 
+              </group>
+              <group>
+                <field name="justification_count" readonly="True"/>
+              </group>
+            </group>
+            <notebook>
+              <page string="Proposed Actions" name="proposed_actions">
+                <field name="proposed_actions" readonly="1">
+                  <tree>
+                    <field name="responsible_name"/>
+                    <field name="description"/>
+                    <field name="indicators"/>
+                    <field name="accomplishment_level"/>
+                    <field name="finish_date"/>
+                  </tree>
+                </field>
+              </page>
+              <page string="Justifications" name="justifications">
+                <field name="justification_id" readonly="True">
+                  <tree> 
+                    <field name="description"/>
+                    <field name="justification_attachments">
+                      <tree>
+                        <field name="name"/>
+                        <field name="attachment"/>
+                        <field name="attachment_type"/>
+                        <field name="description"/>
+                      </tree>
+                    </field>
+                  </tree>
+                </field>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Form View for Answers (without Proposed Action button) -->
+    <record id="autoevaluation_survey_answer_form_no_action" model="ir.ui.view">
+      <field name="name">ae.answer.form.no.action</field>
+      <field name="model">ae.answer</field>
+      <field name="arch" type="xml">
+        <form string="Answer">
+          <header>
+            <button name="toggle_justification" type="object" string="Justification" class="btn-secondary" 
+                    invisible="response != 'si'"/>
+            <button name="view_proposed_actions" type="object" string="View Actions" class="btn-secondary" 
+                    invisible="not proposed_actions"/>
+            <button name="view_justifications" type="object" string="View Justifications" class="btn-secondary" 
+                    invisible="justification_count == 0"/>
+          </header>
+          <sheet>
+            <group>
+              <group>
+                <field name="department_id" readonly="1"/>
+                <field name="manager_id"/>
+                <field name="survey_id"/> 
+                <field name="component_id"/>
+                <field name="question_id"/>
+                <field name="response" required="True"/> 
+              </group>
+              <group>
+                <field name="justification_count" readonly="True"/>
+              </group>
+            </group>
+            <notebook>
+              <page string="Proposed Actions" name="proposed_actions">
+                <field name="proposed_actions" readonly="1">
+                  <tree>
+                    <field name="responsible_name"/>
+                    <field name="description"/>
+                    <field name="indicators"/>
+                    <field name="accomplishment_level"/>
+                    <field name="finish_date"/>
+                  </tree>
+                </field>
+              </page>
+              <page string="Justifications" name="justifications">
+                <field name="justification_id" readonly="True">
+                  <tree> 
+                    <field name="description"/>
+                    <field name="justification_attachments">
+                      <tree>
+                        <field name="name"/>
+                        <field name="attachment"/>
+                        <field name="attachment_type"/>
+                        <field name="description"/>
+                      </tree>
+                    </field>
+                  </tree>
+                </field>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Action for Answers -->
+    <record model="ir.actions.act_window" id="autoevaluation_answer_action">
+      <field name="name">Answers</field>
+      <field name="res_model">ae.answer</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+          Define the answers and related documents for the survey questions.
+        </p>
+      </field>
+    </record>
+  </data>
+</odoo>

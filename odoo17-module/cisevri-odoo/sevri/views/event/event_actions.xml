@@ -1,0 +1,9 @@
+<odoo>
+  <data>
+    <record model="ir.actions.act_window" id="action_event">
+      <field name="name">Eventos</field>
+      <field name="res_model">sev.event</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+  </data>
+</odoo>

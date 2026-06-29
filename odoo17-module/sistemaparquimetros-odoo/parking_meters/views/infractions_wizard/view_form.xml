@@ -1,0 +1,135 @@
+<odoo>
+    <data>
+        <record id="view_infractions_wizard_form" model="ir.ui.view">
+            <field name="name">parking_meters.infractions_wizard.form</field>
+            <field name="model">parking_meters.infractions_wizard</field>
+            <field name="arch" type="xml">
+                <form string="Pago de infracciones" duplicate="0" delete="0" editable="0" create="0">
+
+                    <div class="container">
+                        <div class="row">
+                            <field name="all_registered" invisible="1"></field>
+                            <div class="col-12 col-md-12 mx-auto">
+                                <div class="card shadow-sm col mb-1"
+                                    invisible="not all_registered"
+                                    groups="parking_meters.res_groups_cashier_user">
+                                    <div class="card-header"
+                                        style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%);">
+                                        <h2 class="card-title mb-0 text-white fw-bolder"><i
+                                                class="fa fa-credit-card"></i> Payments</h2>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+
+                                            <div class="col-6 col-md-6">
+                                                <label for="payment_type_ids"
+                                                    style="color:#9d9d9d;"
+                                                    class="form-label fw-bolder">Payment Method</label>
+                                                <div>
+                                                    <field name="payment_type_ids" mode="tree,form"
+                                                        options="{'no_create': False, 'no_create_edit': False}"
+                                                        class="form-control px-0 py-0 mb-0"
+                                                        style="background-color: #fbfbfc;">
+                                                        <tree duplicate="0" delete="1" editable="0"
+                                                            create="1" >
+                                                            <field name="type_payment" />
+                                                            <field name="authorization" />
+                                                            <field name="currency_id"
+                                                                column_invisible="1"
+                                                                invisible="1" />
+                                                            <field name="amount" sum="Total" />
+                                                        </tree>
+                                                        <form>
+                                                            <group>
+                                                                <field name="type_payment" />
+                                                                <field name="authorization"
+                                                                    invisible="type_payment == 'efectivo'" />
+                                                                <field name="amount" />
+                                                            </group>
+                                                        </form>
+                                                    </field>
+                                                </div>
+                                            </div>
+                                            <div class="col-6 col-md-6">
+                                                <div class="row">
+                                                    <label for="cancellation_description"
+                                                        class="form-label fw-bolder"
+                                                        style="color:#9d9d9d;">Cancellation
+                                                        Description</label>
+                                                    <div>
+                                                        <field name="cancellation_description"
+                                                            class="form-control"
+                                                            widget="text"
+                                                            style="background-color: #fbfbfc; width:100%; min-height: 70px; max-height: 150px; resize: none;
+                                                        overflow-y: auto; white-space: pre-wrap;"
+                                                            oninput="this.style.height='auto'; this.style.height=this.scrollHeight+'px';"
+                                                            rows="5"
+                                                            placeholder="Enter description..." />
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-1 p-3">
+                                                    <button type="object"
+                                                        class="btn btn-success btn-lg w-100"
+                                                        style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color:white;"
+                                                        name="insert_new_payment_action">
+                                                        <i class="fa fa-money"></i> Pay</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-md-12 mx-auto">
+                                <div class="card shadow-sm px-0">
+
+                                    <div class="card-header"
+                                        style="background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);">
+                                        <h2 class="card-title mb-0 text-white fw-bolder"><i
+                                                class="fa fa-list-alt"></i> Infraction List</h2>
+                                    </div>
+
+                                    <div class="card-body px-0 py-0 mb-0 card_body_custom">
+
+                                        <field name="infraction_ids" class="mb-0"
+                                            context="{'form_view_ref': 'parking_meters.view_infraction_form', 'from_parent_readonly': True}">
+                                            <tree edit="false" class="tree_footer_custom">
+                                                <field name="ticket_number_formatted"
+                                                    width="auto" />
+                                                <field name="plate_number" width="auto" />
+                                                <field name="plate_type_description"
+                                                    width="auto" widget="badge"
+                                                    decoration-info="'info'" />
+                                                <field name="registration_date" width="auto" />
+                                                <field name="currency_id"
+                                                    column_invisible="1"
+                                                    invisible="1" />
+                                                <field name="infraction_state_description"
+                                                    width="auto"
+                                                    widget="badge"
+                                                    decoration-danger="infraction_state_description == 'REGISTRADO'"
+                                                    decoration-success="infraction_state_description == 'CANCELADO'" />
+
+                                                <field name="infraction_total_amount"
+                                                    width="auto"
+                                                    string="Monto Total" sum="Total" />
+                                            </tree>
+
+                                        </field>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </field>
+        </record>
+    </data>
+
+</odoo>

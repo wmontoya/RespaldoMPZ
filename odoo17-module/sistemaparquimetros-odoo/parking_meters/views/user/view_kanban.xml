@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="view_admin_user_kanban" model="ir.ui.view">
+      <field name="name">parking_meters.user.kanban</field>
+      <field name="model">res.users</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <templates>
+            <t t-name="kanban-box">
+              <div class="card border shadow-sm">
+                <div class="row g-0">
+                  <div class="col-md-4 col-sm-4 text-center">
+                    <img src="http://localhost:10017/web/image?model=res.users&amp;field=avatar_128&amp;id=1"
+                         class="img-fluid rounded-start shadow-sm bg-body-tertiary rounded" alt="User"
+                         style="width: 147px; height: 122px;" />
+                  </div>
+                  <div class="col-md-8 col-sm-8">
+                    <div class="card-body">
+                      <h5 class="card-text">
+                        <field name="name" id="name" />
+                      </h5>
+                      <p class="card-text">
+                        <field name="email" id="email" />
+                      </p>
+                      <button type="object" name="action_open_user_form" class="btn btn-primary btn-md btn-block" string="Open" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+  </data>
+</odoo>

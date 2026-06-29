@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data noupdate="1">
+
+    <!-- ** cantons ** -->
+    <record id="waste_control_cantons_rule_group_leadership" model="ir.rule">
+      <field name="name">Reglas de jefatura</field>
+      <field name="model_id" ref="model_waste_control_cantons" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_leadership'))]" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- ** provinces ** -->
+    <record id="waste_control_provinces_rule_group_leadership" model="ir.rule">
+      <field name="name">Reglas de jefatura</field>
+      <field name="model_id" ref="model_waste_control_provinces" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_leadership'))]" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- ** districts ** -->
+    <record id="waste_control_districts_rule_group_leadership" model="ir.rule">
+      <field name="name">Reglas de jefatura</field>
+      <field name="model_id" ref="model_waste_control_districts" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_leadership'))]" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- ** communities ** -->
+    <record id="waste_control_communities_rule_group_leadership" model="ir.rule">
+      <field name="name">Reglas de jefatura</field>
+      <field name="model_id" ref="model_waste_control_communities" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_leadership'))]" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- ** squads ** -->
+    <record id="waste_control_squads_rule_group_leadership" model="ir.rule">
+      <field name="name">Reglas de jefatura</field>
+      <field name="model_id" ref="model_waste_control_squads" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_leadership'))]" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- ** drivers ** -->
+    <record id="waste_control_drivers_rule_group_leadership" model="ir.rule">
+      <field name="name">Reglas de jefatura</field>
+      <field name="model_id" ref="model_waste_control_drivers" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_leadership'))]" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- ** supervisors ** -->
+    <record id="waste_control_supervisors_rule_group_leadership" model="ir.rule">
+      <field name="name">Reglas de jefatura</field>
+      <field name="model_id" ref="model_waste_control_supervisors" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_leadership'))]" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- ** collection_centers ** -->
+    <record id="waste_control_collection_centers_rule_group_leadership" model="ir.rule">
+      <field name="name">Reglas de jefatura</field>
+      <field name="model_id" ref="model_waste_control_collection_centers" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_leadership'))]" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- ** routes ** -->
+    <record id="waste_control_routes_rule_group_leadership" model="ir.rule">
+      <field name="name">Reglas de jefatura</field>
+      <field name="model_id" ref="model_waste_control_routes" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_leadership'))]" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- ** products ** -->
+    <record id="waste_control_products_rule_group_leadership" model="ir.rule">
+      <field name="name">Reglas de jefatura</field>
+      <field name="model_id" ref="model_waste_control_products" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_leadership'))]" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- ** types_of_waste ** -->
+    <record id="waste_control_types_of_waste_rule_group_leadership" model="ir.rule">
+      <field name="name">Reglas de jefatura</field>
+      <field name="model_id" ref="model_waste_control_types_of_waste" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_leadership'))]" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- ** payment_methods ** -->
+    <record id="waste_control_payment_methods_rule_group_leadership" model="ir.rule">
+      <field name="name">Reglas de jefatura</field>
+      <field name="model_id" ref="model_waste_control_payment_methods" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_leadership'))]" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- ** recycle_programs ** -->
+    <record id="waste_control_recycle_programs_rule_group_leadership" model="ir.rule">
+      <field name="name">Reglas de jefatura</field>
+      <field name="model_id" ref="model_waste_control_recycle_programs" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_leadership'))]" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- ** bills ** -->
+    <record id="waste_control_bills_rule_group_leadership" model="ir.rule">
+      <field name="name">Reglas de jefatura</field>
+      <field name="model_id" ref="model_waste_control_bills" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_leadership'))]" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- ** routes_study ** -->
+    <record id="waste_control_routes_study_rule_group_leadership" model="ir.rule">
+      <field name="name">Reglas de jefatura</field>
+      <field name="model_id" ref="model_waste_control_routes_study" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_leadership'))]" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- ** fuel_purchase_orders ** -->
+    <record id="waste_control_fuel_purchase_orders_rule_group_leadership" model="ir.rule">
+      <field name="name">Reglas de jefatura</field>
+      <field name="model_id" ref="model_waste_control_fuel_purchase_orders" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_leadership'))]" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- ** vehicle_routes ** -->
+    <record id="waste_control_vehicle_routes_rule_group_leadership" model="ir.rule">
+      <field name="name">Reglas de jefatura</field>
+      <field name="model_id" ref="model_waste_control_vehicle_routes" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_leadership'))]" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- ** historic_vehicles ** -->
+    <record id="waste_control_historic_vehicles_rule_group_leadership" model="ir.rule">
+      <field name="name">Reglas de jefatura</field>
+      <field name="model_id" ref="model_waste_control_historic_vehicles" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_leadership'))]" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- ** kilometers_traveled ** -->
+    <record id="waste_control_kilometers_traveled_rule_group_leadership" model="ir.rule">
+      <field name="name">Reglas de jefatura</field>
+      <field name="model_id" ref="model_waste_control_kilometers_traveled" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_leadership'))]" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- ** waste ** -->
+    <record id="waste_control_waste_rule_group_leadership" model="ir.rule">
+      <field name="name">Reglas de jefatura</field>
+      <field name="model_id" ref="model_waste_control_waste" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_leadership'))]" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- ** meat_waste ** -->
+    <record id="waste_control_meat_waste_rule_group_leadership" model="ir.rule">
+      <field name="name">Reglas de jefatura</field>
+      <field name="model_id" ref="model_waste_control_meat_waste" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_leadership'))]" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- ** private_companies ** -->
+    <record id="waste_control_private_companies_rule_group_leadership" model="ir.rule">
+      <field name="name">Reglas de jefatura</field>
+      <field name="model_id" ref="model_waste_control_private_companies" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_leadership'))]" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- ** recycling_on_route ** -->
+    <record id="waste_control_recycling_on_route_rule_group_leadership" model="ir.rule">
+      <field name="name">Reglas de jefatura</field>
+      <field name="model_id" ref="model_waste_control_recycling_on_route" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_leadership'))]" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- ** purchase_orders_ebi ** -->
+    <record id="waste_control_purchase_orders_ebi_rule_group_leadership" model="ir.rule">
+      <field name="name">Reglas de jefatura</field>
+      <field name="model_id" ref="model_waste_control_purchase_orders_ebi" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_leadership'))]" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- ** buenos_aires_tonnages ** -->
+    <record id="waste_control_buenos_aires_tonnages_rule_group_leadership" model="ir.rule">
+      <field name="name">Reglas de jefatura</field>
+      <field name="model_id" ref="model_waste_control_buenos_aires_tonnages" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_leadership'))]" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- ** recycling_by_campaigns ** -->
+    <record id="waste_control_recycling_by_campaigns_rule_group_leadership" model="ir.rule">
+      <field name="name">Reglas de jefatura</field>
+      <field name="model_id" ref="model_waste_control_recycling_by_campaigns" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_leadership'))]" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- ** communities_waste_reports ** -->
+    <record id="waste_control_communities_waste_reports_rule_group_leadership" model="ir.rule">
+      <field name="name">Reglas de jefatura</field>
+      <field name="model_id" ref="model_waste_control_communities_waste_reports" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_leadership'))]" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+
+    <!-- ** ebi_tariffs ** -->
+    <record id="waste_control_ebi_tariffs_rule_group_leadership" model="ir.rule">
+      <field name="name">Reglas de jefatura</field>
+      <field name="model_id" ref="model_waste_control_ebi_tariffs" />
+      <field name="domain_force">[(1, '=', 1)]</field>
+      <field name="groups" eval="[(4, ref('waste_control.group_leadership'))]" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+  </data>
+</odoo>

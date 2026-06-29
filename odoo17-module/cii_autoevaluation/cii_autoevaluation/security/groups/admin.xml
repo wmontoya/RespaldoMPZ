@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="group_category_autoevaluation" model="ir.module.category">
+            <field name="name">AUTOEVALUATION</field>
+            <field name="description">Permissions for the Autoevaluation module</field>
+            <field name="sequence">10</field>
+        </record>
+
+        <record id="group_autoevaluation_admin" model="res.groups">
+            <field name="name">Autoevaluation Admin</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]" />
+            <field name="category_id" ref="group_category_autoevaluation"/>
+        </record>
+
+        <record id="access_autoevaluation_admin_survey" model="ir.model.access">
+            <field name="name">access_autoevaluation_admin_survey</field>
+            <field name="model_id" ref="model_ae_survey" />
+            <field name="group_id" ref="group_autoevaluation_admin" />
+            <field name="perm_read" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_create" eval="1" />
+            <field name="perm_unlink" eval="1" />
+        </record>
+ 
+        <record id="access_autoevaluation_admin_survey_rel" model="ir.model.access">
+            <field name="name">access_autoevaluation_admin_survey_rel</field>
+            <field name="model_id" ref="model_ae_survey_rel" />
+            <field name="group_id" ref="group_autoevaluation_admin" />
+            <field name="perm_read" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_create" eval="1" />
+            <field name="perm_unlink" eval="1" />
+        </record>
+
+        <record id="access_autoevaluation_admin_component" model="ir.model.access">
+            <field name="name">access_autoevaluation_admin_component</field>
+            <field name="model_id" ref="model_ae_component" />
+            <field name="group_id" ref="group_autoevaluation_admin" />
+            <field name="perm_read" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_create" eval="1" />
+            <field name="perm_unlink" eval="1" />
+        </record>
+
+        <record id="access_autoevaluation_admin_section" model="ir.model.access">
+            <field name="name">access_autoevaluation_admin_section</field>
+            <field name="model_id" ref="model_ae_section" />
+            <field name="group_id" ref="group_autoevaluation_admin" />
+            <field name="perm_read" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_create" eval="1" />
+            <field name="perm_unlink" eval="1" />
+        </record>
+
+        <record id="access_autoevaluation_admin_question" model="ir.model.access">
+            <field name="name">access_autoevaluation_admin_question</field>
+            <field name="model_id" ref="model_ae_question" />
+            <field name="group_id" ref="group_autoevaluation_admin" />
+            <field name="perm_read" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_create" eval="1" />
+            <field name="perm_unlink" eval="1" />
+        </record>
+
+        <record id="access_autoevaluation_admin_answer" model="ir.model.access">
+            <field name="name">access_autoevaluation_admin_answer</field>
+            <field name="model_id" ref="model_ae_answer" />
+            <field name="group_id" ref="group_autoevaluation_admin" />
+            <field name="perm_read" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_create" eval="1" />
+            <field name="perm_unlink" eval="1" />
+        </record>
+
+        <record id="access_autoevaluation_admin_user" model="ir.model.access">
+            <field name="name">access_autoevaluation_admin_user</field>
+            <field name="model_id" ref="model_res_users" />
+            <field name="group_id" ref="group_autoevaluation_admin" />
+            <field name="perm_read" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_create" eval="1" />
+            <field name="perm_unlink" eval="1" />
+        </record>
+
+        <record id="access_autoevaluation_admin_department" model="ir.model.access">
+            <field name="name">access_autoevaluation_admin_department</field>
+            <field name="model_id" ref="model_hr_department" />
+            <field name="group_id" ref="group_autoevaluation_admin" />
+            <field name="perm_read" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_create" eval="1" />
+            <field name="perm_unlink" eval="1" />
+        </record>
+
+        
+    </data>
+</odoo>

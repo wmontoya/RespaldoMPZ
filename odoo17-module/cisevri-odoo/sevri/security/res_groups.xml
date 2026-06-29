@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="module_sevri_category" model="ir.module.category">
+            <field name="name">SEVRI</field>
+        </record>
+
+        <record id="res_groups_sev_admin" model="res.groups">
+            <field name="name">Administrador</field>
+            <field name="category_id" ref="sevri.module_sevri_category"/>
+        </record>
+
+        <record id="res_groups_sev_audit" model="res.groups">
+            <field name="name">Auditor</field>
+            <field name="category_id" ref="sevri.module_sevri_category"/>
+        </record>
+
+        <record id="res_groups_sev_internal_control" model="res.groups">
+            <field name="name">Control Interno</field>
+            <field name="category_id" ref="sevri.module_sevri_category"/>
+        </record>
+    </data>
+</odoo>

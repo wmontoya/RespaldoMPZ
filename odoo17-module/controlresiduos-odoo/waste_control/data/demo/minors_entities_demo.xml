@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <!-- Note:
+    the simbol " ** " represent a entity module
+    the simbol " * " represent a entity group
+    the simbol "!" represent a entity
+    -->
+  <data noupdate="0">
+    <!-- ** Minor models **-->
+
+    <!-- * Contacts * -->
+    <!-- ! partner records for test data -->
+    <!-- conductor -->
+    <record id="partner_person_1" model="res.partner">
+      <field name="name">Juan Pérez</field>
+      <field name="function">Conductor</field>
+      <field name="is_company">False</field>
+      <field name="company_type">person</field>
+      <field name="email">juan.perez@ejemplo.com</field>
+      <field name="phone">+50612345678</field>
+      <field name="street">Avenida Ejemplo 456</field>
+      <field name="city">Ciudad Ejemplo</field>
+      <field name="zip">12345</field>
+      <field name="country_id" ref="base.cr" />
+      <field name="active">True</field>
+    </record>
+
+    <!-- supervisor -->
+    <record id="partner_person_2" model="res.partner">
+      <field name="name">Ramiro Pérez</field>
+      <field name="function">Supervisor</field>
+      <field name="is_company">False</field>
+      <field name="company_type">person</field>
+      <field name="email">ramiro.perez@ejemplo.com</field>
+      <field name="phone">+50612345679</field>
+      <field name="street">Avenida Ejemplo 456</field>
+      <field name="city">Ciudad Ejemplo</field>
+      <field name="zip">12345</field>
+      <field name="country_id" ref="base.cr" />
+      <field name="active">True</field>
+    </record>
+
+    <!-- empleado -->
+    <record id="partner_person_3" model="res.partner">
+      <field name="name">David Pérez</field>
+      <field name="function">Empleado</field>
+      <field name="is_company">False</field>
+      <field name="company_type">person</field>
+      <field name="email">david.perez@ejemplo.com</field>
+      <field name="phone">+50612345680</field>
+      <field name="street">Avenida Ejemplo 456</field>
+      <field name="city">Ciudad Ejemplo</field>
+      <field name="zip">12345</field>
+      <field name="country_id" ref="base.cr" />
+      <field name="active">True</field>
+    </record>
+
+    <!-- empleado -->
+    <record id="partner_person_4" model="res.partner">
+      <field name="name">Miguel Pérez</field>
+      <field name="function">Empleado</field>
+      <field name="is_company">False</field>
+      <field name="company_type">person</field>
+      <field name="email">miguel.perez@ejemplo.com</field>
+      <field name="phone">+50612345681</field>
+      <field name="street">Avenida Ejemplo 456</field>
+      <field name="city">Ciudad Ejemplo</field>
+      <field name="zip">12345</field>
+      <field name="country_id" ref="base.cr" />
+      <field name="active">True</field>
+    </record>
+
+    <!-- empleado -->
+    <record id="partner_person_5" model="res.partner">
+      <field name="name">Laura Pérez</field>
+      <field name="function">Empleado</field>
+      <field name="is_company">False</field>
+      <field name="company_type">person</field>
+      <field name="email">laura.perez@ejemplo.com</field>
+      <field name="phone">+50612345683</field>
+      <field name="street">Avenida Ejemplo 456</field>
+      <field name="city">Ciudad Ejemplo</field>
+      <field name="zip">12345</field>
+      <field name="country_id" ref="base.cr" />
+      <field name="active">True</field>
+    </record>
+
+    <!-- provedor -->
+    <record id="partner_person_6" model="res.partner">
+      <field name="name">Eugenio Pérez</field>
+      <field name="function">Proveedor</field>
+      <field name="is_company">False</field>
+      <field name="company_type">person</field>
+      <field name="email">eugenio.perez@ejemplo.com</field>
+      <field name="phone">+50612345682</field>
+      <field name="street">Avenida Ejemplo 456</field>
+      <field name="city">Ciudad Ejemplo</field>
+      <field name="zip">12345</field>
+      <field name="country_id" ref="base.cr" />
+      <field name="active">True</field>
+    </record>
+
+    <!-- collection center -->
+    <record id="partner_person_7" model="res.partner">
+      <field name="name">Centro de Acopio Central</field>
+      <field name="function">Centro de Acopio</field>
+      <field name="is_company">True</field>
+      <field name="company_type">company</field>
+      <field name="email">collection.center@ejemplo.com</field>
+    </record>
+
+    <!-- ! collection_centers -->
+    <record id="collection_centers_1" model="waste_control.collection_centers">
+      <field name="details">None</field>
+      <!-- relations -->
+      <field name="partner_id" ref="partner_person_7" />
+    </record>
+
+    <!-- ! drivers -->
+    <record id="drivers_1" model="waste_control.drivers">
+      <field name="license_number">123456</field>
+      <field name="details">None</field>
+      <!-- relations -->
+      <field name="partner_id" ref="partner_person_1" />
+    </record>
+
+    <!-- ! squads -->
+    <record id="squads_1" model="waste_control.squads">
+      <field name="details">None</field>
+      <!-- relations -->
+      <field name="partner_ids"
+        eval="[(6, 0, [ref('partner_person_3'), ref('partner_person_4')])]" />
+    </record>
+
+    <!-- ! supervisors -->
+    <record id="supervisors_1" model="waste_control.supervisors">
+      <field name="supervision_area">Cuadrillas</field>
+      <field name="identification_number">123456</field>
+      <field name="details">None</field>
+      <!-- relations -->
+      <field name="partner_id" ref="partner_person_2" />
+    </record>
+    <!-- * end Contacts * -->
+
+    <!--  general minor models -->
+    <!-- ! products -->
+    <record id="products_1" model="waste_control.products">
+      <field name="name">Plástico PET</field>
+    </record>
+
+    <record id="products_2" model="waste_control.products">
+      <field name="name">Cartón</field>
+    </record>
+
+    <record id="products_3" model="waste_control.products">
+      <field name="name">Vidrio</field>
+    </record>
+
+    <!-- ! recycle_programs -->
+    <record id="recycle_programs_1" model="waste_control.recycle_programs">
+      <field name="name">Programa Escolar</field>
+    </record>
+
+    <record id="recycle_programs_2" model="waste_control.recycle_programs">
+      <field name="name">Programa Comunitario</field>
+    </record>
+
+    <!-- ! routes -->
+    <record id="routes_1" model="waste_control.routes">
+      <field name="name">Comercial</field>
+      <field name="description">Ruta comercial centro</field>
+      <field name="districts_id" ref="districts_paramo" />
+    </record>
+
+    <record id="routes_2" model="waste_control.routes">
+      <field name="name">Residencial</field>
+      <field name="description">Ruta residencial urbana</field>
+      <field name="districts_id" ref="districts_paramo" />
+    </record>
+    <!-- ** end minor models ** -->
+  </data>
+</odoo>

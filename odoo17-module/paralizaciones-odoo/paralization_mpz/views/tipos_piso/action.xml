@@ -1,0 +1,7 @@
+<odoo>
+    <record model="ir.actions.act_window" id="action_tipos_piso">
+        <field name="name">Tipos de Pisos</field>
+        <field name="res_model">tipos.piso</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+</odoo>

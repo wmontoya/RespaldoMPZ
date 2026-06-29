@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="module_category_patrimonial" model="ir.module.category">
+            <field name="name">Patrimonial Management</field>
+        </record>
+
+        <record id="res_groups_patrimonial_user" model="res.groups">
+            <field name="name">Patrimonial User</field>
+            <field name="category_id" ref="property_patrimonial.module_category_patrimonial" />
+        </record>
+
+        <record id="res_groups_patrimonial_manager" model="res.groups">
+            <field name="name">Patrimonial Manager</field>
+            <field name="category_id" ref="property_patrimonial.module_category_patrimonial" />
+        </record>
+
+    </data>
+</odoo>

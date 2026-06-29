@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="model_payment_webpage_limited" model="ir.model.access">
+            <field name="name">Payment Webpage Limited</field>
+            <field name="model_id" ref="online_payments.model_online_payments_payment" />
+            <field name="group_id" ref="online_payments.webpage_limited" />
+            <field name="perm_create" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_unlink" eval="0" />
+            <field name="perm_read" eval="1" />
+        </record>
+        <record id="model_payment_type_webpage_limited" model="ir.model.access">
+            <field name="name">Payment Type Webpage Limited</field>
+            <field name="model_id" ref="online_payments.model_online_payments_payment_type" />
+            <field name="group_id" ref="online_payments.webpage_limited" />
+            <field name="perm_create" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_unlink" eval="0" />
+            <field name="perm_read" eval="1" />
+        </record>
+        <record id="model_payment_detail_webpage_limited" model="ir.model.access">
+            <field name="name">Payment Details Webpage Limited</field>
+            <field name="model_id" ref="online_payments.model_online_payments_payment_detail" />
+            <field name="group_id" ref="online_payments.webpage_limited" />
+            <field name="perm_create" eval="1" />
+            <field name="perm_write" eval="0" />
+            <field name="perm_unlink" eval="0" />
+            <field name="perm_read" eval="1" />
+        </record>
+        <record id="model_base_url_webpage_limited" model="ir.model.access">
+            <field name="name">Base URLs Webpage Limited</field>
+            <field name="model_id" ref="online_payments.model_online_payments_base_url" />
+            <field name="group_id" ref="online_payments.webpage_limited" />
+            <field name="perm_create" eval="0" />
+            <field name="perm_write" eval="0" />
+            <field name="perm_unlink" eval="0" />
+            <field name="perm_read" eval="1" />
+        </record>
+        <record id="model_status_transaction_webpage_limited" model="ir.model.access">
+            <field name="name">Status Transaction Webpage Limited</field>
+            <field name="model_id" ref="model_online_payments_status_transaction" />
+            <field name="group_id" ref="online_payments.webpage_limited" />
+            <field name="perm_create" eval="0" />
+            <field name="perm_write" eval="0" />
+            <field name="perm_unlink" eval="0" />
+            <field name="perm_read" eval="1" />
+        </record>
+        <record id="access_ir_logging_readonly" model="ir.model.access">
+            <field name="name">Error Access</field>
+            <field name="model_id" ref="base.model_ir_logging" />
+            <field name="group_id" ref="online_payments.webpage_limited" />
+            <field name="perm_read" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_create" eval="1" />
+            <field name="perm_unlink" eval="0" />
+        </record>
+    
+    </data>
+</odoo>

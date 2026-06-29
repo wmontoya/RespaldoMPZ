@@ -1,0 +1,342 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* autoevaluation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-11 00:00+0000\n"
+"PO-Revision-Date: 2024-07-11 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_component__name
+msgid "Component"
+msgstr "Componente"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_component__name
+msgid "Components"
+msgstr "Componentes"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_survey__name
+msgid "Survey"
+msgstr "Encuesta"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_survey__name
+msgid "Surveys"
+msgstr "Encuestas"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_section__name
+msgid "Section"
+msgstr "Sección"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_section__name
+msgid "Sections"
+msgstr "Secciones"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_question__name
+msgid "Question"
+msgstr "Pregunta"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_question__name
+msgid "Questions"
+msgstr "Preguntas"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_answer__name
+msgid "Answer"
+msgstr "Respuesta"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_answer__name
+msgid "Answers"
+msgstr "Respuestas"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_department__name
+msgid "Department"
+msgstr "Departamento"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_department__name
+msgid "Departments"
+msgstr "Departamentos"
+
+#. module: autoevaluation
+#: model:ir.actions.act_window,name:autoevaluation.action_ae_survey
+msgid "Self-Evaluation"
+msgstr "Autoevaluación"
+
+#. module: autoevaluation
+#: model:ir.actions.act_window,name:autoevaluation.action_ae_survey
+msgid "Self-Evaluation Survey"
+msgstr "Encuesta de Autoevaluación"
+
+#. module: autoevaluation
+#: model:ir.module.category,name:autoevaluation.module_category_autoevaluation
+msgid "Internal Control System"
+msgstr "Sistema de Control Interno"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_component__title
+msgid "Environment"
+msgstr "Ambiente"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_component__title
+msgid "Risks"
+msgstr "Riesgos"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_component__title
+msgid "Control Activities"
+msgstr "Actividades de Control"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_component__title
+msgid "Systems"
+msgstr "Sistemas"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_component__title
+msgid "Monitoring"
+msgstr "Seguimiento"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_section__title
+msgid "Integrity and Ethical Values"
+msgstr "Integridad y Valores Éticos"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_section__title
+msgid "Commitment to Competence"
+msgstr "Compromiso con la Competencia"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_section__title
+msgid "Senior Management Participation"
+msgstr "Participación de la Alta Dirección"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_section__title
+msgid "Risk Identification"
+msgstr "Identificación de Riesgos"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_section__title
+msgid "Risk Analysis"
+msgstr "Análisis de Riesgos"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_section__title
+msgid "Risk Management"
+msgstr "Gestión de Riesgos"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_section__title
+msgid "Preventive Controls"
+msgstr "Controles Preventivos"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_section__title
+msgid "Detective Controls"
+msgstr "Controles Detectivos"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_section__title
+msgid "Corrective Controls"
+msgstr "Controles Correctivos"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_section__title
+msgid "Organizational Culture"
+msgstr "Cultura Organizacional"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_section__title
+msgid "Organizational Structure"
+msgstr "Estructura Organizacional"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_section__title
+msgid "Policies and Procedures"
+msgstr "Políticas y Procedimientos"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_section__title
+msgid "Risk Assessment"
+msgstr "Evaluación de Riesgos"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_section__title
+msgid "Risk Response"
+msgstr "Respuesta a Riesgos"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_section__title
+msgid "Information Systems"
+msgstr "Sistemas de Información"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_section__title
+msgid "Communication"
+msgstr "Comunicación"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_section__title
+msgid "Technology"
+msgstr "Tecnología"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_section__title
+msgid "Continuous Monitoring"
+msgstr "Monitoreo Continuo"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_section__title
+msgid "Periodic Evaluations"
+msgstr "Evaluaciones Periódicas"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_section__title
+msgid "Deficiency Reports"
+msgstr "Reportes de Deficiencias"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_survey__title
+msgid "Title"
+msgstr "Título"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_survey__description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_survey__initial_date
+msgid "Start Date"
+msgstr "Fecha de Inicio"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_survey__final_date
+msgid "End Date"
+msgstr "Fecha de Fin"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_survey__status
+msgid "Status"
+msgstr "Estado"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_survey_rel__score
+msgid "Score"
+msgstr "Puntaje"
+
+#. module: autoevaluation
+#: model:ir.model.fields.selection,name:autoevaluation.selection__ae_survey__status__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: autoevaluation
+#: model:ir.model.fields.selection,name:autoevaluation.selection__ae_survey__status__inactive
+msgid "Inactive"
+msgstr "Inactivo"
+
+#. module: autoevaluation
+#: model:ir.model.fields.selection,name:autoevaluation.selection__ae_survey_rel__status__finished
+msgid "Finished"
+msgstr "Finalizado"
+
+#. module: autoevaluation
+#: model:ir.model.fields.selection,name:autoevaluation.selection__ae_answer__response__si
+msgid "Sí"
+msgstr "Sí"
+
+#. module: autoevaluation
+#: model:ir.model.fields.selection,name:autoevaluation.selection__ae_answer__response__no
+msgid "No"
+msgstr "No"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_answer__observations
+msgid "Observations"
+msgstr "Observaciones"
+
+#. module: autoevaluation
+#: model:ir.model.fields,field_description:autoevaluation.field_ae_survey__title
+msgid "Evaluation Name:"
+msgstr "Nombre de la Evaluación:"
+
+#. module: autoevaluation
+msgid "Self-Assessment Process"
+msgstr "Proceso de Autoevaluación"
+
+#. module: autoevaluation
+msgid "Submit Survey"
+msgstr "Enviar Encuesta"
+
+#. module: autoevaluation
+msgid "Self-Assessment"
+msgstr "Autoevaluación"
+
+#. module: autoevaluation
+msgid "Self-Assessments"
+msgstr "Autoevaluaciones"
+
+#. module: autoevaluation
+msgid "My Self-Assessment Response"
+msgstr "Mi Respuesta de Autoevaluación"
+
+#. module: autoevaluation
+msgid "Answers"
+msgstr "Respuestas"
+
+#. module: autoevaluation
+msgid "Proposed Actions"
+msgstr "Acciones Propuestas"
+
+#. module: autoevaluation
+msgid "My Department's Proposed Actions"
+msgstr "Acciones Propuestas de Mi Departamento"
+
+#. module: autoevaluation
+msgid "Settings"
+msgstr "Configuración"
+
+#. module: autoevaluation
+msgid "Surveys"
+msgstr "Encuestas"
+
+#. module: autoevaluation
+msgid "Components"
+msgstr "Componentes"
+
+#. module: autoevaluation
+msgid "Sections"
+msgstr "Secciones"
+
+#. module: autoevaluation
+msgid "Questions"
+msgstr "Preguntas"
+
+#. module: autoevaluation
+#: code:addons/cii_autoevaluation/models/survey.py:145
+msgid "No components defined for this survey."
+msgstr "No hay componentes definidos para esta encuesta."
+
+#. module: autoevaluation
+msgid "Recalculate"
+msgstr "Recalcular"

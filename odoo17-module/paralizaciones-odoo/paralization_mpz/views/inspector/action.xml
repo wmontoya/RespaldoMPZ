@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="action_inspector">
+            <field name="name">Inspectores</field>
+            <field name="res_model">paralization_mpz.inspector</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

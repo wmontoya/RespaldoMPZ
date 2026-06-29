@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_infraction_form" model="ir.ui.view">
+            <field name="name">parking_meters.infraction.form</field>
+            <field name="model">parking_meters.infraction</field>
+            <field name="priority" eval="10" />
+            <field name="arch" type="xml">
+                <form string="Infraction">
+                    <div class="container">
+                        <div class="row mb-3">
+                            <div class="col-12 col-md-12 px-0">
+                                <field name="from_parent_readonly" invisible="1" />
+                                <div class="card shadow-sm col-12 col-md-12 px-0"
+                                    invisible="infraction_state_id != 1 or from_parent_readonly == True"
+                                    groups="parking_meters.res_groups_cashier_user">
+                                    <div class="card-header"
+                                        style="background: linear-gradient(to right, #43a047, #2c692e);">
+                                        <h2 class="card-title mb-0 text-white fw-bolder"><i
+                                                class="fa fa-credit-card"></i>Payment</h2>
+                                    </div>
+                                    <div class="card-body px-2 py-1">
+                                        <div class="row">
+                                            <div class="col-6 col-md-6">
+                                                <div class="row">
+                                                    <label for="payment_type_ids"
+                                                        style="color:#9d9d9d;"
+                                                        class="form-label fw-bolder">Payment Method</label>
+                                                    <div>
+                                                        <field name="payment_type_ids"
+                                                            mode="tree,form"
+                                                            options="{'no_create': False, 'no_create_edit': False}"
+                                                            class="form-control px-0 py-0 mb-0 card_body_custom"
+                                                            style="background-color: #fbfbfc;">
+                                                            <tree delete="1"
+                                                                class="tree_footer_custom">
+                                                                <field name="type_payment" />
+                                                                <field name="authorization" />
+                                                                <field name="currency_id"
+                                                                    column_invisible="1"
+                                                                    invisible="1" />
+                                                                <field name="amount" sum="Total" />
+                                                            </tree>
+                                                            <form>
+                                                                <group>
+                                                                    <field name="type_payment" />
+                                                                    <field name="authorization"
+                                                                        invisible="type_payment == 'efectivo'" />
+                                                                    <field name="amount" />
+                                                                </group>
+                                                            </form>
+                                                        </field>
+                                                    </div>
+                                                </div>
+                                               
+                                            </div>
+                                            <div class="col-6 col-md-6">
+                                                 <div class="row my-2 px-3">
+                                                    <div
+                                                        class="card bg-success bg-opacity-10 border-0 rounded-3">
+                                                        <div class="card-body p-2">
+                                                            <div
+                                                                class="d-flex justify-content-between align-items-center">
+                                                                <span
+                                                                    class="fs-5 fw-bolder text-dark">Total Payment</span>
+                                                                <span
+                                                                    class="fs-3 fw-bolder text-success">
+                                                                    <field name="currency_id"
+                                                                        invisible="1" />
+                                                                    <field
+                                                                        name="infraction_total_amount"
+                                                                        nolabel="1" readonly="1" />
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row">
+                                                    <label for="cancellation_description"
+                                                        class="form-label fw-bolder"
+                                                        style="color:#9d9d9d;">Cancellation
+                                                        Description</label>
+                                                    <div>
+                                                        <field name="cancellation_description"
+                                                            class="form-control px-0 py-0 mb-0 card_body_custom"
+                                                            widget="text"
+                                                            style="background-color: #fbfbfc; width:100%; min-height: 70px; max-height: 150px; resize: none; overflow-y: auto; white-space: pre-wrap;"
+                                                            oninput="this.style.height='auto'; this.style.height=this.scrollHeight+'px';"
+                                                            rows="5"
+                                                            placeholder="Enter description..." />
+                                                    </div>
+                                                </div>
+
+                                                <div class="row mt-1 py-2 mx-0">
+                                                    <button type="object"
+                                                        class="btn btn-success btn-lg w-100"
+                                                        style="background: linear-gradient(to right, #43a047, #2c692e); color:white;"
+                                                        name="insert_new_payment_action">
+                                                        <i class="fa fa-money"></i> Pay</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row gap-2">
+                            <div class="card shadow-sm col px-0">
+                                <div class="card-header"
+                                    style="background: linear-gradient(to right, #7c3aed, #3e0e91);">
+                                    <h2 class="card-title mb-0 text-white fw-bolder"><i
+                                            class="fa fa-file-text-o"></i> Infraction Information</h2>
+                                </div>
+                                <div class="card-body">
+                                    <!-- Ticket Number -->
+                                    <div class="mb-3">
+                                        <div class="d-flex align-items-center p-3"
+                                            style="background-color: #f5f3ff; border-radius: 0.375rem;">
+                                            <i class="fa fa-hashtag fa-lg me-2 fa-fw"
+                                                aria-hidden="true"
+                                                style="width: 20px; height: 20px; color: #7c3aed;"></i>
+                                            <div class="flex-fill">
+                                                <small class="fw-bolder" style="color:#7c3aed;">Ticket
+                                                    Number</small>
+                                                <div class="fw-bold fs-2 fw-bolder">
+                                                    <field name="ticket_number_formatted"
+                                                        nolabel="1"
+                                                        class="p-0 m-0 fs-6 fw-bolder"
+                                                        style="border: none !important; box-shadow: none !important; width:100%;"
+                                                        readonly="1" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Infraction State -->
+                                    <div class="mb-3 d-flex align-items-center">
+                                        <i class="fa fa-bookmark me-2 fa-lg fa-fw"
+                                            aria-hidden="true"
+                                            style="width: 20px; height: 20px; color: #7c3aed;"></i>
+                                        <div class="flex-fill d-flex align-items-center">
+                                            <small class="fw-bolder me-2" style="color:#9d9d9d;">
+                                                State</small>
+                                            <span class="badge fw-bolder rounded-pill"
+                                                style="background-color: #fbfbfc;">
+                                                <field name="infraction_state_id" nolabel="1"
+                                                    groups="parking_meters.res_groups_admin_user"
+                                                    class="p-0 m-0 fs-6"
+                                                    style="border: none !important; box-shadow: none !important; width:100%;" />
+                                                <field name="infraction_state_id" nolabel="1"
+                                                    groups="!parking_meters.res_groups_admin_user"
+                                                    readonly="1"
+                                                    class="p-0 m-0 fs-6"
+                                                    style="border: none !important; box-shadow: none !important; width:100%;" />
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <!-- Registration Date -->
+                                    <div class="mb-3 d-flex align-items-center">
+                                        <i class="fa fa-calendar-o me-2 fa-lg fa-fw"
+                                            style="width: 20px; height: 20px; color: #7c3aed;"></i>
+                                        <div class="flex-fill">
+                                            <small class="fw-bolder" style="color:#9d9d9d;">Registration
+                                                Date</small>
+                                            <div class="fw-medium">
+                                                <field name="registration_date" nolabel="1"
+                                                    readonly="1"
+                                                    class="p-0 m-0 fs-6"
+                                                    style="border: none !important; box-shadow: none !important; width:100%;" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Payment Date -->
+                                    <div class="mb-3 d-flex align-items-center"
+                                        invisible="infraction_state_id != 2">
+                                        <i class="fa fa-calendar-check-o me-2 fa-lg fa-fw"
+                                            style="width: 20px; height: 20px; color: #7c3aed;"></i>
+                                        <div class="flex-fill">
+                                            <small class="fw-bolder" style="color:#9d9d9d;">Payment
+                                                Date</small>
+                                            <div class="fw-medium">
+                                                <field name="payment_date" nolabel="1" readonly="1"
+                                                    class="p-0 m-0 fs-6"
+                                                    style="border: none !important; box-shadow: none !important; width:100%;" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Infraction Price -->
+                                    <div class="mb-3">
+                                        <div class="d-flex align-items-center p-3"
+                                            style="background-color: #f5f3ff; border-radius: 0.375rem;">
+                                            <i class="fa fa-money fa-lg me-2 fa-fw"
+                                                aria-hidden="true"
+                                                style="width: 20px; height: 20px; color: #7c3aed;"></i>
+                                            <div class="flex-fill">
+                                                <small class="fw-bolder" style="color:#7c3aed;">Total
+                                                    Amount</small>
+                                                <div class="fw-bold fs-2 fw-bolder">
+                                                    <field name="currency_id" invisible="1" />
+                                                    <field name="infraction_total_amount"
+                                                        nolabel="1"
+                                                        readonly="1"
+                                                        class="p-0 m-0 fs-6"
+                                                        style="border: none !important; box-shadow: none !important; width:100%;" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Inspector -->
+                                    <div class="mb-3 d-flex align-items-center">
+                                        <i class="fa fa-user-o me-2 fa-lg fa-fw"
+                                            style="width: 20px; height: 20px; color: #7c3aed;"></i>
+                                        <div class="flex-fill">
+                                            <small class="fw-bolder" style="color:#9d9d9d;">
+                                                Inspector</small>
+                                            <div class="fw-medium">
+                                                <field name="inspector_user_id" nolabel="1"
+                                                    readonly="1"
+                                                    class="p-0 m-0 fs-6"
+                                                    style="border: none !important; box-shadow: none !important; width:100%;" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 d-flex align-items-center "
+                                        invisible="infraction_state_id == 1">
+                                        <div class="flex-fill">
+                                            <small class="fw-bolder" style="color:#9d9d9d;">
+                                                Description</small>
+                                            <div class="fw-medium rounded py-1 px-3 mt-2"
+                                                style="background-color: #fbfbfc;">
+                                                <field name="cancellation_description" nolabel="1"
+                                                    groups="parking_meters.res_groups_admin_user"
+                                                    class="p-0 m-0 fs-6"
+                                                    style="width: 100%; min-height: 70px; max-height: 100px; resize: none; overflow-y: auto; white-space: pre-wrap;" />
+                                                <field name="cancellation_description" nolabel="1"
+                                                    readonly="1"
+                                                    groups="!parking_meters.res_groups_admin_user"
+                                                    class="p-0 m-0 fs-6"
+                                                    style="width: 100%; min-height: 70px; max-height: 100px; resize: none; overflow-y: auto; white-space: pre-wrap;" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-1 p-1">
+                                        <button type="object"
+                                            class="btn btn-outline-secondary btn-lg w-100 o_button_icon"
+                                            name="action_open_reprint_modal" style="color:black;">
+                                            <i class="fa fa-print-o"></i> Reprint Infraction </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card shadow-sm col px-0">
+
+                                <div class="card-header"
+                                    style="background: linear-gradient(to right, #0000ff, #0000b0);">
+                                    <h2 class="card-title mb-0 text-white fw-bolder"><i
+                                            class="fa fa-car"></i>Vehicle Information</h2>
+                                </div>
+                                <div class="card-body">
+                                    <!-- Plate Number -->
+                                    <div class="mb-3">
+                                        <div class="d-flex align-items-center p-3"
+                                            style="background-color: #e7ecff; border-radius: 0.375rem;">
+                                            <i class="fa fa-hashtag fa-lg me-2 fa-fw"
+                                                aria-hidden="true"
+                                                style="width: 20px; height: 20px; color: #0000ff;"></i>
+                                            <div class="flex-fill">
+                                                <small class="fw-bolder" style="color:#0000ff;">Plate
+                                                    Number</small>
+                                                <div class="fw-bold fs-2 fw-bolder">
+                                                    <field name="plate_number" nolabel="1"
+                                                        groups="parking_meters.res_groups_admin_user"
+                                                        class="p-0 m-0 fs-6"
+                                                        style="border: none !important; box-shadow: none !important; width:100%;" />
+                                                    <field name="plate_number" nolabel="1"
+                                                        readonly="1"
+                                                        groups="!parking_meters.res_groups_admin_user"
+                                                        class="p-0 m-0 fs-6"
+                                                        style="border: none !important; box-shadow: none !important; width:100%;" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Plate Type -->
+                                    <div class="mb-3 d-flex align-items-center">
+                                        <i class="fa fa-file-powerpoint-o me-2 fa-lg fa-fw"
+                                            style="width: 20px; height: 20px; color: #0000ff;"></i>
+                                        <div class="flex-fill">
+                                            <small class="fw-bolder" style="color:#9d9d9d;">Plate
+                                                Type</small>
+                                            <div class="fw-medium">
+                                                <field name="plate_type_id" nolabel="1"
+                                                    groups="parking_meters.res_groups_admin_user"
+                                                    class="p-0 m-0 fs-6"
+                                                    style="border: none !important; box-shadow: none !important; width:100%;" />
+                                                <field name="plate_type_id" nolabel="1" readonly="1"
+                                                    groups="!parking_meters.res_groups_admin_user"
+                                                    class="p-0 m-0 fs-6"
+                                                    style="border: none !important; box-shadow: none !important; width:100%;" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Government Code -->
+                                    <div class="mb-3 d-flex align-items-center">
+                                        <i class="fa fa-clone me-2 fa-lg fa-fw"
+                                            style="width: 20px; height: 20px; color: #0000ff;"></i>
+                                        <div class="flex-fill">
+                                            <small class="fw-bolder" style="color:#9d9d9d;">Government
+                                                Code</small>
+                                            <div class="fw-medium">
+                                                <field name="plate_detail_id" nolabel="1"
+                                                    groups="parking_meters.res_groups_admin_user"
+                                                    class="p-0 m-0 fs-6"
+                                                    style="border: none !important; box-shadow: none !important; width:100%;" />
+                                                <field name="plate_detail_id" nolabel="1"
+                                                    readonly="1"
+                                                    groups="!parking_meters.res_groups_admin_user"
+                                                    class="p-0 m-0 fs-6"
+                                                    style="border: none !important; box-shadow: none !important; width:100%;" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Brand -->
+                                    <div class="mb-3 d-flex align-items-center">
+                                        <i class="fa fa-sliders me-2 fa-lg fa-fw"
+                                            style="width: 20px; height: 20px; color: #0000ff;"></i>
+                                        <div class="flex-fill">
+                                            <small class="fw-bolder" style="color:#9d9d9d;">Brand</small>
+                                            <div class="fw-medium">
+                                                <field name="brand_code_id" nolabel="1"
+                                                    groups="parking_meters.res_groups_admin_user"
+                                                    class="p-0 m-0 fs-6"
+                                                    style="border: none !important; box-shadow: none !important; width:100%;" />
+                                                <field name="brand_code_id" nolabel="1" readonly="1"
+                                                    groups="!parking_meters.res_groups_admin_user"
+                                                    class="p-0 m-0 fs-6"
+                                                    style="border: none !important; box-shadow: none !important; width:100%;" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Color -->
+                                    <div class="mb-3 d-flex align-items-center">
+                                        <i class="fa fa-pencil-square-o me-2 fa-lg fa-fw"
+                                            style="width: 20px; height: 20px; color: #0000ff;"></i>
+                                        <div class="flex-fill">
+                                            <small class="fw-bolder" style="color:#9d9d9d;">Color</small>
+                                            <div class="fw-medium">
+                                                <field name="color_code_id" nolabel="1"
+                                                    groups="parking_meters.res_groups_admin_user"
+                                                    class="p-0 m-0 fs-6"
+                                                    style="border: none !important; box-shadow: none !important; width:100%;" />
+                                                <field name="color_code_id" nolabel="1" readonly="1"
+                                                    groups="!parking_meters.res_groups_admin_user"
+                                                    class="p-0 m-0 fs-6"
+                                                    style="border: none !important; box-shadow: none !important; width:100%;" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Vehicle Type -->
+                                    <div class="mb-3 d-flex align-items-center">
+                                        <i class="fa fa-life-ring me-2 fa-lg fa-fw"
+                                            style="width: 20px; height: 20px; color: #0000ff;"></i>
+                                        <div class="flex-fill">
+                                            <small class="fw-bolder" style="color:#9d9d9d;">Vehicle
+                                                Type</small>
+                                            <div class="fw-medium">
+                                                <field name="vehicle_code_id" nolabel="1"
+                                                    groups="parking_meters.res_groups_admin_user"
+                                                    class="p-0 m-0 fs-6"
+                                                    style="border: none !important; box-shadow: none !important; width:100%;" />
+                                                <field name="vehicle_code_id" nolabel="1"
+                                                    readonly="1"
+                                                    groups="!parking_meters.res_groups_admin_user"
+                                                    class="p-0 m-0 fs-6"
+                                                    style="border: none !important; box-shadow: none !important; width:100%;" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-1 p-1">
+                                        <button type="object"
+                                            class="btn btn-outline-secondary btn-lg w-100 o_button_icon"
+                                            name="action_open_image_modal" style="color:black;">
+                                            <i class="fa fa-picture-o"></i>View Vehicle Images</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="card shadow-sm col px-0">
+                                <div class="card-header"
+                                    style="background: linear-gradient(to right, #e69000, #b16f00);">
+                                    <h2 class="card-title mb-0 text-white fw-bolder"><i
+                                            class="fa fa-file-text-o"></i>Infringement Details</h2>
+                                </div>
+                                <div class="card-body">
+                                    <!-- Article -->
+                                    <div class="mb-3">
+                                        <div class="d-flex align-items-center p-3"
+                                            style="background-color: #fff8ef; border-radius: 0.375rem;">
+                                            <i class="fa fa-hashtag fa-lg me-2 fa-fw"
+                                                aria-hidden="true"
+                                                style="width: 20px; height: 20px; color: #e69000;"></i>
+                                            <div class="flex-fill">
+                                                <small class="fw-bolder" style="color:#e69000;">
+                                                    Article</small>
+                                                <div class="fw-bold fs-2 fw-bolder">
+                                                    <field
+                                                        name="article_code_id" nolabel="1"
+                                                        groups="parking_meters.res_groups_admin_user"
+                                                        class="p-0 m-0 fs-6"
+                                                        style="border: none !important; box-shadow: none !important; width:100%;" />
+                                                    <field
+                                                        name="article_code_id" nolabel="1"
+                                                        readonly="1"
+                                                        groups="!parking_meters.res_groups_admin_user"
+                                                        class="p-0 m-0 fs-6"
+                                                        style="border: none !important; box-shadow: none !important; width:100%;" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Clause -->
+                                    <div class="mb-3 d-flex align-items-center">
+                                        <i class="fa fa-newspaper-o me-2 fa-lg fa-fw"
+                                            style="width: 20px; height: 20px; color: #e69000;"></i>
+                                        <div class="flex-fill">
+                                            <small class="fw-bolder" style="color:#9d9d9d;">Clause</small>
+                                            <div class="fw-medium">
+                                                <field name="clause_code_id" nolabel="1"
+                                                    groups="parking_meters.res_groups_admin_user"
+                                                    class="p-0 m-0 fs-6"
+                                                    style="border: none !important; box-shadow: none !important; width:100%;white-space: pre-wrap;" />
+                                                <field name="clause_code_id" nolabel="1"
+                                                    readonly="1"
+                                                    groups="!parking_meters.res_groups_admin_user"
+                                                    class="p-0 m-0 fs-6"
+                                                    style="border: none !important; box-shadow: none !important; width:100%;white-space: pre-wrap;" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Observations -->
+                                    <div class="mb-3 d-flex align-items-center ">
+                                        <div class="flex-fill">
+                                            <small class="fw-bolder" style="color:#9d9d9d;">
+                                                Observations</small>
+                                            <div class="fw-medium rounded py-1 px-3 mt-2"
+                                                style="background-color: #fbfbfc;">
+                                                <field name="observations" nolabel="1"
+                                                    groups="parking_meters.res_groups_admin_user"
+                                                    class="p-0 m-0 fs-6"
+                                                    style="width: 100%; min-height: 70px; max-height: 100px; resize: none; overflow-y: auto; white-space: pre-wrap;" />
+                                                <field name="observations" nolabel="1" readonly="1"
+                                                    groups="!parking_meters.res_groups_admin_user"
+                                                    class="p-0 m-0 fs-6"
+                                                    style="width: 100%; min-height: 70px; max-height: 100px; resize: none; overflow-y: auto; white-space: pre-wrap;" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <small class="fw-bolder mb-2" style="color:#3e3e52;">Location
+                                            Details</small>
+                                        <div
+                                            style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+                                            <!-- First Location -->
+                                            <div class="mb-1 rounded text-center py-3"
+                                                style="background-color: #fbfbfc;">
+                                                <small class="fw-bolder" style="color:#9d9d9d;">
+                                                    First</small>
+                                                <div>
+                                                    <field name="first_location"
+                                                        nolabel="1"
+                                                        groups="parking_meters.res_groups_admin_user"
+                                                        class="p-0 m-0 fs-6"
+                                                        style="border: none !important; box-shadow: none !important; width:100%;" />
+                                                    <field name="first_location"
+                                                        nolabel="1" readonly="1"
+                                                        groups="!parking_meters.res_groups_admin_user"
+                                                        class="p-0 m-0 fs-6"
+                                                        style="border: none !important; box-shadow: none !important; width:100%;" />
+                                                </div>
+                                            </div>
+                                            <!-- Second Location -->
+                                            <div class="mb-1 rounded text-center py-3"
+                                                style="background-color: #fbfbfc">
+                                                <small class="fw-bolder" style="color:#9d9d9d;">
+                                                    Second</small>
+                                                <div>
+                                                    <field name="second_location"
+                                                        nolabel="1"
+                                                        groups="parking_meters.res_groups_admin_user"
+                                                        class="p-0 m-0 fs-6"
+                                                        style="border: none !important; box-shadow: none !important; width:100%;" />
+                                                    <field name="second_location"
+                                                        nolabel="1" readonly="1"
+                                                        groups="!parking_meters.res_groups_admin_user"
+                                                        class="p-0 m-0 fs-6"
+                                                        style="border: none !important; box-shadow: none !important; width:100%;" />
+                                                </div>
+                                            </div>
+                                            <!-- Third Location -->
+                                            <div class="mb-1 rounded text-center py-3"
+                                                style="background-color: #fbfbfc">
+                                                <small class="fw-bolder" style="color:#9d9d9d;">
+                                                    Third</small>
+                                                <div>
+                                                    <field name="third_location"
+                                                        nolabel="1"
+                                                        groups="parking_meters.res_groups_admin_user"
+                                                        class="p-0 m-0 fs-6"
+                                                        style="border: none !important; box-shadow: none !important; width:100%;" />
+                                                    <field name="third_location"
+                                                        nolabel="1" readonly="1"
+                                                        groups="!parking_meters.res_groups_admin_user"
+                                                        class="p-0 m-0 fs-6"
+                                                        style="border: none !important; box-shadow: none !important; width:100%;" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-1 p-1">
+                                        <button type="object"
+                                            class="btn btn-outline-secondary btn-lg w-100 o_button_icon"
+                                            name="action_open_map_modal" style="color:black;">
+                                            <i class="fa fa-map-marker"></i>View On Map</button>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+
+
+
+                                       

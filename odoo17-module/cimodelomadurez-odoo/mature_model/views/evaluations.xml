@@ -1,0 +1,141 @@
+<odoo>
+  <data>
+    <!-- Tree View -->
+    <record model="ir.ui.view" id="mature_model_evaluation_tree">
+      <field name="name">evaluation.tree</field>
+      <field name="model">mm.evaluation</field>
+      <field name="arch" type="xml">
+        <tree>
+          <header>
+            <button 
+              string="Enviar Notificación" 
+              type="object" 
+              name="send_notification_email" 
+              class="btn-primary" 
+            />
+          </header>
+          <field name="title"/>
+          <field name="departments"/>
+          <field name="sections"/>
+          <field name="status"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Form View -->
+    <record model="ir.ui.view" id="mature_model_evaluation_form">
+      <field name="name">evaluation.form</field>
+      <field name="model">mm.evaluation</field>
+      <field name="arch" type="xml">
+        <form>
+          <div class="container mt-4">
+            <div class="card shadow-sm">
+              <div class="card-header bg-primary">
+                <h3 class="card-title mb-0 text-white">Evaluation Information</h3>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="mb-3">
+                      <label for="title" class="form-label fw-bold">Title</label>
+                      <field name="title" style="margin-left: 1rem;" required="1" placeholder="e.g. Evaluation 2024"
+                        class="form-control"/>
+                    </div>
+                    <div class="mb-3">
+                      <label for="initial_date" class="form-label fw-bold">Initial Date</label>
+                      <field name="initial_date" required="1" class="form-control"/>
+                    </div>
+                    <div class="mb-3">
+                      <label for="final_date" class="form-label fw-bold">Final Date</label>
+                      <field name="final_date" required="1" class="form-control"/>
+                    </div>
+                    <div class="mb-3">
+                      <label for="status" class="form-label fw-bold">Status</label>
+                      <field name="status" style="margin-left:1rem;" required="1" widget="radio" options="{'horizontal': True}"/>
+                    </div>
+                    <notebook>
+                      <page name="sections" string="Sections">
+                        <field name="sections">
+                          <tree>
+                            <field name="name"/>
+                            <field name="description"/>
+                            <field name="questions"/>
+                          </tree>
+                        </field>
+                      </page>
+                      <page name="department" string="Departments">
+                        <field name="departments">
+                          <tree>
+                            <field name="name"/>
+                            <field name="manager_id"/>
+                            <field name="unit_id"/>
+                          </tree>
+                        </field>
+                      </page>
+                    </notebook>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </field>
+    </record>
+
+    <!-- Kanban View -->
+    <record model="ir.ui.view" id="mature_model_evaluation_kanban">
+      <field name="name">evaluation.kanban</field>
+      <field name="model">mm.evaluation</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <field name="title"/>
+          <field name="departments"/>
+          <field name="sections"/>
+          <field name="status"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <strong class="d-block mb-2">
+                    <field name="title"/>
+                  </strong>
+                  <div class="mb-2">
+                    <strong>Departments:</strong>
+                    <field name="departments"/>
+                  </div>
+                  <div class="mb-2">
+                    <strong>Sections:</strong>
+                    <field name="sections"/>
+                  </div>
+                  <div>
+                    <strong>Status:</strong>
+                    <field name="status"/>
+                  </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+    <!-- Graph View -->
+    <record model="ir.ui.view" id="mature_model_evaluation_graph">
+      <field name="name">evaluation.graph</field>
+      <field name="model">mm.evaluation</field>
+      <field name="arch" type="xml">
+        <graph string="Evaluaciones" type="bar">
+          <field name="title" type="row"/>
+        </graph>
+      </field>
+    </record>
+
+    <!-- Window Action -->
+    <record model="ir.actions.act_window" id="mm_evaluation_action">
+      <field name="name">Evaluaciones</field>
+      <field name="res_model">mm.evaluation</field>
+      <field name="view_mode">tree,form,kanban,graph</field>
+      <field name="view_id" ref="mature_model_evaluation_tree"/>
+    </record>
+  </data>
+</odoo>

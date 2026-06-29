@@ -1,0 +1,103 @@
+<odoo>
+    <data>
+        <record id="view_infraction_export_form" model="ir.ui.view">
+            <field name="name">parking_meters.infraction_export.form</field>
+            <field name="model">parking_meters.infraction_export</field>
+            <field name="arch" type="xml">
+                <form string="Configuración de Fechas">
+                    <div class="container">
+
+                        <div class="row g-4">
+                            <!-- Primera columna -->
+                            <div class="col-12 col-md-6">
+                                <div class="card shadow-sm px-0">
+                                    <div class="card-header white-background border-bottom-0">
+                                        <h2 class="card-title mb-0 fw-bolder">
+                                            <i class="fa fa-upload" style="color: #2563eb;"></i>
+                                            Export Infractions </h2>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="mb-3">
+                                            <label for="date_start"
+                                                class="form-label text-muted fw-medium"></label>
+                                            <div class="input-group">
+                                                <field name="date_start"
+                                                    class="personal-input margen-bot-0 form-control"
+                                                    widget="date" />
+                                                <span class="input-group-text white-background">
+                                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="date_end"
+                                                class="form-label text-muted fw-medium"></label>
+                                            <div class="input-group">
+                                                <field name="date_end"
+                                                    class="personal-input margen-bot-0 form-control"
+                                                    widget="date" />
+                                                <span class="input-group-text white-background">
+                                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3" invisible='not file_name'>
+                                            <label for="file_name"
+                                                class="form-label text-muted fw-medium"></label>
+                                            <div class="input-group">
+                                                <field name="file_name"
+                                                    class="personal-input margen-bot-0 form-control"
+                                                    readonly="1" />
+                                                <button name="download_file" type="object"
+                                                    class="btn btn-primary">
+                                                    <i class="fa fa-download" aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="card-footer d-flex justify-content-end white-background border-top-0">
+                                        <button name="export_txt" type="object"
+                                            string="Export TXT"
+                                            class="btn btn-success me-2" />
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <div class="card shadow-sm px-0">
+                                    <div class="card-header"
+                                        style="background: #ffffff; border-bottom: none;">
+                                        <h2 class="card-title mb-0 fw-bolder">
+                                            <i class="fa fa-list-alt" style="color: #2563eb;"></i>
+                                            List of Infractions</h2>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="oe_title">
+                                            <label for="infraction_count" />
+                                            <field name="infraction_count" readonly="1" class="ms-1" />
+                                        </div>
+                                        <div >
+                                            <field name="infraction_ids">
+                                                <tree editable="bottom" class="border-box">
+                                                    <field name="plate_number" />
+                                                    <field name="plate_type_id" />
+                                                </tree>
+                                            </field>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

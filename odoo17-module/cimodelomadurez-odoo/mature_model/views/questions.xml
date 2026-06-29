@@ -1,0 +1,89 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="question_view_tree">
+      <field name="name">pregunta.view.tree</field>
+      <field name="model">mm.question</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="title"/>
+          <field name="section_id"/>
+          <field name="options"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="question_view_form" model="ir.ui.view">
+      <field name="name">pregunta.view.form</field>
+      <field name="model">mm.question</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <div class="container-fluid mt-4">
+              <div class="card shadow-sm w-100">
+                <div class="card-header bg-primary">
+                  <h3 class="card-title mb-0 text-white">Información de la Pregunta</h3>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-12 mb-3">
+                      <label for="title" class="form-label fw-bold">Título</label>
+                      <field name="title" required="1" placeholder="Ej. Título de la Pregunta" class="form-control"/>
+                    </div>
+                    <div class="col-12 mb-3">
+                      <label for="description" class="form-label fw-bold">Descripción</label>
+                      <field name="description" class="form-control" widget="text" rows="4"/>
+                    </div>
+                    <div class="col-12 mb-3">
+                      <label for="section_id" class="form-label fw-bold">Sección</label>
+                      <field name="section_id"  class="form-control"/>
+                    </div>
+                    <div class="col-12 mb-3">
+                      <label for="options" class="form-label fw-bold">Opciones</label>
+                      <field name="options" >
+                        <tree>
+                          <field name="description"/>
+                          <field name="value"/>
+                          <field name="question_id"/>
+                        </tree>
+                      </field>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="question_view_kanban" model="ir.ui.view">
+      <field name="name">pregunta.view.kanban</field>
+      <field name="model">mm.question</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <templates>
+            <t t-name="kanban-box">
+              <div class="o_kanban_card">
+                <div class="o_kanban_header">
+                  <strong><field name="title"/></strong>
+                </div>
+                <div class="o_kanban_body">
+                  <div class="o_kanban_description">
+                    <p><strong>Sección:</strong> <field name="section_id"/></p>
+                    <p><strong>Opciones:</strong> <field name="options"/></p>
+                  </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+    <record id="mm_question_action" model="ir.actions.act_window">
+      <field name="name">Preguntas</field>
+      <field name="res_model">mm.question</field>
+      <field name="view_mode">tree,form,kanban</field>
+    </record>
+  </data>
+</odoo>

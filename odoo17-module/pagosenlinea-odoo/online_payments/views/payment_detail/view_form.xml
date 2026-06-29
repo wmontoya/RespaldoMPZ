@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_payment_detail_form" model="ir.ui.view">
+            <field name="name">payment.details.form</field>
+            <field name="model">online_payments.payment_detail</field>
+            <field name="arch" type="xml">
+                <form string="Payment Detail">
+                    <sheet>
+                        <group>
+                            <field name="id"/>
+                            <field name="accounting_assistant"/> 
+                            <field name="authorization"/> 
+                            <field name="standard_code"/>
+                            <field name="description"/>
+                            <field name="status"/>
+                            <field name="cutoff_date"/>
+                            <field name="item_id"/>
+                            <field name="balance_id"/>
+                            <field name="amount"/>
+                            <field name="penalty_amount"/>
+                            <field name="penalties"/>
+                            <field name="account_number"/>
+                            <field name="document_number"/>
+                            <field name="period"/>
+                            <field name="balance"/>
+                            <field name="interest_balance"/>
+                            <field name="transaction_type"/>
+                            <field name="year"/> 
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

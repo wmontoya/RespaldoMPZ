@@ -1,0 +1,7 @@
+<odoo>
+    <record model="ir.actions.act_window" id="action_tipos_pared">
+        <field name="name">Tipos de Paredes</field>
+        <field name="res_model">tipos.pared</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+</odoo>

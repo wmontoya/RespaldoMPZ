@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Solo puede ver/crear sus propias respuestas de encuesta -->
+        <record id="rule_ae_survey_answer_assessee_own_department" model="ir.rule">
+            <field name="name">Assessee: Own Department Survey Answers</field>
+            <field name="model_id" ref="model_ae_survey_answer"/>
+            <field name="domain_force">['|',
+                ('department_id', '=', user.employee_id.department_id.id),
+                ('user_id', '=', user.id)
+            ]</field>
+            <field name="groups" eval="[(4, ref('cii_autoevaluation.group_autoevaluation_assessee'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+        </record>
+        
+        <!-- Solo puede ver encuestas de su departamento (sin restricción de estado) -->
+        <record id="rule_ae_survey_assessee_own_department" model="ir.rule">
+            <field name="name">Assessee: Own Department Surveys</field>
+            <field name="model_id" ref="model_ae_survey"/>
+            <field name="domain_force">[("status", "in", ["active", "draft", "completed"])]</field>
+            <field name="groups" eval="[(4, ref('cii_autoevaluation.group_autoevaluation_assessee'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+        </record>
+        
+        <!-- Solo puede ver/crear/editar sus propias respuestas -->
+        <record id="rule_ae_answer_assessee_own_department" model="ir.rule">
+            <field name="name">Assessee: Own Department Answers</field>
+            <field name="model_id" ref="model_ae_answer"/>
+            <field name="domain_force">['|',
+                ('department_id', '=', user.employee_id.department_id.id),
+                ('survey_answer_id.department_id', '=', user.employee_id.department_id.id)
+            ]</field>
+            <field name="groups" eval="[(4, ref('cii_autoevaluation.group_autoevaluation_assessee'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+        </record>
+        <!-- Solo puede ver/crear/editar sus propias justificaciones -->
+        <record id="rule_ae_justification_assessee_own_department" model="ir.rule">
+            <field name="name">Assessee: Own Department Justifications</field>
+            <field name="model_id" ref="model_ae_justification"/>
+            <field name="domain_force">[("answer_id.department_id", "=", user.employee_id.department_id.id)]</field>
+            <field name="groups" eval="[(4, ref('cii_autoevaluation.group_autoevaluation_assessee'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+        </record>
+        <!-- Solo puede ver/crear/editar sus propias acciones propuestas -->
+        <record id="rule_ae_proposed_action_assessee_own_department" model="ir.rule">
+            <field name="name">Assessee: Own Department Proposed Actions</field>
+            <field name="model_id" ref="model_ae_proposed_action"/>
+            <field name="domain_force">['|',
+                ('department_id', '=', user.employee_id.department_id.id),
+                ('answer_id.department_id', '=', user.employee_id.department_id.id)
+            ]</field>
+            <field name="groups" eval="[(4, ref('cii_autoevaluation.group_autoevaluation_assessee'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+        </record>
+        <!-- Solo puede ver/crear/editar sus propios adjuntos -->
+        <record id="rule_ae_attachment_assessee_own_department" model="ir.rule">
+            <field name="name">Assessee: Own Department Attachments</field>
+            <field name="model_id" ref="model_ae_attachment"/>
+            <field name="domain_force">['|',
+                ('justification_id.answer_id.department_id', '=', user.employee_id.department_id.id),
+                ('proposed_action_id.answer_id.department_id', '=', user.employee_id.department_id.id)
+            ]</field>
+            <field name="groups" eval="[(4, ref('cii_autoevaluation.group_autoevaluation_assessee'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+        </record>
+    </data>
+</odoo> 

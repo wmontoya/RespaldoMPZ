@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="main_view_form_view" model="ir.ui.view">
+      <field name="name">main.view.form</field>
+      <field name="model">waste_control.main_view</field>
+      <field name="arch" type="xml">
+        <form string="Panel de Control de Residuos" class="o_form_full_width">
+          <sheet>
+            <div class="oe_title" style="margin-bottom: 30px;">
+              <h1 style="font-size: 2.5em; font-weight: 700; margin-bottom: 10px;">
+                Sistema de Control de Residuos
+              </h1>
+              <p style="font-size: 1.2em; line-height: 1.4;">
+                Gestión integral de recolección, pesaje y rutas.
+              </p>
+            </div>
+
+            <div class="row">
+              <div class="col-12" style="margin-bottom: 24px;">
+                <div
+                  style="padding: 30px; border: 1px solid #e9ecef; border-radius: 12px; background: rgba(37,150,190,0.08);">
+                  <h3
+                    style="color: #00A09D; margin-bottom: 24px; border-bottom: 2px solid rgba(0,160,157,0.2); padding-bottom: 12px; font-weight: 600;">
+                    <i class="fa fa-hand-paper-o" style="margin-right: 10px;" /> ¡Bienvenido(a)!
+                    Conozca su Panel de Trabajo </h3>
+
+                  <p
+                    style="font-size: 1.1em; margin-bottom: 24px; line-height: 1.6;">
+                    Este módulo centraliza todas las operaciones de control de residuos. Aquí
+                    aprenderá a usar las herramientas, comprender el flujo de trabajo y exportar la
+                    información de manera eficiente.
+                  </p>
+
+                  <div class="row">
+                    <!-- Conceptos Odoo -->
+                    <div class="col-md-6"
+                      style="border-right: 1px solid #dee2e6; padding-right: 30px;">
+                      <h5 style="font-weight: 600; color: #17a2b8; margin-bottom: 15px;"><i
+                          class="fa fa-desktop" style="margin-right: 8px;" /> 1. Funciones de Odoo</h5>
+                      <ul
+                        style="font-size: 1em; line-height: 1.8; padding-left: 20px;">
+                        <li><strong>Vistas:</strong> Alterne entre <i>Lista</i> <i class="fa fa-list" />
+                          , <i>Formulario</i>, <i>Kanban</i> <i class="fa fa-th-large" />, <i>
+                          Gráficos</i> <i class="fa fa-bar-chart" /> o <i>Tabla Dinámica</i> <i
+                            class="fa fa-table" />.</li>
+                        <li><strong>Búsqueda Rápida:</strong> Use la barra central para localizar
+                          por "Placa", "Chofer" o "Fecha".</li>
+                        <li><strong>Filtros y Favoritos:</strong> Agrupe información y guarde sus
+                          búsquedas frecuentes.</li>
+                        <li><strong>Chatter:</strong> Ubicado al final de cada formulario para dejar
+                          notas o <i class="fa fa-paperclip" /> adjuntar archivos.</li>
+                      </ul>
+                    </div>
+
+                    <!-- Flujo de Trabajo -->
+                    <div class="col-md-6" style="padding-left: 30px;">
+                      <h5 style="font-weight: 600; color: #28a745; margin-bottom: 15px;"><i
+                          class="fa fa-refresh" style="margin-right: 8px;" /> 2. El Ciclo de su Día</h5>
+                      <p style="font-size: 1em; margin-bottom: 15px;">Optimice su
+                        registro siguiendo este orden:</p>
+                      <table style="font-size: 1em; line-height: 1.6; width: 100%;">
+                        <tr>
+                          <td style="padding-bottom: 10px; vertical-align: top; width: 70px;">
+                            <strong>Paso 1:</strong>
+                          </td>
+                          <td style="padding-bottom: 10px;">En <i>Comb_KM</i> > <i>Kilometrajes</i>,
+                            registre la <b>Salida</b> y el odómetro inicial.</td>
+                        </tr>
+                        <tr>
+                          <td style="padding-bottom: 10px; vertical-align: top;">
+                            <strong>Paso 2:</strong>
+                          </td>
+                          <td style="padding-bottom: 10px;">Realice su ruta y conserve todos los
+                            tiquetes de pesaje y facturas.</td>
+                        </tr>
+                        <tr>
+                          <td style="padding-bottom: 10px; vertical-align: top;">
+                            <strong>Paso 3:</strong>
+                          </td>
+                          <td style="padding-bottom: 10px;">En <i>Gestión de residuos</i>, ingrese
+                            los pesos correspondientes (EBI, Cárnicos, etc.).</td>
+                        </tr>
+                        <tr>
+                          <td style="padding-bottom: 10px; vertical-align: top;">
+                            <strong>Paso 4:</strong>
+                          </td>
+                          <td style="padding-bottom: 10px;">Vuelva a <i>Kilometrajes</i> y registre
+                            la <b>Llegada</b> para el cálculo automático.</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+
+                  <hr style="margin: 30px 0; border-top: 1px solid #dee2e6;" />
+
+                  <div class="row">
+                    <!-- Exportación e Informes -->
+                    <div class="col-md-6"
+                      style="border-right: 1px solid #dee2e6; padding-right: 30px;">
+                      <h5 style="font-weight: 600; color: #ffc107; margin-bottom: 15px;"><i
+                          class="fa fa-download" style="margin-right: 8px;" /> 3. Exportación e
+                        Informes</h5>
+                      <ul
+                        style="font-size: 1em; line-height: 1.8; padding-left: 20px;">
+                        <li><strong>Excel Rápido:</strong> En vista "Lista", seleccione registros y
+                          use <i>Acción > Exportar</i>.</li>
+                        <li><strong>Excel desde Tabla:</strong> Use el ícono de descarga <i
+                            class="fa fa-download" /> en la "Vista Pivote".</li>
+                        <li><strong>Reportes PDF:</strong> Desde el menú "Reportes", elija el tipo
+                          de informe, el año/mes e imprima.</li>
+                      </ul>
+                    </div>
+
+                    <!-- Roles -->
+                    <div class="col-md-6" style="padding-left: 30px;">
+                      <h5 style="font-weight: 600; color: #6f42c1; margin-bottom: 15px;"><i
+                          class="fa fa-users" style="margin-right: 8px;" /> 4. Roles y Seguridad</h5>
+                      <ul
+                        style="font-size: 1em; line-height: 1.8; padding-left: 20px;">
+                        <li><strong>Técnico de Campo:</strong> Registro diario de tiquetes y
+                          kilómetros.</li>
+                        <li><strong>Editor:</strong> Revisión de datos, análisis en tablas dinámicas
+                          y exportaciones.</li>
+                        <li><strong>Jefatura:</strong> Visualización total, reportes ejecutivos y
+                          toma de decisiones.</li>
+                        <li><strong>Auditor:</strong> Acceso de consulta para verificación de
+                          integridad de datos.</li>
+                        <li><strong>IT:</strong> Administración de maestros (tarifas, vehículos,
+                          personal).</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div
+                    style="margin-top: 25px; padding: 12px; border-radius: 6px; background: #fff; border-left: 4px solid #ffc107; font-size: 0.95em; color: #666;">
+                    <i class="fa fa-lightbulb-o" style="margin-right: 8px; color: #ffc107;"
+                      title="Tip" />
+                    <strong>
+                      Tip:</strong> Si su menú se ve limitado, verifique su Rol asignado con el
+                    administrador del sistema. </div>
+
+                  <div style="margin-top: 40px; padding-top: 30px; border-top: 2px dashed #dee2e6;">
+                    <h2 style="color: #00A09D; margin-bottom: 25px; font-weight: 700;"><i
+                        class="fa fa-book" style="margin-right: 12px;" /> Manual Completo del
+                      Usuario</h2>
+
+                    <p
+                      style="font-size: 1.1em; line-height: 1.6; margin-bottom: 25px;">
+                      Este manual detalla las herramientas disponibles para optimizar su flujo de
+                      trabajo diario.
+                    </p>
+
+                    <h4
+                      style="color: #007bff; margin-top: 30px; margin-bottom: 15px; font-weight: 600;">1.
+                      Herramientas de Visualización</h4>
+                    <p style="line-height: 1.6;">El sistema ofrece múltiples
+                      perspectivas de sus datos:</p>
+                    <ul style="font-size: 1em; line-height: 1.8; padding-left: 20px;">
+                      <li><strong>Lista (<i class="fa fa-list" />):</strong> Vista tabular para
+                        gestión masiva.</li>
+                      <li><strong>Formulario:</strong> Detalle profundo y edición de registros.</li>
+                      <li><strong>Tabla Dinámica (<i class="fa fa-table" />):</strong> Análisis
+                        cruzado y sumatorias automáticas.</li>
+                      <li><strong>Gráficos (<i class="fa fa-bar-chart" />):</strong> Representación
+                        visual de tendencias.</li>
+                      <li><strong>Kanban (<i class="fa fa-th-large" />):</strong> Organización por
+                        tarjetas visuales.</li>
+                    </ul>
+
+                    <h4
+                      style="color: #28a745; margin-top: 30px; margin-bottom: 15px; font-weight: 600;">2.
+                      Estructura del Módulo</h4>
+                    <ol style="line-height: 1.8; padding-left: 20px;">
+                      <li><strong>Comb_KM:</strong> Control de combustible y bitácoras de odómetro.</li>
+                      <li><strong>Rutas de vehículos:</strong> Planificación y estudio histórico de
+                        distancias.</li>
+                      <li><strong>Gestión de residuos:</strong> Registro de pesajes (EBI, Cárnicos,
+                        Buenos Aires).</li>
+                      <li><strong>Contactos:</strong> Directorio de personal, centros de acopio y
+                        supervisores.</li>
+                      <li><strong>Administración de datos:</strong> Configuración de tarifas y
+                        parámetros base.</li>
+                      <li><strong>Reportes:</strong> Generación de documentos oficiales en PDF.</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              style="text-align: center; margin-top: 40px; border-top: 1px solid #e9ecef; padding-top: 20px;">
+              <span style="color: #adb5bd; font-size: 0.9em;">Módulo de Gestión de Residuos |
+                Versión 1.0.0</span>
+            </div>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Actions -->
+    <record id="main_view_act_window" model="ir.actions.act_window">
+      <field name="name">Bienvenida</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">waste_control.main_view</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="main_view_form_view" />
+      <field name="target">current</field>
+    </record>
+  </data>
+</odoo>

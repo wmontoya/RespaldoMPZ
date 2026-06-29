@@ -1,0 +1,100 @@
+<odoo>
+    <record id="view_patrimonial_agreement_form" model="ir.ui.view">
+        <field name="name">patrimonial.agreement.form</field>
+        <field name="model">patrimonial.agreement</field>
+        <field name="arch" type="xml">
+            <form string="Convenio">
+
+                <sheet style="background-color: #f4f6f9;">
+
+                    <!-- HEADER BONITO -->
+                    <div class="container-fluid mb-4">
+                        <div class="row align-items-center p-4 rounded shadow-sm"
+                            style="background: linear-gradient(135deg, #2c3e50, #34495e);">
+
+                            <div class="col-md-9">
+                                <h2 class="fw-bold mb-1 text-white">
+                                    <field name="name" />
+                                </h2>
+                                <div style="color: rgba(255,255,255,0.75);">
+                                    Convenio
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- CONTENIDO -->
+                    <div class="container-fluid">
+                        <div class="row g-4">
+
+                            <!-- INFO -->
+                            <div class="col-lg-6">
+                                <div class="card border-0 shadow-sm">
+
+                                    <div class="card-header"
+                                        style="background-color: #ffffff; border-bottom: 1px solid #dee2e6;">
+                                        <h5 class="mb-0 fw-semibold">
+                                            Información General
+                                        </h5>
+                                    </div>
+
+                                    <div class="card-body">
+
+                                        <div class="mb-3">
+                                            <span class="text-muted small">Fecha Inicio</span>
+                                            <field name="fecha_inicio" nolabel="1" />
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <span class="text-muted small">Fecha Vencimiento</span>
+                                            <field name="fecha_vencimiento" nolabel="1" />
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <span class="text-muted small">Notas</span>
+                                            <field name="notes" nolabel="1" />
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- ARCHIVOS -->
+                            <div class="col-lg-6">
+                                <div class="card border-0 shadow-sm h-100">
+
+                                    <div
+                                        class="card-header d-flex justify-content-between align-items-center"
+                                        style="background-color: #ffffff; border-bottom: 1px solid #dee2e6;">
+                                        <h5 class="mb-0 fw-semibold">
+                                            Archivos
+                                        </h5>
+                                    </div>
+
+                                    <div class="card-body p-0">
+
+                                        <field name="file_ids"
+                                            context="{'form_view_ref': 'property_patrimonial.view_patrimonial_agreement_file_form'}"
+                                            nolabel="1">
+                                            <tree class="table table-sm table-hover">
+                                                <field name="name" readonly="1"/>
+                                                <field name="estado" />
+                                                <field name="attachment_id" />
+                                            </tree>
+                                        </field>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

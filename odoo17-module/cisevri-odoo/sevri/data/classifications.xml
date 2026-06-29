@@ -1,0 +1,71 @@
+<odoo>
+    <data>
+        <record id="classification_1" model="sev.classification">
+            <field name="description">Tecnológicos</field>
+            <field name="event_type_id" ref="event_type_1" />
+        </record>
+        <record id="classification_2" model="sev.classification">
+            <field name="description">Infraestructura</field>
+            <field name="event_type_id" ref="event_type_1" />
+        </record>
+        <record id="classification_3" model="sev.classification">
+            <field name="description">Recursos Humanos</field>
+            <field name="event_type_id" ref="event_type_1" />
+        </record>
+        <record id="classification_4" model="sev.classification">
+            <field name="description">Estratégicos</field>
+            <field name="event_type_id" ref="event_type_1" />
+        </record>
+        <record id="classification_5" model="sev.classification">
+            <field name="description">Estructura Organizacional</field>
+            <field name="event_type_id" ref="event_type_1" />
+        </record>
+        <record id="classification_6" model="sev.classification">
+            <field name="description">Procedimientos</field>
+            <field name="event_type_id" ref="event_type_1" />
+        </record>
+        <record id="classification_7" model="sev.classification">
+            <field name="description">Normas Internas</field>
+            <field name="event_type_id" ref="event_type_1" />
+        </record>
+        <record id="classification_8" model="sev.classification">
+            <field name="description">Seguridad</field>
+            <field name="event_type_id" ref="event_type_1" />
+        </record>
+        <record id="classification_16" model="sev.classification">
+            <field name="description">Financieros</field>
+            <field name="event_type_id" ref="event_type_1" />
+        </record>
+
+
+
+        <record id="classification_10" model="sev.classification">
+            <field name="description">Financieros</field>
+            <field name="event_type_id" ref="event_type_2" />
+        </record>
+        <record id="classification_9" model="sev.classification">
+            <field name="description">Legales</field>
+            <field name="event_type_id" ref="event_type_2" />
+        </record>
+        <record id="classification_11" model="sev.classification">
+            <field name="description">Sociales</field>
+            <field name="event_type_id" ref="event_type_2" />
+        </record>
+        <record id="classification_12" model="sev.classification">
+            <field name="description">Politicos</field>
+            <field name="event_type_id" ref="event_type_2" />
+        </record>
+        <record id="classification_13" model="sev.classification">
+            <field name="description">Fenómenos Naturales</field>
+            <field name="event_type_id" ref="event_type_2" />
+        </record>
+        <record id="classification_14" model="sev.classification">
+            <field name="description">Casos Fortuitos</field>
+            <field name="event_type_id" ref="event_type_2" />
+        </record>
+        <record id="classification_15" model="sev.classification">
+            <field name="description">Ambientales</field>
+            <field name="event_type_id" ref="event_type_2" />
+        </record>
+    </data>
+</odoo>

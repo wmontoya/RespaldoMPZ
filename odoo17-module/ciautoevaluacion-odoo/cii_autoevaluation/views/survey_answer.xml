@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Tree View for User's Survey Answers Only -->
+        <record id="autoevaluation_survey_answer_user_tree" model="ir.ui.view">
+            <field name="name">ae.survey.answer.user.tree</field>
+            <field name="model">ae.survey.answer</field>
+            <field name="arch" type="xml">
+                <tree decoration-success="status=='submitted'" decoration-warning="status=='in_progress'" decoration-info="status=='draft'">
+                    <header>
+                        <button name="create_survey_answer_for_user" string="Create My Answer" 
+                                type="object" class="btn-primary"/>
+                    </header>
+                    <field name="survey_title"/>
+                    <field name="department_name"/>
+                    <field name="status"/>
+                    <field name="progress_percentage" widget="progressbar"/>
+                    <field name="answered_questions"/>
+                    <field name="total_questions"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Search View for User's Survey Answers -->
+        <record id="autoevaluation_survey_answer_user_search" model="ir.ui.view">
+            <field name="name">ae.survey.answer.user.search</field>
+            <field name="model">ae.survey.answer</field>
+            <field name="arch" type="xml">
+                <search string="Search My Survey Answers">
+                    <field name="survey_title"/>
+                    <field name="department_name"/>
+                    <filter name="filter_my_department_only" string="My Department"
+                            domain="[('user_id', '=', uid)]"/>
+                    <filter name="filter_my_department_assessments" string="My Department Assessments"
+                            domain="[('department_id', '=', context.get('default_department_id', False))]"/>
+                    <filter name="filter_active_surveys_only" string="Active Surveys" 
+                            domain="[('survey_id.status', '=', 'active')]"/>
+                    <filter name="filter_draft_only" string="Draft" domain="[('status', '=', 'draft')]"/>
+                    <filter name="filter_in_progress_only" string="In Progress" domain="[('status', '=', 'in_progress')]"/> 
+                    <filter name="filter_submitted_only" string="Submitted" domain="[('status', '=', 'submitted')]"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Tree View for Survey Answers -->
+        <record id="autoevaluation_survey_answer_tree" model="ir.ui.view">
+            <field name="name">ae.survey.answer.tree</field>
+            <field name="model">ae.survey.answer</field>
+            <field name="arch" type="xml">
+                <tree decoration-success="status=='submitted'" decoration-warning="status=='in_progress'" decoration-info="status=='draft'">
+                    <header>
+                        <button name="create_survey_answer_for_user" string="Create My Answer" 
+                                type="object" class="btn-primary"/>
+                    </header>
+                    <field name="survey_title"/>
+                    <field name="department_name"/>
+                    <field name="user_id"/>
+                    <field name="current_user_id"/>
+                    <field name="status"/>
+                    <field name="progress_percentage" widget="progressbar"/>
+                    <field name="answered_questions"/>
+                    <field name="total_questions"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Search View for Survey Answers -->
+        <record id="autoevaluation_survey_answer_search" model="ir.ui.view">
+            <field name="name">ae.survey.answer.search</field>
+            <field name="model">ae.survey.answer</field>
+            <field name="arch" type="xml">
+                <search string="Search Survey Answers">
+                    <field name="survey_title"/>
+                    <field name="department_name"/>
+                    <field name="user_id"/>
+                    <filter name="filter_active_surveys" string="Active Surveys" 
+                            domain="[('survey_id.status', '=', 'active')]"/>
+                    <filter name="filter_my_department" string="My Department" 
+                            domain="[('department_id', '=', context.get('default_department_id', False))]"/>
+                    <filter name="filter_my_surveys" string="My Surveys" 
+                            domain="[('user_id', '=', uid)]"/>
+                    <filter name="filter_draft" string="Draft" domain="[('status', '=', 'draft')]"/>
+                    <filter name="filter_in_progress" string="In Progress" domain="[('status', '=', 'in_progress')]"/>
+                    <filter name="filter_completed" string="Completed" domain="[('status', '=', 'completed')]"/>
+                    <filter name="filter_submitted" string="Submitted" domain="[('status', '=', 'submitted')]"/>
+                    <group expand="0" string="Group by">
+                        <filter name="group_by_survey" string="Survey" context="{'group_by': 'survey_id'}"/>
+                        <filter name="group_by_department" string="Department" context="{'group_by': 'department_id'}"/>
+                        <filter name="group_by_status" string="Status" context="{'group_by': 'status'}"/>
+                        <filter name="group_by_user" string="User" context="{'group_by': 'user_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- Form View for Survey Answering -->
+        <record id="autoevaluation_survey_answer_form" model="ir.ui.view">
+            <field name="name">ae.survey.answer.form</field>
+            <field name="model">ae.survey.answer</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="action_start_survey" string="Iniciar Encuesta" type="object"
+                                class="btn-primary" invisible="status != 'draft'"/>
+                        <button name="action_submit_survey_with_refresh" string="Enviar la Autoevaluación" type="object"
+                                class="btn-success" invisible="status != 'in_progress'"/>
+                        <button name="action_generate_html_report" string="Imprimir" type="object" class="btn-primary" invisible="status != 'submitted'"/>
+                        <field name="status" widget="statusbar" statusbar_visible="draft,in_progress,submitted"/>
+                        <div class="alert alert-success" invisible="status != 'submitted'" style="margin: 10px 0;">
+                            <i class="fa fa-lock"/> <strong>Modo Solo Lectura</strong> - La encuesta ha sido enviada y no puede ser modificada
+                        </div>
+                        <div class="alert alert-info" invisible="status == 'draft'" style="margin: 10px 0;">
+                            <i class="fa fa-info-circle"/> <strong>Presione Iniciar para comenzar a responder la encuesta</strong>
+                        </div>
+                    </header>
+                    
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="display_name" readonly="1"/>
+                            </h1>
+                        </div>
+                        
+                        <!-- Collaboration Info -->
+                        <div class="alert alert-info" invisible="user_id == current_user_id or status == 'submitted'">
+                            <i class="fa fa-users"/> <strong>Collaborative Mode</strong><br/>
+                            This survey answer was created by <field name="user_id" readonly="1" nolabel="1"/> 
+                            and you are currently collaborating as <field name="current_user_id" readonly="1" nolabel="1"/>.
+                            Changes you make will be saved in the same department answer.
+                        </div>
+                        
+                        <group>
+                            <group>
+                                <field name="survey_id" readonly="1" options="{'no_create': True, 'no_open': True}" domain="[('status', '=', 'active')]"/>
+                                <field name="department_id" readonly="1" options="{'no_create': True, 'no_open': True}"/>
+                                <field name="user_id" readonly="1" options="{'no_create': True, 'no_open': True}"/>
+                                <field name="current_user_id" readonly="1" options="{'no_create': True, 'no_open': True}"/>
+                            </group>
+                            <group>
+                                <field name="progress_percentage" widget="progressbar"/>
+                                <field name="answered_questions"/>
+                                <field name="total_questions"/>
+                                <field name="available_questions" readonly="1"/>
+                            </group>
+                        </group>
+
+                        <notebook>
+                            <!-- Survey Questions Tab -->
+                            <page string="Survey Questions" name="questions">
+                                <div class="alert alert-info" invisible="status == 'draft' or status == 'submitted'">
+                                    <i class="fa fa-info-circle"/> Answer all survey questions. You can attach supporting documents and add observations.
+                                </div>
+                                <div class="alert alert-warning" invisible="status != 'draft'">
+                                    <i class="fa fa-exclamation-triangle"/> Click "Start Survey" to begin answering the <field name="available_questions"/> available questions.
+                                </div> 
+                                <field name="answers" invisible="status == 'draft'">
+                                    <tree editable="bottom" create="false" delete="false" group_by="component_id" group_expand="1" class="questions-tree" 
+                                    decoration-success = "(response == 'no' and proposed_actions_count > 0) or (response == 'si' and justification_count > 0)"
+                                    readonly="parent.status == 'submitted'">
+                                        
+                                        <field name="component_section_group" options="{'no_create': True, 'no_open': True}"  string="Component-Section"/>
+                                        <field name="question_id" readonly="1" options="{'no_create': True, 'no_open': True}" colspan="2"  />
+                                        <field name="response" readonly="parent.status == 'submitted'"/>
+                                        <field name="status_badge_type" column_invisible="True"/>
+                                        <field name="proposed_actions_count" column_invisible="True" string="Actions"/>
+                                        <field name="justification_count" column_invisible="True" string="Justifications"/>
+
+                                        <!-- Badge clickeable para Sin responder (no hace nada) -->
+                                        <button name="show_unanswered_status" string="Sin responder" type="object" class="p-2 badge badge-secondary" invisible="response != 'sin_respuesta'"/>
+
+                                        <!-- Badge clickeable para Justificación -->
+                                        <button name="toggle_justification" string="Justificación" type="object" class="p-2 badge badge-primary" invisible="response != 'si'"/>
+
+                                        <!-- Badge clickeable para Acción Propuesta -->
+                                        <button name="toggle_proposed_action" string="Acción Propuesta" type="object" class="p-2 badge badge-primary" invisible="response != 'no'"/>
+
+                                    </tree>
+                                </field>
+                                <div class="alert alert-info" invisible="status == 'draft' or answers">
+                                    <i class="fa fa-info-circle"/> No questions available for this survey. Please verify that the survey has components and questions configured.
+                                </div>
+
+                                <!-- BOTÓN DE ENVIAR AL FINAL - Usando misma estructura que Export Excel -->
+                                <div class="card-footer bg-light text-center" style="margin-top: 20px;" invisible="status != 'in_progress'">
+                                    <button name="action_submit_survey_with_refresh"
+                                            type="object"
+                                            string="Enviar la Autoevaluación"
+                                            class="btn btn-success btn-lg">
+                                            <i class="fa fa-paper-plane me-1"></i>
+                                            Enviar la Autoevaluación
+                                    </button>
+                                </div>
+                            </page>
+                             
+                            <!-- Summary Tab -->
+                            <page string="Summary" name="summary">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="card">
+                                            <div class="card-header bg-secondary text-white">
+                                                <h5 class="card-title mb-0">
+                                                    <i class="fa fa-chart-pie"/> General Progress
+                                                </h5>
+                                            </div>
+                                            <div class="card-body text-center">
+                                                <h2 class="text-primary">
+                                                    <field name="progress_percentage"/>%
+                                                </h2>
+                                                <p class="text-muted">
+                                                    <field name="answered_questions"/> of <field name="total_questions"/> questions answered
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card">
+                                            <div class="card-header bg-secondary text-white">
+                                                <h5 class="card-title mb-0">
+                                                    <i class="fa fa-info-circle"/> Survey Information
+                                                </h5>
+                                            </div>
+                                            <div class="card-body">
+                                                <p><strong><i class="fa fa-file-text"/> Survey:</strong> <field name="survey_title"/></p>
+                                                <p><strong><i class="fa fa-building"/> Department:</strong> <field name="department_name"/></p>
+                                                <p><strong><i class="fa fa-user"/> User:</strong> <field name="user_id"/></p>
+                                                <p><strong><i class="fa fa-clock-o"/> Status:</strong> <field name="status"/></p>
+                                                <p><strong><i class="fa fa-check-circle"/> Justifications:</strong> <field name="justification_count"/></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action for Survey Answers -->
+        <record id="autoevaluation_survey_answer_action" model="ir.actions.act_window">
+            <field name="name">Survey Answers</field>
+            <field name="res_model">ae.survey.answer</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{
+                'search_default_filter_active_surveys': 1,
+                'search_default_filter_my_department': 1,
+                'default_user_id': uid
+            }</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No survey answers created
+                </p>
+                <p>
+                    Survey answers are created automatically when a survey is assigned to a department.
+                </p>
+            </field>
+        </record>
+
+        <!-- Action for Creating User's Survey Answer -->
+        <record id="autoevaluation_survey_answer_user_action" model="ir.actions.act_window">
+            <field name="name">My Survey Answer</field>
+            <field name="res_model">ae.survey.answer</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('autoevaluation_survey_answer_user_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('autoevaluation_survey_answer_form')})]"/>
+            <field name="search_view_id" ref="autoevaluation_survey_answer_user_search"/>
+            <field name="context">{
+                'search_default_filter_my_department_only': 1,
+                'search_default_filter_active_surveys_only': 1,
+                'default_user_id': uid
+            }</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    You don't have survey answers
+                </p>
+                <p>
+                    Click "Create My Answer" to create a new survey answer for your department.
+                </p>
+            </field>
+        </record>
+
+        <!-- Action for Auto-Creating User's Survey Answer -->
+        <record id="autoevaluation_survey_answer_user_auto_action" model="ir.actions.server">
+            <field name="name">My Survey Answer</field>
+            <field name="model_id" ref="model_ae_survey_answer"/>
+            <field name="state">code</field>
+            <field name="code">
+                action = model.create_survey_answer_for_user()
+            </field>
+        </record>
+
+        <!-- Server Action for My Previous Assessments (only for assessee) -->
+        <record id="autoevaluation_my_previous_assessments_server_action" model="ir.actions.server">
+            <field name="name">My Previous Assessments</field>
+            <field name="model_id" ref="model_ae_survey_answer"/>
+            <field name="state">code</field>
+            <field name="code">
+                action = model.action_open_my_previous_assessments()
+            </field>
+        </record>
+
+        <!-- Server Action for Assessee Redirect (when access denied) -->
+        <record id="autoevaluation_assessee_redirect_server_action" model="ir.actions.server">
+            <field name="name">Redirect to My Assessments</field>
+            <field name="model_id" ref="model_ae_survey_answer"/>
+            <field name="state">code</field>
+            <field name="code">
+                action = model.redirect_assessee_to_assessments()
+            </field>
+        </record>
+    </data>
+</odoo> 

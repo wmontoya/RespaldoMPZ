@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="module_admin_user" model="ir.module.category">
+            <field name="name">Parking Meters</field>
+        </record>
+
+        <record id="res_groups_ti_user" model="res.groups">
+            <field name="name">Administrador TI</field>
+            <field name="category_id" ref="parking_meters.module_admin_user" />
+        </record>
+
+        <record id="res_groups_admin_user" model="res.groups">
+            <field name="name">Administrator</field>
+            <field name="category_id" ref="parking_meters.module_admin_user" />
+        </record>
+
+        <record id="res_groups_cashier_user" model="res.groups">
+            <field name="name">Cashier</field>
+            <field name="category_id" ref="parking_meters.module_admin_user" />
+        </record>
+
+        <record id="res_groups_officer_user" model="res.groups">
+            <field name="name">Parking Enforcement Officer</field>
+            <field name="category_id" ref="parking_meters.module_admin_user" />
+        </record>
+
+        <record id="res_groups_web_user" model="res.groups">
+            <field name="name">Parking Meter Web</field>
+            <field name="category_id" ref="parking_meters.module_admin_user" />
+        </record>
+
+    </data>
+</odoo>

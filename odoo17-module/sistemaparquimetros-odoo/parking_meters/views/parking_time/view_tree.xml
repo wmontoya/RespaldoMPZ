@@ -1,0 +1,19 @@
+<odoo>
+    <data>
+        <record id="view_parking_time_tree" model="ir.ui.view">
+            <field name="name">parking_meters.parking_time.tree</field>
+            <field name="model">parking_meters.parking_time</field>
+            <field name="arch" type="xml">
+                <tree string="Parking Times" default_order="id desc">
+                    <field name="id" column_invisible="1" invisible="1" />
+                    <field name="plate_type_id"/>
+                    <field name="plate_number"/>
+                    <field name="start_time"/>
+                    <field name="end_time"/>
+                    <field name="status" decoration-success="status=='active'" decoration-danger="status=='inactive'"/>
+                    <field name="consulted"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

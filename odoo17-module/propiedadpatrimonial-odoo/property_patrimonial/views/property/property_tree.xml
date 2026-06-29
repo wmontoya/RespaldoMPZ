@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_patrimonial_property_tree" model="ir.ui.view">
+        <field name="name">patrimonial.property.tree</field>
+        <field name="model">patrimonial.property</field>
+        <field name="arch" type="xml">
+            <tree string="Patrimonial Properties" >
+                <field name="expediente"/>
+                <field name="tipo"/>
+                <field name="estate_ids" widget="many2many_tags"/>
+                <field name="direction"/>
+            </tree>
+        </field>
+    </record>
+     <record id="view_patrimonial_property_search" model="ir.ui.view">
+        <field name="name">patrimonial.property.search</field>
+        <field name="model">patrimonial.property</field>
+        <field name="arch" type="xml">
+            <search string="Search Properties">
+                <field name="direction" />
+                <field name="tipo" />
+
+                <separator />
+                <filter name="filter_zona_verde" string="Ubi. Bienes Demaniales"
+                    domain="[('tipo', '=', 'zona_verde')]" />
+
+                <filter name="filter_inmueble" string="Ubi. BI Patrimoniales"
+                    domain="[('tipo', '=', 'inmueble_patrimonial')]" />
+
+                <separator />
+                <filter name="group_by_tipo" string="Group by Type"
+                    context="{'group_by': 'tipo'}" />
+            </search>
+        </field>
+    </record>
+</odoo>

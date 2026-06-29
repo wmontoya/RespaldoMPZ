@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_payment_detail_kanban" model="ir.ui.view">
+            <field name="name">payment.detail.kanban</field>
+            <field name="model">online_payments.payment_detail</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="description"/>
+                    <field name="amount"/>
+                    <field name="status"/>
+                    <templates>
+                        <t t-name="kanban-box"> 
+                                <strong><field name="description"/></strong>
+                                <div>
+                                    <strong>Amount:</strong>
+                                    <field name="amount"/>
+                                </div>
+                                <div>
+                                    <strong>Status:</strong>
+                                    <field name="status"/>
+                                </div>
+                                <div>
+                                    <strong>Payment ID:</strong>
+                                    <field name="id"/>
+                                </div> 
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+    </data>
+</odoo>

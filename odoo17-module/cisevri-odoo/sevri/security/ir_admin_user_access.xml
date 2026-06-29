@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Admin Group Access - Full Access to All Models -->
+        <record id="access_sev_admin_unit" model="ir.model.access">
+            <field name="name">access_sev_admin_unit</field>
+            <field name="model_id" ref="model_sci_unit" />
+            <field name="group_id" ref="sevri.res_groups_sev_admin" />
+            <field name="perm_read" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_create" eval="1" />
+            <field name="perm_unlink" eval="1" />
+        </record>
+
+        <record id="access_sev_admin_department" model="ir.model.access">
+            <field name="name">access_sev_admin_department</field>
+            <field name="model_id" ref="model_hr_department" />
+            <field name="group_id" ref="sevri.res_groups_sev_admin" />
+            <field name="perm_read" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_create" eval="1" />
+            <field name="perm_unlink" eval="1" />
+        </record>
+
+        <record id="access_sev_admin_activity" model="ir.model.access">
+            <field name="name">access_sev_admin_activity</field>
+            <field name="model_id" ref="model_sev_activity" />
+            <field name="group_id" ref="sevri.res_groups_sev_admin" />
+            <field name="perm_read" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_create" eval="1" />
+            <field name="perm_unlink" eval="1" />
+        </record>
+
+        <record id="access_sev_admin_event" model="ir.model.access">
+            <field name="name">access_sev_admin_event</field>
+            <field name="model_id" ref="model_sev_event" />
+            <field name="group_id" ref="sevri.res_groups_sev_admin" />
+            <field name="perm_read" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_create" eval="1" />
+            <field name="perm_unlink" eval="1" />
+        </record>
+
+        <record id="access_sev_admin_event_type" model="ir.model.access">
+            <field name="name">access_sev_admin_event_type</field>
+            <field name="model_id" ref="model_sev_event_type" />
+            <field name="group_id" ref="sevri.res_groups_sev_admin" />
+            <field name="perm_read" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_create" eval="1" />
+            <field name="perm_unlink" eval="1" />
+        </record>
+
+        <record id="access_sev_admin_classification" model="ir.model.access">
+            <field name="name">access_sev_admin_classification</field>
+            <field name="model_id" ref="model_sev_classification" />
+            <field name="group_id" ref="sevri.res_groups_sev_admin" />
+            <field name="perm_read" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_create" eval="1" />
+            <field name="perm_unlink" eval="1" />
+        </record>
+
+        <record id="access_sev_admin_specification" model="ir.model.access">
+            <field name="name">access_sev_admin_specification</field>
+            <field name="model_id" ref="model_sev_specification" />
+            <field name="group_id" ref="sevri.res_groups_sev_admin" />
+            <field name="perm_read" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_create" eval="1" />
+            <field name="perm_unlink" eval="1" />
+        </record>
+
+        <record id="access_sev_admin_proposed_action" model="ir.model.access">
+            <field name="name">access_sev_admin_proposed_action</field>
+            <field name="model_id" ref="model_sev_proposed_action" />
+            <field name="group_id" ref="sevri.res_groups_sev_admin" />
+            <field name="perm_read" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_create" eval="1" />
+            <field name="perm_unlink" eval="1" />
+        </record>
+
+        <record id="access_sev_admin_process" model="ir.model.access">
+            <field name="name">access_sev_admin_process</field>
+            <field name="model_id" ref="model_sev_process" />
+            <field name="group_id" ref="sevri.res_groups_sev_admin" />
+            <field name="perm_read" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_create" eval="1" />
+            <field name="perm_unlink" eval="1" />
+        </record>
+
+        <record id="access_sev_admin_attachment" model="ir.model.access">
+            <field name="name">access_sev_admin_attachment</field>
+            <field name="model_id" ref="model_sev_attachment" />
+            <field name="group_id" ref="sevri.res_groups_sev_admin" />
+            <field name="perm_read" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_create" eval="1" />
+            <field name="perm_unlink" eval="1" />
+        </record>
+
+        <record id="access_ir_actions_act_window_sev_admin" model="ir.model.access">
+            <field name="name">access.ir.actions.act.window.sev.admin</field>
+            <field name="model_id" ref="base.model_ir_actions_act_window" />
+            <field name="group_id" ref="sevri.res_groups_sev_admin" />
+            <field name="perm_read" eval="1" />
+            <field name="perm_write" eval="0" />
+            <field name="perm_create" eval="0" />
+            <field name="perm_unlink" eval="0" />
+        </record>
+    </data>
+</odoo>

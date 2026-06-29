@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- * Tree View * -->
+    <record id="districts_tree_view" model="ir.ui.view">
+      <field name="name">waste_control.districts.tree</field>
+      <field name="model">waste_control.districts</field>
+      <field name="arch" type="xml">
+        <tree string="Distritos">
+          <field name="name" />
+          <field name="cantons_id" />
+
+          <field name="create_uid" string="Fuente" />
+          <field name="create_date" />
+          <field name="active" widget="boolean_toggle" />
+        </tree>
+      </field>
+    </record>
+
+    <!-- * Form View * -->
+    <record id="districts_form_view" model="ir.ui.view">
+      <field name="name">waste_control.districts.form</field>
+      <field name="model">waste_control.districts</field>
+      <field name="arch" type="xml">
+        <form string="Distritos">
+          <header>
+            <button name="button_save_and_close" string="Guardar y cerrar" type="object"
+              class="btn-primary" />
+          </header>
+          <sheet>
+            <div class="oe_title">
+              <label for="name" class="oe_edit_only" />
+              <h1>
+                <field name="name" placeholder="Ingrese el nombre" />
+              </h1>
+            </div>
+
+            <group>
+              <field name="active" widget="boolean_toggle" />
+              <field name="cantons_id" placeholder="Escriba o seleccione" />
+            </group>
+
+            <notebook>
+              <page string="Comunidades">
+                <field name="communities_ids" />
+              </page>
+
+              <!-- * Audit fields*  -->
+              <page string="Información de modificación">
+                <group>
+                  <group>
+                    <field name="create_date" readonly="1" />
+                    <field name="write_date" readonly="1" />
+                  </group>
+                  <group>
+                    <field name="create_uid" string="Fuente" readonly="1" />
+                    <field name="write_uid" string="Editor" readonly="1" />
+                  </group>
+                </group>
+              </page>
+            </notebook>
+          </sheet>
+          <!-- * Notes/Messages  * -->
+          <div class="oe_chatter">
+            <field name="message_ids" />
+          </div>
+        </form>
+      </field>
+    </record>
+
+    <!-- * Kanban view * -->
+    <record id="districts_kanban_view" model="ir.ui.view">
+      <field name="name">waste_control.districts.kanban</field>
+      <field name="model">waste_control.districts</field>
+      <field name="arch" type="xml">
+        <kanban class="o_kanban_small_column" string="Distritos">
+          <field name="name" />
+          <field name="active" widget="boolean_toggle" />
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_card oe_kanban_global_click"
+                style="border-radius: 10px; box-shadow: 0 2px 8px #e0e0e0; margin: 8px; padding: 16px;">
+                <!-- Name -->
+                <div style="font-size: 1.2em; font-weight: bold;">
+                  <field name="name" />
+                </div>
+                <!-- Action buttons -->
+                <div
+                  style="margin-top: 10px; display: flex; gap: 10px; align-items: center;">
+                  <!-- Edit button -->
+                  <a type="edit" class="btn btn-primary"
+                    title="Editar" role="button">
+                    <i class='fa fa-edit' />Editar</a>
+                  <!-- Delete button -->
+                  <a type="delete" class="btn btn-danger"
+                    title="Borrar" role="button">
+                    <i class='fa fa-trash' />Borrar</a>
+                  <!-- Toggle active/inactive button -->
+                  <button type="object"
+                    name="toggle_active"
+                    class="btn"
+                    t-attf-class="btn #{record.active.raw_value ? 'btn-success' : 'btn-secondary'}"
+                    title="Alternar active">
+                    <t t-esc="record.active.raw_value and 'Active' or 'Inactive'" />
+                  </button>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+    <!-- * Search view * -->
+    <record id="districts_search_view" model="ir.ui.view">
+      <field name="name">waste_control.districts.search</field>
+      <field name="model">waste_control.districts</field>
+      <field name="arch" type="xml">
+        <search>
+          <filter string="Activo" name="filter_active" domain="[('active', '=', True)]" />
+          <filter string="Inactivo" name="filter_inactive"
+            domain="[('active', '=', False)]" />
+
+          <separator />
+          <filter string="Mis registros" name="filter_my_records"
+            domain="[('create_uid', '=', uid)]" />
+
+          <group expand="0" string="Agrupado por">
+            <filter string="Estado" name="group_by_active"
+              context="{'group_by': 'active'}" />
+            <filter string="Usuario responsable" name="group_by_user"
+              context="{'group_by': 'create_uid'}" />
+            <filter string="Fecha de creación" name="group_by_create_date"
+              context="{'group_by': 'create_date:month'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+    <!-- * Action * -->
+    <record id="districts_act_window" model="ir.actions.act_window">
+      <field name="name">Distritos</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">waste_control.districts</field>
+      <field name="view_mode">kanban,tree,form</field>
+    </record>
+  </data>
+</odoo>

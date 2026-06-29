@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_parking_rate_form" model="ir.ui.view">
+            <field name="name">parking_meters.parking_rate.form</field>
+            <field name="model">parking_meters.parking_rate</field>
+            <field name="arch" type="xml">
+                <form string="Parking Rate">
+                    <sheet>
+                        <group>
+                            <field name="minutes" />
+                            <field name="price" />
+                            <field name="update_date" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

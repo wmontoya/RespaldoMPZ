@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data noupdate="1">
+    <!-- * EBI tariffs Basic Data * -->
+    <record id="ebi_tariff_2025" model="waste_control.ebi_tariffs">
+      <field name="year">2025</field>
+      <field name="tariff">15000.00</field>
+    </record>
+
+    <record id="ebi_tariff_2026" model="waste_control.ebi_tariffs">
+      <field name="year">2026</field>
+      <field name="tariff">16500.00</field>
+    </record>
+  </data>
+</odoo>

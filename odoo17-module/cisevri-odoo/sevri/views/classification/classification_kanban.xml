@@ -1,0 +1,26 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="view_classification_kanban">
+      <field name="name">classification.kanban</field>
+      <field name="model">sev.classification</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <field name="description" />
+          <field name="event_type_id" />
+          <field name="specifications" />
+          <templates>
+            <t t-name="kanban-box">
+              <div class="oe_kanban_card">
+                <div class="oe_kanban_content">
+                  <strong><field name="description"/></strong><br/>
+                  <span><field name="event_type_id"/></span><br/>
+                  <span><field name="specifications"/></span>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+  </data>
+</odoo>

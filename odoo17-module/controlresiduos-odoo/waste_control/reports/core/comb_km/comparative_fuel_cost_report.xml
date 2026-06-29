@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="comparative_fuel_cost_report">
+    <t t-call="web.html_container">
+      <t t-call="web.external_layout">
+        <div class="page">
+          <h2>Reporte comparativo de costes de combustible</h2>
+          <p class="text-muted">Fecha del reporte: <span t-esc="report_date" /></p>
+
+          <div class="row mb-4">
+            <div class="col-6">
+              <span>Costo anual total: </span>
+              <span t-esc="total_annual_cost"
+                t-options='{"widget": "monetary", "display_currency": res_company.currency_id}' />
+              <br />
+              <span>Kilómetros totales:</span>
+              <span t-esc="total_annual_km" t-options='{"widget": "float", "precision": 2}' />
+              <br />
+              <span>Costo promedio global (por km):</span>
+              <span t-esc="global_cost_per_km"
+                t-options='{"widget": "monetary", "display_currency": res_company.currency_id}' />
+            </div>
+          </div>
+
+          <table class="table table-sm table-bordered">
+            <thead>
+              <tr>
+                <th>Mes</th>
+                <th class="text-right">Kilómetros</th>
+                <th class="text-right">Costo actual</th>
+                <th class="text-right">Coste previsto (por Km)</th>
+                <th class="text-right">Diferencia</th>
+                <th class="text-right">% Desviación</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <t t-foreach="months_data" t-as="m">
+                <tr>
+                  <td>
+                    <span t-esc="m['month_name']" />
+                  </td>
+                  <td class="text-right">
+                    <span t-esc="m['km']"
+                      t-options='{"widget": "float", "precision": 2}' />
+                  </td>
+                  <td class="text-right">
+                    <span t-esc="m['actual_cost']"
+                      t-options='{"widget": "monetary", "display_currency": res_company.currency_id}' />
+                  </td>
+                  <td class="text-right">
+                    <span t-esc="m['expected_cost']"
+                      t-options='{"widget": "monetary", "display_currency": res_company.currency_id}' />
+                  </td>
+                  <td class="text-right">
+                    <span t-esc="m['difference']"
+                      t-options='{"widget": "monetary", "display_currency": res_company.currency_id}'
+                      t-att-class="'text-danger' if m['difference'] &lt; 0 else 'text-success'" />
+                  </td>
+                  <td class="text-right">
+                    <span>
+                      <span t-esc="m['percentage']"
+                        t-options='{"widget": "float", "precision": 2}'
+                        t-att-class="'text-danger' if m['percentage'] &lt; 0 else 'text-success'"
+                      />%</span>
+                  </td>
+                </tr>
+              </t>
+            </tbody>
+          </table>
+
+          <div class="mt-4">
+            <p class="text-muted">* El coste previsto se calcula multiplicando los kilómetros del
+              mes por el coste medio anual global por kilómetro.<br /> * Una diferencia positiva
+              (verde) indica ahorro respecto al promedio anual. Una diferencia negativa (rojo)
+              indica un gasto excesivo. </p>
+          </div>
+        </div>
+      </t>
+    </t>
+  </template>
+
+  <record id="comparative_fuel_cost_report_action" model="ir.actions.report">
+    <field name="name">Reporte comparativo de costes de combustible</field>
+    <field name="model">waste_control.comparative_fuel_cost_wizard</field>
+    <field name="report_type">qweb-pdf</field>
+    <field name="report_name">waste_control.comparative_fuel_cost_report</field>
+    <field name="report_file">waste_control.comparative_fuel_cost_report</field>
+    <field name="print_report_name">(f'Reporte_Comparativo_de_Costos_de_Combustibles_{object.year}')</field>
+    <field name="binding_model_id" ref="model_waste_control_comparative_fuel_cost_wizard" />
+    <field name="paperformat_id" ref="waste_control.paperformat_landscape" />
+  </record>
+</odoo>

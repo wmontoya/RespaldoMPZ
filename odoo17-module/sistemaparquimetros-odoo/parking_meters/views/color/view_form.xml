@@ -1,0 +1,17 @@
+<odoo>
+    <data>
+        <record id="view_color_form" model="ir.ui.view">
+            <field name="name">parking_meters.color.form</field>
+            <field name="model">parking_meters.color</field>
+            <field name="arch" type="xml">
+                <form string="Color">
+                    <sheet>
+                        <group>
+                            <field name="color" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,192 @@
+<odoo>
+  <data>
+    <!-- Menú principal único - visible para todos los grupos -->
+    <menuitem id="main_menu_root" name="Autoevaluación" sequence="1"
+      web_icon="cii_autoevaluation,static/description/icon.png"
+      groups="cii_autoevaluation.group_autoevaluation_admin,cii_autoevaluation.group_autoevaluation_audit,cii_autoevaluation.group_autoevaluation_assessee,cii_autoevaluation.group_autoevaluation_internal_control" />
+
+    <!-- Window action for main Survey menu -->
+    <record id="autoevaluation_survey_action" model="ir.actions.act_window">
+      <field name="name">Autoevaluación</field>
+      <field name="res_model">ae.survey</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu items for Survey Process - admin/audit con acción, internal_control sin acción -->
+    <menuitem
+      id="main_menu_survey_process_admin_audit"
+      name="Proceso de Autoevaluación"
+      parent="main_menu_root"
+      action="autoevaluation_survey_action"
+      groups="cii_autoevaluation.group_autoevaluation_admin,cii_autoevaluation.group_autoevaluation_audit"
+    />
+
+    <menuitem
+      id="main_menu_survey_process_internal"
+      name="Proceso de Autoevaluación"
+      parent="main_menu_root"
+      groups="cii_autoevaluation.group_autoevaluation_internal_control"
+    />
+
+    <!-- Menú principal para evaluados - Mi Respuesta de Autoevaluación -->
+    <menuitem
+      id="main_menu_my_assessment_assessee"
+      name="Mi Respuesta de Autoevaluación"
+      parent="main_menu_root"
+      action="autoevaluation_survey_answer_user_auto_action"
+      groups="cii_autoevaluation.group_autoevaluation_assessee"
+    />
+
+    <menuitem
+      id="menu_survey_answers_admin_audit"
+      name="Autoevaluaciones"
+      parent="main_menu_survey_process_admin_audit"
+      action="autoevaluation_survey_answer_action"
+      sequence="10"
+      groups="cii_autoevaluation.group_autoevaluation_admin,cii_autoevaluation.group_autoevaluation_audit"
+    />
+
+    <menuitem
+      id="menu_survey_answers_internal"
+      name="Autoevaluaciones"
+      parent="main_menu_survey_process_internal"
+      action="autoevaluation_survey_answer_internal_control_action"
+      sequence="10"
+      groups="cii_autoevaluation.group_autoevaluation_internal_control"
+    />
+
+
+    <!-- Menú de mi respuesta para evaluados (duplicado como submenu) -->
+    <menuitem
+      id="menu_my_survey_answer_assessee"
+      name="Mi Respuesta de Autoevaluación"
+      parent="main_menu_my_assessment_assessee"
+      action="autoevaluation_survey_answer_user_auto_action"
+      sequence="5"
+      groups="cii_autoevaluation.group_autoevaluation_assessee"
+    />
+
+    <menuitem
+      id="main_menu_answers_admin_audit"
+      name="Respuestas"
+      parent="main_menu_survey_process_admin_audit"
+      action="autoevaluation_answer_action"
+      groups="cii_autoevaluation.group_autoevaluation_admin,cii_autoevaluation.group_autoevaluation_audit"
+    />
+
+    <menuitem
+      id="main_menu_answers_internal"
+      name="Respuestas"
+      parent="main_menu_survey_process_internal"
+      action="autoevaluation_answer_action"
+      groups="cii_autoevaluation.group_autoevaluation_internal_control"
+    />
+
+    <menuitem
+      id="main_menu_proposed_actions_admin_audit"
+      name="Acciones Propuestas"
+      parent="main_menu_survey_process_admin_audit"
+      action="action_ae_proposed_action"
+      groups="cii_autoevaluation.group_autoevaluation_admin,cii_autoevaluation.group_autoevaluation_audit"
+    />
+
+    <menuitem
+      id="main_menu_proposed_actions_internal"
+      name="Acciones Propuestas"
+      parent="main_menu_survey_process_internal"
+      action="action_ae_proposed_action"
+      groups="cii_autoevaluation.group_autoevaluation_internal_control"
+    />
+
+    <!-- Menú de evaluaciones anteriores para evaluados -->
+    <menuitem
+      id="main_menu_my_previous_assessments"
+      name="Mis Evaluaciones Anteriores"
+      parent="main_menu_my_assessment_assessee"
+      action="autoevaluation_my_previous_assessments_server_action"
+      sequence="8"
+      groups="cii_autoevaluation.group_autoevaluation_assessee"
+    />
+
+    <!-- Menú de acciones propuestas propias para evaluados -->
+    <menuitem
+      id="main_menu_my_proposed_actions"
+      name="Acciones Propuestas de Mi Departamento"
+      parent="main_menu_my_assessment_assessee"
+      action="action_ae_proposed_action_my_server"
+      sequence="10"
+      groups="cii_autoevaluation.group_autoevaluation_assessee"
+    />
+
+    <menuitem
+      id="main_menu_settings_admin_audit"
+      name="Configuración"
+      parent="main_menu_root"
+      groups="cii_autoevaluation.group_autoevaluation_admin,cii_autoevaluation.group_autoevaluation_audit"
+    />
+
+    <menuitem
+      id="main_menu_settings_internal"
+      name="Configuración"
+      parent="main_menu_root"
+      groups="cii_autoevaluation.group_autoevaluation_internal_control"
+    />
+
+    <menuitem
+      id="main_menu_surveys"
+      name="Encuestas"
+      parent="main_menu_settings_admin_audit"
+      action="autoevaluation_survey_action"
+      groups="cii_autoevaluation.group_autoevaluation_admin,cii_autoevaluation.group_autoevaluation_audit"
+    />
+
+    <menuitem
+      id="main_menu_components_admin_audit"
+      name="Componentes"
+      parent="main_menu_settings_admin_audit"
+      action="autoevaluation_component_action"
+      groups="cii_autoevaluation.group_autoevaluation_admin,cii_autoevaluation.group_autoevaluation_audit"
+    />
+
+    <menuitem
+      id="main_menu_components_internal"
+      name="Componentes"
+      parent="main_menu_settings_internal"
+      action="autoevaluation_component_action"
+      groups="cii_autoevaluation.group_autoevaluation_internal_control"
+    />
+
+    <menuitem
+      id="main_menu_sections_admin_audit"
+      name="Secciones"
+      parent="main_menu_settings_admin_audit"
+      action="autoevaluation_section_action"
+      groups="cii_autoevaluation.group_autoevaluation_admin,cii_autoevaluation.group_autoevaluation_audit"
+    />
+
+    <menuitem
+      id="main_menu_sections_internal"
+      name="Secciones"
+      parent="main_menu_settings_internal"
+      action="autoevaluation_section_action"
+      groups="cii_autoevaluation.group_autoevaluation_internal_control"
+    />
+
+    <menuitem
+      id="main_menu_questions_admin_audit"
+      name="Preguntas"
+      parent="main_menu_settings_admin_audit"
+      action="autoevaluation_question_action"
+      groups="cii_autoevaluation.group_autoevaluation_admin,cii_autoevaluation.group_autoevaluation_audit"
+    />
+
+    <menuitem
+      id="main_menu_questions_internal"
+      name="Preguntas"
+      parent="main_menu_settings_internal"
+      action="autoevaluation_question_action"
+      groups="cii_autoevaluation.group_autoevaluation_internal_control"
+    />
+
+  </data>
+</odoo>

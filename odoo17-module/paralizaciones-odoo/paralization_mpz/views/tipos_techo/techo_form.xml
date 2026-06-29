@@ -1,0 +1,16 @@
+<odoo>
+    <record model="ir.ui.view" id="view_tipos_techo_form">
+        <field name="name">tipos.techo.form</field>
+        <field name="model">tipos.techo</field>
+        <field name="arch" type="xml">
+            <form string="Tipo de Techo">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="desc_techo"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

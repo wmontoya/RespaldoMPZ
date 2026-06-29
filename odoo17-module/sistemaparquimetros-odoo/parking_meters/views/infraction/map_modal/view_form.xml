@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    
+        <record id="view_map_modal" model="ir.ui.view">
+            <field name="name">parking_meters.infraction.map.modal</field>
+            <field name="model">parking_meters.infraction</field>
+            <field name="arch" type="xml">
+                <form string="Map Information">
+                
+                    <group>
+                        <div class="container p-1"
+                            style='width: 935px; height: 680px; overflow: hidden;'>
+                            <field name="map_url" readonly="1"
+                                style='width: 100%; height: 100%; display: block;' nolabel="1" />
+                        </div>
+                    </group>
+                    <footer class="d-flex justify-content-end">
+                        <button string="Close" class="btn btn-danger btn-lg" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

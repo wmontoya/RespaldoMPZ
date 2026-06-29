@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Justification Form View -->
+        <record id="view_ae_justification_form" model="ir.ui.view">
+            <field name="name">ae.justification.form</field>
+            <field name="model">ae.justification</field>
+            <field name="arch" type="xml">
+                <form string="Justification">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="answer_id" readonly="True"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Justification" name="justification">
+                                <field name="description" widget="html"/>
+                            </page>
+                            <page string="Attachments" name="justification_attachments">
+                                <field name="justification_attachments_count" readonly="True"/>
+                                <field name="justification_attachments" widget="one2many">
+                                    <tree editable="bottom">
+                                        <field name="description"/>
+                                        <field name="attachment"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+                <!-- Justification Form Popup View -->
+        <record id="view_ae_justification_popup_form" model="ir.ui.view">
+            <field name="name">ae.justification.popup.form</field>
+            <field name="model">ae.justification</field>
+            <field name="arch" type="xml">
+                <form string="Justification">
+                    <sheet>
+                        <group>
+                            <field name="question_name_by_answer_id" readonly="True"/>
+                            <field name="answer_id" readonly="True" options="{'no_open': True , 'no_create': True }" string="Answer"/>
+                            <field name="is_survey_submitted" invisible="1"/>
+                            <field name="justification_attachments_count" invisible="1"/>
+                            <field name="question_guidance_text" invisible="1"/>
+                        </group>
+
+                        <!-- Guidance Text Section - Solo lectura -->
+                        <div class="alert alert-info" style="padding: 15px;" invisible="not question_guidance_text">
+                            <p style="margin-top: 0;">
+                                <i class="fa fa-lightbulb-o"/> <strong>Orientación para Justificación:</strong>
+                            </p>
+                            <div style="margin-top: 10px; white-space: pre-wrap;">
+                                <field name="question_guidance_text" readonly="1" nolabel="1"/>
+                            </div>
+                        </div>
+
+                        <group>
+                            <separator/>
+                            <field name="description" widget="html" string="Justification" height="250"/>
+                        </group>
+                        
+                                                <!-- Attachments Section -->
+                        <group string="Supporting Documents" >
+
+                            <field name="justification_attachments" readonly="is_survey_submitted" delete="not is_survey_submitted">
+                                <tree editable="bottom">
+                                    <field name="description"/>
+                                    <field name="attachment"/>
+                                    <field name="create_date" readonly="1"/>
+                                </tree>
+                            </field>
+                        </group> 
+                    </sheet> 
+                </form>
+            </field>
+        </record>
+
+        <!-- Justification Tree View -->
+        <record id="view_ae_justification_tree" model="ir.ui.view">
+            <field name="name">ae.justification.tree</field>
+            <field name="model">ae.justification</field>
+            <field name="arch" type="xml">
+                <tree string="Justifications">
+                    <field name="answer_id"/>
+                    <field name="justification_attachments_count"/>
+                    <field name="create_date"/>
+                </tree>
+            </field>
+        </record>
+ 
+        <!-- Justification Search View -->
+        <record id="view_ae_justification_search" model="ir.ui.view">
+            <field name="name">ae.justification.search</field>
+            <field name="model">ae.justification</field>
+            <field name="arch" type="xml">
+                <search string="Search Justifications">
+                    <field name="answer_id"/>
+                    <filter string="No Attachments" name="no_attachments" domain="[('justification_attachments_count', '=', 0)]"/>
+                    <group expand="0" string="Group by">
+                        <filter string="Answer" name="group_answer" context="{'group_by': 'answer_id'}"/>
+                        <filter string="Creation Date" name="group_create_date" context="{'group_by': 'create_date:day'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- Justification Document Form View -->
+        <record id="view_ae_justification_document_form" model="ir.ui.view">
+            <field name="name">ae.justification.document.form</field>
+            <field name="model">ae.attachment</field>
+            <field name="arch" type="xml">
+                <form string="Justification Document">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="justification_id" readonly="True"/>
+                                <field name="attachment_type"/>
+                            </group>
+                        </group>
+                        <field name="description"/>
+                        <field name="attachment"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Justification Document Popup Form View -->
+        <record id="view_ae_justification_document_popup_form" model="ir.ui.view">
+            <field name="name">ae.justification.document.popup.form</field>
+            <field name="model">ae.attachment</field>
+            <field name="arch" type="xml">
+                <form string="Add Document">
+                    <sheet>
+                        <group>
+                            <field name="justification_id" invisible="1"/>
+                            <field name="attachment_type" placeholder="e.g., PDF, DOC, XLS"/>
+                        </group>
+                        <field name="description" placeholder="Document description"/>
+                        <field name="attachment" required="1"/>
+                    </sheet>
+                    <footer>
+                        <button name="action_save_attachment" string="Save" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <!-- Justification Document Tree View -->
+        <record id="view_ae_justification_document_tree" model="ir.ui.view">
+            <field name="name">ae.justification.document.tree</field>
+            <field name="model">ae.attachment</field>
+            <field name="arch" type="xml">
+                <tree string="Justification Documents">
+                    <field name="description"/>
+                    <field name="justification_id"/>
+                    <field name="attachment_type"/>
+                    <field name="create_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Justification Action -->
+        <record id="action_ae_justification" model="ir.actions.act_window">
+            <field name="name">Justifications</field>
+            <field name="res_model">ae.justification</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create your first justification
+                </p>
+                <p>
+                    Justifications are created when "Sí" is selected in an answer.
+                    They include justification text and supporting documents.
+                </p>
+            </field>
+        </record>
+
+        <!-- Justification Document Action -->
+        <record id="action_ae_justification_document" model="ir.actions.act_window">
+            <field name="name">Justification Documents</field>
+            <field name="res_model">ae.attachment</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No justification documents
+                </p>
+                <p>
+                    Documents are added from justifications.
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo> 

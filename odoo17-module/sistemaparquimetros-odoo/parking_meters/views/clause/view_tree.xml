@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_clause_tree" model="ir.ui.view">
+            <field name="name">parking_meters.clause.tree</field>
+            <field name="model">parking_meters.clause</field>
+            <field name="arch" type="xml">
+                <tree string="Clauses">
+                    <field name="id" />
+                    <field name="name"/>
+                    <field name="title"/>
+                    <field name="article_code_id"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

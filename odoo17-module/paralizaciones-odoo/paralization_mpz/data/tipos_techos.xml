@@ -1,0 +1,59 @@
+<odoo>
+    <!-- Tipos de Techos -->
+    <record id="tipo_techo_esm" model="tipos.techo">
+        <field name="name">ESM</field>
+        <field name="desc_techo">ESMALTADA</field>
+    </record>
+    <record id="tipo_techo_hga" model="tipos.techo">
+        <field name="name">HGA</field>
+        <field name="desc_techo">HIERRO GALVANIZADO</field>
+    </record>
+    <record id="tipo_techo_loconc" model="tipos.techo">
+        <field name="name">LOCONC</field>
+        <field name="desc_techo">LOSA CONCRETO</field>
+    </record>
+    <record id="tipo_techo_lreb" model="tipos.techo">
+        <field name="name">LREB</field>
+        <field name="desc_techo">LAMINA RECTANGULAR ESMALTADA BLA</field>
+    </record>
+    <record id="tipo_techo_metl50" model="tipos.techo">
+        <field name="name">METL50</field>
+        <field name="desc_techo">METAL LOCK50</field>
+    </record>
+    <record id="tipo_techo_na" model="tipos.techo">
+        <field name="name">NA</field>
+        <field name="desc_techo">NO APLICA</field>
+    </record>
+    <record id="tipo_techo_otr" model="tipos.techo">
+        <field name="name">OTR</field>
+        <field name="desc_techo">OTRO</field>
+    </record>
+    <record id="tipo_techo_pals" model="tipos.techo">
+        <field name="name">PALS</field>
+        <field name="desc_techo">PALMA SECA</field>
+    </record>
+    <record id="tipo_techo_policr" model="tipos.techo">
+        <field name="name">POLICR</field>
+        <field name="desc_techo">POLIACRIL</field>
+    </record>
+    <record id="tipo_techo_tej" model="tipos.techo">
+        <field name="name">TEJ</field>
+        <field name="desc_techo">TEJA</field>
+    </record>
+    <record id="tipo_techo_ter" model="tipos.techo">
+        <field name="name">TER</field>
+        <field name="desc_techo">THERMOPANEL LAMINAS</field>
+    </record>
+    <record id="tipo_techo_zinond" model="tipos.techo">
+        <field name="name">ZINOND</field>
+        <field name="desc_techo">ZINC ONDULADO</field>
+    </record>
+    <record id="tipo_techo_zinrec" model="tipos.techo">
+        <field name="name">ZINREC</field>
+        <field name="desc_techo">ZINC RECTANG</field>
+    </record>
+    <record id="tipo_techo_zt" model="tipos.techo">
+        <field name="name">ZT</field>
+        <field name="desc_techo">ZINC TEJA</field>
+    </record>
+</odoo>

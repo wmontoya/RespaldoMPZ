@@ -1,0 +1,346 @@
+<odoo>
+  <data>
+    <!-- List View -->
+    <record model="ir.ui.view" id="autoevaluation_survey_surveys_tree">
+      <field name="name">survey.tree</field>
+      <field name="model">ae.survey</field>
+      <field name="arch" type="xml">
+        <tree>
+          <header>
+            <button 
+              string="Send Notification" 
+              type="object" 
+              name="send_notification_email" 
+              class="btn-primary" 
+            />
+            <button 
+              string="Create Answers by Department" 
+              type="object" 
+              name="action_create_survey_answers_wizard" 
+              class="btn-secondary" 
+            />
+          </header>
+          <field name="title"/>
+          <field name="departments"/>
+          <field name="components"/>
+          <field name="status"/>
+          <field name="initial_date"/>
+          <field name="final_date"/>
+        </tree>
+      </field>
+    </record>
+    <!-- Form View -->
+    <record model="ir.ui.view" id="autoevaluation_survey_survey_form">
+      <field name="name">survey.form</field>
+      <field name="model">ae.survey</field>
+      <field name="arch" type="xml">
+        <form>
+          <div class="container mt-4">
+            <div class="card shadow-sm">
+              <div class="card-header bg-primary">
+                <h3 class="card-title mb-0 text-white">Survey Information</h3>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="mb-3">
+                      <label for="title" class="form-label fw-bold">Title</label>
+                      <field name="title" style="margin-left: 1rem;" required="1" placeholder="e.g. Survey 2024" class="form-control"/>
+                    </div>
+                    <div class="mb-3">
+                      <label for="initial_date" class="form-label fw-bold">Initial Date</label>
+                      <field name="initial_date" required="1" class="form-control"/>
+                    </div>
+                    <div class="mb-3">
+                      <label for="final_date" class="form-label fw-bold">Final Date</label>
+                      <field name="final_date" required="1" class="form-control"/>
+                    </div>
+                    <div class="mb-3">
+                      <label for="status" class="form-label fw-bold">Status</label>
+                      <field name="status" style="margin-left:1rem;" required="1" widget="radio" options="{'horizontal': True}"/>
+                    </div>
+                    <notebook>
+                      <page name="components" string="Components">
+                        <field name="components">
+                          <tree>
+                            <field name="title"/>
+                            <field name="sections"/>
+                          </tree>
+                          <form>
+                            <div class="container mt-4">
+                              <div class="card shadow-sm">
+                                <div class="card-header">
+                                  <h3 >Component Information</h3>
+                                </div>
+                                <div class="card-body">
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <div class="mb-3">
+                                        <label for="title" class="form-label fw-bold">Title</label>
+                                        <field name="title" class="form-control"/>
+                                      </div>
+                                      <div class="mb-3">
+                                        <label for="sections" class="form-label fw-bold">Sections</label>
+                                        <field name="sections" class="form-control"/>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                        </field>
+                      </page>
+                      <page name="departments" string="Departments">
+                        <field name="departments">
+                          <tree>
+                            <field name="name"/>
+                            <field name="manager_id"/>
+                            <field name="unit_id"/>
+                          </tree>
+                        </field>
+                      </page>
+                    </notebook>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </field>
+    </record>
+    <!-- Kanban View -->
+    <record model="ir.ui.view" id="autoevaluation_survey_kanban">
+      <field name="name">survey.kanban</field>
+      <field name="model">ae.survey</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <field name="title"/>
+          <field name="departments"/>
+          <field name="components"/>
+          <field name="status"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <strong class="d-block mb-2">
+                    <field name="title"/>
+                  </strong>
+                  <div class="mb-2">
+                    <strong>Departments:</strong>
+                    <field name="departments"/>
+                  </div>
+                  <div class="mb-2">
+                    <strong>Components:</strong>
+                    <field name="components"/>
+                  </div>
+                  <div>
+                    <strong>Status:</strong>
+                    <field name="status"/>
+                  </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+    <!-- Graph View -->
+    <record model="ir.ui.view" id="autoevaluation_survey_graph">
+      <field name="name">survey.graph</field>
+      <field name="model">ae.survey</field>
+      <field name="arch" type="xml">
+        <graph string="Surveys" type="bar">
+          <field name="title" type="row"/>
+          <field name="status" type="col"/>
+        </graph>
+      </field>
+    </record>
+    <!-- Window Action -->
+    <record model="ir.actions.act_window" id="aes_survey_action">
+      <field name="name">Surveys</field>
+      <field name="res_model">ae.survey</field>
+      <field name="view_mode">tree,form,kanban,graph</field>
+      <field name="view_id" ref="autoevaluation_survey_surveys_tree"/>
+    </record>
+
+    <!-- New view to show evaluations with departments and users -->
+    <record model="ir.ui.view" id="autoevaluation_survey_evaluations_tree">
+      <field name="name">survey.evaluations.tree</field>
+      <field name="model">ae.survey</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="title"/>
+          <field name="status"/>
+          <field name="initial_date"/>
+          <field name="final_date"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Form view to show evaluation details with departments and users -->
+    <record model="ir.ui.view" id="autoevaluation_survey_evaluation_form">
+      <field name="name">survey.evaluation.form</field>
+      <field name="model">ae.survey</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+
+            <group>
+              <group>
+                <field name="title" />
+                <field name="description" />
+                <field name="status" />
+              </group>
+              <group>
+                <field name="initial_date" />
+                <field name="final_date" />
+              </group>
+            </group>
+            <notebook>
+                <page string="Components" name="components"> 
+                  <field name="components" />
+                </page> 
+                <page string="Answers by Department" name="survey_answers">
+                  <div class="card shadow">
+                    <div class="card-body">
+                      <field name="survey_answer_ids" readonly="1">
+                        <tree>
+                          <field name="department_id"/>
+                          <field name="manager_id"/>  
+                          <field name="status"/>
+                          <field name="progress_percentage"/> 
+                          <field name="answered_questions"/>
+                          <field name="answers" context="{'form_view_ref': 'cii_autoevaluation.autoevaluation_survey_answer_form_no_action'}"/>
+                        </tree>
+                      </field>
+                    </div>
+                    <div class="card-footer bg-light text-end">
+                      <button name="action_export_responses_to_excel" 
+                              type="object" 
+                              string="Export Answers to Excel" 
+                              class="btn btn-sm btn-secondary"
+                              invisible="status == 'inactive'">
+                              <i class="fa fa-download me-1"></i>
+                              Export Answers to Excel
+                      </button>
+                    </div>
+                  </div> 
+            </page>
+                <page string="Departments without Answer" name="departments_without_answer"> 
+                  <field name="departments_without_answer" readonly="1" >
+                    <tree>
+                      <field name="name"/>
+                      <field name="manager_id"/>  
+                    </tree>
+                  </field>
+                </page>
+                <page string="Statistics by Component" name="component_statistics">
+                  <div class="container-fluid">
+                    <div class="card shadow">
+                      <div class="card-header bg-secondary text-white">
+                        <h4 class="card-title mb-0">
+                          <i class="fa fa-bar-chart me-2"></i>
+                          Answer Statistics by Component
+                        </h4>
+                      </div>
+                      <div class="card-body">
+                        <field name="component_statistics_html" readonly="1" widget="html"/>
+                      </div>
+                      <div class="card-footer bg-light">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <small class="text-muted">
+                              <i class="fa fa-info-circle me-1"></i>
+                              Statistics are automatically calculated based on registered answers
+                            </small>
+                          </div>
+                          <div class="col-md-6 text-end">
+                            <button name="export_component_statistics"
+                                    type="object"
+                                    string="Export to Excel"
+                                    class="btn btn-secondary btn-sm">
+                              <i class="fa fa-download me-1"></i>
+                              Export Statistics
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Window action for the new evaluations view -->
+    <record model="ir.actions.act_window" id="aes_survey_evaluations_action">
+      <field name="name">Evaluations</field>
+      <field name="res_model">ae.survey</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="autoevaluation_survey_evaluations_tree"/>
+    </record>
+
+    <!-- New view to show survey answers with correct relationship -->
+    <record model="ir.ui.view" id="autoevaluation_survey_answers_tree">
+      <field name="name">survey.answers.tree</field>
+      <field name="model">ae.survey.answer</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="survey_id"/>
+          <field name="department_id"/>
+          <field name="user_id"/>
+          <field name="status"/>
+          <field name="progress_percentage"/>
+          <field name="total_questions"/>
+          <field name="answered_questions"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Form view for survey answers -->
+    <record model="ir.ui.view" id="autoevaluation_survey_answer_form">
+      <field name="name">survey.answer.form</field>
+      <field name="model">ae.survey.answer</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <group>
+                <field name="survey_id" readonly="1"/>
+                <field name="department_id" readonly="1"/>
+                <field name="user_id" readonly="1"/>
+              </group>
+              <group>
+                <field name="status" readonly="1"/>
+                <field name="progress_percentage" readonly="1"/>
+                <field name="total_questions" readonly="1"/>
+                <field name="answered_questions" readonly="1"/>
+              </group>
+            </group>
+            <notebook>
+              <page string="General Information" name="general_info">
+                <group>
+                  <group>
+                    <field name="department_name" readonly="1"/>
+                    <field name="survey_title" readonly="1"/>
+                  </group>
+                </group>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Window action for survey answers -->
+    <record model="ir.actions.act_window" id="aes_survey_answers_action">
+      <field name="name">Evaluation Answers</field>
+      <field name="res_model">ae.survey.answer</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="autoevaluation_survey_answers_tree"/>
+    </record>
+  </data>
+</odoo>

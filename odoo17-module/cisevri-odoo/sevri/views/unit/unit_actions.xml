@@ -1,0 +1,9 @@
+<odoo>
+  <data>
+    <record model="ir.actions.act_window" id="action_unit">
+      <field name="name">Unidades</field>
+      <field name="res_model">sci.unit</field>
+      <field name="view_mode">tree,form,kanban,graph</field>
+    </record>
+  </data>
+</odoo>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <template id="waste_disposition_report">
+    <t t-call="web.html_container">
+      <t t-call="web.external_layout">
+        <div class="page">
+          <h2>Reporte anual de disposición final de residuos sólidos</h2>
+          <p class="text-muted">Fecha del reporte: <span t-esc="report_date" /></p>
+
+          <table class="table table-sm table-bordered" style="font-size: 10px;">
+            <thead>
+              <tr>
+                <th>Mes</th>
+                <t t-foreach="waste_types" t-as="type">
+                  <th class="text-right">
+                    <span t-esc="type.name" />
+                  </th>
+                </t>
+                <th class="text-right table-active">Total de residuos</th>
+                <th class="text-right">Enviado a EBI (toneladas)</th>
+                <th class="text-right">Costo EBI (real)</th>
+                <th class="text-right">Costo de EBI (estimado sin reciclaje)</th>
+                <th class="text-right">Savings</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <t t-foreach="months_data" t-as="m">
+                <tr>
+                  <td>
+                    <span t-esc="m['month']" />
+                  </td>
+                  <t t-foreach="waste_types" t-as="type">
+                    <td class="text-right">
+                      <span t-esc="m['types'].get(type.id, 0.0)"
+                        t-options='{"widget": "float", "precision": 2}' />
+                    </td>
+                  </t>
+                  <td class="text-right table-active">
+                    <span t-esc="m['total_tons_displayed']"
+                      t-options='{"widget": "float", "precision": 2}' />
+                  </td>
+                  <td class="text-right">
+                    <span t-esc="m['ebi_tons']"
+                      t-options='{"widget": "float", "precision": 2}' />
+                  </td>
+                  <td class="text-right">
+                    <span t-esc="m['ebi_cost']"
+                      t-options='{"widget": "monetary", "display_currency": res_company.currency_id}' />
+                  </td>
+                  <td class="text-right">
+                    <span t-esc="m['theoretical_cost']"
+                      t-options='{"widget": "monetary", "display_currency": res_company.currency_id}' />
+                  </td>
+                  <td class="text-right text-success">
+                    <span t-esc="m['savings']"
+                      t-options='{"widget": "monetary", "display_currency": res_company.currency_id}' />
+                  </td>
+                </tr>
+              </t>
+              <!-- Totals Row -->
+              <tr class="font-weight-bold table-active">
+                <td>Totales</td>
+                <t t-foreach="waste_types" t-as="type">
+                  <td class="text-right">
+                    <span t-esc="annual_type_totals.get(type.id, 0.0)"
+                      t-options='{"widget": "float", "precision": 2}' />
+                  </td>
+                </t>
+                <td class="text-right">
+                  <span t-esc="annual_total_tons"
+                    t-options='{"widget": "float", "precision": 2}' />
+                </td>
+                <td class="text-right">
+                  <span t-esc="annual_ebi_tons"
+                    t-options='{"widget": "float", "precision": 2}' />
+                </td>
+                <td class="text-right">
+                  <span t-esc="annual_ebi_cost"
+                    t-options='{"widget": "monetary", "display_currency": res_company.currency_id}' />
+                </td>
+                <td class="text-right">
+                  <!-- Theoretical Total is Sum of Monthly Theoreticals, not
+                                    re-calc -->
+                  <span
+                    t-esc="sum(row['theoretical_cost'] for row in months_data)"
+                    t-options='{"widget": "monetary", "display_currency": res_company.currency_id}' />
+                </td>
+                <td class="text-right text-success">
+                  <span t-esc="annual_savings"
+                    t-options='{"widget": "monetary", "display_currency": res_company.currency_id}' />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </t>
+    </t>
+  </template>
+
+  <record id="waste_disposition_report_action" model="ir.actions.report">
+    <field name="name">Reporte de disposición final de residuos sólidos</field>
+    <field name="model">waste_control.waste_disposition_wizard</field>
+    <field name="report_type">qweb-pdf</field>
+    <field name="report_name">waste_control.waste_disposition_report</field>
+    <field name="report_file">waste_control.waste_disposition_report</field>
+    <field name="binding_model_id" ref="model_waste_control_waste_disposition_wizard" />
+    <field name="paperformat_id" ref="waste_control.paperformat_landscape" />
+  </record>
+</odoo>

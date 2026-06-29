@@ -1,0 +1,10 @@
+<odoo>
+  <data>
+    <record model="ir.actions.act_window" id="action_sevri_process_readonly">
+      <field name="name">Proceso SEVRI</field>
+      <field name="res_model">sev.process</field>
+      <field name="view_mode">tree</field>
+      <field name="view_id" ref="sevri.view_sevri_process_tree_readonly"/>
+    </record>
+  </data>
+</odoo>

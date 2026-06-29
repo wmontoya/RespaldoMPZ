@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- acciones -->
+        <menuitem
+            id="mature_model_root"
+            name="Modelo Madurez"
+            action="mm_evaluation_action"
+        />
+        <menuitem
+            id="mm_evaluations"
+            name="Evaluaciones"
+            action="mm_evaluation_action"
+            parent="mature_model_root"
+        />
+
+        <menuitem
+            id="mm_processes"
+            name="Proceso de Evaluación"
+            action="mm_rel_action"
+            parent="mature_model_root"
+        />
+
+        <menuitem
+            id="mm_settings"
+            name="Configuraciones"
+            parent="mature_model_root"
+        />
+        <menuitem
+            id="mm_units"
+            name="Unidades"
+            action="mm_units_action"
+            parent="mm_settings"
+        />
+        <menuitem
+            id="mm_answers"
+            name="Respuestas"
+            action="mm_answer_action"
+            parent="mm_settings"
+        />
+        <menuitem
+            id="mm_sections"
+            name="Secciones"
+            action="mm_section_action"
+            parent="mm_settings"
+        />
+        <menuitem
+            id="mm_options"
+            name="Opciones"
+            action="mm_option_action"
+            parent="mm_settings"
+        />
+        <menuitem
+            id="mm_questions"
+            name="Preguntas"
+            action="mm_question_action"
+            parent="mm_settings"
+        />
+    </data>
+</odoo>

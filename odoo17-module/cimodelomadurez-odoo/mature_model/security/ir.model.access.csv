@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mm_evaluation_model,mm.evaluation,model_mm_evaluation,base.group_user,1,1,1,1
+access_mm_section_model,mm.section,model_mm_section,base.group_user,1,1,1,1
+access_mm_question_model,mm.question,model_mm_question,base.group_user,1,1,1,1
+access_mm_option_model,mm.option,model_mm_option,base.group_user,1,1,1,1
+access_mm_answer_model,mm.answer,model_mm_answer,base.group_user,1,1,1,1
+access_mm_rel,mm.evaluation.rel,model_mm_evaluation_rel,base.group_user,1,0,0,1

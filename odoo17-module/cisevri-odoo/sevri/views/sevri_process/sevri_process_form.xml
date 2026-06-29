@@ -1,0 +1,74 @@
+<odoo>
+  <data>
+    <record id="view_sevri_process_form" model="ir.ui.view">
+      <field name="name">sevri_process.form</field>
+      <field name="model">sev.process</field>
+      <field name="arch" type="xml">
+        <form string="Proceso">
+          <sheet style="background:#f4f6f9;">
+            <div class="container-fluid">
+              <div class="card border-0 shadow-sm rounded">
+                <div class="card-header text-white" style="background: linear-gradient(135deg,#2c3e50,#34495e);">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                      <h4 class="mb-0 text-white">Proceso SEVRI</h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body p-4">
+                  <div class="row g-4">
+                    <div class="col-lg-6 d-flex">
+                      <div class="card border-0 shadow-sm h-100 w-100">
+                        <div class="card-header bg-white">
+                          <h5 class="mb-0 fw-semibold">
+                            <i class="fa fa-info-circle me-1"/>
+                            Información General
+                          </h5>
+                        </div>
+                        <field name="is_internal_control" invisible="1"/>
+                        <div class="card-body">
+                          <div class="mb-3">
+                            <p class="text-muted small">Fecha Inicial</p>
+                            <field name="initial_date" nolabel="1" readonly="is_internal_control"/>
+                          </div>
+                          <div class="mb-3">
+                            <p class="text-muted small">Fecha Final</p>
+                            <field name="final_date" nolabel="1" readonly="is_internal_control"/>
+                          </div>
+                          <div class="mb-3">
+                            <p class="text-muted small">Estado</p>
+                            <field name="status" nolabel="1" readonly="is_internal_control"/>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 d-flex">
+                      <div class="card border-0 shadow-sm h-100 w-100">
+                        <div class="card-header bg-white">
+                          <h5 class="mb-0 fw-semibold">
+                            <i class="fa fa-calendar me-1"/>
+                            Actividades
+                          </h5>
+                        </div>
+                        <div class="card-body">
+                          <field name="activities" nolabel="1" readonly="is_internal_control" >
+                            <tree>
+                              <field name="title" string="Título"/>
+                              <field name="subtitle" string="Subtítulo"/>
+                              <field name="activity_date" string="Fecha de Actividad"/>
+                              <field name="dependency" string="Dependencia"/>
+                            </tree>
+                          </field>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </sheet>
+        </form>
+      </field>
+    </record>
+  </data>
+</odoo>

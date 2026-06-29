@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="module_paralization_mpz" model="ir.module.category">
+            <field name="name">Paralization Management</field>
+        </record>
+        <record id="group_paralization_oficial" model="res.groups">
+            <field name="name">Oficial</field>
+            <field name="category_id" ref="paralization_mpz.module_paralization_mpz"/>
+        </record>
+        <record id="group_paralization_administrativo" model="res.groups">
+            <field name="name">Administrativo</field>
+            <field name="category_id" ref="paralization_mpz.module_paralization_mpz"/>
+        </record>
+        <record id="group_paralization_administrador_ti" model="res.groups">
+            <field name="name">Administrador TI</field>
+            <field name="category_id" ref="paralization_mpz.module_paralization_mpz"/>
+        </record>
+    </data>
+</odoo>

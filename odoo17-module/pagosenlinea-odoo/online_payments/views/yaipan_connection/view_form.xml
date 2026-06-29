@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_yaipan_connection_form" model="ir.ui.view">
+            <field name="name">yaipan_connection.form</field>
+            <field name="model">online_payments.yaipan_connection</field>
+            <field name="arch" type="xml">
+                <form string="Yaipan Connection">
+                    <sheet>
+                        <group string="Yaipan Connection Information">
+                             <field name="environment" placeholder="Select environment" required="1"/>
+                            <field name="url_base" placeholder="Enter base URL" required="1"/>
+                            <field name="autorization" placeholder="Enter authorization" required="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

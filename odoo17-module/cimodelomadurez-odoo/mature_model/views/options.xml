@@ -1,0 +1,98 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="mature_model_option_tree">
+      <field name="name">opción.tree</field>
+      <field name="model">mm.option</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="description" />
+          <field name="value" />
+          <field name="question_id" />
+        </tree>
+      </field>
+    </record>
+    <record id="option_view_form" model="ir.ui.view">
+      <field name="name">opción.view.form</field>
+      <field name="model">mm.option</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <div class="container mt-4">
+              <div class="card shadow-sm">
+                <div class="card-header bg-primary">
+                  <h3 class="card-title mb-0 text-white">Información de la Opción</h3>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="mb-3">
+                        <label for="description" class="form-label fw-bold">Descripción</label>
+                        <field name="description" required="1" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label for="value" class="form-label fw-bold">Valor</label>
+                        <field name="value" widget="radio" options="{'horizontal':'True'}"
+                          required="1" style="margin-left:1rem;" />
+                      </div>
+                      <div class="mb-3">
+                        <label for="question_id" class="form-label fw-bold">Pregunta</label>
+                        <field name="question_id" class="form-control" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </sheet>
+        </form>
+      </field>
+    </record>
+    <!-- Vista Kanban -->
+    <record id="option_view_kanban" model="ir.ui.view">
+      <field name="name">opción.view.kanban</field>
+      <field name="model">mm.option</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <templates>
+            <t t-name="kanban-box">
+              <div class="o_kanban_card">
+                <div class="o_kanban_header">
+                  <strong>
+                    <field name="description" />
+                  </strong>
+                </div>
+                <div class="o_kanban_body">
+                  <div class="o_kanban_description">
+                    <p>
+                      <strong>Valor:</strong>
+                      <field name="value" />
+                    </p>
+                    <p>
+                      <strong>Pregunta:</strong>
+                      <field name="question_id" />
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+    <record id="option_view_graph" model="ir.ui.view">
+      <field name="name">opción.view.graph</field>
+      <field name="model">mm.option</field>
+      <field name="arch" type="xml">
+        <graph string="Opciones por Pregunta">
+          <field name="id" type="measure" sum="1" string="Número de Opciones" />
+          <field name="question_id" type="dimension" string="Pregunta" />
+        </graph>
+      </field>
+    </record>
+    <record model="ir.actions.act_window" id="mm_option_action">
+      <field name="name">Conteo de opciones por pregunta</field>
+      <field name="res_model">mm.option</field>
+      <field name="view_mode">tree,form,kanban,graph</field>
+    </record>
+  </data>
+</odoo>

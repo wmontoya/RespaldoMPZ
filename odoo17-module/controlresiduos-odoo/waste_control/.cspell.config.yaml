@@ -1,0 +1,75 @@
+$schema: https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json
+version: "0.2"
+
+language:
+  - en
+  - es
+
+ignorePaths:
+  # folders
+  - ".idea/**"
+  - ".vscode/**"
+  - ".dictionaries/**"
+  - "__pycache__/**"
+  - "data/**"
+  - "i18n/**"
+  - "tools/utils/**"
+  # files
+  - "**/*.prisma"
+  - "LICENSE"
+  - ".cspell.config.yaml"
+  - "docs/requerimientos/**"
+  - "docs/PROJECT-STRUCTURE.txt"
+  - "json_to_markdown.py"
+  - "non_recyclable_waste_report.py"
+
+dictionaryDefinitions:
+  - name: "project-words"
+    path: "./.dictionaries/project-words.txt"
+  - name: "python"
+    path: "./.dictionaries/python.txt"
+  - name: "spanish"
+    path: "./.dictionaries/spanish.txt"
+
+dictionaries:
+  - "project-words"
+  - "python"
+
+import:
+  - "@cspell/dict-es-es/cspell-ext.json"
+
+words: []
+ignoreWords: []
+useGitignore: true
+# enabled: false
+
+overrides:
+  # Markdown (.md) → EN + ES
+  - filename: "**/*.md"
+    language:
+      - en
+      - es
+    dictionaries:
+      - project-words
+      - spanish
+    allowCompoundWords: true
+
+  # XML (.xml) → EN + ES
+  - filename: "**/*.xml"
+    language:
+      - en
+      - es
+    dictionaries:
+      - project-words
+      - spanish
+    ignoreRegExpList:
+      - "<[^>]+>"
+      - "&[a-zA-Z]+;"
+
+  - filename: "**/*.py"
+    language:
+      - en
+      - es
+    dictionaries:
+      - project-words
+      - spanish

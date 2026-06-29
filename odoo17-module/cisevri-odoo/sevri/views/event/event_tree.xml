@@ -1,0 +1,23 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="view_event_tree">
+      <field name="name">event.tree</field>
+      <field name="model">sev.event</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="activity_id" />
+          <field name="description" />
+          <field name="event_type_id" />
+          <field name="probability" />
+          <field name="impact" />
+          <field name="risk_level" />
+          <field name="aptitude" />
+          <field name="new_risk_level" />
+          <field name="acceptance" />
+          <field name="creation_date" />
+          <field name="status" />
+        </tree>
+      </field>
+    </record>
+  </data>
+</odoo>

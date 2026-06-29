@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_brand_tree" model="ir.ui.view">
+            <field name="name">parking_meters.brand.tree</field>
+            <field name="model">parking_meters.brand</field>
+            <field name="arch" type="xml">
+                <tree string="Brands">
+                    <field name="id" />
+                    <field name="brand" />
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

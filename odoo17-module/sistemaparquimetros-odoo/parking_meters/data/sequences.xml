@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="seq_temporal_invoice_bol" model="ir.sequence">
+        <field name="name">Secuencia de Factura Temporal BOL</field>
+        <field name="code">parking_meters.temporal_invoice_bol</field>
+        <field name="prefix">BOL-</field>
+        <field name="padding">6</field>
+        <field name="suffix">-%(year)s</field>
+        <field name="number_increment">1</field>
+        <field name="implementation">standard</field>
+    </record>
+     <record id="seq_temporal_invoice_mip" model="ir.sequence">
+        <field name="name">Secuencia de Factura Temporal MIP</field>
+        <field name="code">parking_meters.temporal_invoice_mip</field>
+        <field name="prefix">MIP-</field>
+        <field name="padding">6</field>
+        <field name="suffix">-%(year)s</field>
+        <field name="number_increment">1</field>
+        <field name="implementation">standard</field>
+    </record>
+</odoo>

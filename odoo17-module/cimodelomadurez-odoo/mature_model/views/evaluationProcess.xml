@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="mature_model_relation_tree" model="ir.ui.view">
+            <field name="name">vista.relacion.arbol</field>
+            <field name="model">mm.evaluation.rel</field>
+            <field name="arch" type="xml">
+                <tree create="false" decoration-success="status=='finished'"
+                    decoration-warning="status in ('pending',False)">
+                    <header>
+                        <button name="generate_department_report" string="Generar Informe Excel"
+                            type="object" class="btn-primary" />
+                    </header>
+                    <field name="department_id" />
+                    <field name="evaluation_id" />
+                    <field name="status" />
+                    <field name="score" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="mature_model_relation_form" model="ir.ui.view">
+            <field name="name">vista.relacion.formulario</field>
+            <field name="model">mm.evaluation.rel</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="evaluation_id"/>
+                            <field name="department_id"/>
+                            <field name="status"/>
+                            <field name="score"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="mature_model_relation_search" model="ir.ui.view">
+            <field name="name">vista.relacion.busqueda</field>
+            <field name="model">mm.evaluation.rel</field>
+            <field name="arch" type="xml">
+                <search string="Buscar">
+                    <filter name="filter_current_year" string="Evaluación Actual"
+                        domain="[('evaluation_id.initial_date', '&gt;=', datetime.date(context_today().year, 1, 1).strftime('%Y-%m-%d')),
+                         ('evaluation_id.final_date', '&lt;=', datetime.date(context_today().year, 12, 31).strftime('%Y-%m-%d')),
+                            ('evaluation_id.status', '=', 'active')
+                         ]"
+                    />
+                    <!-- Año anterior -->
+                    <filter name="filter_past_year" string="Año Anterior"
+                        domain="[('evaluation_id.initial_date', '&gt;=', datetime.date(context_today().year-1, 1, 1).strftime('%Y-%m-%d')),
+                         ('evaluation_id.final_date', '&lt;=', datetime.date(context_today().year-1, 12, 31).strftime('%Y-%m-%d')),
+                         ]"/>
+                    <!-- Hace 2 años -->
+                    <filter name="filter_2_years_ago" string="Hace 2 Años"
+                        domain="[('evaluation_id.initial_date', '&gt;=', datetime.date(context_today().year-2, 1, 1).strftime('%Y-%m-%d')),
+                         ('evaluation_id.final_date', '&lt;=', datetime.date(context_today().year-2, 12, 31).strftime('%Y-%m-%d')),
+                         ]"/>
+                    <!-- Hace 3 años -->
+                    <filter name="filter_3_years_ago" string="Hace 3 Años"
+                        domain="[('evaluation_id.initial_date', '&gt;=', datetime.date(context_today().year-3, 1, 1).strftime('%Y-%m-%d')),
+                         ('evaluation_id.final_date', '&lt;=', datetime.date(context_today().year-3, 12, 31).strftime('%Y-%m-%d')),
+                         ]"/>
+                    <!-- Hace 4 años -->
+                    <filter name="filter_4_years_ago" string="Hace 4 Años"
+                        domain="[('evaluation_id.initial_date', '&gt;=', datetime.date(context_today().year-4, 1, 1).strftime('%Y-%m-%d')),
+                         ('evaluation_id.final_date', '&lt;=', datetime.date(context_today().year-4, 12, 31).strftime('%Y-%m-%d')),
+                         ]"/>
+                    <!-- Hace 5 años -->
+                    <filter name="filter_5_years_ago" string="Hace 5 Años"
+                        domain="[('evaluation_id.initial_date', '&gt;=', datetime.date(context_today().year-5, 1, 1).strftime('%Y-%m-%d')),
+                         ('evaluation_id.final_date', '&lt;=', datetime.date(context_today().year-5, 12, 31).strftime('%Y-%m-%d')),
+                         ]"/>
+                    <!-- Filtrar por estado -->
+                    <filter name="filter_status_pending" string="Estado Pendiente"
+                        domain="[('status', '=', 'pending')]"/>
+                    <filter name="filter_status_finished" string="Estado Finalizado"
+                        domain="[('status', '=', 'finished')]"/>
+                    <!-- Agrupar por estado -->
+                    <group name="group_by_status" string="Agrupar por Estado">
+                        <filter name="group_by_status" string="Estado" context="{'group_by':'status'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- Vista Pivot -->
+        <record id="mature_model_relation_pivot" model="ir.ui.view">
+            <field name="name">vista.relacion.pivot</field>
+            <field name="model">mm.evaluation.rel</field>
+            <field name="arch" type="xml">
+                <pivot>
+                    <field name="evaluation_id" type="row" />
+                    <field name="status" type="row" />
+                    <field name="department_id" type="row" />
+                    <field name="score" type="measure" operator="score" />
+                </pivot>
+            </field>
+        </record>
+
+        <!-- Vista Gráfica -->
+        <record id="mature_model_evaluation_rel_graph" model="ir.ui.view">
+            <field name="name">vista.grafica.relacion.evaluacion</field>
+            <field name="model">mm.evaluation.rel</field>
+            <field name="arch" type="xml">
+                <graph string="Puntaje por Departamento" type="bar">
+                    <field name="department_id" type="row" />
+                    <field name="score" type="measure" string="Puntaje por Departamento" operator="avg" />
+                </graph>
+            </field>
+        </record>
+        
+        <!-- Acción -->
+        <record model="ir.actions.act_window" id="mm_rel_action">
+            <field name="name">Proceso de Evaluación</field>
+            <field name="res_model">mm.evaluation.rel</field>
+            <field name="view_mode">tree,form,graph,pivot</field>
+            <field name="context">{"search_default_filter_current_year":1}</field>
+        </record>
+    </data>
+</odoo>

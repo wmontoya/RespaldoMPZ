@@ -1,0 +1,12 @@
+<odoo>
+    <record model="ir.ui.view" id="view_tipos_pared_tree">
+        <field name="name">tipos.pared.tree</field>
+        <field name="model">tipos.pared</field>
+        <field name="arch" type="xml">
+            <tree string="Tipos de Paredes" editable="bottom">
+                <field name="name"/>
+                <field name="desc_pared"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

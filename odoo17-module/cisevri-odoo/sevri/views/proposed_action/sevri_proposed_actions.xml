@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="action_sev_proposed_action">
+            <field name="name">Acciones Propuestas</field>
+            <field name="res_model">sev.proposed_action</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="target">current</field>
+        </record>
+    </data>
+</odoo>

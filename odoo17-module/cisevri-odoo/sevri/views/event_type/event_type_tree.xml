@@ -1,0 +1,16 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="view_event_type_tree">
+      <field name="name">event_type.tree</field>
+      <field name="model">sev.event_type</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name" />
+          <field name="description" />
+          <field name="events"/>
+          <field name="classifications" />
+        </tree>
+      </field>
+    </record>
+  </data>
+</odoo>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <!-- Note:
+    the simbol " ** " represent a entity module
+    the simbol " * " represent a entity group
+    the simbol "!" represent a entity
+    -->
+  <data noupdate="0">
+    <!-- ** vehicles_routes ** -->
+    <!-- ! historic_vehicles -->
+    <record id="historic_vehicles_1" model="waste_control.historic_vehicles">
+      <field name="number">VH001</field>
+      <field name="plate_number">SM-123</field>
+      <field name="brand">Toyota</field>
+      <field name="charge_capacity">5000.00</field>
+      <field name="year">2020</field>
+      <field name="state">Operativo - En excelente condición</field>
+      <!-- relations -->
+      <field name="drivers_id" ref="drivers_1" />
+    </record>
+
+    <record id="historic_vehicles_2" model="waste_control.historic_vehicles">
+      <field name="number">VH002</field>
+      <field name="plate_number">SM-789</field>
+      <field name="brand">Isuzu</field>
+      <field name="charge_capacity">7500.00</field>
+      <field name="year">2019</field>
+      <field name="state">Operativo - Requiere mantenimiento menor</field>
+      <!-- relations -->
+      <field name="drivers_id" ref="drivers_1" />
+    </record>
+
+    <!-- ! routes_study -->
+    <record id="routes_study_1" model="waste_control.routes_study">
+      <field name="number">1</field>
+      <field name="kilometers_of_route">125.50</field>
+      <!-- relations -->
+      <field name="routes_id" ref="routes_1" />
+    </record>
+
+    <record id="routes_study_2" model="waste_control.routes_study">
+      <field name="number">2</field>
+      <field name="kilometers_of_route">185.25</field>
+      <!-- relations -->
+      <field name="routes_id" ref="routes_2" />
+    </record>
+
+    <!-- ! vehicle_routes -->
+    <record id="vehicle_routes_1" model="waste_control.vehicle_routes">
+      <field name="number">1</field>
+      <field name="charge_capacity">5000.00</field>
+      <field name="year">2020</field>
+      <field name="observation"><![CDATA[Vehículo asignado a rutas residenciales diurnas.]]></field>
+      <!-- relations -->
+      <field name="drivers_id" ref="drivers_1" />
+      <field name="historic_vehicles_id" ref="historic_vehicles_1" />
+      <field name="routes_id" ref="routes_1" />
+    </record>
+
+    <record id="vehicle_routes_2" model="waste_control.vehicle_routes">
+      <field name="number">2</field>
+      <field name="charge_capacity">7500.00</field>
+      <field name="year">2019</field>
+      <field name="observation"><![CDATA[Vehículo para rutas comerciales e industriales.]]></field>
+      <!-- relations -->
+      <field name="drivers_id" ref="drivers_1" />
+      <field name="historic_vehicles_id" ref="historic_vehicles_2" />
+      <field name="routes_id" ref="routes_1" />
+    </record>
+    <!-- ** end vehicles_routes ** -->
+  </data>
+</odoo>

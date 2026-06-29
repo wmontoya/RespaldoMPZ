@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_sev_proposed_action_kanban">
+            <field name="name">sev.proposed_action.kanban</field>
+            <field name="model">sev.proposed_action</field>
+            <field name="arch" type="xml">
+                <kanban class="o_sev_kanban">
+                    <field name="description"/>
+                    <field name="accomplishment_level"/>
+                    <field name="action_date"/>
+                    <field name="user_id"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <!-- Fecha de hoy para comparar vencimiento -->
+                            <t t-set="today" t-value="new Date().toISOString().slice(0,10)"/>
+
+                            <!-- Estado → clase de borde inferior -->
+                            <t t-set="border_class"
+                               t-value="record.accomplishment_level.raw_value == 'yes'
+                                            ? 'border-bottom-success'
+                                            : record.accomplishment_level.raw_value == 'partial'
+                                                ? 'border-bottom-warning'
+                                                : 'border-bottom-danger'"/>
+
+                            <div t-att-class="'oe_kanban_card oe_kanban_global_click sevri-kanban-card p-0 ' + border_class">
+
+                                <!-- ── CABECERA ── -->
+                                <div class="kanban-card-header d-flex justify-content-between align-items-center">
+
+                                    <!-- Badge de estado -->
+                                    <span t-att-class="record.accomplishment_level.raw_value == 'yes'
+                                                            ? 'badge status-completa'
+                                                            : record.accomplishment_level.raw_value == 'partial'
+                                                                ? 'badge status-parcial'
+                                                                : 'badge status-incompleta'">
+                                        <t t-if="record.accomplishment_level.raw_value == 'yes'">Completa</t>
+                                        <t t-elif="record.accomplishment_level.raw_value == 'partial'">Parcial</t>
+                                        <t t-else="">Incompleta</t>
+                                    </span>
+
+                                    <!-- Badge SEVRI fijo -->
+                                    <span class="badge badge-sevri">SEVRI</span>
+                                </div>
+
+                                <!-- ── CUERPO ── -->
+                                <div class="kanban-card-body">
+                                    <div class="kanban-card-description mb-2">
+                                        <field name="description"/>
+                                    </div>
+
+                                    <!-- ── PIE: fecha o "Vencida" ── -->
+                                    <div class="kanban-card-footer d-flex align-items-center">
+                                        <t t-if="record.action_date.raw_value and record.action_date.raw_value &lt; today">
+                                            <!-- Fecha vencida → etiqueta roja -->
+                                            <span class="badge badge-vencida">Vencida</span>
+                                        </t>
+                                        <t t-else="">
+                                            <!-- Fecha vigente → icono + valor -->
+                                            <span class="kanban-date-normal">
+                                                <i class="fa fa-calendar"/>
+                                                <field name="action_date"/>
+                                            </span>
+                                        </t>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+    </data>
+</odoo>

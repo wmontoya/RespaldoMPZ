@@ -1,0 +1,10 @@
+<odoo>
+  <data>
+    <record model="ir.actions.act_window" id="action_sevri_process">
+      <field name="name">Proceso SEVRI</field>
+      <field name="res_model">sev.process</field>
+      <field name="view_mode">tree,form</field>
+      <field name="target">current</field>
+    </record>
+  </data>
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_vehicle_type_tree" model="ir.ui.view">
+            <field name="name">parking_meters.vehicle_type.tree</field>
+            <field name="model">parking_meters.vehicle_type</field>
+            <field name="arch" type="xml">
+                <tree string="Vehicle Types">
+                    <field name="id" />
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

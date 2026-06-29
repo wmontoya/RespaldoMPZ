@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- * Tree View * -->
+    <record id="routes_study_tree_view" model="ir.ui.view">
+      <field name="name">waste_control.routes_study.tree</field>
+      <field name="model">waste_control.routes_study</field>
+      <field name="arch" type="xml">
+        <tree string="Estudio de rutas">
+          <field name="number" />
+          <field name="routes_id" string="Nombre" />
+          <field name="kilometers_of_route" />
+
+          <field name="create_uid" string="Fuente" />
+          <field name="create_date" />
+          <field name="active" widget="boolean_toggle" />
+        </tree>
+      </field>
+    </record>
+
+    <!-- * Form View * -->
+    <record id="routes_study_form_view" model="ir.ui.view">
+      <field name="name">waste_control.routes_study.form</field>
+      <field name="model">waste_control.routes_study</field>
+      <field name="arch" type="xml">
+        <form string="Estudio de rutas">
+          <header />
+          <sheet>
+            <group>
+              <field name="number" placeholder="Ingrese el numero" />
+              <field name="routes_id" placeholder="Escriba o seleccione" />
+              <field name="kilometers_of_route"
+                placeholder="Kilómetros lineales de la ruta" />
+            </group>
+
+            <separator />
+
+            <group>
+              <field name="active" widget="boolean_toggle" />
+            </group>
+
+            <notebook>
+              <!-- * Audit fields*  -->
+              <page string="Información de modificación">
+                <group>
+                  <group>
+                    <field name="create_date" readonly="1" />
+                    <field name="write_date" readonly="1" />
+                  </group>
+                  <group>
+                    <field name="create_uid" string="Fuente"
+                      readonly="1" />
+                    <field name="write_uid" string="Editor" readonly="1" />
+                  </group>
+                </group>
+              </page>
+            </notebook>
+          </sheet>
+          <!-- * Notes/Messages  * -->
+          <div class="oe_chatter">
+            <field name="message_ids" />
+          </div>
+        </form>
+      </field>
+    </record>
+
+    <!-- * Kanban View * -->
+    <record id="routes_study_kanban_view" model="ir.ui.view">
+      <field name="name">waste_control.routes_study.kanban</field>
+      <field name="model">waste_control.routes_study</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <field name="id" />
+          <field name="number" />
+          <field name="routes_id" />
+          <field name="kilometers_of_route" />
+          <templates>
+            <t t-name="kanban-box">
+              <div class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <span class="o_kanban_record_title">
+                    <field name="routes_id" />
+                  </span>
+                  <div>
+                    <field name="number" />
+                  </div>
+                  <div> Km: <field name="kilometers_of_route" />
+                  </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+    <!-- * Pivot View * -->
+    <record id="routes_study_pivot_view" model="ir.ui.view">
+      <field name="name">waste_control.routes_study.pivot</field>
+      <field name="model">waste_control.routes_study</field>
+      <field name="arch" type="xml">
+        <pivot string="Estudio de rutas">
+          <field name="routes_id" type="row" />
+          <field name="kilometers_of_route" type="measure" />
+        </pivot>
+      </field>
+    </record>
+
+    <!-- * Search view * -->
+    <record id="routes_study_search_view" model="ir.ui.view">
+      <field name="name">waste_control.routes_study.search</field>
+      <field name="model">waste_control.routes_study</field>
+      <field name="arch" type="xml">
+        <search>
+          <filter string="Activo" name="filter_active" domain="[('active', '=', True)]" />
+          <filter string="Inactivo" name="filter_inactive"
+            domain="[('active', '=', False)]" />
+
+          <filter string="Año actual" name="year_current"
+            domain="[('create_date','&gt;=', (context_today()).strftime('%Y-01-01')), ('create_date','&lt;=', (context_today()).strftime('%Y-12-31'))]" />
+
+          <filter string="Año anterior" name="year_last"
+            domain="[('create_date','&gt;=', (context_today() - relativedelta(years=1)).strftime('%Y-01-01')), ('create_date','&lt;=', (context_today() - relativedelta(years=1)).strftime('%Y-12-31'))]" />
+
+          <separator />
+          <filter string="Mis registros" name="filter_my_records"
+            domain="[('create_uid', '=', uid)]" />
+
+          <group expand="0" string="Agrupado por">
+            <filter string="Estado" name="group_by_active"
+              context="{'group_by': 'active'}" />
+            <filter string="Usuario responsable" name="group_by_user"
+              context="{'group_by': 'create_uid'}" />
+            <filter string="Fecha de creación" name="group_by_create_date"
+              context="{'group_by': 'create_date:month'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+    <!-- * Action * -->
+    <record id="routes_study_act_window" model="ir.actions.act_window">
+      <field name="name">Estudio de rutas</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">waste_control.routes_study</field>
+      <field name="context">{'search_default_year_current': 1}</field>
+      <field name="view_mode">tree,kanban,form,pivot</field>
+    </record>
+  </data>
+</odoo>

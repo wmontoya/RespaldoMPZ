@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_infraction_state_tree" model="ir.ui.view">
+            <field name="name">parking_meters.infraction_state.tree</field>
+            <field name="model">parking_meters.infraction_state</field>
+            <field name="arch" type="xml">
+                <tree string="Infraction States">
+                    <field name="id" />
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

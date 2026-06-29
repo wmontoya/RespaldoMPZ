@@ -1,0 +1,86 @@
+<odoo>
+    <record id="view_patrimonial_finca_form" model="ir.ui.view">
+        <field name="name">patrimonial.finca.form</field>
+        <field name="model">patrimonial.finca</field>
+        <field name="arch" type="xml">
+
+            <form string="Finca">
+                <sheet style="background:#f4f6f9;">
+
+                    <div class="container-fluid">
+
+                        <!-- HEADER MODERNO -->
+                        <div class="row mb-4">
+                            <div class="col">
+
+                                <div class="p-4 rounded shadow-sm text-white"
+                                    style="background:linear-gradient(135deg,#1f3b57,#2c5282);">
+                                    <div class="row">
+                                        <h2 class="mb-1">
+                                            <field name="num_plano" class="text-white"/>
+                                        </h2>
+
+                                        <div style="opacity:0.8;">
+                                            Número de Plano
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <h2 class="mb-1">
+                                            <field name="num_finca" class="text-white" />
+                                        </h2>
+
+                                        <div style="opacity:0.8;">
+                                            Número de Finca
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CARD PRINCIPAL -->
+                        <div class="row">
+                            <div class="col">
+
+                                <div class="card border-0 shadow-sm rounded">
+
+                                    <div class="card-header bg-white">
+                                        <strong>Información General</strong>
+                                    </div>
+
+                                    <div class="card-body p-4">
+
+                                        <div class="mb-3">
+                                            <span class="text-muted small">Medida (m²) </span><br/>
+                                            <field name="medida" />
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <span class="text-muted small">Distrito</span><br/>
+                                            <field name="district_id" />
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <span class="text-muted small">Usos</span><br/>
+                                            <field name="use_ids" widget="many2many_tags" />
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <span class="text-muted small">Observaciones</span><br/>
+                                            <field name="observaciones" />
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </sheet>
+            </form>
+
+        </field>
+    </record>
+</odoo>

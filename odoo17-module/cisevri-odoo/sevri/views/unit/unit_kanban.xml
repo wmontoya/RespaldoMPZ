@@ -1,0 +1,35 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="view_unit_kanban">
+      <field name="name">unit.kanban</field>
+      <field name="model">sci.unit</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="row">
+                  <div class="col-12 mb-3">
+                    <strong>
+                      <field name="name"/>
+                    </strong>
+                  </div>
+                </div>
+                <t t-if="record.description.value">
+                  <div class="mb-2">
+                    <strong>Descripción:</strong> <field name="description"/>
+                  </div>
+                </t>
+                <t t-if="record.departments.value">
+                  <div>
+                    <strong>Departamentos:</strong> <field name="departments"/>
+                  </div>
+                </t>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+  </data>
+</odoo>

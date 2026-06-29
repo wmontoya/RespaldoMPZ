@@ -1,0 +1,17 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="view_boleta_tree">
+      <field name="name">paralization_mpz.boleta.tree</field>
+      <field name="model">paralization_mpz.boleta</field>
+      <field name="arch" type="xml">
+        <tree string="Boletas de Paralización de Obra">
+          <field name="numero_boleta"/>
+          <field name="fecha_boleta"/>
+          <field name="inspector_id"/>
+          <field name="inspector_cedula"/>
+          <field name="obra_direccion"/>
+        </tree>
+      </field>
+    </record>
+  </data>
+</odoo>

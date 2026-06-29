@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="survey_answer_pdf_report">
+        <t t-call="web.basic_layout">
+            <div class="article">
+                <!-- Header -->
+                <div class="text-center mb-4">
+                    <h2>Autoevaluación - Reporte de Respuestas</h2>
+                    <hr/>
+                </div>
+
+                <!-- Survey Information -->
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <h4>Información General</h4>
+                        <table class="table table-bordered">
+                            <tr>
+                                <td><strong>Encuesta:</strong></td>
+                                <td t-esc="o.survey_id.title"/>
+                            </tr>
+                            <tr>
+                                <td><strong>Departamento:</strong></td>
+                                <td t-esc="o.department_id.name"/>
+                            </tr>
+                            <tr>
+                                <td><strong>Fecha del Reporte:</strong></td>
+                                <td t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y %H:%M:%S')"/>
+                            </tr>
+                            <tr>
+                                <td><strong>Estado:</strong></td>
+                                <td><span class="badge badge-success" t-esc="o.status"/></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Answers by Component -->
+                <t t-set="components" t-value="o.survey_id.components.sorted('sequence')"/>
+                <t t-foreach="components" t-as="component">
+                    <div class="mb-5">
+                        <h3 class="component-title" t-esc="component.title"/>
+
+                        <!-- Get answers for this component -->
+                        <t t-set="component_answers" t-value="o.answers.filtered(lambda a: a.question_id.component_id.id == component.id).sorted(lambda a: (a.section_id.sequence or 0, a.question_id.sequence or 0))"/>
+
+                        <!-- Group answers by section -->
+                        <t t-set="sections" t-value="component_answers.mapped('section_id').sorted('sequence')"/>
+                        <t t-foreach="sections" t-as="section">
+                            <div class="mb-4">
+                                <h4 class="section-title" t-esc="section.title"/>
+
+                                <t t-set="section_answers" t-value="component_answers.filtered(lambda a: a.section_id.id == section.id)"/>
+                                <t t-foreach="section_answers" t-as="answer">
+                                    <div class="answer-item mb-3 p-3 border rounded">
+                                        <!-- Question -->
+                                        <div class="question">
+                                            <strong><span t-esc="answer.question_id.sequence or ''"/>.</strong>
+                                            <span t-esc="answer.question_id.title"/>
+                                        </div>
+
+                                        <!-- Response -->
+                                        <div class="response mt-2">
+                                            <strong>Respuesta: </strong>
+                                            <span t-if="answer.response == 'si'" class="text-success">SÍ</span>
+                                            <span t-if="answer.response == 'no'" class="text-danger">NO</span>
+                                            <span t-if="answer.response == 'sin_respuesta'" class="text-muted">Sin Respuesta</span>
+                                        </div>
+
+                                        <!-- Question Description -->
+                                        <div t-if="answer.question_id.description" class="question-description mt-2">
+                                            <small class="text-muted" t-esc="answer.question_id.description"/>
+                                        </div>
+
+                                        <!-- Justification (if response is YES) -->
+                                        <div t-if="answer.response == 'si' and answer.justification_id" class="justification mt-3 p-3 bg-light rounded">
+                                            <h6 class="text-success">
+                                                <i class="fa fa-check-circle"/> Justificación:
+                                            </h6>
+                                            <div t-if="answer.justification_id.description" class="justification-text">
+                                                <div t-raw="answer.justification_id.description"/>
+                                            </div>
+
+                                            <!-- Supporting Documents -->
+                                            <div t-if="answer.justification_id.justification_attachments" class="documents mt-2">
+                                                <small><strong>Documentos de Apoyo:</strong></small>
+                                                <ul class="list-unstyled ml-3">
+                                                    <li t-foreach="answer.justification_id.justification_attachments" t-as="doc">
+                                                        <small>• <span t-esc="doc.name"/></small>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <!-- Proposed Action (if response is NO) -->
+                                        <div t-if="answer.response == 'no' and answer.proposed_actions" class="proposed-actions mt-3 p-3 bg-light rounded">
+                                            <h6 class="text-danger">
+                                                <i class="fa fa-exclamation-triangle"/> Acción(es) Propuesta(s):
+                                            </h6>
+
+                                            <t t-foreach="answer.proposed_actions" t-as="action">
+                                                <div class="action-item mt-2 p-2 border rounded bg-white">
+                                                    <div class="action-description">
+                                                        <strong>Descripción:</strong>
+                                                        <div t-raw="action.description or 'No especificada'"/>
+                                                    </div>
+
+                                                    <div t-if="action.indicators" class="action-indicators mt-2">
+                                                        <strong>Indicadores de Cumplimiento:</strong>
+                                                        <div t-raw="action.indicators"/>
+                                                    </div>
+
+                                                    <div class="action-details mt-2">
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <strong>Responsable:</strong>
+                                                                <span t-esc="action.responsible_name or 'No asignado'"/>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <strong>Fecha Límite:</strong>
+                                                                <span t-esc="action.finish_date or 'No definida'"/>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-1">
+                                                            <div class="col-6">
+                                                                <strong>Nivel de Cumplimiento:</strong>
+                                                                <span t-esc="dict(action._fields['accomplishment_level'].selection).get(action.accomplishment_level, action.accomplishment_level)"/>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <strong>Departamento:</strong>
+                                                                <span t-esc="action.department_id.name"/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div t-if="action.justification" class="action-justification mt-2">
+                                                        <strong>Justificación:</strong>
+                                                        <div t-raw="action.justification"/>
+                                                    </div>
+
+                                                    <!-- Action Documents -->
+                                                    <div t-if="action.justification_attachments" class="action-documents mt-2">
+                                                        <small><strong>Documentos:</strong></small>
+                                                        <ul class="list-unstyled ml-3">
+                                                            <li t-foreach="action.justification_attachments" t-as="doc">
+                                                                <small>• <span t-esc="doc.name"/></small>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </t>
+                                        </div>
+
+                                        <!-- No justification or action warning -->
+                                        <div t-if="answer.response == 'si' and not answer.justification_id" class="alert alert-warning mt-2">
+                                            <small>
+                                                <i class="fa fa-exclamation-circle"/>
+                                                No se proporcionó justificación para esta respuesta positiva.
+                                            </small>
+                                        </div>
+
+                                        <div t-if="answer.response == 'no' and not answer.proposed_actions" class="alert alert-warning mt-2">
+                                            <small>
+                                                <i class="fa fa-exclamation-circle"/>
+                                                No se registraron acciones propuestas para esta respuesta negativa.
+                                            </small>
+                                        </div>
+                                    </div>
+                                </t>
+                            </div>
+                        </t>
+                    </div>
+                </t>
+
+                <!-- Summary -->
+                <div class="summary mt-5 p-4 bg-light border rounded">
+                    <h4>Resumen de la Autoevaluación</h4>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="text-center">
+                                <h5 class="text-success" t-esc="o.answers.filtered(lambda a: a.response == 'si')"/>
+                                <small>Respuestas Positivas (Sí)</small>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-center">
+                                <h5 class="text-danger" t-esc="o.answers.filtered(lambda a: a.response == 'no')"/>
+                                <small>Respuestas Negativas (No)</small>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-center">
+                                <h5 class="text-muted" t-esc="o.justification_count + o.proposed_actions_count"/>
+                                <small>Acciones Registradas</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="text-center mt-5">
+                    <hr/>
+                    <small class="text-muted">
+                        Reporte generado el <t t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y %H:%M:%S')"/><br/>
+                        Sistema de Autoevaluación - Control Interno
+                    </small>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

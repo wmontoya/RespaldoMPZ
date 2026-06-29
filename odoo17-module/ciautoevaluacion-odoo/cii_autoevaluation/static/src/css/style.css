@@ -1,0 +1,21 @@
+.questions-tree tbody tr.text-success > td {
+     background-color: #e0f3e0 !important;
+     color: #1a1a1a !important;
+
+}
+.badge-primary {
+  background-color: #714B67;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  padding: 1em 0.65em;
+  font-size: 0.85rem;
+}
+.badge-primary:hover {
+  background-color: #855278;
+  color: #fff;
+}
+
+.o_list_renderer .o_list_table tbody > tr > td:not(.o_list_record_selector).o_list_button > button {
+    padding: 5px;
+}

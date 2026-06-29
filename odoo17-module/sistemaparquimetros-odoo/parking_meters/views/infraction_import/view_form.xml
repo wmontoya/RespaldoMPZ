@@ -1,0 +1,38 @@
+<odoo>
+    <data>
+        <record id="view_infraction_import_form" model="ir.ui.view">
+            <field name="name">parking_meters.infraction_import.form</field>
+            <field name="model">parking_meters.infraction_import</field>
+            <field name="arch" type="xml">
+                <form string="Importar Infracciones TXT">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-md-6 mx-auto">
+                                <div class="card shadow-sm px-0">
+                                    <div class="card-header white-background border-bottom-0">
+                                        <h2 class="card-title mb-0 fw-bolder">
+                                            <i class="fa fa-download" style="color: #2563eb;"></i>
+                                            Importar Infracciones
+                                        </h2>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <group>
+                                            <field name="file_data" filename="file_name" />
+                                            <field name="file_name" readonly="1" invisible="1" />
+                                        </group>
+                                    </div>
+                                    
+                                    <div class="card-footer d-flex justify-content-end white-background border-top-0">
+                                        <button string="Importar" type="object" name="import_txt"
+                                            class="btn btn-primary" context="{}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

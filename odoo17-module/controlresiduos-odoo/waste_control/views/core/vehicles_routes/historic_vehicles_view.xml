@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- * Tree View * -->
+    <record id="historic_vehicles_tree_view" model="ir.ui.view">
+      <field name="name">waste_control.historic_vehicles.tree</field>
+      <field name="model">waste_control.historic_vehicles</field>
+      <field name="arch" type="xml">
+        <tree string="Histórico vehículos">
+          <field name="number" />
+          <field name="plate_number" />
+          <field name="charge_capacity" />
+          <field name="year" widget="char" />
+          <field name="brand" />
+
+          <field name="drivers_id" string="Nombre de conductor" />
+
+          <field name="state" />
+
+          <field name="create_uid" string="Fuente" />
+          <field name="create_date" />
+          <field name="active" widget="boolean_toggle" />
+        </tree>
+      </field>
+    </record>
+
+    <!-- * Form View * -->
+    <record id="historic_vehicles_form_view" model="ir.ui.view">
+      <field name="name">waste_control.historic_vehicles.form</field>
+      <field name="model">waste_control.historic_vehicles</field>
+      <field name="arch" type="xml">
+        <form string="Histórico vehículos">
+          <header />
+          <header />
+          <sheet>
+            <group>
+              <group>
+                <field name="number" placeholder="Ingrese el número del vehículo" />
+                <field name="plate_number" placeholder="Ingrese el número de placa" />
+                <field name="charge_capacity" placeholder="Ingrese la capacidad de carga" />
+                <field name="year" widget="char" size="4" placeholder="Ingrese el año, mínimo 1900" />
+                <field name="brand" placeholder="Ingrese la marca" />
+              </group>
+              <group>
+                <field name="drivers_id" placeholder="Escriba o seleccione" />
+              </group>
+            </group>
+
+            <separator />
+
+            <group>
+              <field name="active" widget="boolean_toggle" />
+            </group>
+
+            <notebook>
+              <page string="Estado">
+                <group>
+                  <field name="state" widget="text" placeholder="Seleccionar estado" />
+                </group>
+              </page>
+
+              <!-- * Audit fields*  -->
+              <page string="Información de modificación">
+                <group>
+                  <group>
+                    <field name="create_date" readonly="1" />
+                    <field name="write_date" readonly="1" />
+                  </group>
+                  <group>
+                    <field name="create_uid" string="Fuente"
+                      readonly="1" />
+                    <field name="write_uid" string="Editor" readonly="1" />
+                  </group>
+                </group>
+              </page>
+            </notebook>
+          </sheet>
+          <!-- * Notes/Messages  * -->
+          <div class="oe_chatter">
+            <field name="message_ids" />
+          </div>
+        </form>
+      </field>
+    </record>
+
+    <!-- * Kanban View * -->
+    <record id="historic_vehicles_kanban_view" model="ir.ui.view">
+      <field name="name">waste_control.historic_vehicles.kanban</field>
+      <field name="model">waste_control.historic_vehicles</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <field name="id" />
+          <field name="plate_number" />
+          <field name="brand" />
+          <field name="year" />
+          <field name="charge_capacity" />
+          <templates>
+            <t t-name="kanban-box">
+              <div class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <span class="o_kanban_record_title">
+                    <field name="plate_number" />
+                  </span>
+                  <div>
+                    <field name="brand" />- <field name="year" />
+                  </div>
+                  <div> Capacidad: <field name="charge_capacity" />
+                  </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+    <!-- * Pivot View * -->
+    <record id="historic_vehicles_pivot_view" model="ir.ui.view">
+      <field name="name">waste_control.historic_vehicles.pivot</field>
+      <field name="model">waste_control.historic_vehicles</field>
+      <field name="arch" type="xml">
+        <pivot string="Histórico vehículos">
+          <field name="brand" type="row" />
+          <field name="year" type="col" />
+          <field name="charge_capacity" type="measure" />
+        </pivot>
+      </field>
+    </record>
+
+    <!-- * Search view * -->
+    <record id="historic_vehicles_search_view" model="ir.ui.view">
+      <field name="name">waste_control.historic_vehicles.search</field>
+      <field name="model">waste_control.historic_vehicles</field>
+      <field name="arch" type="xml">
+        <search>
+          <filter string="Activo" name="filter_active" domain="[('active', '=', True)]" />
+          <filter string="Inactivo" name="filter_inactive"
+            domain="[('active', '=', False)]" />
+
+          <filter string="Año actual" name="year_current"
+            domain="[('create_date','&gt;=', (context_today()).strftime('%Y-01-01')), ('create_date','&lt;=', (context_today()).strftime('%Y-12-31'))]" />
+
+          <filter string="Año anterior" name="year_last"
+            domain="[('create_date','&gt;=', (context_today() - relativedelta(years=1)).strftime('%Y-01-01')), ('create_date','&lt;=', (context_today() - relativedelta(years=1)).strftime('%Y-12-31'))]" />
+
+          <separator />
+          <filter string="Mis registros" name="filter_my_records"
+            domain="[('create_uid', '=', uid)]" />
+
+          <group expand="0" string="Agrupado por">
+            <filter string="Estado" name="group_by_active"
+              context="{'group_by': 'active'}" />
+            <filter string="Usuario responsable" name="group_by_user"
+              context="{'group_by': 'create_uid'}" />
+            <filter string="Fecha de creación" name="group_by_create_date"
+              context="{'group_by': 'create_date:month'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+    <!-- * Action * -->
+    <record id="historic_vehicles_act_window" model="ir.actions.act_window">
+      <field name="name">Histórico vehículos</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">waste_control.historic_vehicles</field>
+      <field name="context">{'search_default_year_current': 1}</field>
+      <field name="view_mode">tree,kanban,form,pivot</field>
+    </record>
+  </data>
+</odoo>

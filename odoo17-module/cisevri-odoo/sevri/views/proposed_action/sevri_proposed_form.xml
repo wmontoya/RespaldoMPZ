@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_sev_proposed_action_form" model="ir.ui.view">
+            <field name="name">sev.proposed_action.form</field>
+            <field name="model">sev.proposed_action</field>
+            <field name="arch" type="xml">
+
+                <form string="Acción Propuesta">
+                    <sheet>
+                        <div class="container-fluid px-3 py-3">
+
+                            <!-- Título -->
+                            <div class="sev-form-title">Detalles de la Acción Propuesta</div>
+
+                            <!-- ══ FILA SUPERIOR: descripción/indicadores + panel de info ══ -->
+                            <div class="sev-top-row">
+
+                                <!-- Columna izquierda -->
+                                <div class="sev-top-left">
+
+                                    <!-- Descripción -->
+                                    <div class="sev-card sev-card-accent mb-3">
+                                        <div class="sev-section-header">
+                                            <i class="fa fa-calendar"/>
+                                            Descripción:
+                                        </div>
+                                        <div class="sev-card-body">
+                                            <field name="description" nolabel="1" readonly="1"/>
+                                        </div>
+                                    </div>
+
+                                    <!-- Indicadores -->
+                                    <div class="sev-card sev-card-accent">
+                                        <div class="sev-section-header">
+                                            <i class="fa fa-list"/>
+                                            Indicadores:
+                                        </div>
+                                        <div class="sev-card-body">
+                                            <field name="indicators" nolabel="1" readonly="1"/>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- Panel derecho de información -->
+                                <div class="sev-info-panel">
+
+                                    <div class="sev-info-row">
+                                        <i class="fa fa-user"/>
+                                        <span>
+                                            <span class="sev-info-label">Responsable: </span>
+                                            <field name="responsible_name" nolabel="1" class="d-inline" readonly="1"/>
+                                        </span>
+                                    </div>
+
+                                    <div class="sev-info-row">
+                                        <i class="fa fa-envelope"/>
+                                        <span>
+                                            <span class="sev-info-label">Email: </span>
+                                            <field name="responsible_email" nolabel="1" class="d-inline sev-email-link" readonly="1"/>
+                                        </span>
+                                    </div>
+
+                                    <div class="sev-info-row">
+                                        <i class="fa fa-calendar"/>
+                                        <span>
+                                            <span class="sev-info-label">Fecha de Acción: </span>
+                                            <field name="action_date" nolabel="1" class="d-inline" readonly="1"/>
+                                        </span>
+                                    </div>
+
+                                    <div class="sev-info-row">
+                                        <i class="fa fa-check-circle"/>
+                                        <span>
+                                            <span class="sev-info-label">Nivel de Cumplimiento: </span>
+                                            <field
+                                                name="accomplishment_level"
+                                                nolabel="1"
+                                                class="d-inline"
+                                                widget="statusbar"
+                                                statusbar_visible="yes,partial,no"
+                                                options="{'clickable': true, 'horizontal': true, 'yes': 'Completa', 'no': 'Incompleta', 'partial': 'Parcial'}"
+                                                decoration-success="accomplishment_level == 'yes'"
+                                                decoration-warning="accomplishment_level == 'partial'"
+                                                decoration-danger="accomplishment_level == 'no'"
+                                            />
+                                        </span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- ══ OBSERVACIONES ══ -->
+                            <div class="sev-card sev-card-accent">
+                                <div class="sev-section-header">
+                                    <i class="fa fa-calendar"/>
+                                    Observaciones:
+                                </div>
+                                <div class="sev-card-body">
+                                    <field name="observations" nolabel="1" placeholder="Ingrese las observaciones…"/>
+                                </div>
+                            </div>
+
+                            <!-- ══ ADJUNTAR ARCHIVOS ══ -->
+                            <div class="sev-card sev-card-accent">
+                                <div class="sev-section-header">
+                                    <i class="fa fa-file"/>
+                                    Adjuntar Archivos:
+                                </div>
+                                <div class="sev-card-body">
+                                    <field name="attachments" nolabel="1">
+                                        <tree editable="bottom" >
+                                            <field name="name" column_invisible="1"/>
+                                            <field name="attachment" widget="binary" filename="name" options="{'mimetype': 'attachment_type'}"/>
+                                            <field name="description"/>
+                                        </tree>
+                                    </field>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </sheet>
+
+                    <!-- Botones de guardar en el chatter/footer -->
+                    <footer>
+                        <button string="Guardar" type="object" name="write"
+                                class="btn btn-success me-2"
+                                icon="fa-check-circle"/>
+                        <button string="Guardar y Cerrar" special="save"
+                                class="btn btn-outline-success"/>
+                        <button string="Descartar" special="cancel"
+                                class="btn btn-outline-secondary ms-2"/>
+                    </footer>
+
+                </form>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

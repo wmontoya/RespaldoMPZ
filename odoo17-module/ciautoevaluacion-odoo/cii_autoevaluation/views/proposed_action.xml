@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Tree View for Proposed Actions -->
+        <record id="view_ae_proposed_action_tree" model="ir.ui.view">
+            <field name="name">ae.proposed_action.tree</field>
+            <field name="model">ae.proposed_action</field>
+            <field name="arch" type="xml">
+                <tree string="Proposed Actions">
+                    <field name="question_name_by_answer_id"/>
+                    <field name="description"/>
+                    <field name="indicators"/>
+                    <field name="department_id"/>
+                    <field name="responsible_name"/>
+                    <field name="accomplishment_level"/>
+                    <field name="finish_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Tree View for User's Own Proposed Actions -->
+        <record id="view_ae_proposed_action_my_tree" model="ir.ui.view">
+            <field name="name">ae.proposed_action.my.tree</field>
+            <field name="model">ae.proposed_action</field>
+            <field name="arch" type="xml">
+                <tree string="My Department's Proposed Actions">
+                    <field name="question_name_by_answer_id"/>
+                    <field name="description"/>
+                    <field name="indicators"/>
+                    <field name="department_id"/>
+                    <field name="responsible_name"/>
+                    <field name="accomplishment_level"/>
+                    <field name="finish_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Search View for User's Own Proposed Actions -->
+        <record id="view_ae_proposed_action_my_search" model="ir.ui.view">
+            <field name="name">ae.proposed_action.my.search</field>
+            <field name="model">ae.proposed_action</field>
+            <field name="arch" type="xml">
+                <search string="Search My Department's Proposed Actions">
+                    <field name="description"/>
+                    <field name="responsible_name"/>
+                    <field name="department_id"/>
+                    <filter name="filter_accomplishment_completed" string="Completed" domain="[('accomplishment_level', '=', 'completed')]"/>
+                    <filter name="filter_accomplishment_not_done" string="Pending" domain="[('accomplishment_level', '=', 'not_done')]"/>
+                    <filter name="filter_accomplishment_partial" string="Partial" domain="[('accomplishment_level', '=', 'partial')]"/>
+                    <group expand="0" string="Group by">
+                        <filter name="group_by_accomplishment" string="Accomplishment Level" context="{'group_by': 'accomplishment_level'}"/>
+                        <filter name="group_by_responsible" string="Responsible" context="{'group_by': 'responsible_name'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- Form View for Proposed Actions -->
+        <record id="view_ae_proposed_action_form" model="ir.ui.view">
+            <field name="name">ae.proposed_action.form</field>
+            <field name="model">ae.proposed_action</field>
+            <field name="arch" type="xml">
+                <form string="Proposed Action">
+                    <sheet>
+                        <group>
+                            <field name="question_name_by_answer_id" readonly="1"/>
+                            <field name="answer_id" readonly="1"/>
+                            <field name="is_survey_submitted" invisible="1"/>
+                            <field name="description" placeholder="Description of the proposed action..." required="1"/>
+                            <field name="indicators" placeholder="Compliance indicators..." required="1"/>
+                            <field name="department_id"/>
+                            <separator/>
+                            <field name="responsible_name"/>
+                            <field name="accomplishment_level"/>
+                            <field name="finish_date"/>
+                            <separator/>
+                            <field name="justification" placeholder="Action justification..."/>
+                            <separator/>
+                            <field name="justification_attachments">
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="attachment" filename="name"/>
+                                    <field name="description"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Popup Form View for Quick Creation -->
+        <record id="view_ae_proposed_action_form_popup" model="ir.ui.view">
+            <field name="name">ae.proposed_action.form.popup</field>
+            <field name="model">ae.proposed_action</field>
+            <field name="arch" type="xml">
+                <form string="Create Proposed Action">
+                    <sheet>
+                        <group>
+                            <field name="question_name_by_answer_id" readonly="1" options="{'no_open': True}"/>
+                            <field name="answer_id" readonly="1" options="{'no_open': True}"/>
+                            <field name="is_survey_submitted" invisible="1"/>
+                            <field name="question_guidance_text" invisible="1"/>
+                        </group>
+
+                        <!-- Guidance Text Section - Solo lectura -->
+                        <div class="alert alert-info" style="padding: 15px;" invisible="not question_guidance_text">
+                            <p style="margin-top: 0;">
+                                <i class="fa fa-lightbulb-o"/> <strong>Orientación para Acción Propuesta:</strong>
+                            </p>
+                            <div style="margin-top: 10px; white-space: pre-wrap;">
+                                <field name="question_guidance_text" readonly="1" nolabel="1"/>
+                            </div>
+                        </div>
+
+                        <group>
+                            <separator/>
+                            <field name="description" placeholder="Description of the proposed action..." required="1" readonly="is_survey_submitted == True"/>
+                            <field name="responsible_name" required="1" readonly="is_survey_submitted == True"/>
+                            <field name="indicators" placeholder="Compliance indicators..." required="1" readonly="is_survey_submitted == True"/>
+                            <field name="finish_date" required="1" readonly="is_survey_submitted == True"/>
+                            <separator/>
+                            <field name="accomplishment_level" required="1" invisible="is_survey_submitted == False" readonly="is_survey_submitted == True"/>
+                            <field name="justification" placeholder="Action justification..." invisible="is_survey_submitted == False" readonly="is_survey_submitted == True"/>
+                            <field name="justification_attachments" invisible="is_survey_submitted == False" readonly="is_survey_submitted == True">
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="attachment" filename="name"/>
+                                    <field name="description"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Search View for Proposed Actions -->
+        <record id="view_ae_proposed_action_search" model="ir.ui.view">
+            <field name="name">ae.proposed_action.search</field>
+            <field name="model">ae.proposed_action</field>
+            <field name="arch" type="xml">
+                <search string="Search Proposed Actions">
+                    <field name="description"/>
+                    <field name="responsible_name"/>
+                    <field name="department_id"/>
+                    <filter name="filter_accomplishment_completed" string="Completed" domain="[('accomplishment_level', '=', 'completed')]"/>
+                    <filter name="filter_accomplishment_not_done" string="Pending" domain="[('accomplishment_level', '=', 'not_done')]"/>
+                    <filter name="filter_accomplishment_partial" string="Partial" domain="[('accomplishment_level', '=', 'partial')]"/>
+                    <group expand="0" string="Group by">
+                        <filter name="group_by_department" string="Department" context="{'group_by': 'department_id'}"/>
+                        <filter name="group_by_accomplishment" string="Accomplishment Level" context="{'group_by': 'accomplishment_level'}"/>
+                        <filter name="group_by_responsible" string="Responsible" context="{'group_by': 'responsible_name'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- Action for Proposed Actions -->
+        <record id="action_ae_proposed_action" model="ir.actions.act_window">
+            <field name="name">Proposed Actions</field>
+            <field name="res_model">ae.proposed_action</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_ae_proposed_action_search"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Crear una nueva acción propuesta
+                </p>
+                <p>
+                    Las acciones propuestas se crean cuando una respuesta es "No" y se requiere una acción correctiva.
+                </p>
+            </field>
+        </record>
+
+        <!-- Server Action for User's Own Proposed Actions -->
+        <record id="action_ae_proposed_action_my_server" model="ir.actions.server">
+            <field name="name">My Department's Proposed Actions</field>
+            <field name="model_id" ref="model_ae_proposed_action"/>
+            <field name="state">code</field>
+            <field name="code">
+# Get user's department
+user_department = user.employee_id.department_id if user.employee_id and user.employee_id.department_id else False
+
+if not user_department:
+    raise UserError("No se pudo determinar su departamento. Por favor verifique que su perfil de empleado tenga un departamento asignado.")
+
+# Return action with filtered domain
+# Get translated name from server action record
+server_action = env.ref('cii_autoevaluation.action_ae_proposed_action_my_server')
+action = {
+    'type': 'ir.actions.act_window',
+    'name': server_action.name,
+    'res_model': 'ae.proposed_action',
+    'view_mode': 'tree,form',
+    'view_ids': [(5, 0, 0),
+        (0, 0, {'view_mode': 'tree', 'view_id': env.ref('cii_autoevaluation.view_ae_proposed_action_my_tree').id}),
+        (0, 0, {'view_mode': 'form', 'view_id': env.ref('cii_autoevaluation.view_ae_proposed_action_form').id})],
+    'search_view_id': env.ref('cii_autoevaluation.view_ae_proposed_action_my_search').id,
+    'domain': [('department_id', '=', user_department.id)],
+    'context': {},
+    'help': '&lt;p class="o_view_nocontent_smiling_face"&gt;Su departamento no tiene acciones propuestas&lt;/p&gt;&lt;p&gt;Las acciones propuestas se crean cuando los miembros del departamento responden "No" a las preguntas de la encuesta.&lt;/p&gt;'
+}
+            </field>
+        </record>
+    </data>
+</odoo> 

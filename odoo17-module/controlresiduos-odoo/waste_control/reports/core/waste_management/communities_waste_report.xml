@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <template id="communities_waste_report_document">
+      <div class="page">
+        <h2>Reporte residuos por comunidad - año <span t-esc="selected_year" /></h2>
+        <p class="text-muted">Fecha del reporte: <span t-esc="report_date" /></p>
+
+        <table class="table table-sm table-bordered">
+          <thead>
+            <tr class="text-center" style="background-color: #d9d9d9;">
+              <th>Fecha</th>
+              <th>Dia</th>
+              <th>Mes</th>
+              <th class="text-end">Kg</th>
+              <th class="text-end">Toneladas</th>
+              <th>Comunidad</th>
+              <th>Distritos</th>
+              <th>EBI Ticket</th>
+              <th>Factura</th>
+              <th>Vehículo</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr t-foreach="docs" t-as="doc">
+              <td>
+                <span t-field="doc.date" />
+              </td>
+              <td>
+                <span t-field="doc.day" />
+              </td>
+              <td>
+                <span t-field="doc.month" />
+              </td>
+              <td class="text-end">
+                <span t-field="doc.kilograms" />
+              </td>
+              <td class="text-end">
+                <span t-field="doc.tons" />
+              </td>
+              <td>
+                <span t-field="doc.communities_id.name" />
+              </td>
+              <td>
+                <span t-field="doc.districts_id.name" />
+              </td>
+              <td>
+                <span t-field="doc.ebi_ticket_number" />
+              </td>
+              <td>
+                <span t-field="doc.bill" />
+              </td>
+              <td>
+                <span t-field="doc.historic_vehicles_id.plate_number" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </template>
+
+    <template id="communities_waste_report">
+      <t t-call="web.html_container">
+        <t t-call="web.external_layout">
+          <t t-call="waste_control.communities_waste_report_document" />
+        </t>
+      </t>
+    </template>
+
+    <record id="communities_waste_report_action" model="ir.actions.report">
+      <field name="name">Reporte residuos de comunidades</field>
+      <field name="model">waste_control.communities_waste_wizard</field>
+      <field name="report_type">qweb-pdf</field>
+      <field name="report_name">waste_control.communities_waste_report</field>
+      <field name="report_file">waste_control.communities_waste_report</field>
+      <field name="print_report_name">(f'Reporte_Residuos_de_Comunidades_{object.year}')</field>
+      <field name="paperformat_id" ref="waste_control.paperformat_landscape" />
+    </record>
+  </data>
+</odoo>

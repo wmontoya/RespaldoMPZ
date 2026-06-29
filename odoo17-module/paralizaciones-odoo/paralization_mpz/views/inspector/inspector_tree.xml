@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Tree View -->
+        <record id="view_inspector_tree" model="ir.ui.view">
+            <field name="name">paralization_mpz.inspector.tree</field>
+            <field name="model">paralization_mpz.inspector</field>
+            <field name="arch" type="xml">
+                <tree string="Inspectores">
+                    <field name="name"/>
+                    <field name="cedula"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,27 @@
+# cspell-tools: keep-case no-split
+abspath
+ascii
+Clasificacion
+comodel
+debugpy
+DEVNULL
+docids
+Escazu
+groupby
+ilike
+monthrange
+noupdate
+odoo
+Odoo
+onchange
+ondelete
+paperformat
+pgdata
+PGDATA
+postgres
+postgresql
+PYTHONUNBUFFERED
+qweb
+Sibaja
+utcnow
+xmlrpc

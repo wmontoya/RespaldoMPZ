@@ -1,0 +1,21 @@
+{
+	"recommendations": [
+		// Lenguaje
+		"ms-python.python",
+		"ms-python.black-formatter",
+		"redhat.vscode-xml",
+		// herramientas
+		"streetsidesoftware.code-spell-checker",
+		"aaron-bond.better-comments",
+		"EditorConfig.EditorConfig",
+		"DavidAnson.vscode-markdownlint",
+		"yzhang.markdown-all-in-one",
+		"eamodio.gitlens",
+		// Visualizacion
+		"tal7aouy.icons",
+		"oderwat.indent-rainbow",
+		"mechatroner.rainbow-csv",
+		// otros
+		"Sazuke01.markdown-command-runner"
+	]
+}

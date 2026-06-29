@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Note: name of entity in plural -->
+<odoo>
+  <data>
+    <!-- * Tree View * -->
+    <record id="entity_name_tree_view" model="ir.ui.view">
+      <field name="name">waste_control.entity_name.tree</field>
+      <field name="model">waste_control.entity_name</field>
+      <field name="arch" type="xml">
+        <tree string="Entity name">
+          <field name="name" />
+
+          <field name="create_uid" string="Source" />
+          <field name="create_date" />
+          <field name="active" widget="boolean_toggle" />
+        </tree>
+      </field>
+    </record>
+
+    <!-- * Form View * -->
+    <record id="entity_name_form_view" model="ir.ui.view">
+      <field name="name">waste_control.entity_name.form</field>
+      <field name="model">waste_control.entity_name</field>
+      <field name="arch" type="xml">
+        <form string="Entity name">
+          <header>
+            <!--  -->
+          </header>
+          <sheet>
+            <div class="oe_title">
+              <label for="name" class="oe_edit_only" />
+              <h1>
+                <field name="name" placeholder="Enter name" />
+              </h1>
+            </div>
+
+            <separator />
+
+            <group>
+              <field name="active" widget="boolean_toggle" />
+            </group>
+
+            <notebook>
+              <!-- * Audit fields*  -->
+              <page string="Modification information">
+                <group>
+                  <group>
+                    <field name="create_date" readonly="1" />
+                    <field name="write_date" readonly="1" />
+                  </group>
+                  <group>
+                    <field name="create_uid" string="Source" readonly="1" />
+                    <field name="write_uid" string="Editor" readonly="1" />
+                  </group>
+                </group>
+              </page>
+            </notebook>
+          </sheet>
+          <!-- * Notes/Messages  * -->
+          <div class="oe_chatter">
+            <field name="message_ids" />
+          </div>
+        </form>
+      </field>
+    </record>
+
+    <!-- * Kanban view * -->
+    <record id="entity_name_kanban_view" model="ir.ui.view">
+      <field name="name">waste_control.entity_name.kanban</field>
+      <field name="model">waste_control.entity_name</field>
+      <field name="arch" type="xml">
+        <kanban class="o_kanban_small_column" string="Entity name">
+          <field name="name" />
+          <field name="active" widget="boolean_toggle" />
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_card oe_kanban_global_click"
+                style="border-radius: 10px; box-shadow: 0 2px 8px #e0e0e0; margin: 8px; padding: 16px;">
+                <!-- Name -->
+                <div style="font-size: 1.2em; font-weight: bold;">
+                  <field name="name" />
+                </div>
+                <!-- Action buttons -->
+                <div
+                  style="margin-top: 10px; display: flex; gap: 10px; align-items: center;">
+                  <!-- Edit button -->
+                  <a type="edit" class="btn btn-primary"
+                    title="Edit" role="button">
+                    <i class='fa fa-edit' />Edit</a>
+                  <!-- Delete button -->
+                  <a type="delete" class="btn btn-danger"
+                    title="Delete" role="button">
+                    <i class='fa fa-trash' />Delete</a>
+                  <!-- Toggle active/inactive button -->
+                  <button type="object"
+                    name="toggle_active"
+                    class="btn"
+                    t-attf-class="btn #{record.active.raw_value ? 'btn-success' : 'btn-secondary'}"
+                    title="Toggle active">
+                    <t t-esc="record.active.raw_value and 'Active' or 'Inactive'" />
+                  </button>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+    <!-- * Search view * -->
+    <record id="entity_name_search_view" model="ir.ui.view">
+      <field name="name">waste_control.entity_name.search</field>
+      <field name="model">waste_control.entity_name</field>
+      <field name="arch" type="xml">
+        <search>
+          <filter string="Active" name="filter_active" domain="[('active', '=', True)]" />
+          <filter string="Inactive" name="filter_inactive"
+            domain="[('active', '=', False)]" />
+
+          <separator />
+          <filter string="My records" name="filter_my_records"
+            domain="[('create_uid', '=', uid)]" />
+
+          <group expand="0" string="Group by">
+            <filter string="Status" name="group_by_active"
+              context="{'group_by': 'active'}" />
+            <filter string="Responsible user" name="group_by_user"
+              context="{'group_by': 'create_uid'}" />
+            <filter string="Creation date" name="group_by_create_date"
+              context="{'group_by': 'create_date:month'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+    <!-- * Action * -->
+    <record id="entity_name_act_window" model="ir.actions.act_window">
+      <field name="name">Entity name</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">waste_control.entity_name</field>
+      <field name="view_mode">kanban,tree,form</field>
+    </record>
+  </data>
+</odoo>

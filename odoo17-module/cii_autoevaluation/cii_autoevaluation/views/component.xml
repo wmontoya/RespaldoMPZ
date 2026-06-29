@@ -1,0 +1,81 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="autoevaluation_survey_component_tree">
+      <field name="name">ae.component.tree</field>
+      <field name="model">ae.component</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="sequence" widget="handle"/>
+          <field name="title" /> 
+          <field name="surveys" widget="many2many_tags"/> 
+          <field name="sections" />
+        </tree>
+      </field>
+    </record>
+
+    <record id="autoevaluation_survey_component_form" model="ir.ui.view">
+      <field name="name">ae.component.form</field>
+      <field name="model">ae.component</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                <field name="title" placeholder="Component Title..." required="1"/>
+              </h1>
+            </div>
+
+            <group>
+              <group>
+                <field name="sequence"/>
+                <field name="surveys" widget="many2many_tags"/>
+              </group>
+            </group>
+
+            <notebook>
+              <page string="Sections" name="sections">
+                <field name="sections">
+                  <tree editable="bottom">
+                    <field name="sequence" widget="handle"/>
+                    <field name="title"/>
+                    <field name="description"/>
+                  </tree>
+                </field>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="autoevaluation_survey_component_kanban" model="ir.ui.view">
+      <field name="name">ae.component.kanban</field>
+      <field name="model">ae.component</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <templates>
+            <t t-name="kanban-box">
+              <div class="o_kanban_card">
+                <div class="o_kanban_header">
+                  <strong><field name="title"/></strong>
+                </div>
+                <div class="o_kanban_body">
+                  <field name="surveys" widget="many2many_tags"/>
+                </div>
+                <div class="o_kanban_footer">
+                  <field name="sections"/>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="autoevaluation_component_action">
+      <field name="name">Component</field>
+      <field name="res_model">ae.component</field>
+      <field name="view_mode">tree,form,kanban</field>
+    </record>
+  </data>
+</odoo>

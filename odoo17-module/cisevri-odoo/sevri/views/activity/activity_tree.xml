@@ -1,0 +1,19 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="view_activity_tree">
+      <field name="name">activity.tree</field>
+      <field name="model">sev.activity</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="title" />
+          <field name="subtitle" />
+          <field name="activity_date" />
+          <field name="dependency" />
+          <field name="procedure_to_follow" />
+          <field name="department_id" />
+          <field name="events" />
+        </tree>
+      </field>
+    </record>
+  </data>
+</odoo>

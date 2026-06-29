@@ -1,0 +1,111 @@
+@baseURL = http://localhost:10017
+@contentType = application/json
+
+### Authentication - Execute this first to get session cookie
+# @name login
+POST {{baseURL}}/web/session/authenticate
+Content-Type: {{contentType}}
+
+{
+    "jsonrpc": "2.0",
+    "method": "call",
+    "params": {
+        "db": "dev",
+        "login": "admin",
+        "password": "admin"
+    }
+}
+
+###
+
+### Budget Endpoints
+
+### Get budget goals
+POST {{baseURL}}/api/v1/yaipan_reports/budget/budget-goals
+Content-Type: {{contentType}}
+
+{}
+
+### Get budget history
+POST {{baseURL}}/api/v1/yaipan_reports/budget/budget-history
+Content-Type: {{contentType}}
+
+{}
+
+### Get budget income
+POST {{baseURL}}/api/v1/yaipan_reports/budget/budget-income
+Content-Type: {{contentType}}
+
+{}
+
+### Get budget areas
+POST {{baseURL}}/api/v1/yaipan_reports/budget/budget-areas
+Content-Type: {{contentType}}
+
+{}
+
+### Get budget percentages
+POST {{baseURL}}/api/v1/yaipan_reports/budget/budget-percentages
+Content-Type: {{contentType}}
+
+{}
+
+### Get budget mosaic
+POST {{baseURL}}/api/v1/yaipan_reports/budget/budget-mosaic
+Content-Type: {{contentType}}
+
+{}
+
+##############################
+
+### Information Endpoints
+
+### Get billing calendar
+POST {{baseURL}}/api/v1/yaipan_reports/information/billing-calendar
+Content-Type: {{contentType}}
+
+{}
+### Get interest rates
+POST {{baseURL}}/api/v1/yaipan_reports/information/interest-rates
+Content-Type: {{contentType}}
+
+{}
+### Get cleaning fees
+POST {{baseURL}}/api/v1/yaipan_reports/information/cleaning-fees
+Content-Type: {{contentType}}
+
+{}
+
+### Get cemetery information
+POST {{baseURL}}/api/v1/yaipan_reports/information/cemetery
+Content-Type: {{contentType}}
+
+{}
+
+###
+
+### Procedures Endpoints
+
+### Get monthly evolution
+POST {{baseURL}}/api/v1/yaipan_reports/procedures/monthly-evolution
+Content-Type: {{contentType}}
+
+{}
+
+### Get rejection rates
+POST {{baseURL}}/api/v1/yaipan_reports/procedures/rejection-rates
+Content-Type: {{contentType}}
+
+{}
+
+### Get procedures by type
+POST {{baseURL}}/api/v1/yaipan_reports/procedures/procedures-by-type
+Content-Type: {{contentType}}
+
+{}
+
+### Get annual growth
+POST {{baseURL}}/api/v1/yaipan_reports/procedures/annual-growth
+Content-Type: {{contentType}}
+
+{}

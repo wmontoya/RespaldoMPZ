@@ -1,0 +1,43 @@
+<odoo>
+    <data>
+
+        <record id="view_sev_proposed_action_tree" model="ir.ui.view">
+            <field name="name">sev.proposed_action.tree</field>
+            <field name="model">sev.proposed_action</field>
+            <field name="arch" type="xml">
+
+                <tree string="Acciones Propuestas">
+
+                    <header>
+                        <button
+                            string="Reporte Excel"
+                            type="object"
+                            name="generate_proposedAction_report"
+                            class="btn-primary"
+                        />
+
+                        <button
+                            string="Reporte PDF"
+                            type="object"
+                            name="generate_proposedAction_report_PDF"
+                            class="btn-secondary"
+                        />
+                    </header>
+
+                    <field name="description"/>
+                    <field name="user_id"/>
+                    <field name="action_date"/>
+                    <field name="accomplishment_level"
+                        widget="badge"
+                        decoration-success="accomplishment_level == 'yes'"
+                        decoration-warning="accomplishment_level == 'partial'"
+                        decoration-danger="accomplishment_level == 'no'"
+                    />
+                    <field name="notification_sent"/>
+                </tree>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

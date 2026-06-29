@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_yaipan_connection_tree" model="ir.ui.view">
+            <field name="name">yaipan_connection.tree</field>
+            <field name="model">online_payments.yaipan_connection</field>
+            <field name="arch" type="xml">
+                <tree string="Yaipan Connections">
+                    <field name="id" string="ID"/>
+                    <field name="environment" string="Environment"/>
+                    <field name="url_base" string="Base URL"/>
+                    <field name="autorization" string="Authorization"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

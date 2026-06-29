@@ -1,0 +1,25 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="view_activity_sevri_user_tree">
+      <field name="name">activity.sevri_user_tree</field>
+      <field name="model">sev.activity</field>
+      <field name="arch" type="xml">
+        <tree >
+          <field name="title" />
+          <field name="subtitle" />
+          <field name="activity_date" />
+          <field name="dependency" />
+          <field name="department_id" />
+        </tree>
+      </field>
+    </record>
+    <record id="rule_sev_activity_department" model="ir.rule">
+      <field name="name">Actividades por Departamento</field>
+      <field name="model_id" ref="model_sev_activity" />
+      <field name="groups" eval="[(4, ref('sevri.res_groups_sev_internal_control'))]" />
+      <field name="domain_force">
+        [('department_id', '=', user.employee_id.department_id.id)]
+      </field>
+    </record>
+  </data>
+</odoo>

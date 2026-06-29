@@ -1,0 +1,77 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="view_activity_sevri_user_form">
+      <field name="name">activity.sevri_user_form</field>
+      <field name="model">sev.activity</field>
+      <field name="arch" type="xml">
+        <form string="SEVRI" class="p-0">
+          <sheet style="background:#f4f6f9; padding: 0px; width: 100%;">
+            <div class="container-fluid" style="padding: -24px;">
+              <div class="card border-0 shadow-sm rounded">
+                <div class="card-header text-white" style="background: linear-gradient(135deg,#2c3e50,#34495e);">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                      <h4 class="mb-0 text-white">Informacióin de la Actividad</h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body p-4">
+                  <div class="row g-4">
+                    <div class="col-lg-6 d-flex">
+                      <div class="card border-0 shadow-sm h-100 w-100">
+                        <div class="card-header bg-white">
+                          <h5 class="mb-0 fw-semibold">
+                            <i class="fa fa-info-circle me-1"/>
+                            Información General
+                          </h5>
+                        </div>
+                        <div class="card-body">
+                          <div class="mb-3">
+                            <p class="text-muted small">Actividad</p>
+                            <field name="title" nolabel="1" class="w-100"/>
+                          </div>
+                          <div class="mb-3">
+                            <p class="text-muted small">Descripción</p>
+                            <field name="subtitle" nolabel="1" class="w-100"/>
+                          </div>
+                          <div class="mb-3">
+                            <p class="text-muted small">Fecha de la Actividad</p>
+                            <field name="activity_date" nolabel="1" readonly="1"/>
+                          </div>
+                          <div class="mb-3">
+                            <p class="text-muted small">Departamento</p>
+                            <field name="department_id" nolabel="1" readonly="1"/>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 d-flex">
+                      <div class="card border-0 shadow-sm h-100 w-100">
+                        <div class="card-header bg-white">
+                          <h5 class="mb-0 fw-semibold">
+                            <i class="fa fa-calendar me-1"/>
+                            Eventos
+                          </h5>
+                        </div>
+                        <div class="card-body">
+                          <field name="events" nolabel="1" 
+                          context="{'form_view_ref': 'sevri.sevri_event_user_form'}">
+                            <tree>
+                              <field name="description"/>
+                              <field name="causes"/>
+                              <field name="consequences"/>
+                            </tree>
+                          </field>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </sheet>
+        </form>
+      </field>
+    </record>
+  </data>
+</odoo>

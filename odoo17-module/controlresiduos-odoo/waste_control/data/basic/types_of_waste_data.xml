@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data noupdate="1">
+    <!-- ! types_of_waste -->
+    <record id="types_of_waste_no_aprovechable" model="waste_control.types_of_waste">
+      <field name="name">No aprovechable</field>
+    </record>
+
+    <record id="types_of_waste_ordinario" model="waste_control.types_of_waste">
+      <field name="name">Ordinario</field>
+    </record>
+
+    <record id="types_of_waste_organico" model="waste_control.types_of_waste">
+      <field name="name">Organico</field>
+    </record>
+  </data>
+</odoo>

@@ -1,0 +1,90 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="mature_model_unit_tree">
+      <field name="name">unidad.tree</field>
+      <field name="model">sci.unit</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+          <field name="departments"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="unit_view_form" model="ir.ui.view">
+      <field name="name">unidad.view.form</field>
+      <field name="model">sci.unit</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <div class="container mt-4">
+              <div class="card shadow-sm">
+                <div class="card-header bg-primary">
+                  <h3 class="card-title mb-0 text-white">Información de la Unidad</h3>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="mb-3">
+                        <label for="name" class="form-label fw-bold">Nombre</label>
+                        <field name="name" required="1" placeholder="ej. Producción" class="form-control" style="margin-left: 1rem;" />
+                      </div>
+                      <div class="mb-3">
+                        <label for="description" class="form-label fw-bold">Descripción</label>
+                        <field name="description" class="form-control" widget="text" rows="4" style="caret-color: #FFF;"/>
+                      </div>
+                      <div class="mb-3">
+                        <label for="departments" class="form-label fw-bold">Departamentos</label>
+                        <field name="departments" required="1" class="form-control"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="unit_view_kanban">
+      <field name="name">unidad.view.kanban</field>
+      <field name="model">sci.unit</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="row">
+                  <div class="col-12 mb-3">
+                    <strong>
+                      <field name="name"/>
+                    </strong>
+                  </div>
+                </div>
+                <t t-if="record.description.value">
+                  <div class="mb-2">
+                    <strong>Descripción:</strong> <field name="description"/>
+                  </div>
+                </t>
+                <t t-if="record.departments.value">
+                  <div>
+                    <strong>Departamentos:</strong> <field name="departments"/>
+                  </div>
+                </t>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="mm_units_action">
+      <field name="name">Unidades</field>
+      <field name="res_model">sci.unit</field>
+      <field name="view_mode">tree,form,kanban,graph</field>
+      <field name="view_id" ref="mature_model_unit_tree"/>
+    </record>
+  </data>
+</odoo>

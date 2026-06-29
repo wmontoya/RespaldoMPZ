@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_catalog_tree" model="ir.ui.view">
+            <field name="name">catalog.tree</field>
+            <field name="model">online_payments.catalog</field>
+            <field name="arch" type="xml">
+                <tree string="Base URLs">
+                    <field name="id" />
+                    <field name="prefix" />
+                    <field name="code_agreement" />
+                    <field name="code_bank" />
+                    <field name="code_agency" />
+                    <field name="identification_default" />
+                    <field name="have_details" />
+                    <field name="active" />
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

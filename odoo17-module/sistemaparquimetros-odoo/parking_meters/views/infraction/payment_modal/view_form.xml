@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_payment_modal" model="ir.ui.view">
+            <field name="name">parking_meters.infraction.payment.modal</field>
+            <field name="model">parking_meters.infraction</field>
+            <field name="arch" type="xml">
+                <form string="Payment Information">
+
+                    <group>
+                        <div class="container p-1"
+                            style='width: 935px; height: 680px; overflow: hidden;'>
+                            <field name="infraction_payment_ticket" nolabel="1" readonly="1" />
+                        </div>
+                    </group>
+                    <footer class="d-flex justify-content-end">
+                        <button string="Print"
+                            class="btn btn-warning btn-lg button_invoice_print"
+                            type="object"
+                            name="button_invoice_print" onclick="printTicket();"/>
+                        <button string="Close" class="btn btn-danger btn-lg" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

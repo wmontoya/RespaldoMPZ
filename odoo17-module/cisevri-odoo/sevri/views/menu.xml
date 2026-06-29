@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!-- ========================= -->
+        <!-- MENÚ ADMINISTRADOR -->
+        <!-- ========================= -->
+
+        <menuitem
+            id="sevri_root_admin"
+            name="SEVRI"
+            web_icon="sevri,static/description/icon.png"
+            groups="sevri.res_groups_sev_admin"
+            sequence="10" />
+
+        <menuitem
+            id="menu_sevri_process_root"
+            name="Proceso del SEVRI"
+            action="action_sevri_process"
+            parent="sevri_root_admin"
+            sequence="11" />
+
+        <menuitem
+            id="menu_sevri_user_process_root_admin"
+            name="Formulario del SEVRI"
+            action="action_sevri_user_activity"
+            parent="sevri_root_admin"
+            sequence="12" />
+
+        <menuitem
+            id="sev_activities"
+            name="Actividades"
+            action="action_activity"
+            parent="sevri_root_admin"
+            sequence="13" />
+
+        <menuitem
+            id="sev_events"
+            name="Eventos"
+            action="action_event"
+            parent="sevri_root_admin"
+            sequence="14" />
+
+        <menuitem
+            id="sev_event_types"
+            name="Tipos de Evento"
+            action="action_event_type"
+            parent="sevri_root_admin"
+            sequence="15" />
+
+        <menuitem
+            id="sev_classifications"
+            name="Clasificaciones"
+            action="action_classification"
+            parent="sevri_root_admin"
+            sequence="16" />
+
+        <menuitem
+            id="sev_specifications"
+            name="Especificaciones"
+            action="action_specification"
+            parent="sevri_root_admin"
+            sequence="17" />
+
+
+        <!-- ========================= -->
+        <!-- MENÚ CONTROL INTERNO -->
+        <!-- ========================= -->
+
+        <menuitem
+            id="sevri_root_internal"
+            name="SEVRI"
+            web_icon="sevri,static/description/icon.png"
+            groups="sevri.res_groups_sev_internal_control"
+            sequence="20" />
+
+        <menuitem
+            id="menu_sevri_process_root_readonly"
+            name="Proceso del SEVRI"
+            action="action_sevri_process_readonly"
+            parent="sevri_root_internal"
+            sequence="21" />
+
+        <menuitem
+            id="menu_sevri_user_process_root"
+            name="Formulario del SEVRI"
+            action="action_sevri_user_activity"
+            parent="sevri_root_internal"
+            sequence="22" />
+
+        <menuitem
+            id="menu_sev_proposed_action"
+            name="Seguimiento de Acciones"
+            action="action_sev_proposed_action"
+            parent="sevri_root_internal"
+            sequence="23" />
+    </data>
+</odoo>

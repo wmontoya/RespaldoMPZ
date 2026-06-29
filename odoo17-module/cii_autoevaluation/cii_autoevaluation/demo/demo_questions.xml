@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- ========================================
+             PREGUNTAS PARA ENCUESTA 2025
+             ======================================== -->
+        
+        <!-- Preguntas para Sección Ambiente 1 2025 -->
+        <record id="demo_question_environment_1_1_2025" model="ae.question">
+            <field name="title">¿La organización promueve activamente la integridad y los valores éticos?</field>
+            <field name="description">Evaluar si la organización tiene políticas claras sobre integridad y valores éticos</field>
+            <field name="section_id" ref="demo_section_environment_1_2025"/>
+        </record>
+
+        <record id="demo_question_environment_1_2_2025" model="ae.question">
+            <field name="title">¿Los empleados conocen y comprenden los valores éticos de la organización?</field>
+            <field name="description">Evaluar el nivel de conocimiento de los empleados sobre valores éticos</field>
+            <field name="section_id" ref="demo_section_environment_1_2025"/>
+        </record>
+
+        <record id="demo_question_environment_1_3_2025" model="ae.question">
+            <field name="title">¿Se sancionan las violaciones de valores éticos?</field>
+            <field name="description">Evaluar si existen mecanismos de sanción para violaciones éticas</field>
+            <field name="section_id" ref="demo_section_environment_1_2025"/>
+        </record>
+
+        <!-- Preguntas para Sección Ambiente 2 2025 -->
+        <record id="demo_question_environment_2_1_2025" model="ae.question">
+            <field name="title">¿La organización evalúa regularmente la competencia del personal?</field>
+            <field name="description">Evaluar si se realizan evaluaciones periódicas de competencia</field>
+            <field name="section_id" ref="demo_section_environment_2_2025"/>
+        </record>
+
+        <record id="demo_question_environment_2_2_2025" model="ae.question">
+            <field name="title">¿Se proporciona capacitación continua al personal?</field>
+            <field name="description">Evaluar si existe un programa de capacitación continua</field>
+            <field name="section_id" ref="demo_section_environment_2_2025"/>
+        </record>
+
+        <record id="demo_question_environment_2_3_2025" model="ae.question">
+            <field name="title">¿El personal tiene las habilidades necesarias para sus funciones?</field>
+            <field name="description">Evaluar si el personal tiene las habilidades requeridas</field>
+            <field name="section_id" ref="demo_section_environment_2_2025"/>
+        </record>
+
+        <!-- Preguntas para Sección Ambiente 3 2025 -->
+        <record id="demo_question_environment_3_1_2025" model="ae.question">
+            <field name="title">¿La alta dirección establece el tono ético de la organización?</field>
+            <field name="description">Evaluar el liderazgo ético de la alta dirección</field>
+            <field name="section_id" ref="demo_section_environment_3_2025"/>
+        </record>
+
+        <record id="demo_question_environment_3_2_2025" model="ae.question">
+            <field name="title">¿La alta dirección participa activamente en el control interno?</field>
+            <field name="description">Evaluar la participación de la alta dirección en el control interno</field>
+            <field name="section_id" ref="demo_section_environment_3_2025"/>
+        </record>
+
+        <record id="demo_question_environment_3_3_2025" model="ae.question">
+            <field name="title">¿La alta dirección comunica efectivamente las expectativas de control?</field>
+            <field name="description">Evaluar la comunicación de expectativas por parte de la alta dirección</field>
+            <field name="section_id" ref="demo_section_environment_3_2025"/>
+        </record>
+
+        <!-- Preguntas para Sección Riesgos 1 2025 -->
+        <record id="demo_question_risks_1_1_2025" model="ae.question">
+            <field name="title">¿Se identifican sistemáticamente los riesgos organizacionales?</field>
+            <field name="description">Evaluar si existe un proceso sistemático de identificación de riesgos</field>
+            <field name="section_id" ref="demo_section_risks_1_2025"/>
+        </record>
+
+        <record id="demo_question_risks_1_2_2025" model="ae.question">
+            <field name="title">¿Se consideran tanto riesgos internos como externos?</field>
+            <field name="description">Evaluar si se consideran todos los tipos de riesgos</field>
+            <field name="section_id" ref="demo_section_risks_1_2025"/>
+        </record>
+
+        <record id="demo_question_risks_1_3_2025" model="ae.question">
+            <field name="title">¿Se actualiza regularmente la identificación de riesgos?</field>
+            <field name="description">Evaluar si el proceso de identificación de riesgos se mantiene actualizado</field>
+            <field name="section_id" ref="demo_section_risks_1_2025"/>
+        </record>
+
+        <!-- Preguntas para Sección Riesgos 2 2025 -->
+        <record id="demo_question_risks_2_1_2025" model="ae.question">
+            <field name="title">¿Se analiza la probabilidad e impacto de los riesgos identificados?</field>
+            <field name="description">Evaluar si se realiza análisis de probabilidad e impacto</field>
+            <field name="section_id" ref="demo_section_risks_2_2025"/>
+        </record>
+
+        <record id="demo_question_risks_2_2_2025" model="ae.question">
+            <field name="title">¿Se priorizan los riesgos según su importancia?</field>
+            <field name="description">Evaluar si existe un proceso de priorización de riesgos</field>
+            <field name="section_id" ref="demo_section_risks_2_2025"/>
+        </record>
+
+        <record id="demo_question_risks_2_3_2025" model="ae.question">
+            <field name="title">¿Se documenta el análisis de riesgos?</field>
+            <field name="description">Evaluar si el análisis de riesgos está documentado</field>
+            <field name="section_id" ref="demo_section_risks_2_2025"/>
+        </record>
+
+        <!-- Preguntas para Sección Riesgos 3 2025 -->
+        <record id="demo_question_risks_3_1_2025" model="ae.question">
+            <field name="title">¿Se establecen estrategias para gestionar los riesgos prioritarios?</field>
+            <field name="description">Evaluar si existen estrategias de gestión de riesgos</field>
+            <field name="section_id" ref="demo_section_risks_3_2025"/>
+        </record>
+
+        <record id="demo_question_risks_3_2_2025" model="ae.question">
+            <field name="title">¿Se asignan responsabilidades para la gestión de riesgos?</field>
+            <field name="description">Evaluar si se asignan responsabilidades claras</field>
+            <field name="section_id" ref="demo_section_risks_3_2025"/>
+        </record>
+
+        <record id="demo_question_risks_3_3_2025" model="ae.question">
+            <field name="title">¿Se monitorea la efectividad de las estrategias de gestión de riesgos?</field>
+            <field name="description">Evaluar si se realiza seguimiento de las estrategias implementadas</field>
+            <field name="section_id" ref="demo_section_risks_3_2025"/>
+        </record>
+
+        <!-- Preguntas para Sección Control 1 2025 -->
+        <record id="demo_question_control_1_1_2025" model="ae.question">
+            <field name="title">¿Existen controles preventivos para los riesgos principales?</field>
+            <field name="description">Evaluar si existen controles que previenen la materialización de riesgos</field>
+            <field name="section_id" ref="demo_section_control_1_2025"/>
+        </record>
+
+        <record id="demo_question_control_1_2_2025" model="ae.question">
+            <field name="title">¿Son efectivos los controles preventivos?</field>
+            <field name="description">Evaluar la efectividad de los controles preventivos</field>
+            <field name="section_id" ref="demo_section_control_1_2025"/>
+        </record>
+
+        <record id="demo_question_control_1_3_2025" model="ae.question">
+            <field name="title">¿Se revisan regularmente los controles preventivos?</field>
+            <field name="description">Evaluar si se realizan revisiones periódicas de controles</field>
+            <field name="section_id" ref="demo_section_control_1_2025"/>
+        </record>
+
+        <!-- Preguntas para Sección Control 2 2025 -->
+        <record id="demo_question_control_2_1_2025" model="ae.question">
+            <field name="title">¿Existen controles detectivos para identificar desviaciones?</field>
+            <field name="description">Evaluar si existen controles que detectan desviaciones</field>
+            <field name="section_id" ref="demo_section_control_2_2025"/>
+        </record>
+
+        <record id="demo_question_control_2_2_2025" model="ae.question">
+            <field name="title">¿Funcionan oportunamente los controles detectivos?</field>
+            <field name="description">Evaluar la oportunidad de los controles detectivos</field>
+            <field name="section_id" ref="demo_section_control_2_2025"/>
+        </record>
+
+        <record id="demo_question_control_2_3_2025" model="ae.question">
+            <field name="title">¿Se documentan las desviaciones detectadas?</field>
+            <field name="description">Evaluar si las desviaciones encontradas se documentan</field>
+            <field name="section_id" ref="demo_section_control_2_2025"/>
+        </record>
+
+        <!-- Preguntas para Sección Control 3 2025 -->
+        <record id="demo_question_control_3_1_2025" model="ae.question">
+            <field name="title">¿Existen controles correctivos para atender desviaciones?</field>
+            <field name="description">Evaluar si existen controles que corrigen desviaciones</field>
+            <field name="section_id" ref="demo_section_control_3_2025"/>
+        </record>
+
+        <record id="demo_question_control_3_2_2025" model="ae.question">
+            <field name="title">¿Son efectivos los controles correctivos?</field>
+            <field name="description">Evaluar la efectividad de los controles correctivos</field>
+            <field name="section_id" ref="demo_section_control_3_2025"/>
+        </record>
+
+        <record id="demo_question_control_3_3_2025" model="ae.question">
+            <field name="title">¿Se implementan mejoras basadas en las correcciones?</field>
+            <field name="description">Evaluar si se implementan mejoras basadas en las correcciones</field>
+            <field name="section_id" ref="demo_section_control_3_2025"/>
+        </record>
+
+        <!-- ========================================
+             PREGUNTAS PARA ENCUESTA 2024
+             ======================================== -->
+        
+        <!-- Preguntas para Sección Ambiente 1 2024 -->
+        <record id="demo_question_environment_1_1_2024" model="ae.question">
+            <field name="title">¿La cultura organizacional promueve la transparencia?</field>
+            <field name="description">Evaluar si la cultura promueve la transparencia</field>
+            <field name="section_id" ref="demo_section_environment_1_2024"/>
+        </record>
+
+        <record id="demo_question_environment_1_2_2024" model="ae.question">
+            <field name="title">¿Los empleados se sienten comprometidos con la organización?</field>
+            <field name="description">Evaluar el compromiso de los empleados</field>
+            <field name="section_id" ref="demo_section_environment_1_2024"/>
+        </record>
+
+        <record id="demo_question_environment_1_3_2024" model="ae.question">
+            <field name="title">¿Existe un ambiente de trabajo colaborativo?</field>
+            <field name="description">Evaluar el ambiente de trabajo colaborativo</field>
+            <field name="section_id" ref="demo_section_environment_1_2024"/>
+        </record>
+
+        <!-- Preguntas para Sección Ambiente 2 2024 -->
+        <record id="demo_question_ambiente_2_1_2024" model="ae.question">
+            <field name="title">La estructura organizacional es clara y efectiva?</field>
+            <field name="description">Evaluar la claridad y efectividad de la estructura</field>
+            <field name="section_id" ref="demo_section_environment_2_2024"/>
+        </record>
+
+        <record id="demo_question_ambiente_2_2_2024" model="ae.question">
+            <field name="title">Las responsabilidades están bien definidas?</field>
+            <field name="description">Evaluar la definición de responsabilidades</field>
+            <field name="section_id" ref="demo_section_environment_2_2024"/>
+        </record>
+
+        <record id="demo_question_ambiente_2_3_2024" model="ae.question">
+            <field name="title">Existe una adecuada separación de funciones?</field>
+            <field name="description">Evaluar la separación de funciones</field>
+            <field name="section_id" ref="demo_section_environment_2_2024"/>
+        </record>
+
+        <!-- Preguntas para Sección Ambiente 3 2024 -->
+        <record id="demo_question_ambiente_3_1_2024" model="ae.question">
+            <field name="title">Las políticas están documentadas y actualizadas?</field>
+            <field name="description">Evaluar la documentación y actualización de políticas</field>
+            <field name="section_id" ref="demo_section_environment_3_2024"/>
+        </record>
+
+        <record id="demo_question_ambiente_3_2_2024" model="ae.question">
+            <field name="title">Los procedimientos son claros y accesibles?</field>
+            <field name="description">Evaluar la claridad y accesibilidad de procedimientos</field>
+            <field name="section_id" ref="demo_section_environment_3_2024"/>
+        </record>
+
+        <record id="demo_question_ambiente_3_3_2024" model="ae.question">
+            <field name="title">Se cumple con las políticas y procedimientos establecidos?</field>
+            <field name="description">Evaluar el cumplimiento de políticas y procedimientos</field>
+            <field name="section_id" ref="demo_section_environment_3_2024"/>
+        </record>
+
+        <!-- Preguntas para Sección Riesgos 1 2024 -->
+        <record id="demo_question_riesgos_1_1_2024" model="ae.question">
+            <field name="title">Se identifican todos los riesgos relevantes?</field>
+            <field name="description">Evaluar la identificación completa de riesgos</field>
+            <field name="section_id" ref="demo_section_risks_1_2024"/>
+        </record>
+
+        <record id="demo_question_riesgos_1_2_2024" model="ae.question">
+            <field name="title">El proceso de identificación de riesgos es sistemático?</field>
+            <field name="description">Evaluar la sistematicidad del proceso</field>
+            <field name="section_id" ref="demo_section_risks_1_2024"/>
+        </record>
+
+        <record id="demo_question_riesgos_1_3_2024" model="ae.question">
+            <field name="title">Se consideran los cambios en el entorno?</field>
+            <field name="description">Evaluar la consideración de cambios ambientales</field>
+            <field name="section_id" ref="demo_section_risks_1_2024"/>
+        </record>
+
+        <!-- Preguntas para Sección Riesgos 2 2024 -->
+        <record id="demo_question_riesgos_2_1_2024" model="ae.question">
+            <field name="title">Se evalúa la probabilidad de ocurrencia de los riesgos?</field>
+            <field name="description">Evaluar la evaluación de probabilidad</field>
+            <field name="section_id" ref="demo_section_risks_2_2024"/>
+        </record>
+
+        <record id="demo_question_riesgos_2_2_2024" model="ae.question">
+            <field name="title">Se evalúa el impacto potencial de los riesgos?</field>
+            <field name="description">Evaluar la evaluación de impacto</field>
+            <field name="section_id" ref="demo_section_risks_2_2024"/>
+        </record>
+
+        <record id="demo_question_riesgos_2_3_2024" model="ae.question">
+            <field name="title">Se priorizan los riesgos según su importancia?</field>
+            <field name="description">Evaluar la priorización de riesgos</field>
+            <field name="section_id" ref="demo_section_risks_2_2024"/>
+        </record>
+
+        <!-- Preguntas para Sección Riesgos 3 2024 -->
+        <record id="demo_question_riesgos_3_1_2024" model="ae.question">
+            <field name="title">Se desarrollan estrategias para mitigar los riesgos?</field>
+            <field name="description">Evaluar el desarrollo de estrategias de mitigación</field>
+            <field name="section_id" ref="demo_section_risks_3_2024"/>
+        </record>
+
+        <record id="demo_question_riesgos_3_2_2024" model="ae.question">
+            <field name="title">Se implementan las estrategias de respuesta a riesgos?</field>
+            <field name="description">Evaluar la implementación de estrategias</field>
+            <field name="section_id" ref="demo_section_risks_3_2024"/>
+        </record>
+
+        <record id="demo_question_riesgos_3_3_2024" model="ae.question">
+            <field name="title">Se monitorea la efectividad de las respuestas a riesgos?</field>
+            <field name="description">Evaluar el monitoreo de efectividad</field>
+            <field name="section_id" ref="demo_section_risks_3_2024"/>
+        </record>
+
+        <!-- Preguntas para Sección Sistemas 1 2024 -->
+        <record id="demo_question_sistemas_1_1_2024" model="ae.question">
+            <field name="title">Los sistemas de información son confiables?</field>
+            <field name="description">Evaluar la confiabilidad de los sistemas</field>
+            <field name="section_id" ref="demo_section_systems_1_2024"/>
+        </record>
+
+        <record id="demo_question_sistemas_1_2_2024" model="ae.question">
+            <field name="title">Los sistemas de información son seguros?</field>
+            <field name="description">Evaluar la seguridad de los sistemas</field>
+            <field name="section_id" ref="demo_section_systems_1_2024"/>
+        </record>
+
+        <record id="demo_question_sistemas_1_3_2024" model="ae.question">
+            <field name="title">Los sistemas de información son accesibles?</field>
+            <field name="description">Evaluar la accesibilidad de los sistemas</field>
+            <field name="section_id" ref="demo_section_systems_1_2024"/>
+        </record>
+
+        <!-- Preguntas para Sección Sistemas 2 2024 -->
+        <record id="demo_question_sistemas_2_1_2024" model="ae.question">
+            <field name="title">La comunicación interna es efectiva?</field>
+            <field name="description">Evaluar la efectividad de la comunicación interna</field>
+            <field name="section_id" ref="demo_section_systems_2_2024"/>
+        </record>
+
+        <record id="demo_question_sistemas_2_2_2024" model="ae.question">
+            <field name="title">La comunicación externa es apropiada?</field>
+            <field name="description">Evaluar la apropiación de la comunicación externa</field>
+            <field name="section_id" ref="demo_section_systems_2_2024"/>
+        </record>
+
+        <record id="demo_question_sistemas_2_3_2024" model="ae.question">
+            <field name="title">Los canales de comunicación son adecuados?</field>
+            <field name="description">Evaluar la adecuación de los canales de comunicación</field>
+            <field name="section_id" ref="demo_section_systems_2_2024"/>
+        </record>
+
+        <!-- Preguntas para Sección Sistemas 3 2024 -->
+        <record id="demo_question_sistemas_3_1_2024" model="ae.question">
+            <field name="title">La tecnología utilizada es apropiada?</field>
+            <field name="description">Evaluar la apropiación de la tecnología</field>
+            <field name="section_id" ref="demo_section_systems_3_2024"/>
+        </record>
+
+        <record id="demo_question_sistemas_3_2_2024" model="ae.question">
+            <field name="title">La tecnología está actualizada?</field>
+            <field name="description">Evaluar la actualización de la tecnología</field>
+            <field name="section_id" ref="demo_section_systems_3_2024"/>
+        </record>
+
+        <record id="demo_question_sistemas_3_3_2024" model="ae.question">
+            <field name="title">Se aprovecha adecuadamente la tecnología disponible?</field>
+            <field name="description">Evaluar el aprovechamiento de la tecnología</field>
+            <field name="section_id" ref="demo_section_systems_3_2024"/>
+        </record>
+
+        <!-- Preguntas para Sección Seguimiento 1 2024 -->
+        <record id="demo_question_seguimiento_1_1_2024" model="ae.question">
+            <field name="title">Se realiza monitoreo continuo de las actividades?</field>
+            <field name="description">Evaluar el monitoreo continuo de actividades</field>
+            <field name="section_id" ref="demo_section_monitoring_1_2024"/>
+        </record>
+
+        <record id="demo_question_seguimiento_1_2_2024" model="ae.question">
+            <field name="title">Se identifican desviaciones oportunamente?</field>
+            <field name="description">Evaluar la identificación oportuna de desviaciones</field>
+            <field name="section_id" ref="demo_section_monitoring_1_2024"/>
+        </record>
+
+        <record id="demo_question_seguimiento_1_3_2024" model="ae.question">
+            <field name="title">Se toman acciones correctivas cuando es necesario?</field>
+            <field name="description">Evaluar la toma de acciones correctivas</field>
+            <field name="section_id" ref="demo_section_monitoring_1_2024"/>
+        </record>
+
+        <!-- Preguntas para Sección Seguimiento 2 2024 -->
+        <record id="demo_question_seguimiento_2_1_2024" model="ae.question">
+            <field name="title">Se realizan evaluaciones periódicas del control interno?</field>
+            <field name="description">Evaluar las evaluaciones periódicas</field>
+            <field name="section_id" ref="demo_section_monitoring_2_2024"/>
+        </record>
+
+        <record id="demo_question_seguimiento_2_2_2024" model="ae.question">
+            <field name="title">Las evaluaciones son independientes y objetivas?</field>
+            <field name="description">Evaluar la independencia y objetividad</field>
+            <field name="section_id" ref="demo_section_monitoring_2_2024"/>
+        </record>
+
+        <record id="demo_question_seguimiento_2_3_2024" model="ae.question">
+            <field name="title">Se documentan los resultados de las evaluaciones?</field>
+            <field name="description">Evaluar la documentación de resultados</field>
+            <field name="section_id" ref="demo_section_monitoring_2_2024"/>
+        </record>
+
+        <!-- Preguntas para Sección Seguimiento 3 2024 -->
+        <record id="demo_question_seguimiento_3_1_2024" model="ae.question">
+            <field name="title">Se reportan las deficiencias identificadas?</field>
+            <field name="description">Evaluar el reporte de deficiencias</field>
+            <field name="section_id" ref="demo_section_monitoring_3_2024"/>
+        </record>
+
+        <record id="demo_question_seguimiento_3_2_2024" model="ae.question">
+            <field name="title">Se asignan responsabilidades para corregir deficiencias?</field>
+            <field name="description">Evaluar la asignación de responsabilidades</field>
+            <field name="section_id" ref="demo_section_monitoring_3_2024"/>
+        </record>
+
+        <record id="demo_question_seguimiento_3_3_2024" model="ae.question">
+            <field name="title">Se verifica la corrección de las deficiencias?</field>
+            <field name="description">Evaluar la verificación de correcciones</field>
+            <field name="section_id" ref="demo_section_monitoring_3_2024"/>
+        </record>
+
+    </data>
+</odoo>

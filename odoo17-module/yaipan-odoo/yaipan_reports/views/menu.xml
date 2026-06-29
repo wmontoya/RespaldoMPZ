@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- <menuitem
+            id="menu_oracle_config_settings"
+            name="Oracle Connection"
+            parent="base.menu_administration"
+            action="yaipan_reports.action_open_oracle_config_settings"
+            sequence="20"
+            groups="yaipan_reports.res_groups_admin_user_yaipan"
+        /> -->
+    </data>
+</odoo>

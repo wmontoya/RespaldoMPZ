@@ -1,0 +1,661 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "PostgreSQL"
+    url      = env("DATABASE_URL")
+}
+
+// Modelo de datos Prisma-PostgreSQL. Enfocado al desarrollo en Odoo 17.
+
+//********************************************
+// # Entidades menores #
+//********************************************
+
+// * categoria: General *
+
+model ResCurrency {
+    // Identificación 
+    id String @id
+
+    // Información principal 
+    nombre  String
+    simbolo String
+
+    // Relaciones inversas
+    EmpresasPrivadas             EmpresasPrivadas[]
+    OrdenesCompra_EBI            OrdenesCompra_EBI[]
+    Facturas                     Facturas[]
+    OrdenesDeCompraDeCombustible OrdenesDeCompraDeCombustible[]
+}
+
+//  (por ejemplo, sinpe, tiquetes, tarjeta, efectivo)
+model MesPago {
+    // Identificación 
+    id String @id
+
+    // Información principal 
+    nombre String @unique
+
+    // Relaciones inversas
+    EmpresasPrivadas EmpresasPrivadas[]
+}
+
+model Productos {
+    // Identificación 
+    id String @id
+
+    // Información principal 
+    nombre String @unique
+
+    detalles String?
+
+    // Relaciones inversas
+    Residuos Residuos[]
+}
+
+model ProgramasReciclaje {
+    // Identificación 
+    id String @id
+
+    // Información principal 
+    nombre String @unique
+
+    detalles String?
+
+    // Relaciones inversas
+    ReciclajePorCampana ReciclajePorCampana[]
+}
+
+model Rutas {
+    // Identificación 
+    id String @id
+
+    // Información principal 
+    nombre      String  @unique
+    descripcion String?
+
+    // Relaciones inversas
+    // Reciclaje               Reciclaje[]
+    Residuos               Residuos[]
+    EstudioRutas           EstudioRutas[]
+    RutasVehiculos         RutasVehiculos[]
+    ReciclajeEnRuta        ReciclajeEnRuta[]
+    ResiduosCarnicos       ResiduosCarnicos[]
+    KilometrajesRecorridos KilometrajesRecorridos[]
+}
+
+// (no aprovechable, ordinario, organico)
+model TiposResiduos {
+    // Identificación 
+    id String @id
+
+    // Información principal 
+    nombre String @unique
+
+    // Relaciones inversas
+    Residuos Residuos[]
+}
+
+// * categoria: Ubicaciones *
+
+model Provincias {
+    // Identificación 
+    id String @id
+
+    // Información principal 
+    nombre String @unique
+
+    // Relaciones inversas
+    Cantones Cantones[]
+}
+
+model Cantones {
+    // Identificación 
+    id String @id
+
+    // Información principal 
+    nombre String @unique
+
+    // Relaciones 
+    provincia   Provincias @relation(fields: [provinciaId], references: [id])
+    provinciaId String
+
+    // Relaciones inversas
+    Distritos Distritos[]
+}
+
+model Distritos {
+    // Identificación 
+    id String @id
+
+    // Información principal 
+    nombre String @unique
+
+    // Relaciones 
+    canton   Cantones @relation(fields: [cantonId], references: [id])
+    cantonId String
+
+    // Relaciones inversas
+    Comunidades                 Comunidad[]
+    ReciclajePorCampana         ReciclajePorCampana[]
+    Reporte_ResiduosComunidades Reporte_ResiduosComunidades[]
+}
+
+model Comunidad {
+    // Identificación 
+    id String @id
+
+    // Información principal 
+    nombre String @unique
+
+    // Relaciones 
+    distrito   Distritos @relation(fields: [distritoId], references: [id])
+    distritoId String
+
+    Reporte_ResiduosComunidades Reporte_ResiduosComunidades[]
+}
+
+// * categoria: Contactos Personas y Entidades * 
+
+model Partner {
+    // Identificación
+    id String @id
+
+    // Información principal
+    nombre        String
+    funcion       String
+    telefono      String
+    telefonoMovil String
+    email         String
+
+    direccion String
+
+    image_1920 String? // URL de la imagen del contacto
+
+    // Relaciones inversas
+    Conductores   Conductores[]
+    Supervisores  Supervisores[]
+    CentrosAcopio CentrosAcopio[]
+
+    Cuadrillas Cuadrillas[] @relation("CuadrillaMembers")
+
+    OrdenesDeCompraDeCombustible OrdenesDeCompraDeCombustible[]
+}
+
+model CentrosAcopio {
+    // Identificación 
+    id String @id
+
+    // Información principal 
+    detalles String?
+
+    // Relaciones 
+    centroAcopio   Partner @relation(fields: [centroAcopioId], references: [id])
+    centroAcopioId String  @unique
+
+    // ! Calculado
+    nombre String // (relacionado) Este campo cambia segun el asocie de la relacion
+
+    // Relaciones inversas
+    ReciclajeEnRuta ReciclajeEnRuta[]
+}
+
+model Conductores {
+    // Identificación 
+    id String @id
+
+    // Información principal
+    numeroDeLicencia String  @unique
+    detalles         String?
+
+    // Relaciones 
+    persona   Partner @relation(fields: [personaId], references: [id])
+    personaId String  @unique
+
+    // ! Calculado
+    nombre String // (relacionado) Este campo cambia segun el asocie de la relacion
+
+    // Relaciones inversas
+    RutasVehiculos         RutasVehiculos[]
+    EmpresasPrivadas       EmpresasPrivadas[]
+    TonelajeBuenosAires    TonelajeBuenosAires[]
+    KilometrajesRecorridos KilometrajesRecorridos[]
+
+    // HistoricoVehiculos     HistoricoVehiculos[]
+}
+
+model Cuadrillas {
+    // Identificación 
+    id String @id
+
+    // Información principal 
+    detalles String?
+
+    // Relaciones
+    personaIds Partner[] @relation("CuadrillaMembers")
+
+    // ! Calculado
+    nombresPersonas String @unique // (relacionado) Este campo cambia segun el asocie de la relacion
+
+    //  Relaciones inversas
+    KilometrajesRecorridos KilometrajesRecorridos[]
+}
+
+model Supervisores {
+    // Identificación 
+    id String @id
+
+    // Información principal
+    areaSupervicion      String
+    numeroIdentificacion String  @unique
+    detalles             String? // ? Text
+
+    // Relaciones 
+    persona   Partner @relation(fields: [personaId], references: [id])
+    personaId String  @unique
+
+    // ! Calculado
+    nombre String // (relacionado) Este campo cambia segun el asocie de la relacion
+}
+
+// ! se descarta porque se maneja de forma distinta. el responsable es quien hace una acción (campos de auditoria)
+// model Responsables {
+// Identificación 
+//    id String @id
+
+// Información principal 
+//    nombre   String
+//    apellido String
+//    cedula   String
+
+//HEREDADO res.parnert nombre cedula  telefono  email   direccion 
+// }
+
+//********************************************
+// # Entidades principales #
+//********************************************
+
+// * categoria: (VEHICULOS-RUTAS) *
+
+model HistoricoVehiculos {
+    // Identificación 
+    id String @id
+
+    // info vehiculo
+    numero Int
+    placa  String  @unique
+    marca  String?
+    year   Int?
+
+    // detalles del vehiculo
+    capacidadCarga Float? // 6,2
+    estado         String? // text 
+
+    // Relaciones
+    // conductorId            Int? //  no fijo, entonces quitar?
+
+    // Relaciones inversas
+    Residuos                     Residuos[]
+    RutasVehiculos               RutasVehiculos[]
+    ReciclajeEnRuta              ReciclajeEnRuta[]
+    EmpresasPrivadas             EmpresasPrivadas[]
+    ResiduosCarnicos             ResiduosCarnicos[]
+    ReciclajePorCampana          ReciclajePorCampana[]
+    TonelajeBuenosAires          TonelajeBuenosAires[]
+    KilometrajesRecorridos       KilometrajesRecorridos[]
+    Reporte_ResiduosComunidades  Reporte_ResiduosComunidades[]
+    OrdenesDeCompraDeCombustible OrdenesDeCompraDeCombustible[]
+}
+
+model EstudioRutas {
+    // Identificación 
+    id String @id
+
+    numero Int //  unique?
+
+    kilometrosDeLaRuta Float // 6,2
+
+    // Relaciones
+    ruta   Rutas?  @relation(fields: [rutaId], references: [id])
+    rutaId String?
+}
+
+model RutasVehiculos {
+    // Identificación 
+    id String @id
+
+    numero Int //  unique?
+
+    year           Int?
+    capacidadCarga Float? // 6,2
+
+    observaciones String?
+
+    // Relaciones
+    vehiculo   HistoricoVehiculos @relation(fields: [vehiculoId], references: [id])
+    vehiculoId String
+
+    conductor     Conductores? @relation(fields: [conductoresId], references: [id])
+    conductoresId String?
+
+    // ! NUEVO. debe valorar
+    ruta   Rutas?  @relation(fields: [rutaId], references: [id]) //  adicional, one2one?
+    rutaId String?
+
+    // fecha DateTime? // ? adicionales ?
+}
+
+// * categoria: (Comb-KM) *
+
+// ! separar control de factura [listo]
+// NEW nuevo modelo
+model Facturas {
+    // Identificación 
+    id String @id
+
+    numeroFactura String   @unique
+    fecha         DateTime
+    monto         Float // Monetary
+
+    // Relaciones
+    moneda   ResCurrency @relation(fields: [monedaId], references: [id])
+    monedaId String
+
+    // Relaciones inversas
+    OrdenesDeCompraDeCombustible OrdenesDeCompraDeCombustible[]
+}
+
+//  unique?
+model OrdenesDeCompraDeCombustible {
+    // Identificación 
+    id String @id
+
+    // Información principal
+    fecha DateTime
+
+    litros    Float // 10,3
+    monto     Float // Monetary
+    numero_OC String?
+    cupon     String?
+
+    // Relaciones
+    facturas   Facturas @relation(fields: [facturasId], references: [id])
+    facturasId String
+
+    nombreSolicitante   Partner? @relation(fields: [nombreSolicitanteId], references: [id])
+    nombreSolicitanteId String?
+
+    vehiculo   HistoricoVehiculos? @relation(fields: [vehiculoId], references: [id])
+    vehiculoId String?
+
+    moneda   ResCurrency @relation(fields: [monedaId], references: [id])
+    monedaId String
+
+    // ! Calculado
+    mes  Int // CALCULADO * seleccion
+    year Int
+}
+
+//  unique?
+model KilometrajesRecorridos {
+    // Identificación 
+    id String @id
+
+    // Información principal
+    fecha DateTime?
+
+    kilometrosAlSalir    Int? // kilometros que marca antes de salir
+    KilometrosAlRegresar Int? // kilometros que marca al volver, no puede ser menor que el anterior
+
+    residuo     String? // char 50 //  tipo (entidad menor?) y relacion?: 1vs1 o 1vsM
+    horasEnRuta Float? // 4,2
+
+    observaciones String?
+
+    // Relaciones
+    chofer        Conductores? @relation(fields: [conductoresId], references: [id])
+    conductoresId String?
+
+    cuadrilla    Cuadrillas? @relation(fields: [cuadrillasId], references: [id])
+    cuadrillasId String?
+
+    vehiculo   HistoricoVehiculos @relation(fields: [vehiculoId], references: [id])
+    vehiculoId String
+
+    ruta    Rutas?  @relation(fields: [rutasId], references: [id])
+    rutasId String?
+
+    // ! Calculado
+    total_km Int? // CALCULADO
+}
+
+// ! ********************************************
+
+// * categoria: Residuos y Reciclaje *
+
+//  unique?
+model ResiduosCarnicos {
+    // Identificación 
+    id String @id
+
+    // Información principal 
+    fecha      DateTime
+    kilogramos Float // 6,2
+
+    // Relaciones
+    ruta   Rutas?  @relation(fields: [rutaId], references: [id])
+    rutaId String?
+
+    vehiculo   HistoricoVehiculos? @relation(fields: [vehiculoId], references: [id])
+    vehiculoId String?
+
+    // ! Calculado
+    mes  Int // CALCULADO * seleccion
+    year Int
+}
+
+//  unique?
+model ReciclajeEnRuta {
+    // Identificación 
+    id String @id
+
+    // Información principal 
+    fecha DateTime
+
+    toneladas            Float //  6,3
+    otrosNoAprovechables Float? // 6,2
+
+    horasEnRuta Float? // 4,2
+    horaPesaje  Float? // 4,2 tiempo
+
+    // Relaciones
+    ruta   Rutas?  @relation(fields: [rutaId], references: [id])
+    rutaId String?
+
+    vehiculo   HistoricoVehiculos? @relation(fields: [vehiculoId], references: [id])
+    vehiculoId String?
+
+    centroAcopio   CentrosAcopio? @relation(fields: [centroAcopioId], references: [id])
+    centroAcopioId String?
+
+    // ! Calculado
+    mes  Int // calclado * seleccion
+    year Int // calclado
+}
+
+//  unique?
+model ReciclajePorCampana {
+    // Identificación 
+    id String @id
+
+    // Información principal
+    lugar String? // char 50 // finca u otro.
+
+    fecha DateTime
+
+    toneladas Float // 6,3
+
+    // Relaciones
+    distrito   Distritos? @relation(fields: [distritoId], references: [id])
+    distritoId String?
+
+    programaReciclaje   ProgramasReciclaje? @relation(fields: [programaReciclajeId], references: [id])
+    programaReciclajeId String?
+
+    vehiculo   HistoricoVehiculos? @relation(fields: [vehiculoId], references: [id])
+    vehiculoId String?
+
+    // ! Calculado
+    mes  Int // CALCULADO * seleccion
+    year Int
+}
+
+// (no aprovechable, ordinario, organico)
+//  unique?
+model Residuos {
+    // Identificación 
+    id String @id
+
+    // Información principal 
+    fecha DateTime
+
+    toneladas  Float // 6,2
+    horaPesaje Float? // 4,2 tiempo
+
+    // Relaciones
+    productos   Productos? @relation(fields: [productosId], references: [id])
+    productosId String?
+
+    tiposResiduos   TiposResiduos? @relation(fields: [tiposResiduosId], references: [id])
+    tiposResiduosId String?
+
+    ruta   Rutas?  @relation(fields: [rutaId], references: [id])
+    rutaId String?
+
+    vehiculo   HistoricoVehiculos @relation(fields: [vehiculoId], references: [id])
+    vehiculoId String
+
+    // ! Calculado
+    mes  Int // CALCULADO * seleccion
+    year Int
+}
+
+//  unique?
+model TonelajeBuenosAires {
+    // Identificación 
+    id String @id
+
+    // Información principal 
+    fechaFacturacion DateTime
+    toneladas        Float // 6,3
+    notas            String? // text
+    boleta           String? // char 10
+
+    // Relaciones
+    vehiculo   HistoricoVehiculos @relation(fields: [vehiculoId], references: [id])
+    vehiculoId String
+
+    chofer        Conductores? @relation(fields: [conductoresId], references: [id])
+    conductoresId String?
+
+    // ! Calculado
+    mes Int // CALCULADO
+
+    // Relaciones inversas
+}
+
+//  unique?
+model OrdenesCompra_EBI {
+    // Identificación 
+    id String @id
+
+    // Información principal 
+    ordenCompra String // char 10
+    fecha       DateTime
+    tonelajes   Float // 8,2
+    costo       Float // Monetary
+
+    notas String? // text/char 50
+
+    // Relaciones
+    moneda   ResCurrency @relation(fields: [monedaId], references: [id])
+    monedaId String
+
+    // ! Calculado
+    mes  Int // CALCULADO * seleccion
+    year Int // CALCULADO
+}
+
+//  unique?
+model EmpresasPrivadas {
+    // Identificación 
+    id String @id
+
+    // Información principal
+    fecha DateTime
+
+    pesoToneladas Float // 6,2
+
+    numeroComprobante String // char 20
+
+    montoCancelar  Float // Monetary
+    montoCancelado Float? // Monetary
+    diferencia     Float? // Monetary
+
+    observaciones String? // text
+
+    pesoTiquete Float? // 4,1
+    desconocido Float? // 4,1 // 
+
+    // Relaciones
+    vehiculo   HistoricoVehiculos? @relation(fields: [vehiculoId], references: [id])
+    vehiculoId String?
+
+    chofer        Conductores? @relation(fields: [conductoresId], references: [id])
+    conductoresId String?
+
+    // sinpe, tiquetes, efectivo, etc
+    mePago   MesPago? @relation(fields: [mePagoId], references: [id])
+    mePagoId String?
+
+    moneda   ResCurrency @relation(fields: [monedaId], references: [id])
+    monedaId String
+
+    // ! Calculado
+    mes  Int // CALCULADO * seleccion
+    year Int // CALCULADO
+}
+
+// : entidad almanenenada?
+//  unique?
+model Reporte_ResiduosComunidades {
+    // Identificación 
+    id String @id
+
+    // Información principal
+    fecha DateTime
+
+    kilogramos Int?
+    toneladas  Float // 6,2
+
+    numeroBoleta_EBI String? // char 10
+
+    factura String? // char 10
+
+    // Relaciones
+    vehiculo   HistoricoVehiculos? @relation(fields: [vehiculoId], references: [id])
+    vehiculoId String?
+
+    distrito   Distritos? @relation(fields: [distritoId], references: [id])
+    distritoId String?
+
+    // Se filtra segun el distrito, si no hay distrito, se asocia a la comunidad y define distrido asociado a la comunidad
+    comunidad   Comunidad? @relation(fields: [comunidadId], references: [id])
+    comunidadId String?
+
+    // ! Calculado
+    dia Int // CALCULADO * seleccion
+    mes Int // CALCULADO * seleccion
+}

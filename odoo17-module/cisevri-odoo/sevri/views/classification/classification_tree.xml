@@ -1,0 +1,15 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="view_classification_tree">
+      <field name="name">classification.tree</field>
+      <field name="model">sev.classification</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="description" />
+          <field name="event_type_id" />
+          <field name="specifications" />
+        </tree>
+      </field>
+    </record>
+  </data>
+</odoo>

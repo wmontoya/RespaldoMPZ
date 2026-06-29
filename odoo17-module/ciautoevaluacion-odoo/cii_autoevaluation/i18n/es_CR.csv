@@ -1,0 +1,444 @@
+module,type,name,res_id,src,value
+cii_autoevaluation,model,"ir.actions.act_url,name",cii_autoevaluation.assessee_access_error_action,Access Error - Redirect,Error de Acceso - Redirección
+cii_autoevaluation,model,"ir.actions.act_window,name",cii_autoevaluation.action_ae_justification,Justifications,Justificaciones
+cii_autoevaluation,model_terms,"ir.actions.act_window,help",cii_autoevaluation.action_ae_justification,Create your first justification,Cree su primera justificación
+cii_autoevaluation,model_terms,"ir.actions.act_window,help",cii_autoevaluation.action_ae_justification,"Justifications are created when ""Sí"" is selected in an answer.
+                    They include justification text and supporting documents.","Las justificaciones se crean cuando se selecciona ""Sí"" en una respuesta.
+                    Incluyen texto de justificación y documentos de apoyo."
+cii_autoevaluation,model,"ir.actions.act_window,name",cii_autoevaluation.action_ae_justification_document,Justification Documents,Documentos de Justificación
+cii_autoevaluation,model_terms,"ir.actions.act_window,help",cii_autoevaluation.action_ae_justification_document,No justification documents,Sin documentos de justificación
+cii_autoevaluation,model_terms,"ir.actions.act_window,help",cii_autoevaluation.action_ae_justification_document,Documents are added from justifications.,Los documentos se agregan desde las justificaciones.
+cii_autoevaluation,model,"ir.actions.act_window,name",cii_autoevaluation.action_ae_proposed_action,Proposed Actions,Acciones Propuestas
+cii_autoevaluation,model_terms,"ir.actions.act_window,help",cii_autoevaluation.action_ae_proposed_action,Crear una nueva acción propuesta,Crear una nueva propuesta de acción
+cii_autoevaluation,model_terms,"ir.actions.act_window,help",cii_autoevaluation.action_ae_proposed_action,"Las acciones propuestas se crean cuando una respuesta es ""No"" y se requiere una acción correctiva.","Las acciones propuestas se crean cuando una respuesta es ""No"" y se requiere una acción correctiva."
+cii_autoevaluation,model,"ir.actions.act_window,name",cii_autoevaluation.aes_survey_action,Surveys,Encuestas
+cii_autoevaluation,model,"ir.actions.act_window,name",cii_autoevaluation.aes_survey_answer_detailed_action,Answer Survey,Responder Encuesta
+cii_autoevaluation,model,"ir.actions.act_window,name",cii_autoevaluation.aes_survey_answers_action,Evaluation Answers,Respuestas de Evaluación
+cii_autoevaluation,model,"ir.actions.act_window,name",cii_autoevaluation.aes_survey_evaluations_action,Evaluations,Evaluaciones
+cii_autoevaluation,model,"ir.actions.act_window,name",cii_autoevaluation.autoevaluation_answer_action,Answers,Respuestas
+cii_autoevaluation,model_terms,"ir.actions.act_window,help",cii_autoevaluation.autoevaluation_answer_action,Define the answers and related documents for the survey questions.,Defina las respuestas y documentos relacionados para las preguntas de la encuesta.
+cii_autoevaluation,model,"ir.actions.act_window,name",cii_autoevaluation.autoevaluation_component_action,Component,Componente
+cii_autoevaluation,model,"ir.actions.act_window,name",cii_autoevaluation.autoevaluation_question_action,Questions,Preguntas
+cii_autoevaluation,model,"ir.actions.act_window,name",cii_autoevaluation.autoevaluation_section_action,Sections,Secciones
+cii_autoevaluation,model,"ir.actions.act_window,name",cii_autoevaluation.autoevaluation_survey_action,Self-Assessment,Autoevaluación
+cii_autoevaluation,model,"ir.actions.act_window,name",cii_autoevaluation.autoevaluation_survey_answer_action,Survey Answers,Respuestas de Encuesta
+cii_autoevaluation,model_terms,"ir.actions.act_window,help",cii_autoevaluation.autoevaluation_survey_answer_action,No survey answers created,No se han creado respuestas de encuesta
+cii_autoevaluation,model_terms,"ir.actions.act_window,help",cii_autoevaluation.autoevaluation_survey_answer_action,Survey answers are created automatically when a survey is assigned to a department.,Las respuestas de encuesta se crean automáticamente cuando una encuesta se asigna a un departamento.
+cii_autoevaluation,model,"ir.actions.act_window,name",cii_autoevaluation.autoevaluation_survey_answer_internal_control_action,Survey Answers,Respuestas de Encuesta
+cii_autoevaluation,model_terms,"ir.actions.act_window,help",cii_autoevaluation.autoevaluation_survey_answer_internal_control_action,No survey answers created,No se han creado respuestas de encuesta
+cii_autoevaluation,model_terms,"ir.actions.act_window,help",cii_autoevaluation.autoevaluation_survey_answer_internal_control_action,Survey answers are created automatically when a survey is assigned to a department.,Las respuestas de encuesta se crean automáticamente cuando una encuesta se asigna a un departamento.
+cii_autoevaluation,model,"ir.actions.act_window,name",cii_autoevaluation.autoevaluation_survey_answer_user_action,My Survey Answer,Mi Respuesta de Encuesta
+cii_autoevaluation,model_terms,"ir.actions.act_window,help",cii_autoevaluation.autoevaluation_survey_answer_user_action,You don't have survey answers,No tiene respuestas de encuesta
+cii_autoevaluation,model_terms,"ir.actions.act_window,help",cii_autoevaluation.autoevaluation_survey_answer_user_action,"Click ""Create My Answer"" to create a new survey answer for your department.","Haga clic en ""Crear Mi Respuesta"" para crear una nueva respuesta de encuesta para su departamento."
+cii_autoevaluation,model,"ir.actions.server,name",cii_autoevaluation.action_ae_proposed_action_my_server,My Department's Proposed Actions,Acciones Propuestas de Mi Departamento
+cii_autoevaluation,model,"ir.actions.server,name",cii_autoevaluation.autoevaluation_assessee_redirect_server_action,Redirect to My Assessments,Redirigir a Mis Evaluaciones
+cii_autoevaluation,model,"ir.actions.server,name",cii_autoevaluation.autoevaluation_my_previous_assessments_server_action,My Previous Assessments,Mis Evaluaciones Anteriores
+cii_autoevaluation,model,"ir.actions.server,name",cii_autoevaluation.autoevaluation_survey_answer_user_auto_action,My Survey Answer,Mi Respuesta de Encuesta
+cii_autoevaluation,model,"ir.model,name",cii_autoevaluation.model_ae_answer,Answer,Respuesta
+cii_autoevaluation,model,"ir.model,name",cii_autoevaluation.model_ae_attachment,Self-Evaluation Attachment,Adjunto de Autoevaluación
+cii_autoevaluation,model,"ir.model,name",cii_autoevaluation.model_ae_component,Component,Componente
+cii_autoevaluation,model,"ir.model,name",cii_autoevaluation.model_ae_justification,Answer Justification,Justificación de Respuesta
+cii_autoevaluation,model,"ir.model,name",cii_autoevaluation.model_ae_proposed_action,Proposed Action for Self-Assessment,Acción Propuesta para Autoevaluación
+cii_autoevaluation,model,"ir.model,name",cii_autoevaluation.model_ae_question,Question,Pregunta
+cii_autoevaluation,model,"ir.model,name",cii_autoevaluation.model_ae_section,Section,Sección
+cii_autoevaluation,model,"ir.model,name",cii_autoevaluation.model_ae_survey,Survey,Encuesta
+cii_autoevaluation,model,"ir.model,name",cii_autoevaluation.model_ae_survey_answer,Department Survey Answer,Respuesta de Encuesta de Departamento
+cii_autoevaluation,model,"ir.model,name",cii_autoevaluation.model_ae_survey_answer_wizard,Survey Answer Creation Wizard,Asistente de Creación de Respuesta de Encuesta
+cii_autoevaluation,model,"ir.model,name",cii_autoevaluation.model_ae_survey_rel,Department Survey,Encuesta de Departamento
+cii_autoevaluation,model,"ir.model,name",cii_autoevaluation.model_hr_department,Department,Departamento
+cii_autoevaluation,model,"ir.model,name",cii_autoevaluation.model_res_users,User,Usuario
+cii_autoevaluation,model,"ir.model.constraint,message",cii_autoevaluation.constraint_ae_survey_answer_unique_survey_department,A response already exists for this survey and department.,Ya existe una respuesta para esta encuesta y departamento.
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_answer__component_id,Component,Componente
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_answer__component_section_group,Component/Section Group,Grupo Componente/Sección
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_answer__create_date,Created on,Creado el
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_answer__create_uid,Created by,Creado por
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_answer__department_id,Department,Departamento
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_answer__display_name,Display Name,Nombre para Mostrar
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_answer__document,Document,Documento
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_answer__id,ID,IDENTIFICACIÓN
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_answer__justification_count,Number of Justifications,Número de Justificaciones
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_answer__justification_id,Justifications,Justificaciones
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_answer__manager_id,Manager,Gerente
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_answer__proposed_actions,Proposed Actions,Acciones Propuestas
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_answer__proposed_actions_count,Number of Proposed Actions,Número de Acciones Propuestas
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_answer__question_id,Question,Pregunta
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_answer__response,Response,Respuesta
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_answer__section_id,Section,Sección
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_answer__status_badge_type,Status Badge Type,Tipo de insignia de estado
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_answer__survey_answer_id,Survey Answer,Respuesta de Encuesta
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_answer__survey_id,Survey,Encuesta
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_answer__unanswered_button,Estado,Estado
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_answer__write_date,Last Updated on,Última Actualización el
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_answer__write_uid,Last Updated by,Última Actualización por
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_attachment__attachment,Attachment File,Archivo Adjunto
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_attachment__attachment_type,Attachment MIME Type,Tipo MIME del Adjunto
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_attachment__create_date,Created on,Creado el
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_attachment__create_uid,Created by,Creado por
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_attachment__description,Description,Descripción
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_attachment__display_name,Display Name,Nombre para Mostrar
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_attachment__id,ID,IDENTIFICACIÓN
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_attachment__justification_id,Justification,Justificación
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_attachment__name,Attachment Name,Nombre del Adjunto
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_attachment__proposed_action_id,Proposed Action,Acción Propuesta
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_attachment__write_date,Last Updated on,Última Actualización el
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_attachment__write_uid,Last Updated by,Última Actualización por
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_component__aes_answers,Answers,Respuestas
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_component__create_date,Created on,Creado el
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_component__create_uid,Created by,Creado por
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_component__display_name,Display Name,Nombre para Mostrar
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_component__id,ID,IDENTIFICACIÓN
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_component__sections,Sections,Secciones
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_component__sequence,Sequence,Secuencia
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_component__surveys,Surveys,Encuestas
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_component__title,Title,Título
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_component__write_date,Last Updated on,Última Actualización el
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_component__write_uid,Last Updated by,Última Actualización por
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_justification__answer_id,Answer,Respuesta
+cii_autoevaluation,model,"ir.model.fields,help",cii_autoevaluation.field_ae_justification__answer_id,Answer to which this justification belongs,Respuesta a la que pertenece esta justificación
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_justification__create_date,Created on,Creado el
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_justification__create_uid,Created by,Creado por
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_justification__description,Justification,Justificación
+cii_autoevaluation,model,"ir.model.fields,help",cii_autoevaluation.field_ae_justification__description,Justification text in HTML format,Texto de justificación en formato HTML
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_justification__display_name,Display Name,Nombre para Mostrar
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_justification__id,ID,IDENTIFICACIÓN
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_justification__is_survey_submitted,Survey Submitted,Encuesta Enviada
+cii_autoevaluation,model,"ir.model.fields,help",cii_autoevaluation.field_ae_justification__is_survey_submitted,Indicates if the parent survey has already been submitted,Indica si la encuesta padre ya ha sido enviada
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_justification__justification_attachments,Attachments,Adjuntos
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_justification__justification_attachments_count,Number of Attachments,Número de Adjuntos
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_justification__question_guidance_text,Guidance,Orientación
+cii_autoevaluation,model,"ir.model.fields,help",cii_autoevaluation.field_ae_justification__question_guidance_text,Text to guide users when providing justifications or proposed actions for this question,Texto para guiar a los usuarios al proporcionar justificaciones o acciones propuestas para esta pregunta
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_justification__question_name_by_answer_id,Question,Pregunta
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_justification__write_date,Last Updated on,Última Actualización el
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_justification__write_uid,Last Updated by,Última Actualización por
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_proposed_action__accomplishment_level,Accomplishment Level,Nivel de Cumplimiento
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_proposed_action__answer_id,Answer,Respuesta
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_proposed_action__create_date,Created on,Creado el
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_proposed_action__create_uid,Created by,Creado por
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_proposed_action__department_id,Department,Departamento
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_proposed_action__description,Description,Descripción
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_proposed_action__display_name,Display Name,Nombre para Mostrar
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_proposed_action__finish_date,Action Finish Date,Fecha de Finalización de Acción
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_proposed_action__id,ID,IDENTIFICACIÓN
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_proposed_action__indicators,Indicators,Indicadores
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_proposed_action__is_survey_submitted,Survey Submitted,Encuesta Enviada
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_proposed_action__justification,Justification,Justificación
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_proposed_action__justification_attachments,Attachments,Adjuntos
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_proposed_action__question_guidance_text,Guidance,Orientación
+cii_autoevaluation,model,"ir.model.fields,help",cii_autoevaluation.field_ae_proposed_action__question_guidance_text,Text to guide users when providing justifications or proposed actions for this question,Texto para guiar a los usuarios al proporcionar justificaciones o acciones propuestas para esta pregunta
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_proposed_action__question_name_by_answer_id,Question,Pregunta
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_proposed_action__responsible_name,Responsible Name,Nombre del Responsable
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_proposed_action__write_date,Last Updated on,Última Actualización el
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_proposed_action__write_uid,Last Updated by,Última Actualización por
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_question__aes_answers,Answers,Respuestas
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_question__create_date,Created on,Creado el
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_question__create_uid,Created by,Creado por
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_question__description,Description,Descripción
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_question__display_name,Display Name,Nombre para Mostrar
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_question__guidance_text,Guidance Text,Texto de Orientación
+cii_autoevaluation,model,"ir.model.fields,help",cii_autoevaluation.field_ae_question__guidance_text,Text to guide users when providing justifications or proposed actions for this question,Texto para guiar a los usuarios al proporcionar justificaciones o acciones propuestas para esta pregunta
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_question__guidance_text_justification,Guidance Text for Justification,Texto de Orientación para Justificación
+cii_autoevaluation,model,"ir.model.fields,help",cii_autoevaluation.field_ae_question__guidance_text_justification,Text to guide users when providing justifications (when answer is 'Yes'),Texto para guiar a los usuarios al proporcionar justificaciones (cuando la respuesta es 'Sí')
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_question__guidance_text_proposed_action,Guidance Text for Proposed Action,Texto de Orientación para Acción Propuesta
+cii_autoevaluation,model,"ir.model.fields,help",cii_autoevaluation.field_ae_question__guidance_text_proposed_action,Text to guide users when providing proposed actions (when answer is 'No'),Texto para guiar a los usuarios al proporcionar acciones propuestas (cuando la respuesta es 'No')
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_question__id,ID,IDENTIFICACIÓN
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_question__related_components,Related Components,Componentes Relacionados
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_question__section_id,Section,Sección
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_question__sequence,Sequence,Secuencia
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_question__title,Title,Título
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_question__write_date,Last Updated on,Última Actualización el
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_question__write_uid,Last Updated by,Última Actualización por
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_section__components,Components,Componentes
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_section__create_date,Created on,Creado el
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_section__create_uid,Created by,Creado por
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_section__description,Description,Descripción
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_section__display_name,Display Name,Nombre para Mostrar
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_section__id,ID,IDENTIFICACIÓN
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_section__questions,Questions,Preguntas
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_section__sequence,Sequence,Secuencia
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_section__title,Title,Título
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_section__write_date,Last Updated on,Última Actualización el
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_section__write_uid,Last Updated by,Última Actualización por
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey__closed_notification_sent,Close Notification Sent,Notificación de Cierre Enviada
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey__component_statistics_html,Statistics by Component,Estadísticas por Componente
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey__components,Components,Componentes
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey__create_date,Created on,Creado el
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey__create_uid,Created by,Creado por
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey__departments,Departments,Departamentos
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey__departments_without_answer,Departments without Answer,Departamentos sin Respuesta
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey__description,Description,Descripción
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey__display_name,Display Name,Nombre para Mostrar
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey__final_date,Final Date,Fecha Final
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey__id,ID,IDENTIFICACIÓN
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey__initial_date,Initial Date,Fecha Inicial
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey__notification_sent,Notification Sent,Notificación Enviada
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey__status,Status,Estado
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey__survey_answer_ids,Survey Answers,Respuestas de Encuesta
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey__title,Title,Título
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey__write_date,Last Updated on,Última Actualización el
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey__write_uid,Last Updated by,Última Actualización por
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_answer__answered_questions,Answered Questions,Preguntas Respondidas
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_answer__answers,Answers,Respuestas
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_answer__available_questions,Available Questions,Preguntas Disponibles
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_answer__create_date,Created on,Creado el
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_answer__create_uid,Created by,Creado por
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_answer__current_user_id,Current User,Usuario Actual
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_answer__department_id,Department,Departamento
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_answer__department_name,Department Name,Nombre del Departamento
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_answer__display_name,Name,Nombre
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_answer__id,ID,IDENTIFICACIÓN
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_answer__justification_count,Total Justifications,Total de Justificaciones
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_answer__manager_id,Department Manager,Gerente de Departamento
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_answer__progress_percentage,Progress (%),Progreso (%)
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_answer__proposed_actions_count,Total Proposed Actions,Total de Acciones Propuestas
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_answer__status,Status,Estado
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_answer__survey_id,Survey,Encuesta
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_answer__survey_title,Survey Title,Título de Encuesta
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_answer__total_questions,Total Questions,Total de Preguntas
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_answer__user_id,Created by,Creado por
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_answer__write_date,Last Updated on,Última Actualización el
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_answer__write_uid,Last Updated by,Última Actualización por
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_answer_wizard__create_date,Created on,Creado el
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_answer_wizard__create_uid,Created by,Creado por
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_answer_wizard__department_ids,Departments,Departamentos
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_answer_wizard__display_name,Display Name,Nombre para Mostrar
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_answer_wizard__id,ID,IDENTIFICACIÓN
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_answer_wizard__survey_id,Survey,Encuesta
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_answer_wizard__write_date,Last Updated on,Última Actualización el
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_answer_wizard__write_uid,Last Updated by,Última Actualización por
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_rel__create_date,Created on,Creado el
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_rel__create_uid,Created by,Creado por
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_rel__department_id,Department,Departamento
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_rel__display_name,Display Name,Nombre para Mostrar
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_rel__id,ID,IDENTIFICACIÓN
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_rel__score,Score,Puntaje
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_rel__status,Status,Estado
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_rel__survey_id,Survey,Encuesta
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_rel__write_date,Last Updated on,Última Actualización el
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_ae_survey_rel__write_uid,Last Updated by,Última Actualización por
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_hr_department__aes_answers,Answers,Respuestas
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_hr_department__unit_id,Unidad,Unidad
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_hr_department__users,Usuarios,Usuarios
+cii_autoevaluation,model,"ir.model.fields,field_description",cii_autoevaluation.field_res_users__department_id,Departamento,Departamento
+cii_autoevaluation,model,"ir.model.fields.selection,name",cii_autoevaluation.selection__ae_answer__response__no,No,No
+cii_autoevaluation,model,"ir.model.fields.selection,name",cii_autoevaluation.selection__ae_answer__response__si,Sí,Si
+cii_autoevaluation,model,"ir.model.fields.selection,name",cii_autoevaluation.selection__ae_answer__response__sin_respuesta,Sin Respuesta,Sin respuesta
+cii_autoevaluation,model,"ir.model.fields.selection,name",cii_autoevaluation.selection__ae_answer__status_badge_type__primary,Primary,Primario
+cii_autoevaluation,model,"ir.model.fields.selection,name",cii_autoevaluation.selection__ae_answer__status_badge_type__secondary,Secondary,Secundario
+cii_autoevaluation,model,"ir.model.fields.selection,name",cii_autoevaluation.selection__ae_proposed_action__accomplishment_level__completed,Completed,Completado
+cii_autoevaluation,model,"ir.model.fields.selection,name",cii_autoevaluation.selection__ae_proposed_action__accomplishment_level__not_done,Pending,Pendiente
+cii_autoevaluation,model,"ir.model.fields.selection,name",cii_autoevaluation.selection__ae_proposed_action__accomplishment_level__partial,Partial,Parcial
+cii_autoevaluation,model,"ir.model.fields.selection,name",cii_autoevaluation.selection__ae_survey__status__active,Active,Activo
+cii_autoevaluation,model,"ir.model.fields.selection,name",cii_autoevaluation.selection__ae_survey__status__inactive,Inactive,Inactivo
+cii_autoevaluation,model,"ir.model.fields.selection,name",cii_autoevaluation.selection__ae_survey__status__pending,Pending,Pendiente
+cii_autoevaluation,model,"ir.model.fields.selection,name",cii_autoevaluation.selection__ae_survey_answer__status__draft,Draft,Borrador
+cii_autoevaluation,model,"ir.model.fields.selection,name",cii_autoevaluation.selection__ae_survey_answer__status__in_progress,In Progress,En Progreso
+cii_autoevaluation,model,"ir.model.fields.selection,name",cii_autoevaluation.selection__ae_survey_answer__status__submitted,Submitted,Enviado
+cii_autoevaluation,model,"ir.model.fields.selection,name",cii_autoevaluation.selection__ae_survey_rel__status__finished,Finished,Finalizado
+cii_autoevaluation,model,"ir.model.fields.selection,name",cii_autoevaluation.selection__ae_survey_rel__status__pending,Pending,Pendiente
+cii_autoevaluation,model,"ir.module.category,name",cii_autoevaluation.group_category_autoevaluation,AUTOEVALUATION,AUTOEVALUACIÓN
+cii_autoevaluation,model,"ir.module.category,description",cii_autoevaluation.group_category_autoevaluation,Permissions for the Autoevaluation module,Permisos para el módulo de Autoevaluación
+cii_autoevaluation,model,"ir.ui.menu,name",cii_autoevaluation.main_menu_answers,Answers,Respuestas
+cii_autoevaluation,model,"ir.ui.menu,name",cii_autoevaluation.main_menu_components,Components,Componentes
+cii_autoevaluation,model,"ir.ui.menu,name",cii_autoevaluation.main_menu_my_assessment_assessee,My Self-Assessment Response,Mi Respuesta de Autoevaluación
+cii_autoevaluation,model,"ir.ui.menu,name",cii_autoevaluation.main_menu_my_previous_assessments,My Previous Assessments,Mis Evaluaciones Anteriores
+cii_autoevaluation,model,"ir.ui.menu,name",cii_autoevaluation.main_menu_my_proposed_actions,My Department's Proposed Actions,Acciones Propuestas de Mi Departamento
+cii_autoevaluation,model,"ir.ui.menu,name",cii_autoevaluation.main_menu_proposed_actions,Proposed Actions,Acciones Propuestas
+cii_autoevaluation,model,"ir.ui.menu,name",cii_autoevaluation.main_menu_questions,Questions,Preguntas
+cii_autoevaluation,model,"ir.ui.menu,name",cii_autoevaluation.main_menu_root,Self-Assessment,Autoevaluación
+cii_autoevaluation,model,"ir.ui.menu,name",cii_autoevaluation.main_menu_sections,Sections,Secciones
+cii_autoevaluation,model,"ir.ui.menu,name",cii_autoevaluation.main_menu_settings,Settings,Configuración
+cii_autoevaluation,model,"ir.ui.menu,name",cii_autoevaluation.main_menu_survey_process,Self-Assessment Process,Proceso de Autoevaluación
+cii_autoevaluation,model,"ir.ui.menu,name",cii_autoevaluation.main_menu_surveys,Surveys,Encuestas
+cii_autoevaluation,model,"ir.ui.menu,name",cii_autoevaluation.menu_my_survey_answer_assessee,My Self-Assessment Response,Mi Respuesta de Autoevaluación
+cii_autoevaluation,model,"ir.ui.menu,name",cii_autoevaluation.menu_survey_answers,Self-Assessments,Autoevaluaciones
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.aes_survey_answer_detailed_form,Start Survey,Iniciar Encuesta
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.aes_survey_answer_detailed_form,Submit Survey,Enviar la Autoevaluación
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.aes_survey_answer_detailed_form,"<i class=""fa fa-lock""/> <strong>Read-Only Mode</strong> - The survey has been submitted and cannot be modified","<i class=""fa fa-lock""/> <strong>Modo Solo Lectura</strong> - La encuesta ha sido enviada y no puede ser modificada"
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.aes_survey_answer_detailed_form,"<i class=""fa fa-check-circle""/> <strong>Survey Submitted</strong><br/>
+                                    This survey has already been successfully submitted. No modifications can be made to answers, justifications, or proposed actions. 
+                                    You can only consult the information.","<i class=""fa fa-check-circle""/> <strong>Encuesta Enviada</strong><br/>
+                                    Esta encuesta ya ha sido enviada exitosamente. No se pueden realizar modificaciones a las respuestas, justificaciones o acciones propuestas. 
+                                    Solo puede consultar la información."
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.aes_survey_answer_detailed_form,Component-Section,Componente-Sección
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.aes_survey_answer_detailed_form,Actions,Acciones
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.aes_survey_answer_detailed_form,Justifications,Justificaciones
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.aes_survey_answer_detailed_form,Sin responder,Sin responder
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.aes_survey_answer_detailed_form,Justificación,Justificación
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.aes_survey_answer_detailed_form,Acción Propuesta,Acción Propuesta
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.aes_survey_answer_detailed_form,"<i class=""fa fa-info-circle""/> No questions available for this survey. Please verify that the survey has components and questions configured.","<i class=""fa fa-info-circle""/> No hay preguntas disponibles para esta encuesta. Por favor verifique que la encuesta tenga componentes y preguntas configurados."
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.aes_survey_answer_detailed_form,Survey Questions,Preguntas de Encuesta
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.aes_survey_answer_wizard_form,"<i class=""fa fa-info-circle""/> This wizard will create survey answers for the selected departments.
+                            The answers will be created in ""Draft"" status and can be completed later.","<i class=""fa fa-info-circle""/> Este asistente creará respuestas de encuesta para los departamentos seleccionados.
+                            Las respuestas se crearán en estado ""Borrador"" y podrán completarse más tarde."
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.aes_survey_answer_wizard_form,Create Answers,Crear Respuestas
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.aes_survey_answer_wizard_form,Cancel,Cancelar
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.aes_survey_answer_wizard_form,Create Survey Answers,Crear Respuestas de Encuesta
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.assessee_access_error_page,"<i class=""fa fa-exclamation-triangle""/> Área Restringida","<i class=""fa fa-exclamation-triangle""/> Área Restringida"
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.assessee_access_error_page,"Lo sentimos, no tiene permisos para acceder a esta sección.","Lo sentimos, no tiene permisos para acceder a esta sección."
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.assessee_access_error_page,"Como usuario evaluado, solo puede acceder a sus autoevaluaciones.","Como usuario evaluado, solo puede acceder a sus autoevaluaciones."
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.assessee_access_error_page,<strong>¿Dónde desea ir?</strong>,<strong>¿Dónde desea ir?</strong>
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.assessee_access_error_page,"<i class=""fa fa-file-text""/> Mi Autoevaluación Actual","<i class=""fa fa-file-text""/> Mi Autoevaluación Actual"
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.assessee_access_error_page,"<i class=""fa fa-history""/> Mis Evaluaciones Anteriores","<i class=""fa fa-history""/> Mis Evaluaciones Anteriores"
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.assessee_access_error_page,"<small class=""text-muted"">
+                                            Si necesita acceso a otras funciones, contacte a su administrador.
+                                        </small>","<small class=""texto-silenciado"">
+                                            Si necesita acceso a otras funciones, contacte a su administrador.
+                                        </pequeño>"
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_answer_form,Proposed Action,Acción Propuesta
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_answer_form,Justification,Justificación
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_answer_form,View Actions,Ver Acciones
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_answer_form,View Justifications,Ver Justificaciones
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_answer_form,Proposed Actions,Acciones Propuestas
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_answer_form,Justifications,Justificaciones
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_answer_form,Answer,Respuesta
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_answer_form_no_action,Justification,Justificación
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_answer_form_no_action,View Actions,Ver Acciones
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_answer_form_no_action,View Justifications,Ver Justificaciones
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_answer_form_no_action,Proposed Actions,Acciones Propuestas
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_answer_form_no_action,Justifications,Justificaciones
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_answer_form_no_action,Answer,Respuesta
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_answer_search,Active Surveys,Encuestas Activas
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_answer_search,My Department,Mi Departamento
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_answer_search,My Surveys,Mis Encuestas
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_answer_search,Draft,Borrador
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_answer_search,In Progress,En Progreso
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_answer_search,Completed,Completado
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_answer_search,Submitted,Enviado
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_answer_search,Survey,Encuesta
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_answer_search,Department,Departamento
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_answer_search,Status,Estado
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_answer_search,User,Usuario
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_answer_search,Group by,Agrupar por
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_answer_search,Search Survey Answers,Buscar Respuestas de Encuesta
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_answer_tree,Create My Answer,Crear Mi Respuesta
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_answer_user_search,My Department,Mi Departamento
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_answer_user_search,My Department Assessments,Evaluaciones de Mi Departamento
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_answer_user_search,Active Surveys,Encuestas Activas
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_answer_user_search,Draft,Borrador
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_answer_user_search,In Progress,En Progreso
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_answer_user_search,Submitted,Enviado
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_answer_user_search,Search My Survey Answers,Buscar Mis Respuestas de Encuesta
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_answer_user_tree,Create My Answer,Crear Mi Respuesta
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_answers_tree,Answers,Respuestas
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_component_form,Component Title...,Título del Componente...
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_component_form,Sections,Secciones
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_evaluation_form,Components,Componentes
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_evaluation_form,"<i class=""fa fa-download me-1""/>
+                              Export Answers to Excel","<i class=""fa fa-download me-1""/>
+                              Exportar Respuestas a Excel"
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_evaluation_form,Export Answers to Excel,Exportar Respuestas a Excel
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_evaluation_form,Answers by Department,Respuestas por Departamento
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_evaluation_form,Departments without Answer,Departamentos sin Respuesta
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_evaluation_form,"<i class=""fa fa-bar-chart me-2""/>
+                          Answer Statistics by Component","<i class=""fa fa-bar-chart me-2""/>
+                          Estadísticas de Respuestas por Componente"
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_evaluation_form,"<small class=""text-muted"">
+                              <i class=""fa fa-info-circle me-1""/>
+                              Statistics are automatically calculated based on registered answers
+                            </small>","<small class=""text-muted"">
+                              <i class=""fa fa-info-circle me-1""/>
+                              Las estadísticas se calculan automáticamente basándose en las respuestas registradas
+                            </small>"
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_evaluation_form,"<i class=""fa fa-download me-1""/>
+                              Export Statistics","<i class=""fa fa-download me-1""/>
+                              Exportar Estadísticas"
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_evaluation_form,Export to Excel,Exportar a Excel
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_evaluation_form,Statistics by Component,Estadísticas por Componente
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_graph,Surveys,Encuestas
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_kanban,<strong>Departments:</strong>,<strong>Departamentos:</strong>
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_kanban,<strong>Components:</strong>,<strong>Componentes:</strong>
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_kanban,<strong>Status:</strong>,<strong>Estado:</strong>
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_question_form,Question Title...,Título de Pregunta...
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_question_form,Description,Descripción
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_question_form,Question description...,Descripción de pregunta...
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_question_form,Guidance Text,Texto de Orientación
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_question_form,Optional guidance text to help users when providing justifications or proposed actions...,Texto de orientación opcional para ayudar a los usuarios al proporcionar justificaciones o acciones propuestas...
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_question_form,Optional guidance text to help users when providing justifications (when answer is 'Yes')...,Texto de orientación opcional para ayudar a los usuarios al proporcionar justificaciones (cuando la respuesta es 'Sí')...
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_question_form,Optional guidance text to help users when providing proposed actions (when answer is 'No')...,Texto de orientación opcional para ayudar a los usuarios al proporcionar acciones propuestas (cuando la respuesta es 'No')...
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_question_form,Question Details,Detalles de Pregunta
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_question_tree,Related Components,Componentes Relacionados
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_section_form,Section Title...,Título de Sección...
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_section_form,Description,Descripción
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_section_form,Section description...,Descripción de sección...
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_section_form,Section Details,Detalles de Sección
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_section_form,Questions,Preguntas
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_survey_form,Survey Information,Información de Encuesta
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_survey_form,Title,Título
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_survey_form,e.g. Survey 2024,ej. Encuesta 2024
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_survey_form,Initial Date,Fecha Inicial
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_survey_form,Final Date,Fecha Final
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_survey_form,Status,Estado
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_survey_form,Component Information,Información del Componente
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_survey_form,Sections,Secciones
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_survey_form,Components,Componentes
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_survey_form,Departments,Departamentos
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_surveys_tree,Send Notification,Enviar Notificación
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.autoevaluation_survey_surveys_tree,Create Answers by Department,Crear Respuestas por Departamento
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_justification_document_form,Justification Document,Documento de Justificación
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_justification_document_popup_form,Document name,Nombre del documento
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_justification_document_popup_form,"e.g., PDF, DOC, XLS","ej., PDF, DOC, XLS"
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_justification_document_popup_form,Document description (optional),Descripción del documento (opcional)
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_justification_document_popup_form,Save,Guardar
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_justification_document_popup_form,Cancel,Cancelar
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_justification_document_popup_form,Add Document,Agregar Documento
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_justification_document_tree,Justification Documents,Documentos de Justificación
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_justification_form,Justification,Justificación
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_justification_form,Attachments,Adjuntos
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_justification_popup_form,Answer,Respuesta
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_justification_popup_form,Indicaciones de respuesta,Indicaciones de respuesta
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_justification_popup_form,"<i class=""fa fa-lightbulb-o""/> <strong>Guidance:</strong><br/>","<i class=""fa fa-lightbulb-o""/> <strong>Orientación:</strong><br/>"
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_justification_popup_form,Orientación para Justificación:,Orientación para Justificación:
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_justification_popup_form,Justification,Justificación
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_justification_popup_form,Supporting Documents,Documentos de Apoyo
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_justification_search,No Attachments,Sin Adjuntos
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_justification_search,Answer,Respuesta
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_justification_search,Creation Date,Fecha de Creación
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_justification_search,Group by,Agrupar por
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_justification_search,Search Justifications,Buscar Justificaciones
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_justification_tree,Justifications,Justificaciones
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_proposed_action_form,Description of the proposed action...,Descripción de la acción propuesta...
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_proposed_action_form,Compliance indicators...,Indicadores de cumplimiento...
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_proposed_action_form,Action justification...,Justificación de acción...
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_proposed_action_form,Proposed Action,Acción Propuesta
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_proposed_action_form_popup,"<i class=""fa fa-lightbulb-o""/> <strong>Guidance:</strong><br/>","<i class=""fa fa-lightbulb-o""/> <strong>Orientación:</strong><br/>"
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_proposed_action_form_popup,Orientación para Acción Propuesta:,Orientación para Acción Propuesta:
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_proposed_action_form_popup,Description of the proposed action...,Descripción de la acción propuesta...
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_proposed_action_form_popup,Compliance indicators...,Indicadores de cumplimiento...
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_proposed_action_form_popup,Action justification...,Justificación de acción...
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_proposed_action_form_popup,Create Proposed Action,Crear Acción Propuesta
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_proposed_action_my_search,Completed,Completado
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_proposed_action_my_search,Pending,Pendiente
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_proposed_action_my_search,Partial,Parcial
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_proposed_action_my_search,Accomplishment Level,Nivel de Cumplimiento
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_proposed_action_my_search,Responsible,Responsable
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_proposed_action_my_search,Group by,Agrupar por
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_proposed_action_my_search,Search My Department's Proposed Actions,Buscar Acciones Propuestas de Mi Departamento
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_proposed_action_my_tree,My Department's Proposed Actions,Acciones Propuestas de Mi Departamento
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_proposed_action_search,Completed,Completado
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_proposed_action_search,Pending,Pendiente
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_proposed_action_search,Partial,Parcial
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_proposed_action_search,Department,Departamento
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_proposed_action_search,Accomplishment Level,Nivel de Cumplimiento
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_proposed_action_search,Responsible,Responsable
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_proposed_action_search,Group by,Agrupar por
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_proposed_action_search,Search Proposed Actions,Buscar Acciones Propuestas
+cii_autoevaluation,model_terms,"ir.ui.view,arch_db",cii_autoevaluation.view_ae_proposed_action_tree,Proposed Actions,Acciones Propuestas
+cii_autoevaluation,model,"res.groups,name",cii_autoevaluation.group_autoevaluation_admin,Autoevaluation Admin,Administrador de Autoevaluación
+cii_autoevaluation,model,"res.groups,name",cii_autoevaluation.group_autoevaluation_assessee,Autoevaluation Assessee,Evaluado de Autoevaluación
+cii_autoevaluation,model,"res.groups,name",cii_autoevaluation.group_autoevaluation_audit,Autoevaluation Audit,Auditoría de Autoevaluación
+cii_autoevaluation,model,"res.groups,name",cii_autoevaluation.group_autoevaluation_internal_control,Autoevaluation Internal Control,Control Interno de Autoevaluación
+cii_autoevaluation,code,addons/cii_autoevaluation/models/justification.py,76,Justifications can only be created for 'Sí' responses.,Las justificaciones solo pueden crearse para respuestas 'Sí'.
+cii_autoevaluation,code,addons/cii_autoevaluation/models/justification.py,115,%s (copy),%s (copia)
+cii_autoevaluation,code,addons/cii_autoevaluation/models/proposed_action.py,54,La descripción es obligatoria y no puede estar vacía.,La descripción es obligatoria y no puede estar vacía.
+cii_autoevaluation,code,addons/cii_autoevaluation/models/proposed_action.py,59,La fecha de finalización de la acción debe ser posterior a la fecha de creación.,La fecha de finalización debe ser posterior a la fecha de creación.
+cii_autoevaluation,code,addons/cii_autoevaluation/models/proposed_action.py,65,La fecha de finalización de la acción no puede ser superior a un año después de la fecha de creación.,La fecha de finalización de la acción no puede ser superior a un año después de la fecha de creación.
+cii_autoevaluation,code,addons/cii_autoevaluation/models/answer.py,162,Editar Acción Propuesta,Editar Acción Propuesta
+cii_autoevaluation,code,addons/cii_autoevaluation/models/answer.py,169,Crear Acción Propuesta,Crear Acción Propuesta
+cii_autoevaluation,code,addons/cii_autoevaluation/models/answer.py,190,No proposed action exists to delete.,No existe acción propuesta para eliminar.
+cii_autoevaluation,code,addons/cii_autoevaluation/models/answer.py,246,Justifications can only be created for 'Sí' responses.,Las justificaciones solo pueden crearse para respuestas 'Sí'.
+cii_autoevaluation,code,addons/cii_autoevaluation/models/answer.py,262,Editar Justificación,Editar Justificación
+cii_autoevaluation,code,addons/cii_autoevaluation/models/answer.py,269,Crear Justificación,Crear Justificación
+cii_autoevaluation,code,addons/cii_autoevaluation/models/answer.py,274,Justificación para: %s,Justificación para: %s
+cii_autoevaluation,code,addons/cii_autoevaluation/models/answer.py,288,No justification exists to delete.,No existe justificación para eliminar.
+cii_autoevaluation,code,addons/cii_autoevaluation/models/answer.py,306,Justification for: %s,Justificación para: %s
+cii_autoevaluation,code,addons/cii_autoevaluation/models/survey.py,145,No components defined for this survey.,No hay componentes definidos para esta encuesta.

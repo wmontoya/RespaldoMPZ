@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data noupdate="1">
+    <!-- * Locations * -->
+    <record id="provinces_san_jose" model="waste_control.provinces">
+      <field name="name">San José</field>
+    </record>
+
+    <record id="cantons_perez_zeledon" model="waste_control.cantons">
+      <field name="name">Pérez Zeledón</field>
+      <field name="provinces_id" ref="provinces_san_jose" />
+    </record>
+
+    <record id="districts_paramo" model="waste_control.districts">
+      <field name="name">Páramo</field>
+      <field name="cantons_id" ref="cantons_perez_zeledon" />
+    </record>
+
+    <record id="communities_san_isidro" model="waste_control.communities">
+      <field name="name">San Isidro</field>
+      <field name="districts_id" ref="districts_paramo" />
+    </record>
+  </data>
+</odoo>

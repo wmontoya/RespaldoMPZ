@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="parking_meters.action_parking_time_tree" model="ir.actions.act_window">
+            <field name="name">Parking Times</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">parking_meters.parking_time</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('view_parking_time_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('view_parking_time_form')})
+            ]"/>
+        </record>
+    </data>
+</odoo>

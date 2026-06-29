@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="waste_percentage_report">
+    <t t-call="web.html_container">
+      <t t-call="web.external_layout">
+        <div class="page">
+          <h2>Reporte porcentual de residuos por tipo y mes</h2>
+          <p class="text-muted">Fecha del reporte: <span t-esc="report_date" /></p>
+
+          <table class="table table-sm table-bordered">
+            <thead>
+              <tr>
+                <th>Mes</th>
+                <t t-foreach="waste_types" t-as="type">
+                  <th class="text-right"><span t-esc="type.name" />(%)</th>
+                </t>
+                <th class="text-right table-active">Total de toneladas (100%)</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <t t-foreach="months_data" t-as="m">
+                <tr>
+                  <td>
+                    <span t-esc="m['month']" />
+                  </td>
+                  <t t-foreach="waste_types" t-as="type">
+                    <td class="text-right">
+                      <span><span t-esc="m['types_pct'].get(type.id, 0.0)"
+                          t-options='{"widget": "float", "precision": 2}' />%</span>
+                    </td>
+                  </t>
+                  <td class="text-right table-active">
+                    <span t-esc="m['total_tons']"
+                      t-options='{"widget": "float", "precision": 2}' />
+                  </td>
+                </tr>
+              </t>
+              <!-- Annual Percentages -->
+              <tr class="font-weight-bold table-active">
+                <td>Totales anuales</td>
+                <t t-foreach="waste_types" t-as="type">
+                  <td class="text-right">
+                    <span><span t-esc="annual_type_pct.get(type.id, 0.0)"
+                        t-options='{"widget": "float", "precision": 2}' />%</span>
+                  </td>
+                </t>
+                <td class="text-right">
+                  <span t-esc="annual_total_tons"
+                    t-options='{"widget": "float", "precision": 2}' />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </t>
+    </t>
+  </template>
+
+  <record id="waste_percentage_report_action" model="ir.actions.report">
+    <field name="name">Reporte porcentual mensual de la cantidad de residuos</field>
+    <field name="model">waste_control.waste_percentage_wizard</field>
+    <field name="report_type">qweb-pdf</field>
+    <field name="report_name">waste_control.waste_percentage_report</field>
+    <field name="report_file">waste_control.waste_percentage_report</field>
+    <field name="binding_model_id" ref="model_waste_control_waste_percentage_wizard" />
+    <field name="paperformat_id" ref="waste_control.paperformat_landscape" />
+  </record>
+</odoo>

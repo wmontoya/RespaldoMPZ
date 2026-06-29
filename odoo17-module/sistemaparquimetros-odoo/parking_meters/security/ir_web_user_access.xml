@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+    <record id="model_access_infraction_web_user" model="ir.model.access">
+        <field name="name">access_infraction_web_user</field>
+        <field name="model_id" ref="model_parking_meters_infraction" />
+        <field name="group_id" ref="parking_meters.res_groups_web_user" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_unlink" eval="0" />
+        <field name="perm_read" eval="1" />
+    </record>
+
+    <record id="model_access_image_web_user" model="ir.model.access">
+        <field name="name">access_image_web_user</field>
+        <field name="model_id" ref="model_parking_meters_image" />
+        <field name="group_id" ref="parking_meters.res_groups_web_user" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_unlink" eval="0" />
+        <field name="perm_read" eval="1" />
+    </record>
+
+    <record id="model_access_article_web_user" model="ir.model.access">
+        <field name="name">access_article_web_user</field>
+        <field name="model_id" ref="model_parking_meters_article" />
+        <field name="group_id" ref="parking_meters.res_groups_web_user" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_unlink" eval="0" />
+        <field name="perm_read" eval="1" />
+    </record>
+
+    <record id="model_access_brand_web_user" model="ir.model.access">
+        <field name="name">access_brand_web_user</field>
+        <field name="model_id" ref="model_parking_meters_brand" />
+        <field name="group_id" ref="parking_meters.res_groups_web_user" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_unlink" eval="0" />
+        <field name="perm_read" eval="1" />
+    </record>
+
+    <record id="model_access_clause_web_user" model="ir.model.access">
+        <field name="name">access_clause_web_user</field>
+        <field name="model_id" ref="model_parking_meters_clause" />
+        <field name="group_id" ref="parking_meters.res_groups_web_user" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_unlink" eval="0" />
+        <field name="perm_read" eval="1" />
+    </record>
+
+    <record id="model_access_color_web_user" model="ir.model.access">
+        <field name="name">access_color_web_user</field>
+        <field name="model_id" ref="model_parking_meters_color" />
+        <field name="group_id" ref="parking_meters.res_groups_web_user" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_unlink" eval="0" />
+        <field name="perm_read" eval="1" />
+    </record>
+
+    <record id="model_access_plate_detail_web_user" model="ir.model.access">
+        <field name="name">access_plate_detail_web_user</field>
+        <field name="model_id" ref="model_parking_meters_plate_detail" />
+        <field name="group_id" ref="parking_meters.res_groups_web_user" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_unlink" eval="0" />
+        <field name="perm_read" eval="1" />
+    </record>
+
+    <record id="model_access_infraction_price_web_user" model="ir.model.access">
+        <field name="name">access_infraction_price_web_user</field>
+        <field name="model_id" ref="model_parking_meters_infraction_price" />
+        <field name="group_id" ref="parking_meters.res_groups_web_user" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_unlink" eval="0" />
+        <field name="perm_read" eval="1" />
+    </record>
+
+    <record id="model_access_infraction_state_web_user" model="ir.model.access">
+        <field name="name">access_infraction_state_web_user</field>
+        <field name="model_id" ref="model_parking_meters_infraction_state" />
+        <field name="group_id" ref="parking_meters.res_groups_web_user" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_unlink" eval="0" />
+        <field name="perm_read" eval="1" />
+    </record>
+
+    <record id="model_access_plate_type_web_user" model="ir.model.access">
+        <field name="name">access_plate_type_web_user</field>
+        <field name="model_id" ref="model_parking_meters_plate_type" />
+        <field name="group_id" ref="parking_meters.res_groups_web_user" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_unlink" eval="0" />
+        <field name="perm_read" eval="1" />
+    </record>
+
+    <record id="model_access_vehicle_type_web_user" model="ir.model.access">
+        <field name="name">access_vehicle_type_web_user</field>
+        <field name="model_id" ref="model_parking_meters_vehicle_type" />
+        <field name="group_id" ref="parking_meters.res_groups_web_user" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_unlink" eval="0" />
+        <field name="perm_read" eval="1" />
+    </record>
+
+    <record id="model_access_parameter_web_user" model="ir.model.access">
+        <field name="name">access_parameter_web_user</field>
+        <field name="model_id" ref="parking_meters.model_ir_config_parameter" />
+        <field name="group_id" ref="parking_meters.res_groups_web_user" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_unlink" eval="0" />
+        <field name="perm_read" eval="1" />
+    </record>
+
+    <record id="model_access_parking_rate_web_user" model="ir.model.access">
+        <field name="name">access_parking_rate_web_user</field>
+        <field name="model_id" ref="model_parking_meters_parking_rate" />
+        <field name="group_id" ref="parking_meters.res_groups_web_user" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_unlink" eval="0" />
+        <field name="perm_read" eval="1" />
+    </record>
+
+    <record id="model_access_parking_time_web_user" model="ir.model.access">
+        <field name="name">access_parking_time_web_user</field>
+        <field name="model_id" ref="model_parking_meters_parking_time" />
+        <field name="group_id" ref="parking_meters.res_groups_web_user" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_unlink" eval="0" />
+        <field name="perm_read" eval="1" />
+    </record>
+
+    <record id="model_access_res_lang_web_user" model="ir.model.access">
+        <field name="name">access_res_lang_web_user</field>
+        <field name="model_id" ref="base.model_res_lang" />
+        <field name="group_id" ref="parking_meters.res_groups_web_user" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_unlink" eval="0" />
+        <field name="perm_read" eval="1" />
+    </record>
+
+    <record id="model_access_ir_sequence_web_user" model="ir.model.access">
+        <field name="name">access_ir_sequence_web_user</field>
+        <field name="model_id" ref="base.model_ir_sequence" />
+        <field name="group_id" ref="parking_meters.res_groups_web_user" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_unlink" eval="0" />
+        <field name="perm_read" eval="1" />
+    </record>
+
+    <record id="access_res_currency_web_user" model="ir.model.access">
+        <field name="name">access_res_currency_web_user</field>
+        <field name="model_id" ref="base.model_res_currency" />
+        <field name="group_id" ref="parking_meters.res_groups_web_user" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_unlink" eval="0" />
+    </record>
+
+    <record id="access_ir_logging_web_user" model="ir.model.access">
+        <field name="name">Error Access - Parking Meter Web</field>
+        <field name="model_id" ref="base.model_ir_logging" />
+        <field name="group_id" ref="parking_meters.res_groups_web_user" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_unlink" eval="0" />
+    </record>
+</data>
+</odoo>

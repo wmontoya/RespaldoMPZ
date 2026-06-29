@@ -1,0 +1,13 @@
+<odoo>
+  <data>
+    <record model="ir.actions.act_window" id="action_sevri_user_activity">
+      <field name="name">SEVRI</field>
+      <field name="res_model">sev.activity</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="view_activity_sevri_user_tree" />
+      <field name="context">
+        {'form_view_ref':'sevri.view_activity_sevri_user_form', 'search_default_my_department': 1}
+      </field>
+    </record>
+  </data>
+</odoo>

@@ -1,0 +1,1449 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* cii_autoevaluation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-03 20:13+0000\n"
+"PO-Revision-Date: 2025-10-03 20:13+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cii_autoevaluation
+#. odoo-python
+#: code:addons/cii_autoevaluation/models/justification.py:0
+#, python-format
+msgid "%s (copy)"
+msgstr "%s (copia)"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_evaluation_form
+msgid ""
+"<i class=\"fa fa-bar-chart me-2\"/>\n"
+"                          Answer Statistics by Component"
+msgstr ""
+"<i class=\"fa fa-bar-chart me-2\"/>\n"
+"                          Estadísticas de Respuestas por Componente"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.aes_survey_answer_detailed_form
+msgid ""
+"<i class=\"fa fa-check-circle\"/> <strong>Survey Submitted</strong><br/>\n"
+"                                    This survey has already been successfully submitted. No modifications can be made to answers, justifications, or proposed actions. \n"
+"                                    You can only consult the information."
+msgstr ""
+"<i class=\"fa fa-check-circle\"/> <strong>Encuesta Enviada</strong><br/>\n"
+"                                    Esta encuesta ya ha sido enviada exitosamente. No se pueden realizar modificaciones a las respuestas, justificaciones o acciones propuestas. \n"
+"                                    Solo puede consultar la información."
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_evaluation_form
+msgid ""
+"<i class=\"fa fa-download me-1\"/>\n"
+"                              Export Answers to Excel"
+msgstr ""
+"<i class=\"fa fa-download me-1\"/>\n"
+"                              Exportar Respuestas a Excel"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_evaluation_form
+msgid ""
+"<i class=\"fa fa-download me-1\"/>\n"
+"                              Export Statistics"
+msgstr ""
+"<i class=\"fa fa-download me-1\"/>\n"
+"                              Exportar Estadísticas"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.assessee_access_error_page
+msgid "<i class=\"fa fa-exclamation-triangle\"/> Área Restringida"
+msgstr "<i class=\"fa fa-exclamation-triangle\"/> Área Restringida"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.assessee_access_error_page
+msgid "<i class=\"fa fa-file-text\"/> Mi Autoevaluación Actual"
+msgstr "<i class=\"fa fa-file-text\"/> Mi Autoevaluación Actual"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.assessee_access_error_page
+msgid "<i class=\"fa fa-history\"/> Mis Evaluaciones Anteriores"
+msgstr "<i class=\"fa fa-history\"/> Mis Evaluaciones Anteriores"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.aes_survey_answer_detailed_form
+msgid ""
+"<i class=\"fa fa-info-circle\"/> No questions available for this survey. "
+"Please verify that the survey has components and questions configured."
+msgstr ""
+"<i class=\"fa fa-info-circle\"/> No hay preguntas disponibles para esta encuesta. "
+"Por favor verifique que la encuesta tenga componentes y preguntas configurados."
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.aes_survey_answer_wizard_form
+msgid ""
+"<i class=\"fa fa-info-circle\"/> This wizard will create survey answers for the selected departments.\n"
+"                            The answers will be created in \"Draft\" status and can be completed later."
+msgstr ""
+"<i class=\"fa fa-info-circle\"/> Este asistente creará respuestas de encuesta para los departamentos seleccionados.\n"
+"                            Las respuestas se crearán en estado \"Borrador\" y podrán completarse más tarde."
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_justification_popup_form
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_proposed_action_form_popup
+msgid "<i class=\"fa fa-lightbulb-o\"/> <strong>Guidance:</strong><br/>"
+msgstr "<i class=\"fa fa-lightbulb-o\"/> <strong>Orientación:</strong><br/>"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_justification_popup_form
+msgid "Orientación para Justificación:"
+msgstr "Orientación para Justificación:"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_proposed_action_form_popup
+msgid "Orientación para Acción Propuesta:"
+msgstr "Orientación para Acción Propuesta:"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.aes_survey_answer_detailed_form
+msgid ""
+"<i class=\"fa fa-lock\"/> <strong>Read-Only Mode</strong> - The survey has "
+"been submitted and cannot be modified"
+msgstr ""
+"<i class=\"fa fa-lock\"/> <strong>Modo Solo Lectura</strong> - La encuesta ha "
+"sido enviada y no puede ser modificada"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.assessee_access_error_page
+msgid ""
+"<small class=\"text-muted\">\n"
+"                                            Si necesita acceso a otras funciones, contacte a su administrador.\n"
+"                                        </small>"
+msgstr ""
+"<small class=\"text-muted\">\n"
+"                                            Si necesita acceso a otras funciones, contacte a su administrador.\n"
+"                                        </small>"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_evaluation_form
+msgid ""
+"<small class=\"text-muted\">\n"
+"                              <i class=\"fa fa-info-circle me-1\"/>\n"
+"                              Statistics are automatically calculated based on registered answers\n"
+"                            </small>"
+msgstr ""
+"<small class=\"text-muted\">\n"
+"                              <i class=\"fa fa-info-circle me-1\"/>\n"
+"                              Las estadísticas se calculan automáticamente basándose en las respuestas registradas\n"
+"                            </small>"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_kanban
+msgid "<strong>Components:</strong>"
+msgstr "<strong>Componentes:</strong>"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_kanban
+msgid "<strong>Departments:</strong>"
+msgstr "<strong>Departamentos:</strong>"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_kanban
+msgid "<strong>Status:</strong>"
+msgstr "<strong>Estado:</strong>"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.assessee_access_error_page
+msgid "<strong>¿Dónde desea ir?</strong>"
+msgstr "<strong>¿Dónde desea ir?</strong>"
+
+#. module: cii_autoevaluation
+#: model:ir.model.constraint,message:cii_autoevaluation.constraint_ae_survey_answer_unique_survey_department
+msgid "A response already exists for this survey and department."
+msgstr "Ya existe una respuesta para esta encuesta y departamento."
+
+#. module: cii_autoevaluation
+#: model:ir.module.category,name:cii_autoevaluation.group_category_autoevaluation
+msgid "AUTOEVALUATION"
+msgstr "AUTOEVALUACIÓN"
+
+#. module: cii_autoevaluation
+#: model:ir.actions.act_url,name:cii_autoevaluation.assessee_access_error_action
+msgid "Access Error - Redirect"
+msgstr "Error de Acceso - Redirección"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_proposed_action__accomplishment_level
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_proposed_action_my_search
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_proposed_action_search
+msgid "Accomplishment Level"
+msgstr "Nivel de Cumplimiento"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_proposed_action__finish_date
+msgid "Action Finish Date"
+msgstr "Fecha de Finalización de Acción"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_proposed_action_form
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_proposed_action_form_popup
+msgid "Action justification..."
+msgstr "Justificación de acción..."
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.aes_survey_answer_detailed_form
+msgid "Actions"
+msgstr "Acciones"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields.selection,name:cii_autoevaluation.selection__ae_survey__status__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_answer_search
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_answer_user_search
+msgid "Active Surveys"
+msgstr "Encuestas Activas"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_justification_document_popup_form
+msgid "Add Document"
+msgstr "Agregar Documento"
+
+#. module: cii_autoevaluation
+#: model:ir.model,name:cii_autoevaluation.model_ae_answer
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_justification__answer_id
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_proposed_action__answer_id
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_answer_form
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_answer_form_no_action
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_justification_popup_form
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_justification_search
+msgid "Answer"
+msgstr "Respuesta"
+
+#. module: cii_autoevaluation
+#: model:ir.model,name:cii_autoevaluation.model_ae_justification
+msgid "Answer Justification"
+msgstr "Justificación de Respuesta"
+
+#. module: cii_autoevaluation
+#: model:ir.actions.act_window,name:cii_autoevaluation.aes_survey_answer_detailed_action
+msgid "Answer Survey"
+msgstr "Responder Encuesta"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,help:cii_autoevaluation.field_ae_justification__answer_id
+msgid "Answer to which this justification belongs"
+msgstr "Respuesta a la que pertenece esta justificación"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_answer__answered_questions
+msgid "Answered Questions"
+msgstr "Preguntas Respondidas"
+
+#. module: cii_autoevaluation
+#: model:ir.actions.act_window,name:cii_autoevaluation.autoevaluation_answer_action
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_component__aes_answers
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_question__aes_answers
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_answer__answers
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_hr_department__aes_answers
+#: model:ir.ui.menu,name:cii_autoevaluation.main_menu_answers
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_answers_tree
+msgid "Answers"
+msgstr "Respuestas"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_evaluation_form
+msgid "Answers by Department"
+msgstr "Respuestas por Departamento"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_attachment__attachment
+msgid "Attachment File"
+msgstr "Archivo Adjunto"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_attachment__attachment_type
+msgid "Attachment MIME Type"
+msgstr "Tipo MIME del Adjunto"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_attachment__name
+msgid "Attachment Name"
+msgstr "Nombre del Adjunto"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_justification__justification_attachments
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_proposed_action__justification_attachments
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_justification_form
+msgid "Attachments"
+msgstr "Adjuntos"
+
+#. module: cii_autoevaluation
+#: model:res.groups,name:cii_autoevaluation.group_autoevaluation_admin
+msgid "Autoevaluation Admin"
+msgstr "Administrador de Autoevaluación"
+
+#. module: cii_autoevaluation
+#: model:res.groups,name:cii_autoevaluation.group_autoevaluation_assessee
+msgid "Autoevaluation Assessee"
+msgstr "Evaluado de Autoevaluación"
+
+#. module: cii_autoevaluation
+#: model:res.groups,name:cii_autoevaluation.group_autoevaluation_audit
+msgid "Autoevaluation Audit"
+msgstr "Auditoría de Autoevaluación"
+
+#. module: cii_autoevaluation
+#: model:res.groups,name:cii_autoevaluation.group_autoevaluation_internal_control
+msgid "Autoevaluation Internal Control"
+msgstr "Control Interno de Autoevaluación"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_answer__available_questions
+msgid "Available Questions"
+msgstr "Preguntas Disponibles"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.aes_survey_answer_wizard_form
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_justification_document_popup_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.actions.act_window,help:cii_autoevaluation.autoevaluation_survey_answer_user_action
+msgid ""
+"Click \"Create My Answer\" to create a new survey answer for your "
+"department."
+msgstr ""
+"Haga clic en \"Crear Mi Respuesta\" para crear una nueva respuesta de encuesta para su "
+"departamento."
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey__closed_notification_sent
+msgid "Close Notification Sent"
+msgstr "Notificación de Cierre Enviada"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.assessee_access_error_page
+msgid "Como usuario evaluado, solo puede acceder a sus autoevaluaciones."
+msgstr "Como usuario evaluado, solo puede acceder a sus autoevaluaciones."
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields.selection,name:cii_autoevaluation.selection__ae_proposed_action__accomplishment_level__completed
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_answer_search
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_proposed_action_my_search
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_proposed_action_search
+msgid "Completed"
+msgstr "Completado"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_proposed_action_form
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_proposed_action_form_popup
+msgid "Compliance indicators..."
+msgstr "Indicadores de cumplimiento..."
+
+#. module: cii_autoevaluation
+#: model:ir.actions.act_window,name:cii_autoevaluation.autoevaluation_component_action
+#: model:ir.model,name:cii_autoevaluation.model_ae_component
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_answer__component_id
+msgid "Component"
+msgstr "Componente"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_survey_form
+msgid "Component Information"
+msgstr "Información del Componente"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_component_form
+msgid "Component Title..."
+msgstr "Título del Componente..."
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.aes_survey_answer_detailed_form
+msgid "Component-Section"
+msgstr "Componente-Sección"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_answer__component_section_group
+msgid "Component/Section Group"
+msgstr "Grupo Componente/Sección"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_section__components
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey__components
+#: model:ir.ui.menu,name:cii_autoevaluation.main_menu_components
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_evaluation_form
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_survey_form
+msgid "Components"
+msgstr "Componentes"
+
+#. module: cii_autoevaluation
+#. odoo-python
+#: code:addons/cii_autoevaluation/models/answer.py:0
+#, python-format
+msgid "Crear Acción Propuesta"
+msgstr "Crear Acción Propuesta"
+
+#. module: cii_autoevaluation
+#. odoo-python
+#: code:addons/cii_autoevaluation/models/answer.py:0
+#, python-format
+msgid "Crear Justificación"
+msgstr "Crear Justificación"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.actions.act_window,help:cii_autoevaluation.action_ae_proposed_action
+msgid "Crear una nueva acción propuesta"
+msgstr "Crear una nueva acción propuesta"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.aes_survey_answer_wizard_form
+msgid "Create Answers"
+msgstr "Crear Respuestas"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_surveys_tree
+msgid "Create Answers by Department"
+msgstr "Crear Respuestas por Departamento"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_answer_tree
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_answer_user_tree
+msgid "Create My Answer"
+msgstr "Crear Mi Respuesta"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_proposed_action_form_popup
+msgid "Create Proposed Action"
+msgstr "Crear Acción Propuesta"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.aes_survey_answer_wizard_form
+msgid "Create Survey Answers"
+msgstr "Crear Respuestas de Encuesta"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.actions.act_window,help:cii_autoevaluation.action_ae_justification
+msgid "Create your first justification"
+msgstr "Cree su primera justificación"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_answer__create_uid
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_attachment__create_uid
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_component__create_uid
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_justification__create_uid
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_proposed_action__create_uid
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_question__create_uid
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_section__create_uid
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey__create_uid
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_answer__create_uid
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_answer__user_id
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_answer_wizard__create_uid
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_rel__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_answer__create_date
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_attachment__create_date
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_component__create_date
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_justification__create_date
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_proposed_action__create_date
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_question__create_date
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_section__create_date
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey__create_date
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_answer__create_date
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_answer_wizard__create_date
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_rel__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_justification_search
+msgid "Creation Date"
+msgstr "Fecha de Creación"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_answer__current_user_id
+msgid "Current User"
+msgstr "Usuario Actual"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.actions.act_window,help:cii_autoevaluation.autoevaluation_answer_action
+msgid "Define the answers and related documents for the survey questions."
+msgstr "Defina las respuestas y documentos relacionados para las preguntas de la encuesta."
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_res_users__department_id
+msgid "Departamento"
+msgstr "Departamento"
+
+#. module: cii_autoevaluation
+#: model:ir.model,name:cii_autoevaluation.model_hr_department
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_answer__department_id
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_proposed_action__department_id
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_answer__department_id
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_rel__department_id
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_answer_search
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_proposed_action_search
+msgid "Department"
+msgstr "Departamento"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_answer__manager_id
+msgid "Department Manager"
+msgstr "Gerente de Departamento"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_answer__department_name
+msgid "Department Name"
+msgstr "Nombre del Departamento"
+
+#. module: cii_autoevaluation
+#: model:ir.model,name:cii_autoevaluation.model_ae_survey_rel
+msgid "Department Survey"
+msgstr "Encuesta de Departamento"
+
+#. module: cii_autoevaluation
+#: model:ir.model,name:cii_autoevaluation.model_ae_survey_answer
+msgid "Department Survey Answer"
+msgstr "Respuesta de Encuesta de Departamento"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey__departments
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_answer_wizard__department_ids
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_survey_form
+msgid "Departments"
+msgstr "Departamentos"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey__departments_without_answer
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_evaluation_form
+msgid "Departments without Answer"
+msgstr "Departamentos sin Respuesta"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_attachment__description
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_proposed_action__description
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_question__description
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_section__description
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey__description
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_question_form
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_section_form
+msgid "Description"
+msgstr "Descripción"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_proposed_action_form
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_proposed_action_form_popup
+msgid "Description of the proposed action..."
+msgstr "Descripción de la acción propuesta..."
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_answer__display_name
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_attachment__display_name
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_component__display_name
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_justification__display_name
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_proposed_action__display_name
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_question__display_name
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_section__display_name
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey__display_name
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_answer_wizard__display_name
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_rel__display_name
+msgid "Display Name"
+msgstr "Nombre para Mostrar"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_answer__document
+msgid "Document"
+msgstr "Documento"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_justification_document_popup_form
+msgid "Document description (optional)"
+msgstr "Descripción del documento (opcional)"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_justification_document_popup_form
+msgid "Document name"
+msgstr "Nombre del documento"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.actions.act_window,help:cii_autoevaluation.action_ae_justification_document
+msgid "Documents are added from justifications."
+msgstr "Los documentos se agregan desde las justificaciones."
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields.selection,name:cii_autoevaluation.selection__ae_survey_answer__status__draft
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_answer_search
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_answer_user_search
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: cii_autoevaluation
+#. odoo-python
+#: code:addons/cii_autoevaluation/models/answer.py:0
+#, python-format
+msgid "Editar Acción Propuesta"
+msgstr "Editar Acción Propuesta"
+
+#. module: cii_autoevaluation
+#. odoo-python
+#: code:addons/cii_autoevaluation/models/answer.py:0
+#, python-format
+msgid "Editar Justificación"
+msgstr "Editar Justificación"
+
+#. module: cii_autoevaluation
+#: model:ir.actions.act_window,name:cii_autoevaluation.aes_survey_answers_action
+msgid "Evaluation Answers"
+msgstr "Respuestas de Evaluación"
+
+#. module: cii_autoevaluation
+#: model:ir.actions.act_window,name:cii_autoevaluation.aes_survey_evaluations_action
+msgid "Evaluations"
+msgstr "Evaluaciones"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_evaluation_form
+msgid "Export Answers to Excel"
+msgstr "Exportar Respuestas a Excel"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_evaluation_form
+msgid "Export to Excel"
+msgstr "Exportar a Excel"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey__final_date
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_survey_form
+msgid "Final Date"
+msgstr "Fecha Final"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields.selection,name:cii_autoevaluation.selection__ae_survey_rel__status__finished
+msgid "Finished"
+msgstr "Finalizado"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_answer_search
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_justification_search
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_proposed_action_my_search
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_proposed_action_search
+msgid "Group by"
+msgstr "Agrupar por"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_justification__question_guidance_text
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_proposed_action__question_guidance_text
+msgid "Guidance"
+msgstr "Orientación"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_question__guidance_text
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_question_form
+msgid "Guidance Text"
+msgstr "Texto de Orientación"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_question__guidance_text_justification
+msgid "Guidance Text for Justification"
+msgstr "Texto de Orientación para Justificación"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,help:cii_autoevaluation.field_ae_question__guidance_text_justification
+msgid "Text to guide users when providing justifications (when answer is 'Yes')"
+msgstr "Texto para guiar a los usuarios al proporcionar justificaciones (cuando la respuesta es 'Sí')"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_question__guidance_text_proposed_action
+msgid "Guidance Text for Proposed Action"
+msgstr "Texto de Orientación para Acción Propuesta"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,help:cii_autoevaluation.field_ae_question__guidance_text_proposed_action
+msgid "Text to guide users when providing proposed actions (when answer is 'No')"
+msgstr "Texto para guiar a los usuarios al proporcionar acciones propuestas (cuando la respuesta es 'No')"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_answer__id
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_attachment__id
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_component__id
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_justification__id
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_proposed_action__id
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_question__id
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_section__id
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey__id
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_answer__id
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_answer_wizard__id
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_rel__id
+msgid "ID"
+msgstr "ID"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields.selection,name:cii_autoevaluation.selection__ae_survey_answer__status__in_progress
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_answer_search
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_answer_user_search
+msgid "In Progress"
+msgstr "En Progreso"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields.selection,name:cii_autoevaluation.selection__ae_survey__status__inactive
+msgid "Inactive"
+msgstr "Inactivo"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,help:cii_autoevaluation.field_ae_justification__is_survey_submitted
+msgid "Indicates if the parent survey has already been submitted"
+msgstr "Indica si la encuesta padre ya ha sido enviada"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_proposed_action__indicators
+msgid "Indicators"
+msgstr "Indicadores"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey__initial_date
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_survey_form
+msgid "Initial Date"
+msgstr "Fecha Inicial"
+
+#. module: cii_autoevaluation
+#. odoo-python
+#: code:addons/cii_autoevaluation/models/answer.py:0
+#, python-format
+msgid "Justificación para: %s"
+msgstr "Justificación para: %s"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_attachment__justification_id
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_justification__description
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_proposed_action__justification
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.aes_survey_answer_detailed_form
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_answer_form
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_answer_form_no_action
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_justification_form
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_justification_popup_form
+msgid "Justification"
+msgstr "Justificación"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_justification_document_form
+msgid "Justification Document"
+msgstr "Documento de Justificación"
+
+#. module: cii_autoevaluation
+#: model:ir.actions.act_window,name:cii_autoevaluation.action_ae_justification_document
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_justification_document_tree
+msgid "Justification Documents"
+msgstr "Documentos de Justificación"
+
+#. module: cii_autoevaluation
+#. odoo-python
+#: code:addons/cii_autoevaluation/models/answer.py:0
+#, python-format
+msgid "Justification for: %s"
+msgstr "Justificación para: %s"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,help:cii_autoevaluation.field_ae_justification__description
+msgid "Justification text in HTML format"
+msgstr "Texto de justificación en formato HTML"
+
+#. module: cii_autoevaluation
+#: model:ir.actions.act_window,name:cii_autoevaluation.action_ae_justification
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_answer__justification_id
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.aes_survey_answer_detailed_form
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_answer_form
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_answer_form_no_action
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_justification_tree
+msgid "Justifications"
+msgstr "Justificaciones"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.actions.act_window,help:cii_autoevaluation.action_ae_justification
+msgid ""
+"Justifications are created when \"Sí\" is selected in an answer.\n"
+"                    They include justification text and supporting documents."
+msgstr ""
+"Las justificaciones se crean cuando se selecciona \"Sí\" en una respuesta.\n"
+"                    Incluyen texto de justificación y documentos de apoyo."
+
+#. module: cii_autoevaluation
+#. odoo-python
+#: code:addons/cii_autoevaluation/models/answer.py:0
+#: code:addons/cii_autoevaluation/models/justification.py:0
+#, python-format
+msgid "Justifications can only be created for 'Sí' responses."
+msgstr "Las justificaciones solo pueden crearse para respuestas 'Sí'."
+
+#. module: cii_autoevaluation
+#. odoo-python
+#: code:addons/cii_autoevaluation/models/proposed_action.py:0
+#, python-format
+msgid "La descripción es obligatoria y no puede estar vacía."
+msgstr "La descripción es obligatoria y no puede estar vacía."
+
+#. module: cii_autoevaluation
+#. odoo-python
+#: code:addons/cii_autoevaluation/models/proposed_action.py:0
+#, python-format
+msgid "La fecha de la acción debe ser posterior a la fecha de creación."
+msgstr "La fecha de la acción debe ser posterior a la fecha de creación."
+
+#. module: cii_autoevaluation
+#. odoo-python
+#: code:addons/cii_autoevaluation/models/proposed_action.py:0
+#, python-format
+msgid ""
+"La fecha de finalización de la acción no puede ser superior a un año después de la fecha "
+"de creación."
+msgstr ""
+"La fecha de finalización de la acción no puede ser superior a un año después de la fecha "
+"de creación."
+
+#. module: cii_autoevaluation
+#: model_terms:ir.actions.act_window,help:cii_autoevaluation.action_ae_proposed_action
+msgid ""
+"Las acciones propuestas se crean cuando una respuesta es \"No\" y se "
+"requiere una acción correctiva."
+msgstr ""
+"Las acciones propuestas se crean cuando una respuesta es \"No\" y se "
+"requiere una acción correctiva."
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_answer__write_uid
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_attachment__write_uid
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_component__write_uid
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_justification__write_uid
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_proposed_action__write_uid
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_question__write_uid
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_section__write_uid
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey__write_uid
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_answer__write_uid
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_answer_wizard__write_uid
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_rel__write_uid
+msgid "Last Updated by"
+msgstr "Última Actualización por"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_answer__write_date
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_attachment__write_date
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_component__write_date
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_justification__write_date
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_proposed_action__write_date
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_question__write_date
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_section__write_date
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey__write_date
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_answer__write_date
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_answer_wizard__write_date
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_rel__write_date
+msgid "Last Updated on"
+msgstr "Última Actualización el"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.assessee_access_error_page
+msgid "Lo sentimos, no tiene permisos para acceder a esta sección."
+msgstr "Lo sentimos, no tiene permisos para acceder a esta sección."
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_answer__manager_id
+msgid "Manager"
+msgstr "Gerente"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_answer_search
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_answer_user_search
+msgid "My Department"
+msgstr "Mi Departamento"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_answer_user_search
+msgid "My Department Assessments"
+msgstr "Evaluaciones de Mi Departamento"
+
+#. module: cii_autoevaluation
+#: model:ir.actions.server,name:cii_autoevaluation.action_ae_proposed_action_my_server
+#: model:ir.ui.menu,name:cii_autoevaluation.main_menu_my_proposed_actions
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_proposed_action_my_tree
+msgid "My Department's Proposed Actions"
+msgstr "Acciones Propuestas de Mi Departamento"
+
+#. module: cii_autoevaluation
+#: model:ir.actions.server,name:cii_autoevaluation.autoevaluation_my_previous_assessments_server_action
+#: model:ir.ui.menu,name:cii_autoevaluation.main_menu_my_previous_assessments
+msgid "My Previous Assessments"
+msgstr "Mis Evaluaciones Anteriores"
+
+#. module: cii_autoevaluation
+#: model:ir.ui.menu,name:cii_autoevaluation.main_menu_my_assessment_assessee
+#: model:ir.ui.menu,name:cii_autoevaluation.menu_my_survey_answer_assessee
+msgid "My Self-Assessment Response"
+msgstr "Mi Respuesta de Autoevaluación"
+
+#. module: cii_autoevaluation
+#: model:ir.actions.act_window,name:cii_autoevaluation.autoevaluation_survey_answer_user_action
+#: model:ir.actions.server,name:cii_autoevaluation.autoevaluation_survey_answer_user_auto_action
+msgid "My Survey Answer"
+msgstr "Mi Respuesta de Encuesta"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_answer_search
+msgid "My Surveys"
+msgstr "Mis Encuestas"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_answer__display_name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields.selection,name:cii_autoevaluation.selection__ae_answer__response__no
+msgid "No"
+msgstr "No"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_justification_search
+msgid "No Attachments"
+msgstr "Sin Adjuntos"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.actions.act_window,help:cii_autoevaluation.action_ae_justification_document
+msgid "No justification documents"
+msgstr "Sin documentos de justificación"
+
+#. module: cii_autoevaluation
+#. odoo-python
+#: code:addons/cii_autoevaluation/models/answer.py:0
+#, python-format
+msgid "No justification exists to delete."
+msgstr "No existe justificación para eliminar."
+
+#. module: cii_autoevaluation
+#. odoo-python
+#: code:addons/cii_autoevaluation/models/answer.py:0
+#, python-format
+msgid "No proposed action exists to delete."
+msgstr "No existe acción propuesta para eliminar."
+
+#. module: cii_autoevaluation
+#: model_terms:ir.actions.act_window,help:cii_autoevaluation.autoevaluation_survey_answer_action
+#: model_terms:ir.actions.act_window,help:cii_autoevaluation.autoevaluation_survey_answer_internal_control_action
+msgid "No survey answers created"
+msgstr "No se han creado respuestas de encuesta"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey__notification_sent
+msgid "Notification Sent"
+msgstr "Notificación Enviada"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_justification__justification_attachments_count
+msgid "Number of Attachments"
+msgstr "Número de Adjuntos"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_answer__justification_count
+msgid "Number of Justifications"
+msgstr "Número de Justificaciones"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_answer__proposed_actions_count
+msgid "Number of Proposed Actions"
+msgstr "Número de Acciones Propuestas"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_question_form
+msgid ""
+"Optional guidance text to help users when providing justifications or "
+"proposed actions..."
+msgstr ""
+"Texto de orientación opcional para ayudar a los usuarios al proporcionar justificaciones o "
+"acciones propuestas..."
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_question_form
+msgid "Optional guidance text to help users when providing justifications (when answer is 'Yes')..."
+msgstr "Texto de orientación opcional para ayudar a los usuarios al proporcionar justificaciones (cuando la respuesta es 'Sí')..."
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_question_form
+msgid "Optional guidance text to help users when providing proposed actions (when answer is 'No')..."
+msgstr "Texto de orientación opcional para ayudar a los usuarios al proporcionar acciones propuestas (cuando la respuesta es 'No')..."
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields.selection,name:cii_autoevaluation.selection__ae_proposed_action__accomplishment_level__partial
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_proposed_action_my_search
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_proposed_action_search
+msgid "Partial"
+msgstr "Parcial"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields.selection,name:cii_autoevaluation.selection__ae_proposed_action__accomplishment_level__not_done
+#: model:ir.model.fields.selection,name:cii_autoevaluation.selection__ae_survey__status__pending
+#: model:ir.model.fields.selection,name:cii_autoevaluation.selection__ae_survey_rel__status__pending
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_proposed_action_my_search
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_proposed_action_search
+msgid "Pending"
+msgstr "Pendiente"
+
+#. module: cii_autoevaluation
+#: model:ir.module.category,description:cii_autoevaluation.group_category_autoevaluation
+msgid "Permissions for the Autoevaluation module"
+msgstr "Permisos para el módulo de Autoevaluación"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_answer__progress_percentage
+msgid "Progress (%)"
+msgstr "Progreso (%)"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_attachment__proposed_action_id
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.aes_survey_answer_detailed_form
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_answer_form
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_proposed_action_form
+msgid "Proposed Action"
+msgstr "Acción Propuesta"
+
+#. module: cii_autoevaluation
+#: model:ir.model,name:cii_autoevaluation.model_ae_proposed_action
+msgid "Proposed Action for Self-Assessment"
+msgstr "Acción Propuesta para Autoevaluación"
+
+#. module: cii_autoevaluation
+#: model:ir.actions.act_window,name:cii_autoevaluation.action_ae_proposed_action
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_answer__proposed_actions
+#: model:ir.ui.menu,name:cii_autoevaluation.main_menu_proposed_actions
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_answer_form
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_answer_form_no_action
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_proposed_action_tree
+msgid "Proposed Actions"
+msgstr "Acciones Propuestas"
+
+#. module: cii_autoevaluation
+#: model:ir.model,name:cii_autoevaluation.model_ae_question
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_answer__question_id
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_justification__question_name_by_answer_id
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_proposed_action__question_name_by_answer_id
+msgid "Question"
+msgstr "Pregunta"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_question_form
+msgid "Question Details"
+msgstr "Detalles de Pregunta"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_question_form
+msgid "Question Title..."
+msgstr "Título de Pregunta..."
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_question_form
+msgid "Question description..."
+msgstr "Descripción de pregunta..."
+
+#. module: cii_autoevaluation
+#: model:ir.actions.act_window,name:cii_autoevaluation.autoevaluation_question_action
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_section__questions
+#: model:ir.ui.menu,name:cii_autoevaluation.main_menu_questions
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_section_form
+msgid "Questions"
+msgstr "Preguntas"
+
+#. module: cii_autoevaluation
+#: model:ir.actions.server,name:cii_autoevaluation.autoevaluation_assessee_redirect_server_action
+msgid "Redirect to My Assessments"
+msgstr "Redirigir a Mis Evaluaciones"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_question__related_components
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_question_tree
+msgid "Related Components"
+msgstr "Componentes Relacionados"
+
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_answer__response
+msgid "Response"
+msgstr "Respuesta"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_proposed_action_my_search
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_proposed_action_search
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_proposed_action__responsible_name
+msgid "Responsible Name"
+msgstr "Nombre del Responsable"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_justification_document_popup_form
+msgid "Save"
+msgstr "Guardar"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_rel__score
+msgid "Score"
+msgstr "Puntaje"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_justification_search
+msgid "Search Justifications"
+msgstr "Buscar Justificaciones"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_proposed_action_my_search
+msgid "Search My Department's Proposed Actions"
+msgstr "Buscar Acciones Propuestas de Mi Departamento"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_answer_user_search
+msgid "Search My Survey Answers"
+msgstr "Buscar Mis Respuestas de Encuesta"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_proposed_action_search
+msgid "Search Proposed Actions"
+msgstr "Buscar Acciones Propuestas"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_answer_search
+msgid "Search Survey Answers"
+msgstr "Buscar Respuestas de Encuesta"
+
+#. module: cii_autoevaluation
+#: model:ir.model,name:cii_autoevaluation.model_ae_section
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_answer__section_id
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_question__section_id
+msgid "Section"
+msgstr "Sección"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_section_form
+msgid "Section Details"
+msgstr "Detalles de Sección"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_section_form
+msgid "Section Title..."
+msgstr "Título de Sección..."
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_section_form
+msgid "Section description..."
+msgstr "Descripción de sección..."
+
+#. module: cii_autoevaluation
+#: model:ir.actions.act_window,name:cii_autoevaluation.autoevaluation_section_action
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_component__sections
+#: model:ir.ui.menu,name:cii_autoevaluation.main_menu_sections
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_component_form
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_survey_form
+msgid "Sections"
+msgstr "Secciones"
+
+#. module: cii_autoevaluation
+#: model:ir.actions.act_window,name:cii_autoevaluation.autoevaluation_survey_action
+#: model:ir.ui.menu,name:cii_autoevaluation.main_menu_root
+msgid "Self-Assessment"
+msgstr "Autoevaluación"
+
+#. module: cii_autoevaluation
+#: model:ir.ui.menu,name:cii_autoevaluation.main_menu_survey_process
+msgid "Self-Assessment Process"
+msgstr "Proceso de Autoevaluación"
+
+#. module: cii_autoevaluation
+#: model:ir.ui.menu,name:cii_autoevaluation.menu_survey_answers
+msgid "Self-Assessments"
+msgstr "Autoevaluaciones"
+
+#. module: cii_autoevaluation
+#: model:ir.model,name:cii_autoevaluation.model_ae_attachment
+msgid "Self-Evaluation Attachment"
+msgstr "Adjunto de Autoevaluación"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_surveys_tree
+msgid "Send Notification"
+msgstr "Enviar Notificación"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_component__sequence
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_question__sequence
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_section__sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: cii_autoevaluation
+#: model:ir.ui.menu,name:cii_autoevaluation.main_menu_settings
+msgid "Settings"
+msgstr "Configuración"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields.selection,name:cii_autoevaluation.selection__ae_answer__response__sin_respuesta
+msgid "Sin Respuesta"
+msgstr "Sin Respuesta"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.aes_survey_answer_detailed_form
+msgid "Start Survey"
+msgstr "Iniciar Encuesta"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey__component_statistics_html
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_evaluation_form
+msgid "Statistics by Component"
+msgstr "Estadísticas por Componente"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey__status
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_answer__status
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_rel__status
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_answer_search
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_survey_form
+msgid "Status"
+msgstr "Estado"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.aes_survey_answer_detailed_form
+msgid "Submit Survey"
+msgstr "Enviar la Autoevaluación"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields.selection,name:cii_autoevaluation.selection__ae_survey_answer__status__submitted
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_answer_search
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_answer_user_search
+msgid "Submitted"
+msgstr "Enviado"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_justification_popup_form
+msgid "Supporting Documents"
+msgstr "Documentos de Apoyo"
+
+#. module: cii_autoevaluation
+#: model:ir.model,name:cii_autoevaluation.model_ae_survey
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_answer__survey_id
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_answer__survey_id
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_answer_wizard__survey_id
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_rel__survey_id
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_answer_search
+msgid "Survey"
+msgstr "Encuesta"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_answer__survey_answer_id
+msgid "Survey Answer"
+msgstr "Respuesta de Encuesta"
+
+#. module: cii_autoevaluation
+#: model:ir.model,name:cii_autoevaluation.model_ae_survey_answer_wizard
+msgid "Survey Answer Creation Wizard"
+msgstr "Asistente de Creación de Respuesta de Encuesta"
+
+#. module: cii_autoevaluation
+#: model:ir.actions.act_window,name:cii_autoevaluation.autoevaluation_survey_answer_action
+#: model:ir.actions.act_window,name:cii_autoevaluation.autoevaluation_survey_answer_internal_control_action
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey__survey_answer_ids
+msgid "Survey Answers"
+msgstr "Respuestas de Encuesta"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_survey_form
+msgid "Survey Information"
+msgstr "Información de Encuesta"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.aes_survey_answer_detailed_form
+msgid "Survey Questions"
+msgstr "Preguntas de Encuesta"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_justification__is_survey_submitted
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_proposed_action__is_survey_submitted
+msgid "Survey Submitted"
+msgstr "Encuesta Enviada"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_answer__survey_title
+msgid "Survey Title"
+msgstr "Título de Encuesta"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.actions.act_window,help:cii_autoevaluation.autoevaluation_survey_answer_action
+#: model_terms:ir.actions.act_window,help:cii_autoevaluation.autoevaluation_survey_answer_internal_control_action
+msgid ""
+"Survey answers are created automatically when a survey is assigned to a "
+"department."
+msgstr ""
+"Las respuestas de encuesta se crean automáticamente cuando una encuesta se asigna a un "
+"departamento."
+
+#. module: cii_autoevaluation
+#: model:ir.actions.act_window,name:cii_autoevaluation.aes_survey_action
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_component__surveys
+#: model:ir.ui.menu,name:cii_autoevaluation.main_menu_surveys
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_graph
+msgid "Surveys"
+msgstr "Encuestas"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields.selection,name:cii_autoevaluation.selection__ae_answer__response__si
+msgid "Sí"
+msgstr "Sí"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,help:cii_autoevaluation.field_ae_justification__question_guidance_text
+#: model:ir.model.fields,help:cii_autoevaluation.field_ae_proposed_action__question_guidance_text
+#: model:ir.model.fields,help:cii_autoevaluation.field_ae_question__guidance_text
+msgid ""
+"Text to guide users when providing justifications or proposed actions for "
+"this question"
+msgstr ""
+"Texto para guiar a los usuarios al proporcionar justificaciones o acciones propuestas para "
+"esta pregunta"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_component__title
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_question__title
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_section__title
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey__title
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_survey_form
+msgid "Title"
+msgstr "Título"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_answer__justification_count
+msgid "Total Justifications"
+msgstr "Total de Justificaciones"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_answer__proposed_actions_count
+msgid "Total Proposed Actions"
+msgstr "Total de Acciones Propuestas"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_survey_answer__total_questions
+msgid "Total Questions"
+msgstr "Total de Preguntas"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_hr_department__unit_id
+msgid "Unidad"
+msgstr "Unidad"
+
+#. module: cii_autoevaluation
+#: model:ir.model,name:cii_autoevaluation.model_res_users
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_answer_search
+msgid "User"
+msgstr "Usuario"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_hr_department__users
+msgid "Usuarios"
+msgstr "Usuarios"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_answer_form
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_answer_form_no_action
+msgid "View Actions"
+msgstr "Ver Acciones"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_answer_form
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_answer_form_no_action
+msgid "View Justifications"
+msgstr "Ver Justificaciones"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.actions.act_window,help:cii_autoevaluation.autoevaluation_survey_answer_user_action
+msgid "You don't have survey answers"
+msgstr "No tiene respuestas de encuesta"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.autoevaluation_survey_survey_form
+msgid "e.g. Survey 2024"
+msgstr "ej. Encuesta 2024"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_justification_document_popup_form
+msgid "e.g., PDF, DOC, XLS"
+msgstr "ej., PDF, DOC, XLS"
+
+#. module: cii_autoevaluation
+#. odoo-python
+#: code:addons/cii_autoevaluation/models/survey.py:145
+#, python-format
+msgid "No components defined for this survey."
+msgstr "No hay componentes definidos para esta encuesta."
+
+#. module: cii_autoevaluation
+#. odoo-python
+#: code:addons/cii_autoevaluation/models/survey_answer.py:430
+#, python-format
+msgid "There are no active surveys at the moment. Please contact the administrator."
+msgstr "No hay encuestas activas en este momento. Por favor contacte al administrador."
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.view_ae_justification_popup_form
+msgid "Indicaciones de respuesta"
+msgstr "Indicaciones de respuesta"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.aes_survey_answer_detailed_form
+msgid "Sin responder"
+msgstr "Sin responder"
+
+#. module: cii_autoevaluation
+#: model_terms:ir.ui.view,arch_db:cii_autoevaluation.aes_survey_answer_detailed_form
+msgid "Acción Propuesta"
+msgstr "Acción Propuesta"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_answer__status_badge_type
+msgid "Status Badge Type"
+msgstr "Tipo de insignia de estado"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields,field_description:cii_autoevaluation.field_ae_answer__unanswered_button
+msgid "Estado"
+msgstr "Estado"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields.selection,name:cii_autoevaluation.selection__ae_answer__status_badge_type__primary
+msgid "Primary"
+msgstr "Primario"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields.selection,name:cii_autoevaluation.selection__ae_answer__status_badge_type__secondary
+msgid "Secondary"
+msgstr "Secundario"
+
+#. module: cii_autoevaluation
+#: model:ir.model.fields.selection,name:cii_autoevaluation.selection__ae_answer__response__sin_respuesta
+msgid "Sin respuesta"
+msgstr "Sin respuesta"
+
+
+#. module: cii_autoevaluation
+#. odoo-python
+#: code:addons/cii_autoevaluation/views/proposed_action.xml:184
+#, python-format
+msgid "My Department's Proposed Actions"
+msgstr "Acciones Propuestas de Mi Departamento"
+
+#. module: cii_autoevaluation
+msgid "Recalculate"
+msgstr "Recalcular"
+

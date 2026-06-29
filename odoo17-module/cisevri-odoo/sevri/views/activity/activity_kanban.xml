@@ -1,0 +1,30 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="view_activity_kanban">
+      <field name="name">activity.kanban</field>
+      <field name="model">sev.activity</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <field name="title" />
+          <field name="subtitle" />
+          <field name="activity_date" />
+          <field name="dependency" />
+          <field name="procedure_to_follow" />
+          <field name="department_id" />
+          <templates>
+            <t t-name="kanban-box">
+              <div class="oe_kanban_card">
+                <div class="oe_kanban_content">
+                  <strong><field name="title"/></strong><br/>
+                  <span><field name="activity_date"/></span><br/>
+                  <span><field name="dependency"/></span><br/>
+                  <span><field name="procedure_to_follow"/></span>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+  </data>
+</odoo>

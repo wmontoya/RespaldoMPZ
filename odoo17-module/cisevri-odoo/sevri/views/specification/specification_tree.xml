@@ -1,0 +1,14 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="view_specification_tree">
+      <field name="name">specification.tree</field>
+      <field name="model">sev.specification</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="description" />
+          <field name="classification_id" />
+        </tree>
+      </field>
+    </record>
+  </data>
+</odoo>

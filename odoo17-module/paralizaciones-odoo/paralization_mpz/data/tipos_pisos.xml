@@ -1,0 +1,123 @@
+<odoo>
+    <!-- Tipos de Pisos -->
+    <record id="tipo_piso_adoq" model="tipos.piso">
+        <field name="name">ADOQ</field>
+        <field name="desc_piso">ADOQUINES</field>
+    </record>
+    <record id="tipo_piso_alf" model="tipos.piso">
+        <field name="name">ALF</field>
+        <field name="desc_piso">ALFOMBRA</field>
+    </record>
+    <record id="tipo_piso_asfa" model="tipos.piso">
+        <field name="name">ASFA</field>
+        <field name="desc_piso">ASFALTO</field>
+    </record>
+    <record id="tipo_piso_cem" model="tipos.piso">
+        <field name="name">CEM</field>
+        <field name="desc_piso">CEMENTO</field>
+    </record>
+    <record id="tipo_piso_cer" model="tipos.piso">
+        <field name="name">CER</field>
+        <field name="desc_piso">CERAMICO</field>
+    </record>
+    <record id="tipo_piso_conc" model="tipos.piso">
+        <field name="name">CONC</field>
+        <field name="desc_piso">CONCRETO</field>
+    </record>
+    <record id="tipo_piso_fibr" model="tipos.piso">
+        <field name="name">FIBR</field>
+        <field name="desc_piso">FIBROLIT</field>
+    </record>
+    <record id="tipo_piso_gra" model="tipos.piso">
+        <field name="name">GRA</field>
+        <field name="desc_piso">GRANITO</field>
+    </record>
+    <record id="tipo_piso_grav" model="tipos.piso">
+        <field name="name">GRAV</field>
+        <field name="desc_piso">GRAVA</field>
+    </record>
+    <record id="tipo_piso_gyp" model="tipos.piso">
+        <field name="name">GYP</field>
+        <field name="desc_piso">GYPSUM</field>
+    </record>
+    <record id="tipo_piso_lad" model="tipos.piso">
+        <field name="name">LAD</field>
+        <field name="desc_piso">LADRILLO</field>
+    </record>
+    <record id="tipo_piso_lam" model="tipos.piso">
+        <field name="name">LAM</field>
+        <field name="desc_piso">LAMINADO</field>
+    </record>
+    <record id="tipo_piso_lascom" model="tipos.piso">
+        <field name="name">LASCOM</field>
+        <field name="desc_piso">LASTRE COMPACTADO</field>
+    </record>
+    <record id="tipo_piso_luj" model="tipos.piso">
+        <field name="name">LUJ</field>
+        <field name="desc_piso">LUJADO</field>
+    </record>
+    <record id="tipo_piso_lv" model="tipos.piso">
+        <field name="name">LV</field>
+        <field name="desc_piso">LOSETAS DE VINILO</field>
+    </record>
+    <record id="tipo_piso_mad" model="tipos.piso">
+        <field name="name">MAD</field>
+        <field name="desc_piso">MADERA</field>
+    </record>
+    <record id="tipo_piso_mosaic" model="tipos.piso">
+        <field name="name">MOSAIC</field>
+        <field name="desc_piso">MOSAICO</field>
+    </record>
+    <record id="tipo_piso_na" model="tipos.piso">
+        <field name="name">NA</field>
+        <field name="desc_piso">NO APLICA</field>
+    </record>
+    <record id="tipo_piso_otro" model="tipos.piso">
+        <field name="name">OTRO</field>
+        <field name="desc_piso">OTROS</field>
+    </record>
+    <record id="tipo_piso_pala" model="tipos.piso">
+        <field name="name">PALA</field>
+        <field name="desc_piso">PALADIANA</field>
+    </record>
+    <record id="tipo_piso_parq" model="tipos.piso">
+        <field name="name">PARQ</field>
+        <field name="desc_piso">PARQUET</field>
+    </record>
+    <record id="tipo_piso_pav" model="tipos.piso">
+        <field name="name">PAV</field>
+        <field name="desc_piso">PAVIMENTO</field>
+    </record>
+    <record id="tipo_piso_playr" model="tipos.piso">
+        <field name="name">PLAYR</field>
+        <field name="desc_piso">PLAY ROCK</field>
+    </record>
+    <record id="tipo_piso_porcel" model="tipos.piso">
+        <field name="name">PORCEL</field>
+        <field name="desc_piso">PORCELANATO</field>
+    </record>
+    <record id="tipo_piso_sint" model="tipos.piso">
+        <field name="name">SINT</field>
+        <field name="desc_piso">SINTETICO</field>
+    </record>
+    <record id="tipo_piso_ter" model="tipos.piso">
+        <field name="name">TER</field>
+        <field name="desc_piso">TERRAZO</field>
+    </record>
+    <record id="tipo_piso_tie" model="tipos.piso">
+        <field name="name">TIE</field>
+        <field name="desc_piso">TIERRA</field>
+    </record>
+    <record id="tipo_piso_trav" model="tipos.piso">
+        <field name="name">TRAV</field>
+        <field name="desc_piso">TRAVERTINO</field>
+    </record>
+    <record id="tipo_piso_vitcer" model="tipos.piso">
+        <field name="name">VITCER</field>
+        <field name="desc_piso">VITROCERAMICA</field>
+    </record>
+    <record id="tipo_piso_zoc" model="tipos.piso">
+        <field name="name">ZOC</field>
+        <field name="desc_piso">ZOCALO</field>
+    </record>
+</odoo>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem id="menu_root_online_payments" name="Online Payments" sequence="20" web_icon="online_payments,static/description/icon.png"/>
+        <menuitem id="menu_general" name="General" parent="menu_root_online_payments" sequence="21"/>
+        <menuitem id="menu_payment" name="Payments" action="action_payment" parent="menu_general" sequence="22" groups="online_payments.finance_administrator"/>
+        <menuitem id="menu_payment_detail" name="Payment Details" action="action_payment_detail" parent="menu_general" sequence="23" groups="online_payments.finance_administrator"/>
+        <menuitem id="menu_base_url" name="Base Url" action="action_base_url" parent="menu_general" sequence="24" groups="online_payments.system_administrator"/>
+        <menuitem id="menu_catalog" name="Payment Catalog" action="action_catalog" parent="menu_general" sequence="26" groups="online_payments.system_administrator"/>
+        <menuitem id="menu_yaipan_connection" name="Yaipan Connection" action="action_yaipan_connection" parent="menu_general" sequence="25" groups="online_payments.system_administrator"/>
+    </data>
+</odoo>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <template id="meat_waste_report_document">
+      <div class="page">
+        <h2>Reporte mensual de desperdicio de carne - año <span t-esc="selected_year" /></h2>
+        <p class="text-muted">Fecha del reporte: <span t-esc="report_date" /></p>
+
+        <table class="table table-sm table-bordered">
+          <thead>
+            <tr class="text-center" style="background-color: #d9d9d9;">
+              <th>Mes</th>
+
+              <t t-foreach="monthly_data" t-as="month">
+                <th>
+                  <span t-esc="month['name']" />
+                </th>
+              </t>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <!-- * Column name * -->
+              <td class="align-middle text-center" style="background-color: #f2f2f2;">Toneladas</td>
+
+              <t t-foreach="monthly_data" t-as="month">
+                <td class="text-end">
+                  <span t-esc="month['kilograms'] / 1000.0"
+                    t-options="{'widget': 'float', 'precision': 3}"
+                    t-if="month['kilograms'] > 0" />
+                  <span t-else="">0.00</span>
+                </td>
+              </t>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="row mt-4">
+          <div class="col-12">
+            <span>Total anual de toneladas:</span>
+            <span t-esc="annual_total / 1000.0"
+              t-options="{'widget': 'float', 'precision': 3}" />
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <template id="meat_waste_report">
+      <t t-call="web.html_container">
+        <t t-call="web.external_layout">
+          <t t-call="waste_control.meat_waste_report_document" />
+        </t>
+      </t>
+    </template>
+
+    <record id="meat_waste_report_action" model="ir.actions.report">
+      <field name="name">Reporte desperdicio de carne</field>
+      <field name="model">waste_control.meat_waste_wizard</field>
+      <field name="report_type">qweb-pdf</field>
+      <field name="report_name">waste_control.meat_waste_report</field>
+      <field name="report_file">waste_control.meat_waste_report</field>
+      <field name="print_report_name">(f'Reporte_Residuos_Cárnicos_{object.year}')</field>
+      <field name="paperformat_id" ref="waste_control.paperformat_landscape" />
+    </record>
+  </data>
+</odoo>
