@@ -1,0 +1,33 @@
+{
+  "name": "Sistema de Recolección de Basura",
+  "short_name": "Recolección",
+  "description": "Gestiona rutas de recolección de basura",
+  "icons": [
+    {
+      "src": "/basura/images/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/basura/images/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/basura/images/icon-maskable-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/basura/images/icon-maskable-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ],
+  "start_url": "/basura/?source=pwa",
+  "orientation": "portrait",
+  "display": "standalone",
+  "scope": "/basura/"
+}
