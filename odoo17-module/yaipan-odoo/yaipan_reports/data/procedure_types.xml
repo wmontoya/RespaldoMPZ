@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="procedure_type_fiscal_value" model="yaipan_reports.procedure_type">
+            <field name="name">Solicitud de Constancia de Valor Fiscal</field>
+            <field name="code">fiscal_value</field>
+            <field name="requires_property" eval="True"/>
+            <field name="icon">Landmark</field>
+            <field name="color">#082b63</field>
+            <field name="notification_email">valoracion@mpz.go.cr</field>
+            <field name="sequence">10</field>
+        </record>
+
+        <record id="procedure_type_municipal_taxes" model="yaipan_reports.procedure_type">
+            <field name="name">Solicitud de Constancia de Impuestos Municipales</field>
+            <field name="code">municipal_taxes</field>
+            <field name="requires_property" eval="False"/>
+            <field name="icon">ReceiptText</field>
+            <field name="color">#059669</field>
+            <field name="notification_email">ciat@mpz.go.cr</field>
+            <field name="sequence">20</field>
+        </record>
+    </data>
+</odoo>

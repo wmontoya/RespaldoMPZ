@@ -1,0 +1,357 @@
+#  ingresar https://editor.swagger.io/ y pegar este contenido en el panel izquierdo para ver la documentación 
+openapi: 3.0.4
+info:
+  title: API de Consulta MPZ
+  description: |-
+    Esta API permite consultar información relacionada con:
+    - Solicitudes de uso de suelo
+    - Información de fincas registradas
+
+    **IMPORTANTE**:
+    - Se requiere autenticación con un token JWT en el header `Authorization`.
+    - Para formar el token se requiere los datos que proveerá la Municipalidad para formar un JWT con el siguiente formato:  
+    `jwt.sign( { sub: 'identificador', empresa: 'nombre_empresa' }, 'token_secreto', { expiresIn: '(tiempo)h' } );`
+  contact:
+    email: informatica@mpz.go.cr
+  version: 1.0.2
+
+servers:
+  - url: https://www.perezzeledon.go.cr:6908
+
+paths:
+  /api/v1/yaipan/finca:
+    post:
+      summary: Consulta de propiedades por cédula o número de finca
+      description: Devuelve una lista de propiedades asociadas a una cédula, o los detalles de una finca por número.`Solo retorna los usos de suelo de aquellas propiedades que cuentan con el uso de suelo tipo "LICENCIA MUNICIPAL"`
+      
+      tags:
+        - Propiedades
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cedula:
+                  type: string
+                  example: "0113051003"
+                num_finca:
+                  type: string
+                  example: "480028"
+            examples:
+              BuscarPorCedula:
+                summary: Buscar fincas por cédula
+                value:
+                  cedula: "0113051003"
+              BuscarPorNumeroFinca:
+                summary: Buscar por número de finca 
+                value:
+                  num_finca: "441146"
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+            example: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6...
+          description: Token JWT. Debe iniciar con `"Bearer "`.
+        - name: Origin
+          in: header
+          required: true
+          schema:
+            type: string
+            example: https://www.perezzeledon.go.cr
+          description: Dominio desde el cual se realiza la solicitud.
+      responses:
+        '200':
+          description: Solicitud procesada correctamente.
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - type: object
+                    properties:
+                      success:
+                        type: boolean
+                        example: true
+                      data:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            canton:
+                              type: string
+                              example: "19"
+                            distrito:
+                              type: string
+                              example: "01"
+                            senas:
+                              type: string
+                              example: "25 AL SUR DEL PUENTE SOBRE EL RIO SAN ISIDRO"
+                            numeroFinca:
+                              type: string
+                              example: "441146"
+                            nombre:
+                              type: string
+                              example: "MOTO EXTREME DEL SUR S.A"
+                            cedula:
+                              type: string
+                              example: "3101348116"
+                            direccion1:
+                              type: string
+                              example: "Bº SINAI. 300 NORTE DE LA UNA"
+                            direccion2:
+                              type: string
+                              nullable: true
+                              example: null
+                            correo:
+                              type: string
+                              nullable: true
+                              example: null
+                            telefono:
+                              type: string
+                              nullable: true
+                              example: null
+                            movil:
+                              type: string
+                              nullable: true
+                              example: "88296456"
+                            usos_suelos:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  num_tramite:
+                                    type: integer
+                                    example: 6730
+                                  nombre_solicitante:
+                                    type: string
+                                    example: "MOTO EXTREME DEL SUR S.A"
+                                  cedula_solicitante:
+                                    type: string
+                                    example: "3101348116"
+                                  correo:
+                                    type: string
+                                    nullable: true
+                                    example: null
+                                  num_plano:
+                                    type: string
+                                    example: "216233-94"
+                                  telefono_solicitante:
+                                    type: string
+                                    example: "88296456"
+                                  fec_solicitud:
+                                    type: string
+                                    format: date
+                                    example: "2022-04-22"
+                                  direccion_propiedad:
+                                    type: string
+                                    example: "25 AL SUR DEL PUENTE SOBRE EL RIO SAN ISIDRO"
+                                  direccion_solicitante:
+                                    type: string
+                                    example: "Bº SINAI. 300 NORTE DE LA UNA"
+                                  area_terreno:
+                                    type: number
+                                    example: 120
+                                  observaciones:
+                                    type: string
+                                    example: "La explotación de la actividad comercial debe estar acorde con la legislación específica de la materia."
+                                  descripcion:
+                                    type: string
+                                    example: "tienda para ropa americana"
+                                  tipo_uso_suelo:
+                                    type: string
+                                    example: "01-RESIDENCIAL"
+                                  estado_uso_suelo:
+                                    type: string
+                                    example: "4 - Finalizado"
+                                  finalidad_uso_suelo:
+                                    type: string
+                                    example: "LICENCIA MUNICIPAL"
+                  - type: object
+                    properties:
+                      success:
+                        type: boolean
+                        example: true
+                      data:
+                        type: array
+                        items: {}
+                        example: []
+        '400':
+          description: Petición incorrecta, faltan parámetros o token inválido.
+          content:
+            application/json:
+              schema:
+                type: object
+                oneOf:
+                  - properties:
+                      success:
+                        type: boolean
+                        example: false
+                      error:
+                        type: string
+                        example: "Datos inválidos"
+                      details:
+                        type: object
+                        properties:
+                          formErrors:
+                            type: array
+                            items:
+                              type: string
+                            example: ["Debe proporcionar al menos una cédula o un número de finca"]
+                          fieldErrors:
+                            type: object
+                            example: {}
+                  - properties:
+                      success:
+                        type: boolean
+                        example: false
+                      error:
+                        type: string
+                        example: "Token JWT no agregado o formato incorrecto"
+        '403':
+          description: Token inválido o expirado.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  error:
+                    type: string
+                    example: "Token JWT inválido o expirado"
+        '500':
+          description: Error interno del servidor (CORS).
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  error:
+                    type: string
+                    example: "Not allowed by CORS"
+  /api/v1/yaipan/pendiente:
+    post:
+      summary: Consulta si un contribuyente tiene pendientes en estado vencido por cédula
+      description: Devuelve un valor true si la persona tiene cobros en estado vencido y false si la persona se encuentra al día con sus tributos.
+      tags:
+        - Pendientes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cedula:
+                  type: string
+                  example: "3010045279"
+            examples:
+              BuscarPorCedula:
+                summary: Buscar pendiente por cédula
+                value:
+                  cedula: "3010045279"
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+            example: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6...
+          description: Token JWT. Debe iniciar con `"Bearer "`.
+        - name: Origin
+          in: header
+          required: true
+          schema:
+            type: string
+            example: https://www.perezzeledon.go.cr
+          description: Dominio desde el cual se realiza la solicitud.
+      responses:
+        '200':
+          description: Solicitud procesada correctamente.
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - type: object
+                    properties:
+                      success:
+                        type: boolean
+                        example: true
+                      pendiente:
+                        type: boolean
+                        example: true
+                  - type: object
+                    properties:
+                      success:
+                        type: boolean
+                        example: true
+                      data:
+                        type: array
+                        items: {}
+                        example: []
+        '400':
+          description: Petición incorrecta, faltan parámetros o token inválido.
+          content:
+            application/json:
+              schema:
+                type: object
+                oneOf:
+                  - properties:
+                      success:
+                        type: boolean
+                        example: false
+                      error:
+                        type: string
+                        example: "Datos inválidos"
+                      details:
+                        type: object
+                        properties:
+                          formErrors:
+                            type: array
+                            items:
+                              type: string
+                            example: ["Debe proporcionar al menos una cédula"]
+                          fieldErrors:
+                            type: object
+                            example: {}
+                  - properties:
+                      success:
+                        type: boolean
+                        example: false
+                      error:
+                        type: string
+                        example: "Token JWT no agregado o formato incorrecto"
+        '403':
+          description: Token inválido o expirado.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  error:
+                    type: string
+                    example: "Token JWT inválido o expirado"
+        '500':
+          description: Error interno del servidor (CORS).
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  error:
+                    type: string
+                    example: "Not allowed by CORS"
+                                      

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Servicios internos existentes en el SPA -->
+        <record id="service_properties" model="yaipan_reports.service">
+            <field name="name">Bienes Inmuebles</field>
+            <field name="description">Propiedades registradas a su nombre.</field>
+            <field name="url">/dashboard/properties</field>
+            <field name="icon">Building2</field>
+            <field name="color">#082b63</field>
+            <field name="is_external" eval="False" />
+            <field name="sequence">10</field>
+        </record>
+
+        <record id="service_business_licenses" model="yaipan_reports.service">
+            <field name="name">Patentes</field>
+            <field name="description">Patentes comerciales y permisos.</field>
+            <field name="url">/dashboard/business-licenses</field>
+            <field name="icon">FileText</field>
+            <field name="color">#f59e0b</field>
+            <field name="is_external" eval="False" />
+            <field name="sequence">20</field>
+        </record>
+
+        <record id="service_payment_history" model="yaipan_reports.service">
+            <field name="name">Histórico de Pagos</field>
+            <field name="description">Pagos realizados y movimientos registrados.</field>
+            <field name="url">/dashboard/payment-history</field>
+            <field name="icon">History</field>
+            <field name="color">#059669</field>
+            <field name="is_external" eval="False" />
+            <field name="sequence">30</field>
+        </record>
+
+        <record id="service_outstanding_payments" model="yaipan_reports.service">
+            <field name="name">Saldos Pendientes</field>
+            <field name="description">Obligaciones municipales pendientes.</field>
+            <field name="url">/dashboard/outstanding-payments</field>
+            <field name="icon">WalletCards</field>
+            <field name="color">#f43f5e</field>
+            <field name="is_external" eval="False" />
+            <field name="sequence">40</field>
+        </record>
+
+        <!-- Servicio externo: proyecto de alquileres -->
+        <record id="service_rentals" model="yaipan_reports.service">
+            <field name="name">Alquileres</field>
+            <field name="description">Reserva de instalaciones y alquileres municipales.</field>
+            <field name="url">http://172.19.20.58/reservation</field>
+            <field name="icon">CalendarCheck</field>
+            <field name="color">#7c3aed</field>
+            <field name="is_external" eval="True" />
+            <field name="sequence">50</field>
+        </record>
+    </data>
+</odoo>

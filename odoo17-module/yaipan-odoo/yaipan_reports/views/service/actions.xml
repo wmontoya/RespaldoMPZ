@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="action_yaipan_service" model="ir.actions.act_window">
+            <field name="name">Servicios del SPA</field>
+            <field name="res_model">yaipan_reports.service</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Registre un nuevo servicio para el portal de autogestión
+                </p>
+                <p>
+                    Cada servicio se muestra como una tarjeta en el menú principal del SPA.
+                    Defina el título, descripción, color, icono y la URL del servicio.
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>

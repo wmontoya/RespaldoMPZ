@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+        <menuitem
+            id="menu_yaipan_root"
+            name="Autogestión"
+            web_icon="yaipan_reports,static/description/icon.png"
+            sequence="10"
+            groups="yaipan_reports.res_groups_admin_user_yaipan,base.group_system"
+        />
+
+        <menuitem
+            id="menu_yaipan_services"
+            name="Servicios del SPA"
+            parent="menu_yaipan_root"
+            action="yaipan_reports.action_yaipan_service"
+            sequence="10"
+            groups="yaipan_reports.res_groups_admin_user_yaipan,base.group_system"
+        />
+
+        <menuitem
+            id="menu_yaipan_procedure_request"
+            name="Solicitudes de Trámites"
+            parent="menu_yaipan_root"
+            action="yaipan_reports.action_yaipan_procedure_request"
+            sequence="20"
+            groups="yaipan_reports.res_groups_admin_user_yaipan,base.group_system"
+        />
+
+        <menuitem
+            id="menu_yaipan_procedure_type"
+            name="Tipos de Trámite"
+            parent="menu_yaipan_root"
+            action="yaipan_reports.action_yaipan_procedure_type"
+            sequence="30"
+            groups="yaipan_reports.res_groups_admin_user_yaipan,base.group_system"
+        />
+
         <!-- <menuitem
             id="menu_oracle_config_settings"
             name="Oracle Connection"

@@ -1,0 +1,33 @@
+{
+  "name": "Parquímetro MPZ",
+  "short_name": "PARKING",
+  "description": "Sitio para comprar tiempo en línea y pagar multas de estacionamiento.",
+  "icons": [
+    {
+      "src": "/apps/parking/images/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/apps/parking/images/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/apps/parking/images/icon-maskable-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/apps/parking/images/icon-maskable-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ],
+  "start_url": "/apps/parking/?source=pwa",
+  "orientation": "portrait",
+  "display": "standalone",
+  "scope": "/apps/parking/"
+}

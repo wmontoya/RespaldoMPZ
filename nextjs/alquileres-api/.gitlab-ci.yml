@@ -1,0 +1,19 @@
+
+variables:
+  PROJECT_NAME: "alquileres_api"
+
+include:
+  - project: 'mpz/gitlab-base'
+    ref: main
+    file: '/ci-templates/next-api-deploy-template.yml'
+
+deploy_test:
+  extends: .deploy_test_template
+  needs: [build-dev]
+
+deploy_production:
+  extends: .deploy_production_template
+  needs: [build-prod]
+
+move_final:
+  extends: .move_final_template

@@ -1,0 +1,7 @@
+# Use this workspace to collaborate
+workspace:
+  id: 265b66c0-5053-4560-89fa-2aebb87edf04
+
+localResources:
+  specs:
+    - ..\yaipan_reports_api\consulta_propiedades_docu.yml

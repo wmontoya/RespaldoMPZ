@@ -1,0 +1,35 @@
+--
+SELECT
+    CP.NUM_FINCA AS folio_real,
+    CP.NUM_CUENTA AS num_cuenta,
+
+    
+    OC.CAN_OCUPAC AS cantidad_ocupacion,
+    OC.COD_OCUPAC AS codigo_ocupacion,
+    OC.FEC_REGIST AS fecha_registro_ocupacion,
+
+    SO.COD_SERVIC AS codigo_servicio,
+    SO.COD_TARIFA AS codigo_tarifa,
+
+    TA.MON_TARIFA AS monto_tarifa_base,
+    TA.TIP_TARIFA AS tipo_tarifa,
+    TA.FEC_VIGENC AS fecha_vigencia_tarifa
+
+
+FROM DEC.CUF_PROPIE CP
+
+INNER JOIN DEC.CUF_OCUPAC OC
+    ON OC.NUM_CUENTA = CP.NUM_CUENTA
+
+LEFT JOIN DEC.CUF_SEROCU SO
+    ON SO.NUM_CUENTA = OC.NUM_CUENTA
+   AND SO.CON_OCUPAC = OC.CON_OCUPAC
+
+LEFT JOIN DEC.CUF_TARIFA TA
+    ON TA.AUX_CONTAB = SO.AUX_CONTAB
+   AND TA.COD_SERVIC = SO.COD_SERVIC
+   AND TA.COD_TARIFA = SO.COD_TARIFA
+
+WHERE CP.NUM_FINCA = :num_finca
+
+ORDER BY OC.FEC_REGIST DESC

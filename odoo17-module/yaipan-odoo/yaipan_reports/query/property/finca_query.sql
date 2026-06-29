@@ -3,6 +3,7 @@ SELECT
     CP.ABR_DISTRI AS fin_district_code,
     CONVERT(CP.SENAS_LOTE, 'AL32UTF8', 'WE8MSWIN1252') AS fin_senas,
     CP.NUM_FINCA AS num_finca,
+    CP.AREA_REGIS AS area,
     CASE
         WHEN PE.NOM_PERSON IS NOT NULL
          AND PE.SEG_NOMBRE IS NULL

@@ -20,5 +20,105 @@
             <field name="perm_create" eval="0"/>
             <field name="perm_unlink" eval="0"/>
         </record>
+
+        <record id="access_service_admin" model="ir.model.access">
+            <field name="name">yaipan.service admin access</field>
+            <field name="model_id" ref="model_yaipan_reports_service"/>
+            <field name="group_id" ref="yaipan_reports.res_groups_admin_user_yaipan"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_service_system" model="ir.model.access">
+            <field name="name">yaipan.service system access</field>
+            <field name="model_id" ref="model_yaipan_reports_service"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_procedure_type_admin" model="ir.model.access">
+            <field name="name">yaipan.procedure_type admin access</field>
+            <field name="model_id" ref="model_yaipan_reports_procedure_type"/>
+            <field name="group_id" ref="yaipan_reports.res_groups_admin_user_yaipan"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_procedure_type_system" model="ir.model.access">
+            <field name="name">yaipan.procedure_type system access</field>
+            <field name="model_id" ref="model_yaipan_reports_procedure_type"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_procedure_request_admin" model="ir.model.access">
+            <field name="name">yaipan.procedure_request admin access</field>
+            <field name="model_id" ref="model_yaipan_reports_procedure_request"/>
+            <field name="group_id" ref="yaipan_reports.res_groups_admin_user_yaipan"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_procedure_request_system" model="ir.model.access">
+            <field name="name">yaipan.procedure_request system access</field>
+            <field name="model_id" ref="model_yaipan_reports_procedure_request"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_procedure_email_log_admin" model="ir.model.access">
+            <field name="name">yaipan.procedure_type_email_log admin access</field>
+            <field name="model_id" ref="model_yaipan_reports_procedure_type_email_log"/>
+            <field name="group_id" ref="yaipan_reports.res_groups_admin_user_yaipan"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_procedure_email_log_system" model="ir.model.access">
+            <field name="name">yaipan.procedure_type_email_log system access</field>
+            <field name="model_id" ref="model_yaipan_reports_procedure_type_email_log"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_procedure_cancel_wizard_admin" model="ir.model.access">
+            <field name="name">yaipan.procedure_cancel_wizard admin access</field>
+            <field name="model_id" ref="model_yaipan_reports_procedure_cancel_wizard"/>
+            <field name="group_id" ref="yaipan_reports.res_groups_admin_user_yaipan"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_procedure_cancel_wizard_system" model="ir.model.access">
+            <field name="name">yaipan.procedure_cancel_wizard system access</field>
+            <field name="model_id" ref="model_yaipan_reports_procedure_cancel_wizard"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
     </data>
 </odoo> 

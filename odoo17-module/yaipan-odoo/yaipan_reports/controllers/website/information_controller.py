@@ -12,7 +12,7 @@ class InformationController(http.Controller):
     Maneja 8 endpoints diferentes usando configuración parametrizable.
     """
 
-    def _handle_standard_endpoint(self, endpoint_key):
+    def _handle_standard_endpoint(self, endpoint_key, **kwargs):
         """
         Maneja endpoints estándar (information-style) con estructura simple.
         """
@@ -114,6 +114,28 @@ class InformationController(http.Controller):
                     "vigencia": "Vigencia"
                 },
                 "table_title": "Tarifas del Cementerio"
+            },
+
+            #Endpoint adicional para información del contribuyente
+            "people-information": {
+                "title": "Información del Contribuyente",
+                "description": "Consulta de información básica del contribuyente",
+                "sql_file": "people_information.sql",
+                "columns": [
+                    "cedula_persona",
+                    "nombre_completo",
+                    "tipo_cedula",
+                    "direccion_principal",
+                    "ultima_actualizacion"
+                ],
+                "column_titles": {
+                    "cedula_persona": "Cédula",
+                    "nombre_completo": "Nombre completo",
+                    "tipo_cedula": "Tipo de cédula",
+                    "direccion_principal": "Dirección principal",
+                    "ultima_actualizacion": "Última actualización"
+                },
+                "table_title": "Información del Contribuyente"
             }
         }
         
@@ -134,7 +156,8 @@ class InformationController(http.Controller):
         
         try:
             # Ejecutar consulta Oracle
-            data = request.env["yaipan_reports.oracle"].ejecutar_query_oracle(sql_path, {})
+            #data = request.env["yaipan_reports.oracle"].ejecutar_query_oracle(sql_path, {})
+            data = request.env["yaipan_reports.oracle"].ejecutar_query_oracle(sql_path, kwargs)
             response = self._build_standard_response(endpoint_key, data)
             _logger.info(f"Consulta {endpoint_key} ejecutada exitosamente. Registros: {len(data) if data else 0}")
             return response
@@ -246,6 +269,32 @@ class InformationController(http.Controller):
                     "vigencia": "Vigencia"
                 },
                 "table_title": "Tarifas del Cementerio"
+            },
+            
+            #Endpoint adicional para información del contribuyente
+            "people-information": {
+                "title": "Información del Contribuyente",
+                "description": "Consulta de información básica del contribuyente",
+                "sql_file": "people_information.sql",
+                "columns": [
+                    "cedula_persona",
+                    "nombre_completo",
+                    "tipo_cedula",
+                    "direccion_principal",
+                    "telefono",
+                    "correo_electronico",
+                    "ultima_actualizacion"
+                ],
+                "column_titles": {
+                    "cedula_persona": "Cédula",
+                    "nombre_completo": "Nombre completo",
+                    "tipo_cedula": "Tipo de cédula",
+                    "direccion_principal": "Dirección principal",
+                    "telefono": "Teléfono",
+                    "correo_electronico": "Correo electrónico",
+                    "ultima_actualizacion": "Última actualización"
+                },
+                "table_title": "Información del Contribuyente"
             }
         }
         
@@ -288,3 +337,9 @@ class InformationController(http.Controller):
     def get_cemetery(self, **kwargs):
         """Endpoint para obtener información del personal del cementerio."""
         return self._handle_standard_endpoint("cemetery")
+    
+    # Endpoint adicional para información del contribuyente
+    @http.route("/api/v1/yaipan_reports/information/people-information", type='json', auth='user', methods=['POST'], csrf=False)
+    def get_people_information(self, **kwargs):
+        """Endpoint para obtener información básica del contribuyente."""
+        return self._handle_standard_endpoint("people-information", **kwargs)

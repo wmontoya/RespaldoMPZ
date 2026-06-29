@@ -8,10 +8,15 @@ import socket
 class Oracle(models.TransientModel):
     _name = "yaipan_reports.oracle"
     _description = "Conector temporal a base Oracle"
+    
+    # Pool simple de configuraciones Oracle
     _oracle_pool = None
     
     @classmethod
     def _get_oracle_pool(cls):
+        """
+        Configurar el pool de conexiones Oracle si no existe.
+        """
         if cls._oracle_pool is None:
             try:
                 # Configurar el pool con parámetros conservadores
@@ -24,13 +29,20 @@ class Oracle(models.TransientModel):
                     retry_count=3,
                     retry_delay=1
                 )
+                print("✓ Pool de conexiones Oracle inicializado")
             except Exception as e:
                 print(f"⚠️  No se pudo crear pool Oracle: {e}")
-                cls._oracle_pool = False
+                cls._oracle_pool = False  # Marcar como fallido
         
         return cls._oracle_pool if cls._oracle_pool is not False else None
 
     def _test_tcp_connectivity(self, host, port, timeout=5):
+        """
+        Prueba la conectividad TCP al servidor Oracle.
+        
+        Returns:
+            bool: True si la conexión TCP es exitosa
+        """
         try:
             sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             sock.settimeout(timeout)
@@ -42,16 +54,33 @@ class Oracle(models.TransientModel):
             return False
 
     def _connect_with_retry(self, user, password, dsn, max_retries=3, delay=2):
+        """
+        Intenta conectar a Oracle con reintentos automáticos.
+        
+        Args:
+            user: Usuario Oracle
+            password: Contraseña Oracle 
+            dsn: Data Source Name
+            max_retries: Número máximo de reintentos
+            delay: Tiempo en segundos entre reintentos
+            
+        Returns:
+            conexión Oracle o lanza excepción
+        """
         last_error = None
         
         for attempt in range(max_retries):
             try:
+                print(f"Intento de conexión Oracle #{attempt + 1}/{max_retries}")
+                
+                # Conectar sin timeout (no soportado en esta versión)
                 conn = oracledb.connect(
                     user=user,
                     password=password,
                     dsn=dsn
                 )
                 
+                print(f"✓ Conexión Oracle exitosa en intento #{attempt + 1}")
                 return conn
                 
             except Exception as e:
@@ -62,6 +91,7 @@ class Oracle(models.TransientModel):
                     print(f"Esperando {delay} segundos antes del siguiente intento...")
                     time.sleep(delay)
         
+        # Si llegamos aquí, todos los intentos fallaron
         raise UserError(f"Error de conexión Oracle después de {max_retries} intentos: {str(last_error)}")
 
     def leer_archivo_sql(self, ruta):
@@ -94,6 +124,7 @@ class Oracle(models.TransientModel):
 
         dsn = f"{oracle_host}:{int(oracle_port)}/{oracle_service_name}"
        
+        # Resolve the real path to handle symlinks correctly
         real_file_path = os.path.realpath(__file__)
         sql_file_path = os.path.normpath(os.path.join(
             os.path.dirname(real_file_path), os.path.pardir, "query", archivo_sql
@@ -105,9 +136,14 @@ class Oracle(models.TransientModel):
         sql_query = self.leer_archivo_sql(sql_file_path)
 
         try:
+            # Verificar conectividad TCP primero
+            print("Verificando conectividad TCP...")
             if not self._test_tcp_connectivity(oracle_host, oracle_port):
                 raise UserError(f"No se puede alcanzar el servidor Oracle en {oracle_host}:{oracle_port}")
             
+            print("✓ Conectividad TCP confirmada")
+            
+            # Usar conexión con reintentos
             with self._connect_with_retry(oracle_user, oracle_password, dsn) as conn:
                 with conn.cursor() as cursor:
                     print(f"Ejecutando SQL: {sql_query[:100]}...")
@@ -118,10 +154,12 @@ class Oracle(models.TransientModel):
 
                     columnas = [col[0].lower() for col in cursor.description]
                     resultados = [dict(zip(columnas, fila)) for fila in cursor.fetchall()]
-
+                    print(f"✓ Consulta exitosa - {len(resultados)} registros")
         except Exception as e:
             print(f"✗ Error Oracle: {str(e)}")
+            print(f"Tipo de error: {type(e).__name__}")
             
+            # Proporcionar información de diagnóstico adicional
             error_msg = f"Error al ejecutar el query Oracle: {str(e)}"
             if "Connection refused" in str(e):
                 error_msg += f"\n\nDiagnóstico: El servidor Oracle en {oracle_host}:{oracle_port} no está disponible."

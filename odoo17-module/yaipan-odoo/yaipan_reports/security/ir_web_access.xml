@@ -20,5 +20,35 @@
             <field name="perm_create" eval="0"/>
             <field name="perm_unlink" eval="0"/>
         </record>
+
+        <record id="access_service_web_readonly" model="ir.model.access">
+            <field name="name">yaipan.service web readonly</field>
+            <field name="model_id" ref="model_yaipan_reports_service"/>
+            <field name="group_id" ref="yaipan_reports.res_groups_web_yaipan"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+        </record>
+
+        <record id="access_procedure_type_web_readonly" model="ir.model.access">
+            <field name="name">yaipan.procedure_type web readonly</field>
+            <field name="model_id" ref="model_yaipan_reports_procedure_type"/>
+            <field name="group_id" ref="yaipan_reports.res_groups_web_yaipan"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+        </record>
+
+        <record id="access_procedure_request_web_readonly" model="ir.model.access">
+            <field name="name">yaipan.procedure_request web readonly</field>
+            <field name="model_id" ref="model_yaipan_reports_procedure_request"/>
+            <field name="group_id" ref="yaipan_reports.res_groups_web_yaipan"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+        </record>
     </data>
 </odoo> 

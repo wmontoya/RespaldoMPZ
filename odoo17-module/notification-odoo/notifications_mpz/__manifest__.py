@@ -10,7 +10,6 @@
     "data": [
         "security/res_groups.xml",
         "security/ir_admin_user_access.xml",
-        
         "views/reports/notification_time.xml",
         
         "views/oracle_email/view_tree.xml",

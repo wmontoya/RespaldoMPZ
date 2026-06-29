@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_yaipan_procedure_request_tree" model="ir.ui.view">
+            <field name="name">yaipan_reports.procedure_request.tree</field>
+            <field name="model">yaipan_reports.procedure_request</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="cedula"/>
+                    <field name="type_id"/>
+                    <field name="email"/>
+                    <field name="property_number" optional="show"/>
+                    <field name="create_date" string="Fecha de creación" optional="show"/>
+                    <field name="state" widget="badge"
+                           decoration-info="state == 'draft'"
+                           decoration-warning="state == 'in_progress'"
+                           decoration-success="state == 'done'"
+                           decoration-danger="state == 'cancelled'"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_yaipan_procedure_request_form" model="ir.ui.view">
+            <field name="name">yaipan_reports.procedure_request.form</field>
+            <field name="model">yaipan_reports.procedure_request</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="action_set_in_progress" type="object"
+                                string="Marcar en proceso"
+                                invisible="state != 'draft'"/>
+                        <button name="action_set_cancelled" type="object"
+                                string="Anular"
+                                invisible="state not in ('draft', 'in_progress')"/>
+                        <field name="state" widget="statusbar"
+                               statusbar_visible="draft,in_progress,done"
+                               options="{'clickable': 0}"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="type_id"/>
+                                <field name="type_code" invisible="1"/>
+                                <field name="requires_property" invisible="1"/>
+                                <field name="property_number"
+                                       invisible="not requires_property"
+                                       required="requires_property"/>
+                                <field name="account_statement_type"
+                                       invisible="type_code != 'account_statement'"/>
+                            </group>
+                            <group>
+                                <field name="cedula"/>
+                                <field name="email" widget="email"/>
+                                <field name="phone" widget="phone"/>
+                                <field name="create_date" string="Fecha de creación" readonly="1"/>
+                                <field name="done_date"
+                                       invisible="not done_date"/>
+                                <field name="document_sent_date"
+                                       invisible="not document_sent_date"/>
+                                <field name="document_sent_by"
+                                       invisible="not document_sent_date"/>
+                            </group>
+                        </group>
+                        <group string="Anulación" invisible="state != 'cancelled'">
+                            <field name="cancel_reason" nolabel="1" readonly="1"/>
+                        </group>
+                        <notebook>
+                            <page string="Documentos adjuntos" name="documents">
+                                <div class="mb-3" invisible="state in ('done', 'cancelled')">
+                                    <button name="action_send_document_to_citizen"
+                                            type="object"
+                                            string="Enviar adjunto"
+                                            class="btn-primary"
+                                            confirm="¿Enviar el documento adjunto al solicitante y finalizar el trámite?"/>
+                                </div>
+                                <field name="attachment_ids" widget="many2many_binary"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_yaipan_procedure_request_search" model="ir.ui.view">
+            <field name="name">yaipan_reports.procedure_request.search</field>
+            <field name="model">yaipan_reports.procedure_request</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="cedula"/>
+                    <field name="type_id"/>
+                    <field name="email"/>
+                    <field name="phone"/>
+                    <field name="property_number"/>
+                    <separator/>
+                    <filter name="filter_draft" string="Iniciados"
+                            domain="[('state', '=', 'draft')]"/>
+                    <filter name="filter_in_progress" string="En proceso"
+                            domain="[('state', '=', 'in_progress')]"/>
+                    <filter name="filter_done" string="Finalizados"
+                            domain="[('state', '=', 'done')]"/>
+                    <filter name="filter_cancelled" string="Anulados"
+                            domain="[('state', '=', 'cancelled')]"/>
+                    <group expand="0" string="Agrupar por">
+                        <filter name="group_type" string="Tipo de trámite"
+                                context="{'group_by': 'type_id'}"/>
+                        <filter name="group_state" string="Estado"
+                                context="{'group_by': 'state'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>

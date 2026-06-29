@@ -9,4 +9,14 @@
         <field name="number_increment">1</field>
         <field name="implementation">standard</field>
     </record>
+
+    <record id="seq_yaipan_procedure_request" model="ir.sequence">
+        <field name="name">Solicitud de Trámite Municipal</field>
+        <field name="code">yaipan_reports.procedure_request</field>
+        <field name="prefix">TRA-</field>
+        <field name="padding">5</field>
+        <field name="suffix">-%(year)s</field>
+        <field name="number_increment">1</field>
+        <field name="implementation">standard</field>
+    </record>
 </odoo>

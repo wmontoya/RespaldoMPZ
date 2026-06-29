@@ -11,7 +11,7 @@
     """,
     "category": "Administration",
     "version": "0.1",
-    "depends": ["base", "online_payments"],
+    "depends": ["base", "mail", "online_payments", "notifications_mpz"],
     "data": [
         "data/sequences.xml",
         "security/res_groups.xml",
@@ -20,7 +20,21 @@
 
         "views/parameter/actions.xml",
         "views/parameter/view_form.xml",
-        
+
+        "views/service/actions.xml",
+        "views/service/views.xml",
+
+        "data/services.xml",
+
+        "views/procedure_type/actions.xml",
+        "views/procedure_type/views.xml",
+
+        "views/procedure_request/actions.xml",
+        "views/procedure_request/cancel_wizard_views.xml",
+        "views/procedure_request/views.xml",
+
+        "data/procedure_types.xml",
+
         "views/menu.xml"
     ],
     "demo": [],

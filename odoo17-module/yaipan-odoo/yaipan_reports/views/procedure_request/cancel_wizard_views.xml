@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_procedure_cancel_wizard_form" model="ir.ui.view">
+            <field name="name">yaipan_reports.procedure_cancel_wizard.form</field>
+            <field name="model">yaipan_reports.procedure_cancel_wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="request_id" invisible="1"/>
+                    <group>
+                        <field name="reason" nolabel="1"
+                               placeholder="Indique el motivo de la anulación del trámite..."/>
+                    </group>
+                    <footer>
+                        <button name="action_confirm" type="object"
+                                string="Anular trámite" class="btn-danger"/>
+                        <button string="Cancelar" class="btn-secondary"
+                                special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

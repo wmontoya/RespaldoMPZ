@@ -1,7 +1,7 @@
 from odoo import models, api
 from odoo.exceptions import UserError
 import requests
-from datetime import datetime, timedelta
+from datetime import datetime
 import json
 
 
@@ -58,8 +58,7 @@ class YaipanApiConnection(models.TransientModel):
     @api.model
     def yaipan_get_pending(self, **kwargs):
         try:
-            estado_param = kwargs.get("estado") or "todos"
-            filtro_param = kwargs.get("filtro") or "todos"
+            estado_param = kwargs.get("estado", "todos").lower()
             cedula = kwargs.get("cedula")
             if not cedula:
                 return {
@@ -67,6 +66,7 @@ class YaipanApiConnection(models.TransientModel):
                     "error": "Falta el parámetro obligatorio: cédula",
                 }
 
+            # === 1. Llamada a la API Yaipan ===
             conn = self.env["yaipan_reports.yaipan_api_connection"].sudo()
             result = conn.yaipan_person_request(
                 "GET",
@@ -81,11 +81,11 @@ class YaipanApiConnection(models.TransientModel):
                 }
 
             api_result = result.get("result", {})
-            print(api_result)
             if isinstance(api_result, dict) and "error" in api_result:
                 if api_result["error"] == "Persona en Cobro Judicial":
                     return {"success": True, "error": api_result["error"]}
 
+            # === 2. Cálculo de periodo actual ===
             now = datetime.now()
             anno_actual, mes_actual = now.year, now.month
             periodo_actual = {
@@ -103,6 +103,7 @@ class YaipanApiConnection(models.TransientModel):
                 12: 4,
             }[mes_actual]
 
+            # === 3. Mapeo de descripciones ===
             desc_map = {
                 "Desc. Bienes Inmuebles": "Bienes Inmuebles",
                 "Desc.Mant. Parques y Ornatos": "Mant de Parques y Ornato",
@@ -115,6 +116,7 @@ class YaipanApiConnection(models.TransientModel):
             pendientes = []
 
             for item in datos:
+                # --- Año y periodo ---
                 periodo_cobro = int(
                     item.get("periodo") or item.get("periodoCobro") or 0
                 )
@@ -127,6 +129,7 @@ class YaipanApiConnection(models.TransientModel):
                 if is_patent:
                     periodo_ref += 1
 
+                # --- Estado ---
                 estado = "pendiente"
                 if anno_cobro < anno_actual or (
                     anno_cobro == anno_actual and periodo_cobro < periodo_ref
@@ -138,6 +141,7 @@ class YaipanApiConnection(models.TransientModel):
                 if is_patent and anno_cobro > anno_actual and periodo_cobro == 1:
                     estado = "al cobro" if periodo_ref == 5 else "pendiente"
 
+                # --- Descuentos ---
                 descripcion = (item.get("descripcion") or "").strip()
                 if descripcion.startswith("Desc"):
                     estado = "pendiente"
@@ -146,6 +150,7 @@ class YaipanApiConnection(models.TransientModel):
                 item["estado"] = estado
                 pendientes.append(item)
 
+            # === 4. Ajuste de saldos con descuento real (optimizado) ===
             from collections import defaultdict
 
             grupos = defaultdict(list)
@@ -172,30 +177,8 @@ class YaipanApiConnection(models.TransientModel):
 
             filtrados = []
             for d in pendientes:
-                estado_dato = (d.get("estado") or "").lower()
-                tipo_transaccion = (d.get("tipoTransaccion") or "").lower()
-                descripcion = (d.get("descripcion") or "").lower()
-
-                estado_filtro = (estado_param or "todos").lower()
-                filtro_filtro = (filtro_param or "todos").lower()
-
-                pasa = True
-
-                if estado_filtro != "todos" and estado_filtro != "todo":
-                    if not (estado_dato == estado_filtro or tipo_transaccion == estado_filtro):
-                        pasa = False
-
-                if filtro_filtro != "todos" and filtro_filtro != "todo":
-                    if not (
-                        filtro_filtro in estado_dato
-                        or filtro_filtro in tipo_transaccion
-                        or filtro_filtro in descripcion
-                    ):
-                        pasa = False
-
-                if not pasa:
+                if estado_param != "todos" and d.get("estado") != estado_param:
                     continue
-
                 filtrados.append(
                     {
                         "codigoServicio": d.get("codigoServicio"),
@@ -213,10 +196,11 @@ class YaipanApiConnection(models.TransientModel):
                         "tipoTransaccion": d.get("tipoTransaccion"),
                         "numeroDocumento": d.get("numeroDocumento"),
                         "montoMulta": d.get("montoMulta"),
-                        "numeroFinca": d.get("informacionCuenta", {}).get("numeroFinca"),
+                        "numeroFinca": d.get("informacionCuenta", {}).get(
+                            "numeroFinca"
+                        ),
                     }
                 )
-
 
             return {"success": True, "result": filtrados}
 
@@ -258,7 +242,6 @@ class YaipanApiConnection(models.TransientModel):
                 }
 
             payment_details = []
-            yaipan_payments_datails = []
             for item in pendientes:
                 payment_details.append(
                     (0, 0, {
@@ -281,14 +264,6 @@ class YaipanApiConnection(models.TransientModel):
                         "authorization": item.get("authorization", "000000"),
                     })
                 )
-                yaipan_payments_datails.append(
-                    {
-                        "auxiliarContable": item.get("auxiliarContable", ""),
-                        "numeroCuenta": item.get("numeroCuenta", "0"),
-                        "tipoTransaccion": item.get("tipoTransaccion", ""),
-                        "numeroDocumento": item.get("numeroDocumento", ""),
-                    }
-                )
 
             payment_values = {
                 "date_creation": datetime.now(),
@@ -303,52 +278,16 @@ class YaipanApiConnection(models.TransientModel):
                 "sub_amount": sub_amount,
                 "stamp": 0,
                 "total_amount": sub_amount + interest,
-                "status_transaction_id": kwargs.get("status_transaction_id", 1),
+                "status_transaction_id": kwargs.get("status_transaction_id", 2),
                 "authorization": kwargs.get("authorization", "000000"),
                 "payment_details_ids": payment_details
             }
-
+            
             try:
                 payment = self.env["online_payments.payment"].insert_payment(
                     payment_values, "","", None
                 )
-                date_str = (datetime.now() + timedelta(hours=1)).strftime("%Y-%m-%dT%H:%M:%S")
-                payment_values_finish={
-                    "requestId": "0",
-                    "status": {
-                        "status": "APPROVED",
-                        "reason": "00",
-                        "message": "La petición ha sido aprobada exitosamente",
-                        "date": date_str
-                    },
-                    "request": {
-                        "locale": "es_CR",
-                        "payer": {
-                        "document": kwargs.get("cedula", ""),
-                        "documentType": "",
-                        "name": "",
-                        "surname": "",
-                        "email": "",
-                        "mobile": ""
-                        },
-                        "payment": {
-                        "reference": payment.get("payment_id"),
-                        "description": "Municipalidad Pérez Zeledón",
-                        "amount": {
-                            "currency": "CRC",
-                            "total": sub_amount + interest,
-                        },
-                        "allowPartial": False,
-                        "subscribe": False
-                        }
-                    },
-                    "payments": yaipan_payments_datails ,
-                    "payment": [{"authorization": payment_values.get("authorization", "000000")}] ,
-                }
-                self.env["online_payments.payment"].finish_payment(
-                    payment_values_finish, payment.get("payment_id"),"", None
-                )
-                return {"success": True, "result": payment.get("payment_id")} 
+                return {"success": True, "result": payment} 
             except Exception as e:
                 print(f"Error: {str(e)}")
 
@@ -359,6 +298,7 @@ class YaipanApiConnection(models.TransientModel):
                 "success": False,
                 "error": str(e)
             }
+
     @api.model
     def yaipan_get_person(self, **kwargs):
         try:
@@ -368,53 +308,25 @@ class YaipanApiConnection(models.TransientModel):
                     "success": False,
                     "error": "Falta el parámetro obligatorio: cédula",
                 }
+
             conn = self.env["yaipan_reports.yaipan_api_connection"].sudo()
             result = conn.yaipan_person_request(
-                "GET",
-                "get",
-                f"cedula:{cedula}"
+                "GET", "get", f"cedula:{cedula}"
             )
-            if result is None:
-                return {
-                    "success": False,
-                    "error": "La API no devolvió respuesta"
-                }
-            if not isinstance(result, dict):
-                return {
-                    "success": False,
-                    "error": f"Formato inválido de respuesta: {type(result).__name__}"
-                }
             if not result.get("success"):
                 return {
                     "success": False,
-                    "error": result.get("result") or result.get("error") or "Error desconocido"
+                    "error": result.get("result", "Error desconocido"),
                 }
 
-            api_result = result.get("result")
+            api_result = result.get("result", {})
+            if isinstance(api_result, dict) and "error" in api_result:
+                if api_result.get("error") is None and len(api_result) == 1:
+                    return {"success": True, "result": None}
+                if "error" in api_result and api_result["error"] is not None:
+                    return {"success": False, "error": api_result["error"]}
 
-            if (
-                isinstance(api_result, dict)
-                and "error" in api_result
-                and api_result.get("error") is None
-            ):
-                return {
-                    "success": True,
-                    "result": None
-                }
-
-            if (
-                isinstance(api_result, dict)
-                and api_result.get("error")
-            ):
-                return {
-                    "success": False,
-                    "error": api_result["error"]
-                }
-
-            return {
-                "success": True,
-                "result": api_result
-            }
+            return {"success": True, "result": api_result}
 
         except Exception as e:
             self.env["ir.logging"].sudo().create(
@@ -423,58 +335,10 @@ class YaipanApiConnection(models.TransientModel):
                     "type": "server",
                     "dbname": self.env.cr.dbname,
                     "level": "error",
-                    "message": f"Error en yaipan_get_person: {str(e)}",
+                    "message": f"Error en yaipan api connection: {e}",
                     "path": __name__,
                     "func": "yaipan_get_person",
                     "line": 287,
                 }
             )
-
-            return {
-                "success": False,
-                "error": str(e)
-            }
-        
-    # @api.model
-    # def yaipan_get_person(self, **kwargs):
-        # try:
-        #     cedula = kwargs.get("cedula")
-        #     if not cedula:
-        #         return {
-        #             "success": False,
-        #             "error": "Falta el parámetro obligatorio: cédula",
-        #         }
-
-        #     conn = self.env["yaipan_reports.yaipan_api_connection"].sudo()
-        #     result = conn.yaipan_person_request(
-        #         "GET", "get", f"cedula:{cedula}"
-        #     )
-        #     if not result.get("success"):
-        #         return {
-        #             "success": False,
-        #             "error": result.get("result", "Error desconocido"),
-        #         }
-
-        #     api_result = result.get("result", {})
-        #     if isinstance(api_result, dict) and "error" in api_result:
-        #         if api_result.get("error") is None and len(api_result) == 1:
-        #             return {"success": True, "result": None}
-        #         if "error" in api_result and api_result["error"] is not None:
-        #             return {"success": False, "error": api_result["error"]}
-
-        #     return {"success": True, "result": api_result}
-
-        # except Exception as e:
-        #     self.env["ir.logging"].sudo().create(
-        #         {
-        #             "name": "yaipan_get_person",
-        #             "type": "server",
-        #             "dbname": self.env.cr.dbname,
-        #             "level": "error",
-        #             "message": f"Error en yaipan api connection: {e}",
-        #             "path": __name__,
-        #             "func": "yaipan_get_person",
-        #             "line": 287,
-        #         }
-        #     )
-        #     return {"success": False, "error": str(e)}
+            return {"success": False, "error": str(e)}

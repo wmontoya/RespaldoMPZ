@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_yaipan_service_tree" model="ir.ui.view">
+            <field name="name">yaipan_reports.service.tree</field>
+            <field name="model">yaipan_reports.service</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence" widget="handle" />
+                    <field name="name" />
+                    <field name="icon" />
+                    <field name="color" />
+                    <field name="url" />
+                    <field name="is_external" />
+                    <field name="active" widget="boolean_toggle" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_yaipan_service_form" model="ir.ui.view">
+            <field name="name">yaipan_reports.service.form</field>
+            <field name="model">yaipan_reports.service</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <widget name="web_ribbon" title="Archivado" bg_color="bg-danger"
+                                invisible="active" />
+                        <field name="active" invisible="1" />
+                        <div class="oe_title">
+                            <label for="name" />
+                            <h1>
+                                <field name="name" placeholder="Ej: Bienes Inmuebles" />
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="icon" placeholder="Ej: Building2" />
+                                <field name="color" placeholder="Ej: #082b63" widget="char" />
+                                <field name="sequence" />
+                            </group>
+                            <group>
+                                <field name="is_external" />
+                                <field name="url" placeholder="/dashboard/properties ó http://servidor/ruta" />
+                            </group>
+                        </group>
+                        <group string="Descripción">
+                            <field name="description" nolabel="1"
+                                   placeholder="Texto que acompaña al título en la tarjeta." />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_yaipan_service_search" model="ir.ui.view">
+            <field name="name">yaipan_reports.service.search</field>
+            <field name="model">yaipan_reports.service</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name" />
+                    <field name="url" />
+                    <filter name="filter_internal" string="Internos"
+                            domain="[('is_external', '=', False)]" />
+                    <filter name="filter_external" string="Externos"
+                            domain="[('is_external', '=', True)]" />
+                    <separator />
+                    <filter name="filter_inactive" string="Archivados"
+                            domain="[('active', '=', False)]" />
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_yaipan_procedure_type_tree" model="ir.ui.view">
+            <field name="name">yaipan_reports.procedure_type.tree</field>
+            <field name="model">yaipan_reports.procedure_type</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence" widget="handle"/>
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="requires_property" widget="boolean_toggle"/>
+                    <field name="active" widget="boolean_toggle"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_yaipan_procedure_type_form" model="ir.ui.view">
+            <field name="name">yaipan_reports.procedure_type.form</field>
+            <field name="model">yaipan_reports.procedure_type</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <widget name="web_ribbon" title="Archivado" bg_color="bg-danger"
+                                invisible="active"/>
+                        <field name="active" invisible="1"/>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name"
+                                       placeholder="Ej: Solicitud de Constancia de Valor Fiscal"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="code" placeholder="Ej: fiscal_value"/>
+                                <field name="sequence"/>
+                                <field name="requires_property"/>
+                            </group>
+                            <group>
+                                <field name="icon" placeholder="Ej: FileText"/>
+                                <field name="color" placeholder="Ej: #082b63" widget="char"/>
+                            </group>
+                        </group>
+                        <group string="Notificación">
+                            <field name="notification_email"
+                                   placeholder="Ej: valoracion@mpz.go.cr (varios separados por coma)"/>
+                            <field name="change_note"
+                                   placeholder="Observación opcional para el historial"/>
+                        </group>
+                        <group string="Descripción">
+                            <field name="description" nolabel="1"
+                                   placeholder="Descripción interna del tipo de trámite."/>
+                        </group>
+                        <notebook>
+                            <page string="Historial de correos" name="email_history">
+                                <field name="email_log_ids" readonly="1">
+                                    <tree>
+                                        <field name="change_date"/>
+                                        <field name="user_id"/>
+                                        <field name="old_email"/>
+                                        <field name="new_email"/>
+                                        <field name="note"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_yaipan_procedure_type_search" model="ir.ui.view">
+            <field name="name">yaipan_reports.procedure_type.search</field>
+            <field name="model">yaipan_reports.procedure_type</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="code"/>
+                    <filter name="filter_requires_property" string="Requieren finca"
+                            domain="[('requires_property', '=', True)]"/>
+                    <separator/>
+                    <filter name="filter_inactive" string="Archivados"
+                            domain="[('active', '=', False)]"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>

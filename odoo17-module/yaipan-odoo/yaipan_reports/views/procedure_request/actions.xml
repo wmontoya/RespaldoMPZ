@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="action_yaipan_procedure_request" model="ir.actions.act_window">
+            <field name="name">Solicitudes de Trámites</field>
+            <field name="res_model">yaipan_reports.procedure_request</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Registre una nueva solicitud de trámite municipal
+                </p>
+                <p>
+                    Indique la cédula, el tipo de trámite y el correo electrónico, y
+                    adjunte los documentos necesarios. El número de finca se solicitará
+                    únicamente cuando el tipo de trámite lo requiera.
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>
